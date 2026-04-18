@@ -42,7 +42,7 @@
 <!-- HERO PAGE -->
 <section class="page-hero">
   <div class="page-hero-overlay"></div>
-  <div class="page-hero-bg" style="background-image:url('../Eurekabtp/soudure/PHOTO-2026-04-18-16-40-33.jpg')"></div>
+  <div class="page-hero-bg" style="background-image:url('images/soudure/PHOTO-2026-04-18-16-40-33.jpg')"></div>
   <div class="page-hero-content">
     <a href="index.html" class="page-hero-back">← Retour à l'accueil</a>
     <p class="section-eyebrow">Catalogue complet</p>
@@ -55,131 +55,181 @@
 <section class="cat-section">
   <div class="cat-inner">
 
-    <!-- Barre de recherche demande -->
-    <div class="pieces-request-bar" data-animate>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-      <p>Vous cherchez une pièce précise ? <strong>Décrivez-la, nous la trouvons.</strong></p>
-      <a href="index.html#contact-strip" class="btn-primary">Faire une demande</a>
+    <!-- Spotlight Search Bar -->
+    <div class="spotlight-wrap" id="spotlightWrap">
+      <div class="spotlight-bar">
+        <svg class="spotlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="search" id="spotlightInput" class="spotlight-input" placeholder="Rechercher : pompe, vérin, goulotte, câble..." autocomplete="off" spellcheck="false">
+        <span class="spotlight-count" id="spotlightCount">12 pièces</span>
+      </div>
+      <div class="spotlight-empty" id="spotlightEmpty" style="display:none">
+        <p>Aucun résultat pour « <strong id="spotlightQuery"></strong> » — <a href="index.html#contact-strip">Faire une demande directe →</a></p>
+      </div>
     </div>
 
-    <!-- Catégories -->
-    <div class="cat-grid" data-animate>
+    <!-- Catégories (Nouvelle Grille de 12 Items) -->
+    <div class="catalog-grid" data-animate>
 
-      <div class="cat-card">
-        <div class="cat-card-header" style="background-image:url('../Eurekabtp/soudure/PHOTO-2026-04-18-16-40-32 4.jpg')">
-          <div class="cat-card-overlay"></div>
-          <h3>Toupies à Béton</h3>
+      <!-- Item 1 -->
+      <div class="catalog-card" data-search="rallonge goulotte plastique toupie extension matériaux" data-tag="Toupie">
+        <div class="catalog-img">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=500" alt="Rallonge de goulotte en plastique haute résistance">
+          <div class="catalog-img-overlay"></div>
         </div>
-        <div class="cat-card-body">
-          <ul class="cat-list">
-            <li>Réducteurs toutes marques (IMER, Stetter, Liebherr)</li>
-            <li>Moteurs électriques et hydrauliques</li>
-            <li>Cuves et tambours de malaxage</li>
-            <li>Goulottes de déversement</li>
-            <li>Câbles de commande et boîtiers</li>
-            <li>Joints et étanchéité</li>
-          </ul>
-          <a href="index.html#contact-strip" class="cat-cta">Demander un devis →</a>
+        <div class="catalog-content">
+          <span class="catalog-tag">Toupie</span>
+          <h2>Rallonge de goulotte en plastique</h2>
+          <p>Extension légère et durable pour optimisation du flux de matériaux</p>
         </div>
       </div>
 
-      <div class="cat-card">
-        <div class="cat-card-header" style="background-image:url('../Eurekabtp/strucutre/PHOTO-2026-04-18-16-43-13.jpg')">
-          <div class="cat-card-overlay"></div>
-          <h3>Pompes à Béton</h3>
+      <!-- Item 2 -->
+      <div class="catalog-card" data-search="rallonge goulotte aluminium toupie robuste" data-tag="Toupie">
+        <div class="catalog-img">
+          <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=500" alt="Rallonge de goulotte en aluminium renforcé">
+          <div class="catalog-img-overlay"></div>
         </div>
-        <div class="cat-card-body">
-          <ul class="cat-list">
-            <li>Pistons et cylindres de pompage</li>
-            <li>Clapets et clapets anti-retour</li>
-            <li>Flexibles haute pression</li>
-            <li>Raccords et coudes de distribution</li>
-            <li>Bras articulés et mâts</li>
-            <li>Systèmes de commande</li>
-          </ul>
-          <a href="index.html#contact-strip" class="cat-cta">Demander un devis →</a>
+        <div class="catalog-content">
+          <span class="catalog-tag">Toupie</span>
+          <h2>Rallonge de goulotte aluminium renforcé</h2>
+          <p>Solution robuste pour prolongement et canalisation des matériaux</p>
         </div>
       </div>
 
-      <div class="cat-card">
-        <div class="cat-card-header" style="background-image:url('../Eurekabtp/soudure/PHOTO-2026-04-18-16-40-33 2.jpg')">
-          <div class="cat-card-overlay"></div>
-          <h3>Mixo-pompes</h3>
+      <!-- Item 3 -->
+      <div class="catalog-card" data-search="tôle usure abrasion acier protection" data-tag="Usure">
+        <div class="catalog-img">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=500" alt="Tôle d'usure adaptable toutes marques">
+          <div class="catalog-img-overlay"></div>
         </div>
-        <div class="cat-card-body">
-          <ul class="cat-list">
-            <li>Tambours malaxeurs</li>
-            <li>Pompes de transfert</li>
-            <li>Rotors et stators</li>
-            <li>Trémies et auges</li>
-            <li>Motoréducteurs</li>
-            <li>Tableaux de commande</li>
-          </ul>
-          <a href="index.html#contact-strip" class="cat-cta">Demander un devis →</a>
+        <div class="catalog-content">
+          <span class="catalog-tag">Usure</span>
+          <h2>Tôle d'usure adaptable toutes marques</h2>
+          <p>Protection contre l'abrasion, les chocs et l'usure intensive.</p>
         </div>
       </div>
 
-      <div class="cat-card">
-        <div class="cat-card-header" style="background-image:url('../Eurekabtp/camion/PHOTO-2026-04-18-16-40-29.jpg')">
-          <div class="cat-card-overlay"></div>
-          <h3>Hydraulique</h3>
+      <!-- Item 4 -->
+      <div class="catalog-card" data-search="système retenue béton srb structure" data-tag="Toupie">
+        <div class="catalog-img">
+          <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&q=80&w=500" alt="Système de retenue béton SRB">
+          <div class="catalog-img-overlay"></div>
         </div>
-        <div class="cat-card-body">
-          <ul class="cat-list">
-            <li>Pompes hydrauliques toutes marques</li>
-            <li>Vérins et actionneurs</li>
-            <li>Distributeurs et électrovannes</li>
-            <li>Flexibles et raccords HP</li>
-            <li>Centrales hydrauliques</li>
-            <li>Filtres et accumulateurs</li>
-          </ul>
-          <a href="index.html#contact-strip" class="cat-cta">Demander un devis →</a>
+        <div class="catalog-content">
+          <span class="catalog-tag">Toupie</span>
+          <h2>Système de retenue béton SRB</h2>
+          <p>Système robuste et léger pour retenue béton professionnelle.</p>
         </div>
       </div>
 
-      <div class="cat-card">
-        <div class="cat-card-header" style="background-image:url('../Eurekabtp/camion/PHOTO-2026-04-18-16-40-30.jpg')">
-          <div class="cat-card-overlay"></div>
-          <h3>Carrosserie & Châssis</h3>
+      <!-- Item 5 -->
+      <div class="catalog-card" data-search="manette commande contrôle levier ergonomique" data-tag="Commande">
+        <div class="catalog-img">
+          <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&q=80&w=500" alt="Manette de commande">
+          <div class="catalog-img-overlay"></div>
         </div>
-        <div class="cat-card-body">
-          <ul class="cat-list">
-            <li>Bennes basculantes et ridelles</li>
-            <li>Hayons élévateurs</li>
-            <li>Protections et gardes-boue</li>
-            <li>Supports et berceaux</li>
-            <li>Cabines et éléments de tôlerie</li>
-            <li>Systèmes de fixation</li>
-          </ul>
-          <a href="index.html#contact-strip" class="cat-cta">Demander un devis →</a>
+        <div class="catalog-content">
+          <span class="catalog-tag">Commande</span>
+          <h2>Manette de commande</h2>
+          <p>Manette ergonomique assurant contrôle précis des équipements chantier.</p>
         </div>
       </div>
 
-      <div class="cat-card cat-card--commande">
-        <div class="cat-card-header cat-card-header--dark">
-          <div class="cat-command-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-          </div>
-          <h3>Centrales à Béton</h3>
+      <!-- Item 6 -->
+      <div class="catalog-card" data-search="pompe hydraulique pression puissance haute performance" data-tag="Hydraulique">
+        <div class="catalog-img">
+          <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80&w=500" alt="Pompe hydraulique">
+          <div class="catalog-img-overlay"></div>
         </div>
-        <div class="cat-card-body">
-          <p class="cat-commande-note">Approvisionnement sur commande dans les meilleurs délais.</p>
-          <ul class="cat-list">
-            <li>Malaxeurs et turbines</li>
-            <li>Doseurs et trémies</li>
-            <li>Convoyeurs et tapis</li>
-            <li>Silos et systèmes de pesage</li>
-            <li>Automatismes et superviseurs</li>
-            <li>Pièces d'usure (lames, aubes…)</li>
-          </ul>
-          <a href="index.html#contact-strip" class="cat-cta">Commander une pièce →</a>
+        <div class="catalog-content">
+          <span class="catalog-tag">Hydraulique</span>
+          <h2>Pompe hydraulique</h2>
+          <p>Pompe hydraulique performante pour puissance fiable et durable.</p>
+        </div>
+      </div>
+
+      <!-- Item 7 -->
+      <div class="catalog-card" data-search="vérin manuel hydraulique toupie béton cylindre" data-tag="Hydraulique">
+        <div class="catalog-img">
+          <img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&q=80&w=500" alt="Vérin manuel pour toupie à béton">
+          <div class="catalog-img-overlay"></div>
+        </div>
+        <div class="catalog-content">
+          <span class="catalog-tag">Hydraulique</span>
+          <h2>Vérin manuel pour toupie à béton</h2>
+          <p>Vérin robuste et précis adapté aux toupies béton professionnelles.</p>
+        </div>
+      </div>
+
+      <!-- Item 8 -->
+      <div class="catalog-card" data-search="câble commande mécanique transmission renforcé" data-tag="Commande">
+        <div class="catalog-img">
+          <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&q=80&w=500" alt="Câble de commande">
+          <div class="catalog-img-overlay"></div>
+        </div>
+        <div class="catalog-content">
+          <span class="catalog-tag">Commande</span>
+          <h2>Câble de commande</h2>
+          <p>Câble renforcé garantissant transmission fiable des commandes mécaniques.</p>
+        </div>
+      </div>
+
+      <!-- Item 9 -->
+      <div class="catalog-card" data-search="pompe hydraulique toupie béton haute performance compatible" data-tag="Hydraulique">
+        <div class="catalog-img">
+          <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&q=80&w=500" alt="Pompe hydraulique pour toupie à béton">
+          <div class="catalog-img-overlay"></div>
+        </div>
+        <div class="catalog-content">
+          <span class="catalog-tag">Hydraulique</span>
+          <h2>Pompe hydraulique pour toupie — toutes marques</h2>
+          <p>Haute performance pour toupies à béton. Compatible IMER, Stetter, Liebherr.</p>
+        </div>
+      </div>
+
+      <!-- Item 10 -->
+      <div class="catalog-card" data-search="compteur eau toupie béton dosage contrôle" data-tag="Toupie">
+        <div class="catalog-img">
+          <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=500" alt="Compteur d'eau pour toupie à béton">
+          <div class="catalog-img-overlay"></div>
+        </div>
+        <div class="catalog-content">
+          <span class="catalog-tag">Toupie</span>
+          <h2>Compteur d'eau pour toupie à béton</h2>
+          <p>Contrôle optimal de la quantité d'eau ajoutée — robuste et fiable.</p>
+        </div>
+      </div>
+
+      <!-- Item 11 -->
+      <div class="catalog-card" data-search="toupie béton sur mesure cuve robuste qualité" data-tag="Toupie">
+        <div class="catalog-img">
+          <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80&w=500" alt="Toupies à béton sur mesure">
+          <div class="catalog-img-overlay"></div>
+        </div>
+        <div class="catalog-content">
+          <span class="catalog-tag">Toupie</span>
+          <h2>Toupies à béton sur mesure</h2>
+          <p>Matériaux de haute qualité, robustesse et durabilité garanties.</p>
+        </div>
+      </div>
+
+      <!-- Item 12 -->
+      <div class="catalog-card" data-search="joints accessoires étanchéité fixation divers" data-tag="Accessoires">
+        <div class="catalog-img">
+          <img src="https://images.unsplash.com/photo-1581092162384-8987c1d64926?auto=format&fit=crop&q=80&w=500" alt="Joints et accessoires divers">
+          <div class="catalog-img-overlay"></div>
+        </div>
+        <div class="catalog-content">
+          <span class="catalog-tag">Accessoires</span>
+          <h2>Joints &amp; Accessoires Divers</h2>
+          <p>Gamme complète de joints d'étanchéité et d'accessoires de fixation.</p>
         </div>
       </div>
 
     </div>
 
     <!-- Marques référencées -->
-    <div class="marques-section" data-animate>
+    <div class="marques-section" data-animate style="margin-top:4rem;">
       <h4>Marques référencées</h4>
       <div class="marques-list">
         <span>IMER</span><span>Stetter</span><span>Liebherr</span><span>Cifa</span>
@@ -228,28 +278,9 @@
         <li><a href="index.html#contact-strip">Contact & Devis</a></li>
       </ul>
     </div>
-    <div class="footer-map-col">
-      <h5>Nous trouver</h5>
-      <p class="footer-map-hint">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-        Seine-et-Marne (77), France
-      </p>
-      <div class="map-wrap-v2">
-        <div class="map-pin-overlay" aria-hidden="true">
-          <div class="pin-rings"><span class="pin-ring-a"></span><span class="pin-ring-b"></span></div>
-          <div class="pin-dot"></div>
-        </div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d343086.21960767855!2d2.7539!3d48.5834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5f0a6a4c7aa7d%3A0x408ab2ae4bb2f80!2sSeine-et-Marne!5e0!3m2!1sfr!2sfr!4v1"
-          width="100%" height="240" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade" title="Eureka BTP"></iframe>
-      </div>
-    </div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 Eureka BTP — Tous droits réservés</p>
-    <div class="footer-bottom-links">
-      <a href="#">Mentions légales</a><a href="#">Confidentialité</a>
-    </div>
   </div>
 </footer>
 
@@ -266,8 +297,52 @@
   document.querySelectorAll('[data-animate]').forEach(el => {
     gsap.from(el, { y: 30, opacity: 0, duration: 0.75, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 85%' } });
   });
-  gsap.from('.cat-card', { y: 40, opacity: 0, stagger: 0.1, duration: 0.7, ease: 'power2.out',
-    scrollTrigger: { trigger: '.cat-grid', start: 'top 80%' } });
+  gsap.from('.catalog-card', { y: 40, opacity: 0, stagger: 0.08, duration: 0.7, ease: 'power2.out',
+    scrollTrigger: { trigger: '.catalog-grid', start: 'top 85%' } });
+
+  /* ─── SPOTLIGHT SEARCH ─── */
+  const spotWrap  = document.getElementById('spotlightWrap');
+  const spotInput = document.getElementById('spotlightInput');
+  const spotCount = document.getElementById('spotlightCount');
+  const spotEmpty = document.getElementById('spotlightEmpty');
+  const spotQuery = document.getElementById('spotlightQuery');
+  const allCards  = Array.from(document.querySelectorAll('.catalog-card'));
+
+  /* Inject permanent CTA into every card */
+  allCards.forEach(card => {
+    const content = card.querySelector('.catalog-content');
+    if (!content) return;
+    const a = document.createElement('a');
+    a.href = 'index.html#contact-strip';
+    a.className = 'catalog-devis';
+    a.textContent = 'Demander un devis →';
+    content.appendChild(a);
+  });
+
+  window.addEventListener('scroll', () => {
+    spotWrap.classList.toggle('is-compact', window.scrollY > 180);
+  }, { passive: true });
+
+  spotInput.addEventListener('input', () => {
+    const q = spotInput.value.toLowerCase().trim();
+    let visible = 0;
+    allCards.forEach(card => {
+      const match = !q || card.dataset.search.toLowerCase().includes(q);
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    spotCount.textContent = `${visible} pièce${visible !== 1 ? 's' : ''}`;
+    spotEmpty.style.display = (q && visible === 0) ? 'block' : 'none';
+    spotQuery.textContent = q;
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && spotInput.value) {
+      spotInput.value = '';
+      spotInput.dispatchEvent(new Event('input'));
+      spotInput.blur();
+    }
+  });
 </script>
 </body>
 </html>
