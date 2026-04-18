@@ -273,7 +273,6 @@ body.bg-gray-50 {
   color: #555;
   line-height: 1.5;
   font-weight: 400;
-  margin-top: auto;
 }
 
 @media (min-width: 1024px) {
@@ -416,7 +415,7 @@ body.bg-gray-50 {
 /* CTA always visible in card footer */
 .catalog-devis {
   display: inline-block;
-  margin-top: 0.9rem;
+  margin-top: auto;
   font-size: 0.82rem;
   font-weight: 700;
   color: var(--accent);
