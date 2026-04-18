@@ -227,6 +227,7 @@ body.bg-gray-50 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .catalog-card:hover {
