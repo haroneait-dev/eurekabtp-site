@@ -5,28 +5,6 @@
 /* ─── GSAP init ─── */
 gsap.registerPlugin(ScrollTrigger);
 
-/* ─── PRELOADER ─── */
-(function () {
-  const preloader = document.getElementById('preloader');
-  if (!preloader) return;
-
-  document.body.style.overflow = 'hidden';
-
-  const tl = gsap.timeline({
-    onComplete() {
-      preloader.remove();
-      document.body.style.overflow = '';
-    }
-  });
-
-  tl.from(['#loader-eureka', '#loader-btp'], {
-    y: 40, opacity: 0, duration: 0.5, stagger: 0.1, ease: 'power2.out'
-  })
-  .to('#loader-eureka', { x: '-100vw', duration: 0.65, ease: 'power3.in' }, '+=0.35')
-  .to('#loader-btp',    { x:  '100vw', duration: 0.65, ease: 'power3.in' }, '<')
-  .to('#door-left',     { x: '-100%',  duration: 0.7,  ease: 'power3.inOut' }, '-=0.1')
-  .to('#door-right',    { x:  '100%',  duration: 0.7,  ease: 'power3.inOut' }, '<');
-})();
 
 
 /* ─── ACTIVITÉS : SERPENT ANIMÉ ─── */

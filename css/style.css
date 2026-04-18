@@ -1561,44 +1561,6 @@ footer { background: #1e2127; color: #fff; }
   .pc-next    { right: 8px; }
 }
 
-/* ═══════════════════════════════════════════════
-   PRELOADER — PORTES D'ASCENSEUR
-═══════════════════════════════════════════════ */
-#preloader {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  overflow: hidden;
-  pointer-events: all;
-}
-#door-left, #door-right {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 50%;
-  background: #fff;
-  z-index: 1;
-}
-#door-left  { left: 0; }
-#door-right { right: 0; }
-#preloader-text {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25em;
-}
-#loader-eureka, #loader-btp {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(3rem, 10vw, 7.5rem);
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  color: #1f2937;
-  display: block;
-  will-change: transform;
-}
 
 /* ═══════════════════════════════════════════════
    NOS ACTIVITÉS — SERPENT
