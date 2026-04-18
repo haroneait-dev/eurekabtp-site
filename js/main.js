@@ -7,41 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-/* ─── ACTIVITÉS : SERPENT ANIMÉ ─── */
-(function () {
-  const snakePath = document.getElementById('actSnakePath');
-  if (!snakePath) return;
 
-  const len = snakePath.getTotalLength();
-  gsap.set(snakePath, { strokeDasharray: len, strokeDashoffset: len });
-
-  const thresholds = [0, 0.32, 0.64, 0.96];
-  const nodes  = [0, 1, 2, 3].map(i => document.getElementById(`actNode${i}`));
-  const texts  = [1, 2, 3].map(i => document.getElementById(`actNodeText${i}`));
-  const steps  = Array.from(document.querySelectorAll('.act-step'));
-
-  gsap.to(snakePath, {
-    strokeDashoffset: 0,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '#actTimeline',
-      start: 'top 65%',
-      end:   'bottom 70%',
-      scrub: 1.5,
-      onUpdate(self) {
-        const p = self.progress;
-        nodes.forEach((node, i) => {
-          const lit = p >= thresholds[i];
-          node.setAttribute('fill', lit ? '#f4650a' : '#e5e7eb');
-          if (i > 0) {
-            texts[i - 1].setAttribute('fill', lit ? '#fff' : '#9ca3af');
-          }
-          if (steps[i]) steps[i].classList.toggle('is-lit', lit);
-        });
-      }
-    }
-  });
-})();
 
 /* ─── NAVBAR SCROLL ─── */
 const navbar    = document.getElementById('navbar');
@@ -62,21 +28,18 @@ navMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
 }));
 
 /* ─── GSAP: SERVICES DOTTED PATH REVEAL ─── */
-const pathOverlay = document.querySelector('.services-path-overlay');
-if (pathOverlay) {
-  gsap.fromTo(pathOverlay, 
-    { clipPath: "inset(0 0 100% 0)" }, 
-    {
-      clipPath: "inset(0 0 0% 0)",
-      ease: "none",
-      scrollTrigger: {
-        trigger: "#services",
-        start: "top 40%",
-        end: "bottom 80%",
-        scrub: 1
-      }
+const servicesClipRect = document.getElementById('servicesClipRect');
+if (servicesClipRect) {
+  gsap.to(servicesClipRect, {
+    attr: { height: 100 },
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#services",
+      start: "top 40%",
+      end: "bottom 80%",
+      scrub: 1
     }
-  );
+  });
 }
 
 /* ─── SMOOTH ANCHOR SCROLL ─── */
@@ -114,23 +77,23 @@ statCards.forEach(card => {
 });
 
 /* ─── GSAP : COMPTEURS ANIMÉS ─── */
-const counterObs = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    const numEl  = entry.target.querySelector('.stat-v2-num');
-    if (!numEl) return;
-    const target = parseInt(numEl.dataset.target, 10);
-    gsap.to({ val: 0 }, {
-      val: target,
-      duration: 2,
-      ease: 'power2.out',
-      onUpdate() { numEl.textContent = Math.round(this.targets()[0].val).toLocaleString('fr-FR'); },
-      onComplete() { numEl.textContent = target.toLocaleString('fr-FR'); }
-    });
-    counterObs.unobserve(entry.target);
+document.querySelectorAll('.stat-v2').forEach(c => {
+  const numEl = c.querySelector('.stat-v2-num');
+  if (!numEl) return;
+  const target = parseInt(numEl.dataset.target, 10);
+  let obj = { val: 0 };
+  gsap.to(obj, {
+    val: target,
+    duration: 2,
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: c,
+      start: 'top 85%'
+    },
+    onUpdate: () => { numEl.textContent = Math.round(obj.val).toLocaleString('fr-FR'); },
+    onComplete: () => { numEl.textContent = target.toLocaleString('fr-FR'); }
   });
-}, { threshold: 0.5 });
-document.querySelectorAll('.stat-v2').forEach(c => counterObs.observe(c));
+});
 
 /* ─── GSAP : SCROLL ANIMATIONS génériques (data-animate) ─── */
 document.querySelectorAll('[data-animate]').forEach(el => {
