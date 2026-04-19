@@ -265,7 +265,7 @@
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--accent);
-  background: rgba(244,101,10,0.09);
+  background: rgba(29,78,216,0.09);
   padding: 0.22rem 0.65rem;
   border-radius: 999px;
   align-self: flex-start;
@@ -314,7 +314,7 @@
   transition: transform 0.2s ease;
 }
 .catalog-devis:hover {
-  color: #d95c08;
+  color: var(--accent-dk);
   gap: 0.55rem;
 }
 .catalog-devis:hover::after { transform: translateX(3px); }
@@ -351,7 +351,7 @@
 }
 .spotlight-bar:focus-within {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(244,101,10,0.12), 0 8px 40px rgba(0,0,0,0.07);
+  box-shadow: 0 0 0 3px rgba(29,78,216,0.12), 0 8px 40px rgba(0,0,0,0.07);
 }
 .is-compact .spotlight-bar {
   padding: 0.6rem 1.2rem;
@@ -665,3 +665,24 @@
   .catalog-card.card-wide { grid-column: span 1; }
   .catalog-card.card-wide .catalog-img { height: 185px; }
 }
+
+/* ─── Images produit sur fond clair (AVIF avec bg transparent/blanc) ─── */
+.catalog-img--light {
+  background: #f8f9fb;
+  display: flex; align-items: center; justify-content: center;
+}
+.catalog-img--light img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  padding: 1rem;
+}
+.card-wide .catalog-img--light {
+  height: 220px;
+}
+.catalog-img--light + .catalog-content .catalog-devis {
+  font-size: 0.8rem;
+}
+
+/* ─── Spotlight kbd fix couleur bleue ─── */
+.spotlight-kbd { border-color: rgba(29,78,216,0.3); }
+.marques-list span:hover { border-color: rgba(29,78,216,0.5); }

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Identité d'Eureka BTP — SARL fondée en 2001, spécialiste en réparation et maintenance de toupies et pompes à béton en Seine-et-Marne.">
+  <title>Notre Identité — Eureka BTP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── PAGE HERO ── */
+    .id-hero {
+      position: relative;
+      height: 55vh; min-height: 380px; max-height: 600px;
+      display: flex; align-items: flex-end;
+      padding: 0 2rem 4.5rem;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0c1424 0%, #1d4ed8 55%, #0f1e3d 100%);
+    }
+    .id-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,14,22,0.75) 0%, transparent 60%);
+    }
+    .id-hero-content {
+      position: relative; z-index: 2;
+      max-width: 1240px; margin: 0 auto; width: 100%;
+      color: #fff;
+    }
+    .id-hero-back {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.82rem; font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 1.25rem;
+      transition: color 0.3s;
+    }
+    .id-hero-back:hover { color: var(--accent); }
+    .id-hero-content h1 { margin-bottom: 0.85rem; }
+    .id-hero-content p {
+      font-size: 1.05rem; color: rgba(255,255,255,0.75);
+      max-width: 640px; line-height: 1.72;
+    }
+
+    /* ── FICHE IDENTITÉ ── */
+    #id-fiche {
+      background: #fff;
+      padding: 6rem 2rem;
+    }
+    .id-fiche-inner {
+      max-width: 1240px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.2fr 1fr;
+      gap: 6rem; align-items: start;
+    }
+
+    /* Infos clés */
+    .id-info-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.25rem; margin-bottom: 3rem;
+    }
+    .id-info-card {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.25rem;
+      border-top: 3px solid var(--accent);
+    }
+    .id-info-card .id-info-label {
+      font-size: 0.65rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.14em;
+      color: var(--gray-lt); margin-bottom: 0.45rem;
+    }
+    .id-info-card .id-info-val {
+      font-size: 1.05rem; font-weight: 800;
+      color: var(--anthracite); letter-spacing: -0.02em;
+    }
+
+    /* Qui sommes-nous */
+    .id-qui {
+      background: var(--dark);
+      border-radius: 16px;
+      padding: 2.5rem;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .id-qui::before {
+      content: '';
+      position: absolute; top: -60%; right: -20%;
+      width: 340px; height: 340px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(29,78,216,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .id-qui .section-eyebrow { color: var(--accent); margin-bottom: 1rem; }
+    .id-qui h3 { color: #fff; margin-bottom: 1rem; font-size: 1.35rem; }
+    .id-qui p {
+      font-size: 0.95rem; color: rgba(255,255,255,0.68);
+      line-height: 1.78; margin-bottom: 1.25rem;
+    }
+    .id-qui p:last-child { margin-bottom: 0; }
+
+    /* ── VALEURS ── */
+    #id-valeurs {
+      background: #f0f5ff;
+      padding: 6rem 2rem;
+    }
+    .id-valeurs-inner {
+      max-width: 1240px; margin: 0 auto;
+    }
+    .id-valeurs-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; margin-top: 4rem;
+    }
+    .id-valeur-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 2.25rem 2rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--t), box-shadow var(--t);
+    }
+    .id-valeur-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .id-valeur-icon {
+      width: 48px; height: 48px;
+      background: var(--accent-glass);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+      color: var(--accent);
+    }
+    .id-valeur-icon svg { width: 24px; height: 24px; }
+    .id-valeur-card h4 {
+      font-size: 1.05rem; font-weight: 800;
+      color: var(--anthracite); margin-bottom: 0.65rem;
+    }
+    .id-valeur-card p {
+      font-size: 0.9rem; color: var(--gray);
+      line-height: 1.72;
+    }
+
+    /* ── LOCALISATION ── */
+    #id-localisation {
+      background: #fff;
+      padding: 6rem 2rem;
+    }
+    .id-loc-inner {
+      max-width: 1240px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .id-loc-info h2 { color: var(--anthracite); margin-bottom: 1.5rem; }
+    .id-loc-list {
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+    .id-loc-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.25rem;
+      background: var(--light);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+    .id-loc-item-icon {
+      width: 42px; height: 42px; flex-shrink: 0;
+      background: var(--accent-glass);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent);
+    }
+    .id-loc-item-icon svg { width: 20px; height: 20px; }
+    .id-loc-item-text strong {
+      display: block; font-size: 0.88rem; font-weight: 800;
+      color: var(--anthracite); margin-bottom: 0.25rem;
+    }
+    .id-loc-item-text span {
+      font-size: 0.85rem; color: var(--gray);
+    }
+    .id-loc-map {
+      height: 360px; border-radius: 16px; overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+    }
+    .id-loc-map iframe {
+      width: 100%; height: 100%; border: none;
+      filter: grayscale(20%) contrast(1.05);
+    }
+
+    /* ── CTA ── */
+    #id-cta {
+      background: var(--dark);
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    .id-cta-inner {
+      max-width: 640px; margin: 0 auto;
+    }
+    .id-cta-inner h2 { color: #fff; margin-bottom: 1rem; }
+    .id-cta-inner p { color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.75; margin-bottom: 2.5rem; }
+    .id-cta-actions {
+      display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .id-fiche-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .id-valeurs-grid { grid-template-columns: 1fr 1fr; }
+      .id-loc-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .id-loc-map { height: 280px; }
+    }
+    @media (max-width: 600px) {
+      .id-info-grid { grid-template-columns: 1fr; }
+      .id-valeurs-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar" class="scrolled">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-eureka">EUREKA</span><span class="logo-btp">BTP</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="identite.html" style="color:var(--accent)">Identité</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="pieces.html">Pièces détachées</a></li>
+      <li><a href="index.html#vente">Achat & Revente</a></li>
+      <li><a href="index.html#avis">Avis clients</a></li>
+    </ul>
+    <a href="index.html#contact-strip" class="nav-cta">Demander un devis</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="identite.html">Notre identité</a>
+    <a href="index.html#services">Services</a>
+    <a href="pieces.html">Pièces détachées</a>
+    <a href="index.html#vente">Achat & Revente</a>
+    <a href="index.html#contact-strip">Contact</a>
+    <a href="index.html#contact-strip" class="mobile-cta">Demander un devis</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="id-hero">
+  <div class="id-hero-overlay"></div>
+  <div class="id-hero-content">
+    <a href="index.html" class="id-hero-back">← Retour à l'accueil</a>
+    <p class="section-eyebrow">Notre identité</p>
+    <h1>EUREKA BTP</h1>
+    <p>Expert en carrosserie béton depuis 2001 — réparation, maintenance et préparation de toupies et pompes à béton, partout en France.</p>
+  </div>
+</section>
+
+<!-- FICHE IDENTITÉ -->
+<section id="id-fiche">
+  <div class="id-fiche-inner">
+
+    <!-- Infos structurées -->
+    <div data-animate>
+      <p class="section-eyebrow" style="text-align:left;">Fiche entreprise</p>
+      <h2 style="color:var(--anthracite); margin-bottom:2rem;">Notre identité en quelques chiffres</h2>
+
+      <div class="id-info-grid">
+        <div class="id-info-card">
+          <div class="id-info-label">Forme juridique</div>
+          <div class="id-info-val">SARL</div>
+        </div>
+        <div class="id-info-card">
+          <div class="id-info-label">Année de création</div>
+          <div class="id-info-val">2001</div>
+        </div>
+        <div class="id-info-card">
+          <div class="id-info-label">Dirigeante</div>
+          <div class="id-info-val">Mme Sophie Darmigny</div>
+        </div>
+        <div class="id-info-card">
+          <div class="id-info-label">Localisation</div>
+          <div class="id-info-val">Gretz-Armainvilliers (77)</div>
+        </div>
+        <div class="id-info-card">
+          <div class="id-info-label">Zone d'intervention</div>
+          <div class="id-info-val">Toute la France</div>
+        </div>
+        <div class="id-info-card">
+          <div class="id-info-label">Spécialité</div>
+          <div class="id-info-val">Carrosserie béton</div>
+        </div>
+      </div>
+
+      <a href="index.html#contact-strip" class="btn-primary">Prendre contact →</a>
+    </div>
+
+    <!-- Qui sommes-nous -->
+    <div class="id-qui" data-animate>
+      <p class="section-eyebrow">Qui sommes-nous</p>
+      <h3>Une expertise forgée en plus de 20 ans</h3>
+      <p>EUREKA BTP est une entreprise experte en carrosserie, spécialisée dans la réparation, la maintenance et la préparation de toupies à béton et de pompes à béton en Seine-et-Marne.</p>
+      <p>Forte de plus de 20 ans d'expérience, nous accompagnons les professionnels du bâtiment et des travaux publics sur toute la France. Notre savoir-faire reconnu nous permet d'intervenir sur toutes les marques — IMER, Stetter, Liebherr, Putzmeister, CIFA, Schwing — avec la rigueur et la réactivité qu'exige votre activité.</p>
+      <p>Chaque véhicule qui passe dans notre atelier repart opérationnel, contrôlé et prêt pour le chantier. C'est notre engagement depuis le premier jour.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- VALEURS -->
+<section id="id-valeurs">
+  <div class="id-valeurs-inner">
+    <div class="section-header" data-animate>
+      <p class="section-eyebrow">Ce qui nous distingue</p>
+      <h2>Nos engagements</h2>
+      <p class="section-subtitle">Des valeurs concrètes qui guident chacune de nos interventions depuis plus de 20 ans.</p>
+    </div>
+    <div class="id-valeurs-grid">
+
+      <div class="id-valeur-card" data-animate>
+        <div class="id-valeur-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h4>Expertise technique</h4>
+        <p>Nos techniciens maîtrisent toutes les marques et tous les modèles de toupies et pompes à béton. Plus de 20 ans de savoir-faire concentré dans notre atelier de Gretz-Armainvilliers.</p>
+      </div>
+
+      <div class="id-valeur-card" data-animate>
+        <div class="id-valeur-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h4>Réactivité maximale</h4>
+        <p>Chaque heure d'immobilisation coûte cher. Nous intervenons vite, avec des délais tenus et une disponibilité qui s'adapte à vos impératifs de chantier.</p>
+      </div>
+
+      <div class="id-valeur-card" data-animate>
+        <div class="id-valeur-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h4>Relation de confiance</h4>
+        <p>Nos clients nous confient leur parc depuis des années. Une relation construite sur la transparence des devis, la qualité du travail et un suivi rigoureux après intervention.</p>
+      </div>
+
+      <div class="id-valeur-card" data-animate>
+        <div class="id-valeur-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h4>Couverture nationale</h4>
+        <p>Basés en Seine-et-Marne, nous intervenons et livrons sur toute la France. Pièces expédiées en 24-48h, déplacements pour les interventions complexes.</p>
+      </div>
+
+      <div class="id-valeur-card" data-animate>
+        <div class="id-valeur-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h4>Toutes marques</h4>
+        <p>IMER, Stetter, Liebherr, Putzmeister, CIFA, Schwing, Sermac… Aucune contrainte de marque. Nous avons les compétences et les références pour tout type de matériel béton.</p>
+      </div>
+
+      <div class="id-valeur-card" data-animate>
+        <div class="id-valeur-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        </div>
+        <h4>Devis transparent</h4>
+        <p>Avant chaque intervention, vous recevez un devis détaillé, gratuit et sans engagement. Pas de surprise, pas de frais cachés — une relation professionnelle claire et honnête.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LOCALISATION -->
+<section id="id-localisation">
+  <div class="id-loc-inner">
+    <div class="id-loc-info" data-animate>
+      <p class="section-eyebrow" style="text-align:left;">Où nous trouver</p>
+      <h2>Notre atelier en Seine-et-Marne</h2>
+
+      <div class="id-loc-list">
+        <div class="id-loc-item">
+          <div class="id-loc-item-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div class="id-loc-item-text">
+            <strong>Adresse</strong>
+            <span>Gretz-Armainvilliers, Seine-et-Marne (77)</span>
+          </div>
+        </div>
+
+        <div class="id-loc-item">
+          <div class="id-loc-item-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          </div>
+          <div class="id-loc-item-text">
+            <strong>Téléphone</strong>
+            <span><a href="tel:+33XXXXXXXXX" style="color:inherit;">+33 X XX XX XX XX</a></span>
+          </div>
+        </div>
+
+        <div class="id-loc-item">
+          <div class="id-loc-item-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="id-loc-item-text">
+            <strong>Horaires d'atelier</strong>
+            <span>Lun–Ven : 8h–18h &nbsp;|&nbsp; Sam : 8h–12h</span>
+          </div>
+        </div>
+
+        <div class="id-loc-item">
+          <div class="id-loc-item-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="id-loc-item-text">
+            <strong>Zone d'intervention</strong>
+            <span>Toute la France — déplacements possibles</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="id-loc-map" data-animate>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2635.0!2d2.7!3d48.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5f0a6a4c7aa7d%3A0x408ab2ae4bb2f80!2sGretz-Armainvilliers!5e0!3m2!1sfr!2sfr!4v1"
+        width="100%" height="100%"
+        style="border:0;"
+        allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Localisation Eureka BTP — Gretz-Armainvilliers"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="id-cta">
+  <div class="id-cta-inner" data-animate>
+    <p class="section-eyebrow" style="color:var(--accent);">Travaillons ensemble</p>
+    <h2>Un projet ? Une réparation urgente ?</h2>
+    <p>Nos experts répondent sous 24h. Décrivez votre besoin et recevez une estimation gratuite et sans engagement.</p>
+    <div class="id-cta-actions">
+      <a href="index.html#contact-strip" class="btn-primary">Demander un devis gratuit</a>
+      <a href="index.html#services" class="btn-ghost">Voir nos services</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <span class="logo-eureka">EUREKA</span><span class="logo-btp">BTP</span>
+      </div>
+      <p class="footer-tagline">25 ans au service des professionnels du BPE. Réparation, location, achat & revente de toupies à béton — toutes marques, partout en France.</p>
+      <div class="footer-coords">
+        <p><strong>Adresse :</strong> Gretz-Armainvilliers, Seine-et-Marne (77)</p>
+        <p><strong>Tél :</strong> <a href="tel:+33XXXXXXXXX">+33 X XX XX XX XX</a></p>
+        <p><strong>Email :</strong> <a href="mailto:contact@eurekabtp.com">contact@eurekabtp.com</a></p>
+      </div>
+      <div class="footer-hours">
+        <p><strong>Horaires :</strong></p>
+        <p>Lundi – Vendredi : 8h00 – 18h00</p>
+        <p>Samedi : 8h00 – 12h00</p>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="identite.html">Notre identité</a></li>
+        <li><a href="index.html#services">Nos services</a></li>
+        <li><a href="pieces.html">Pièces détachées</a></li>
+        <li><a href="index.html#vente">Véhicules à vendre</a></li>
+        <li><a href="index.html#contact-strip">Contact & Devis</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Eureka BTP — Tous droits réservés</p>
+    <div class="footer-bottom-links">
+      <a href="#">Mentions légales</a>
+      <a href="#">Confidentialité</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  const nb = document.getElementById('navbar');
+  window.addEventListener('scroll', () => nb.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+  document.getElementById('navBurger').addEventListener('click', function() {
+    document.getElementById('navMobile').classList.toggle('open');
+    this.classList.toggle('open');
+  });
+  document.querySelectorAll('[data-animate]').forEach(el => {
+    gsap.from(el, { y: 30, opacity: 0, duration: 0.75, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 85%' } });
+  });
+</script>
+</body>
+</html>

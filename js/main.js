@@ -5,6 +5,39 @@
 /* ─── GSAP init ─── */
 gsap.registerPlugin(ScrollTrigger);
 
+/* ─── HERO SLIDER ─── */
+(function () {
+  const slides = Array.from(document.querySelectorAll('.hero-slide'));
+  const dots   = Array.from(document.querySelectorAll('.hero-dot'));
+  if (!slides.length) return;
+
+  let current = 0;
+  let timer;
+
+  function goTo(n) {
+    slides[current].classList.remove('is-active');
+    dots[current]?.classList.remove('active');
+    current = ((n % slides.length) + slides.length) % slides.length;
+    slides[current].classList.add('is-active');
+    dots[current]?.classList.add('active');
+  }
+
+  function startAuto() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), 5000);
+  }
+
+  document.querySelector('.hero-prev')?.addEventListener('click', () => { goTo(current - 1); startAuto(); });
+  document.querySelector('.hero-next')?.addEventListener('click', () => { goTo(current + 1); startAuto(); });
+  dots.forEach(dot => dot.addEventListener('click', () => { goTo(+dot.dataset.slide); startAuto(); }));
+
+  const hero = document.getElementById('hero');
+  hero?.addEventListener('mouseenter', () => clearInterval(timer));
+  hero?.addEventListener('mouseleave', () => startAuto());
+
+  startAuto();
+})();
+
 
 
 
