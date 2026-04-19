@@ -370,6 +370,11 @@ h5 { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spa
   padding: 0.35rem 0.85rem; border-radius: 20px;
   margin-bottom: 1.1rem;
 }
+.service-content {
+  background: #fff;
+  position: relative;
+  z-index: 2;
+}
 .service-content h3 { color: var(--anthracite); margin-bottom: 1.1rem; }
 .service-content p  { color: var(--gray); line-height: 1.78; margin-bottom: 1.5rem; }
 .service-list { margin-bottom: 2rem; }
@@ -812,6 +817,7 @@ footer { background: #1e2127; color: #fff; }
     gap: 2rem;
   }
   .service-row.reverse .service-image { order: -1; }
+  .services-path-overlay { display: none; }
 
   .pieces-search-block { flex-direction: column; text-align: center; }
   .pieces-search-block .pieces-search-icon { margin: 0 auto; }

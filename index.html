@@ -156,22 +156,23 @@
       </clipPath>
     </defs>
     <!--
-      Route Z-pattern : 4 lignes droites + 3 virages
-        Gauche  (01)  → virage → Droite (02)
-        Droite  (02)  → virage → Gauche (03)
-        Gauche  (03)  → virage → Droite : s'arrête dans l'image 04
+      Route : droites dans les colonnes images, courbes uniquement dans les gaps.
+      x=26 = colonne image gauche (rangées 01, 03)
+      x=74 = colonne image droite (rangées 02, 04)
+      Les courbes (8% de hauteur) se situent dans les marges entre rangées.
+      Démarre à y=19 (sous le titre de section), finit à y=91 (image 04).
     -->
     <g clip-path="url(#servicesClip)">
-      <!-- Couche 1 : bandes de rive (la plus large, blanche) -->
-      <path d="M 28 4 L 28 24 C 28 35 72 35 72 46 L 72 57 C 72 68 28 68 28 79 L 28 84 C 28 91 72 91 72 96"
+      <!-- Couche 1 : bandes de rive blanches -->
+      <path d="M 26 19 L 26 34 C 26 38 74 38 74 42 L 74 55 C 74 59 26 59 26 63 L 26 76 C 26 80 74 80 74 84 L 74 91"
             fill="none" stroke="rgba(255,255,255,0.72)" stroke-width="5.6"
             stroke-linecap="butt" stroke-linejoin="round"/>
-      <!-- Couche 2 : asphalte (couvre le centre, révèle les bords) -->
-      <path d="M 28 4 L 28 24 C 28 35 72 35 72 46 L 72 57 C 72 68 28 68 28 79 L 28 84 C 28 91 72 91 72 96"
+      <!-- Couche 2 : asphalte sombre -->
+      <path d="M 26 19 L 26 34 C 26 38 74 38 74 42 L 74 55 C 74 59 26 59 26 63 L 26 76 C 26 80 74 80 74 84 L 74 91"
             fill="none" stroke="rgba(20,22,28,0.84)" stroke-width="4.1"
             stroke-linecap="butt" stroke-linejoin="round"/>
       <!-- Couche 3 : tirets d'axe central -->
-      <path d="M 28 4 L 28 24 C 28 35 72 35 72 46 L 72 57 C 72 68 28 68 28 79 L 28 84 C 28 91 72 91 72 96"
+      <path d="M 26 19 L 26 34 C 26 38 74 38 74 42 L 74 55 C 74 59 26 59 26 63 L 26 76 C 26 80 74 80 74 84 L 74 91"
             fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="0.3"
             stroke-dasharray="2.5 2" stroke-linecap="square"/>
     </g>
