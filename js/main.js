@@ -14,26 +14,44 @@ gsap.registerPlugin(ScrollTrigger);
   let current = 0;
   let timer;
 
+  /* Premier slide déjà visible (is-active dans le HTML) */
+  slides[0].style.transform = 'translateX(0)';
+  slides[0].style.zIndex = '2';
+
   function goTo(n) {
-    slides[current].classList.remove('is-active');
-    dots[current]?.classList.remove('active');
+    const prev = current;
     current = ((n % slides.length) + slides.length) % slides.length;
-    slides[current].classList.add('is-active');
+    if (prev === current) return;
+
+    dots[prev]?.classList.remove('active');
     dots[current]?.classList.add('active');
+
+    /* Slide sortante → gauche */
+    slides[prev].classList.remove('is-active');
+    slides[prev].classList.add('is-leaving');
+
+    /* Slide entrante → depuis la droite vers le centre */
+    slides[current].classList.add('is-active');
+
+    /* Après la transition, réinitialise la slide sortante */
+    const leaving = slides[prev];
+    setTimeout(() => {
+      leaving.style.transition = 'none';
+      leaving.classList.remove('is-leaving');
+      void leaving.offsetWidth;            /* force reflow */
+      leaving.style.transition = '';
+    }, 820);
   }
 
   function startAuto() {
     clearInterval(timer);
-    timer = setInterval(() => goTo(current + 1), 5000);
+    timer = setInterval(() => goTo(current + 1), 2000);
   }
-
-  document.querySelector('.hero-prev')?.addEventListener('click', () => { goTo(current - 1); startAuto(); });
-  document.querySelector('.hero-next')?.addEventListener('click', () => { goTo(current + 1); startAuto(); });
-  dots.forEach(dot => dot.addEventListener('click', () => { goTo(+dot.dataset.slide); startAuto(); }));
 
   const hero = document.getElementById('hero');
   hero?.addEventListener('mouseenter', () => clearInterval(timer));
   hero?.addEventListener('mouseleave', () => startAuto());
+  dots.forEach(dot => dot.addEventListener('click', () => { goTo(+dot.dataset.slide); startAuto(); }));
 
   startAuto();
 })();
