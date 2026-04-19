@@ -61,6 +61,8 @@
         <svg class="spotlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
         <input type="search" id="spotlightInput" class="spotlight-input" placeholder="Rechercher : pompe, vérin, goulotte, câble..." autocomplete="off" spellcheck="false">
         <span class="spotlight-count" id="spotlightCount">12 pièces</span>
+        <button class="spotlight-clear" id="spotlightClear" aria-label="Effacer">✕</button>
+        <kbd class="spotlight-kbd">/</kbd>
       </div>
       <div class="spotlight-empty" id="spotlightEmpty" style="display:none">
         <p>Aucun résultat pour « <strong id="spotlightQuery"></strong> » — <a href="index.html#contact-strip">Faire une demande directe →</a></p>
@@ -306,6 +308,7 @@
   const spotCount = document.getElementById('spotlightCount');
   const spotEmpty = document.getElementById('spotlightEmpty');
   const spotQuery = document.getElementById('spotlightQuery');
+  const spotClear = document.getElementById('spotlightClear');
   const allCards  = Array.from(document.querySelectorAll('.catalog-card'));
 
   /* Inject permanent CTA into every card */
@@ -315,7 +318,7 @@
     const a = document.createElement('a');
     a.href = 'index.html#contact-strip';
     a.className = 'catalog-devis';
-    a.textContent = 'Demander un devis →';
+    a.textContent = 'Demander un devis';
     content.appendChild(a);
   });
 
@@ -323,7 +326,7 @@
     spotWrap.classList.toggle('is-compact', window.scrollY > 180);
   }, { passive: true });
 
-  spotInput.addEventListener('input', () => {
+  function runFilter() {
     const q = spotInput.value.toLowerCase().trim();
     let visible = 0;
     allCards.forEach(card => {
@@ -334,12 +337,27 @@
     spotCount.textContent = `${visible} pièce${visible !== 1 ? 's' : ''}`;
     spotEmpty.style.display = (q && visible === 0) ? 'block' : 'none';
     spotQuery.textContent = q;
+    spotClear.classList.toggle('visible', q.length > 0);
+  }
+
+  spotInput.addEventListener('input', runFilter);
+
+  spotClear.addEventListener('click', () => {
+    spotInput.value = '';
+    runFilter();
+    spotInput.focus();
   });
 
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && spotInput.value) {
-      spotInput.value = '';
-      spotInput.dispatchEvent(new Event('input'));
+    if (e.key === '/' && document.activeElement !== spotInput) {
+      e.preventDefault();
+      spotInput.focus();
+    }
+    if (e.key === 'Escape') {
+      if (spotInput.value) {
+        spotInput.value = '';
+        runFilter();
+      }
       spotInput.blur();
     }
   });
