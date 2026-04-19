@@ -69,6 +69,12 @@
       </div>
     </div>
 
+    <!-- En-tête de grille -->
+    <div class="catalog-grid-header">
+      <h2>Pièces &amp; Équipements</h2>
+      <span id="catalogTotal">12 références</span>
+    </div>
+
     <!-- Catégories (Nouvelle Grille de 12 Items) -->
     <div class="catalog-grid" data-animate>
 
@@ -308,7 +314,8 @@
   const spotCount = document.getElementById('spotlightCount');
   const spotEmpty = document.getElementById('spotlightEmpty');
   const spotQuery = document.getElementById('spotlightQuery');
-  const spotClear = document.getElementById('spotlightClear');
+  const spotClear   = document.getElementById('spotlightClear');
+  const catalogTotal = document.getElementById('catalogTotal');
   const allCards  = Array.from(document.querySelectorAll('.catalog-card'));
 
   /* Inject permanent CTA into every card */
@@ -335,6 +342,7 @@
       if (match) visible++;
     });
     spotCount.textContent = `${visible} pièce${visible !== 1 ? 's' : ''}`;
+    catalogTotal.textContent = `${visible} référence${visible !== 1 ? 's' : ''}`;
     spotEmpty.style.display = (q && visible === 0) ? 'block' : 'none';
     spotQuery.textContent = q;
     spotClear.classList.toggle('visible', q.length > 0);
