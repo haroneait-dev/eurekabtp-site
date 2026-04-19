@@ -147,14 +147,32 @@
      SERVICES — Z-PATTERN
 ═══════════════════════════════════════════ -->
 <section id="services" style="position: relative;">
-  <!-- Chemin animé au scroll -->
-  <svg class="services-path-overlay" preserveAspectRatio="none" viewBox="0 0 100 100" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.4;">
+  <!-- Route animée au scroll -->
+  <svg class="services-path-overlay" preserveAspectRatio="none" viewBox="0 0 100 100"
+       style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;">
     <defs>
       <clipPath id="servicesClip">
-        <rect id="servicesClipRect" x="0" y="0" width="100" height="0" />
+        <rect id="servicesClipRect" x="0" y="0" width="100" height="0"/>
       </clipPath>
     </defs>
-    <path id="servicesPath" d="M 25 15 C 25 35, 75 35, 75 40 C 75 60, 25 60, 25 65 C 25 85, 75 85, 75 90" fill="none" stroke="var(--accent)" stroke-width="0.3" stroke-dasharray="1.5, 1.5" clip-path="url(#servicesClip)" />
+    <g clip-path="url(#servicesClip)">
+      <!-- Bas-côtés (bandes blanches larges = bords de route) -->
+      <path d="M 25 15 C 25 35, 75 35, 75 40 C 75 60, 25 60, 25 65 C 25 85, 75 85, 75 90"
+            fill="none" stroke="rgba(210,210,210,0.22)" stroke-width="6"
+            stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Surface asphalte (couvre le centre, laisse les bords visibles) -->
+      <path d="M 25 15 C 25 35, 75 35, 75 40 C 75 60, 25 60, 25 65 C 25 85, 75 85, 75 90"
+            fill="none" stroke="rgba(18,20,26,0.55)" stroke-width="4.2"
+            stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Ligne de rive (trait plein fin, côté route) -->
+      <path d="M 25 15 C 25 35, 75 35, 75 40 C 75 60, 25 60, 25 65 C 25 85, 75 85, 75 90"
+            fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="4.8"
+            stroke-linecap="round" stroke-dasharray="0.1 4.6 0.1 0"/>
+      <!-- Tirets d'axe central (marquage routier blanc) -->
+      <path d="M 25 15 C 25 35, 75 35, 75 40 C 75 60, 25 60, 25 65 C 25 85, 75 85, 75 90"
+            fill="none" stroke="rgba(255,255,255,0.72)" stroke-width="0.38"
+            stroke-dasharray="2.2 1.8" stroke-linecap="round"/>
+    </g>
   </svg>
 
   <div class="section-header" data-animate style="position: relative; z-index: 2;">
