@@ -12,42 +12,37 @@ gsap.registerPlugin(ScrollTrigger);
   if (!slides.length) return;
 
   let current = 0;
-  let busy    = false;
   let timer;
 
-  /* Init: first slide visible, all others off-screen right */
-  gsap.set(slides, { x: '100%', zIndex: 0, autoAlpha: 1 });
-  gsap.set(slides[0], { x: '0%', zIndex: 1 });
+  /* Init: first slide fully visible, others hidden */
+  gsap.set(slides, { autoAlpha: 0, filter: 'blur(10px)', zIndex: 0 });
+  gsap.set(slides[0], { autoAlpha: 1, filter: 'blur(0px)', zIndex: 1 });
   dots[0]?.classList.add('active');
 
   function goTo(n) {
-    if (busy) return;
     const prev = current;
     current = ((n % slides.length) + slides.length) % slides.length;
     if (prev === current) return;
-    busy = true;
 
     dots[prev]?.classList.remove('active');
     dots[current]?.classList.add('active');
 
-    /* New slide comes in from right above old slide */
-    gsap.set(slides[current], { x: '100%', zIndex: 2 });
+    /* New slide on top, fade+unblur in; old slide fade+blur out simultaneously */
+    gsap.set(slides[current], { zIndex: 2 });
     gsap.set(slides[prev],    { zIndex: 1 });
 
-    gsap.to(slides[current], {
-      x: '0%',
-      duration: 0.65,
-      ease: 'power2.inOut',
-      onComplete() {
-        gsap.set(slides[prev], { x: '100%', zIndex: 0 });
-        busy = false;
+    gsap.to(slides[prev], { autoAlpha: 0, filter: 'blur(10px)', duration: 0.7, ease: 'power2.inOut' });
+    gsap.fromTo(slides[current],
+      { autoAlpha: 0, filter: 'blur(10px)' },
+      { autoAlpha: 1, filter: 'blur(0px)', duration: 0.7, ease: 'power2.inOut',
+        onComplete() { gsap.set(slides[prev], { zIndex: 0, filter: 'blur(0px)' }); }
       }
-    });
+    );
   }
 
   function startAuto() {
     clearInterval(timer);
-    timer = setInterval(() => goTo(current + 1), 3500);
+    timer = setInterval(() => goTo(current + 1), 2000);
   }
 
   const hero = document.getElementById('hero');

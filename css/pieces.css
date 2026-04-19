@@ -514,6 +514,7 @@ html, body { background-color: #ffffff !important; }
 .catalog-devis:hover { color: var(--accent-dk); gap: 0.55rem; }
 
 /* ─── Spotlight ─── */
+.spotlight-wrap { background: #fff; }
 .spotlight-wrap.is-compact { background: rgba(255,255,255,0.96); backdrop-filter: blur(18px); box-shadow: 0 1px 0 rgba(29,78,216,0.08); }
 .spotlight-bar { background: #fff; border-color: var(--border); box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
 .spotlight-bar:focus-within { border-color: rgba(29,78,216,0.5); box-shadow: 0 0 0 3px rgba(29,78,216,0.1), 0 4px 24px rgba(0,0,0,0.06); }
