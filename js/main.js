@@ -117,8 +117,8 @@ document.querySelectorAll('.stat-v2').forEach(c => {
   let obj = { val: 0 };
   gsap.to(obj, {
     val: target,
-    duration: 2,
-    ease: 'power2.out',
+    duration: 3.8,
+    ease: 'power1.inOut',
     scrollTrigger: {
       trigger: c,
       start: 'top 85%'

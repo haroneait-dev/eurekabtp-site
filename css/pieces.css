@@ -27,7 +27,9 @@
   display: inline-flex; align-items: center; gap: 0.4rem;
   font-size: 0.82rem; font-weight: 600;
   color: rgba(255,255,255,0.6);
-  margin-bottom: 1rem;
+  position: absolute;
+  top: 5.5rem; left: 2rem;
+  z-index: 5;
   transition: color 0.3s;
 }
 .page-hero-back:hover { color: var(--accent); }
@@ -36,7 +38,7 @@
 .page-hero-content strong { color: var(--accent); }
 
 /* ─── CATALOGUE SECTION ─── */
-.cat-section { background: #f2f3f6; padding: 5rem 2rem 6rem; }
+.cat-section { background: #ffffff; padding: 5rem 2rem 6rem; }
 .cat-inner { max-width: 1240px; margin: 0 auto; }
 
 /* En-tête de grille */
@@ -525,7 +527,7 @@
 }
 .catalog-card:hover {
   background: rgba(255,255,255,0.09);
-  border-color: rgba(244,101,10,0.45);
+  border-color: rgba(29,78,216,0.3);
   transform: translateY(-5px);
   box-shadow: 0 14px 44px rgba(0,0,0,0.35);
 }
