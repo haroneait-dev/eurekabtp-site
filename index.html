@@ -147,17 +147,28 @@
      SERVICES — Z-PATTERN
 ═══════════════════════════════════════════ -->
 <section id="services" style="position: relative;">
-  <!-- Chemin animé au scroll -->
+  <!-- Route animée au scroll -->
   <svg class="services-path-overlay" preserveAspectRatio="none" viewBox="0 0 100 100"
-       style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.4;">
+       style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.65;">
     <defs>
       <clipPath id="servicesClip">
         <rect id="servicesClipRect" x="0" y="0" width="100" height="0"/>
       </clipPath>
     </defs>
-    <path d="M 25 15 C 25 35, 75 35, 75 40 C 75 60, 25 60, 25 65 C 25 85, 75 85, 75 90"
-          fill="none" stroke="var(--accent)" stroke-width="0.3"
-          stroke-dasharray="1.5, 1.5" clip-path="url(#servicesClip)"/>
+    <g clip-path="url(#servicesClip)">
+      <!-- Bordures blanches -->
+      <path d="M 25 15 C 25 35, 75 35, 75 40 C 75 60, 25 60, 25 65 C 25 85, 75 85, 75 90"
+            fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="2.6"
+            stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Asphalte -->
+      <path d="M 25 15 C 25 35, 75 35, 75 40 C 75 60, 25 60, 25 65 C 25 85, 75 85, 75 90"
+            fill="none" stroke="rgba(20,22,28,0.88)" stroke-width="2.0"
+            stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Tirets centraux -->
+      <path d="M 25 15 C 25 35, 75 35, 75 40 C 75 60, 25 60, 25 65 C 25 85, 75 85, 75 90"
+            fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="0.2"
+            stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+    </g>
   </svg>
 
   <div class="section-header" data-animate style="position: relative; z-index: 2;">
