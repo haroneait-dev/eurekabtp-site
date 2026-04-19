@@ -177,6 +177,23 @@ if (piecesCards.length) {
   });
 }
 
+/* ─── VANILLA TILT : VEHICLE CARDS ─── */
+if (typeof VanillaTilt !== 'undefined') {
+  VanillaTilt.init(document.querySelectorAll('.vehicle-card[data-tilt]'), {
+    max: 8, speed: 400, glare: true, 'max-glare': 0.08,
+  });
+}
+
+/* ─── IDENTITY KPI CARDS : SCROLL ENTRANCE ─── */
+const idKpis = document.querySelectorAll('.id-kpi');
+if (idKpis.length) {
+  gsap.from(idKpis, {
+    y: 28, opacity: 0, stagger: 0.12, duration: 0.7, ease: 'power2.out',
+    scrollTrigger: { trigger: '.identite-kpis', start: 'top 82%' },
+    onStart() { idKpis.forEach(k => k.classList.add('visible')); }
+  });
+}
+
 /* ─── FORM SUBMISSION ─── */
 const form      = document.getElementById('contactForm');
 const submitBtn = document.getElementById('submitBtn');

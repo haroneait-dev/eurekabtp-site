@@ -47,11 +47,11 @@
      HERO
 ═══════════════════════════════════════════ -->
 <section id="hero">
-  <!-- Slider backgrounds -->
+  <!-- Slider backgrounds with real images -->
   <div class="hero-slides">
-    <div class="hero-slide is-active" style="background: linear-gradient(135deg, #0c1424 0%, #1a2d5e 60%, #0f1e3d 100%);"></div>
-    <div class="hero-slide" style="background: linear-gradient(135deg, #15181e 0%, #1d3a7a 55%, #111827 100%);"></div>
-    <div class="hero-slide" style="background: linear-gradient(135deg, #0a0f1c 0%, #1e3a8a 50%, #15181e 100%);"></div>
+    <div class="hero-slide is-active" style="background-image:url('images/camion/PHOTO-2026-04-18-16-40-29.jpg'); background-size:cover; background-position:center;"></div>
+    <div class="hero-slide" style="background-image:url('images/soudure/PHOTO-2026-04-18-16-40-33.jpg'); background-size:cover; background-position:center;"></div>
+    <div class="hero-slide" style="background-image:url('images/camion/PHOTO-2026-04-18-16-40-30.jpg'); background-size:cover; background-position:center;"></div>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -63,23 +63,13 @@
       <a href="#services" class="btn-ghost">Découvrir nos services</a>
     </div>
   </div>
-  <!-- Slider controls -->
+  <!-- Dots only — pas de flèches -->
   <div class="hero-controls">
-    <button class="hero-prev" aria-label="Précédent">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><polyline points="15 18 9 12 15 6"/></svg>
-    </button>
     <div class="hero-dots">
       <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
       <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
       <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
     </div>
-    <button class="hero-next" aria-label="Suivant">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-  </div>
-  <div class="hero-scroll-hint">
-    <span class="scroll-line"></span>
-    <span>Défiler</span>
   </div>
 </section>
 
@@ -208,7 +198,8 @@
 
   <!-- 01 — Image gauche / Texte droite -->
   <div class="service-row" data-animate>
-    <div class="service-image" style="background: linear-gradient(135deg, #1a2540 0%, #1d4ed8 100%); min-height: 320px; display:flex; align-items:center; justify-content:center;">
+    <div class="service-image">
+      <img src="images/soudure/PHOTO-2026-04-18-16-40-33.jpg" alt="Réparation et maintenance de véhicules béton">
       <div class="service-badge">01</div>
     </div>
     <div class="service-content">
@@ -239,14 +230,16 @@
       </ul>
       <a href="#contact-strip" class="btn-primary">Prendre rendez-vous</a>
     </div>
-    <div class="service-image" style="background: linear-gradient(135deg, #0f1e3d 0%, #1a3a8a 100%); min-height: 320px; display:flex; align-items:center; justify-content:center;">
+    <div class="service-image">
+      <img src="images/camion/PHOTO-2026-04-18-16-40-31.jpg" alt="Préparation et mise en service camion neuf">
       <div class="service-badge">02</div>
     </div>
   </div>
 
   <!-- 03 — Image gauche / Texte droite -->
   <div class="service-row" data-animate>
-    <div class="service-image" style="position: relative; z-index: 2; background: linear-gradient(135deg, #0d1829 0%, #1e40af 100%); min-height: 320px; display:flex; align-items:center; justify-content:center;">
+    <div class="service-image" style="position: relative; z-index: 2;">
+      <img src="images/camion/PHOTO-2026-04-18-16-40-29%202.jpg" alt="Location de toupies à béton">
       <div class="service-badge">03</div>
     </div>
     <div class="service-content">
@@ -277,7 +270,8 @@
       </ul>
       <a href="#vente" class="btn-primary">Voir le stock disponible</a>
     </div>
-    <div class="service-image" style="background: linear-gradient(135deg, #111827 0%, #1d4ed8 100%); min-height: 320px; display:flex; align-items:center; justify-content:center;">
+    <div class="service-image">
+      <img src="images/camion/PHOTO-2026-04-18-16-40-30%205.jpg" alt="Achat et revente de toupies et camions">
       <div class="service-badge">04</div>
     </div>
   </div>
@@ -286,10 +280,10 @@
 <!-- ═══════════════════════════════════════════
      PIÈCES DÉTACHÉES (COVERFLOW CAROUSEL)
 ═══════════════════════════════════════════ -->
-<section id="pieces" style="background: var(--anthracite); color: #fff; padding: 6rem 0; overflow: hidden; position: relative;">
+<section id="pieces" style="background: #ffffff; padding: 6rem 0; overflow: hidden; position: relative; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
   <div class="section-header" data-animate style="text-align: center; margin-bottom: 2rem; position: relative; z-index: 2;">
     <p class="section-eyebrow">Catalogue</p>
-    <h2 class="section-title" style="color: #fff;">Pièces Détachées</h2>
+    <h2 class="section-title">Pièces Détachées</h2>
   </div>
 
   <!-- ─── 3D PRODUCT CAROUSEL ─── -->
@@ -399,19 +393,20 @@
 <section id="vente">
   <div class="section-header" data-animate>
     <p class="section-eyebrow">Stock disponible</p>
-    <h2 class="section-title">Véhicules à la Vente</h2>
-    <p class="section-subtitle">Des camions professionnels remis en état, contrôlés et garantis — prêts à rejoindre vos chantiers.</p>
+    <h2 class="section-title">Matériels à la Vente</h2>
+    <p class="section-subtitle">Camions, pompes, bennes et équipements de chantier — remis en état, contrôlés et garantis par nos techniciens.</p>
   </div>
 
   <div class="vehicles-listing-grid" data-animate>
 
-    <!-- Véhicule 1 — Disponible -->
-    <div class="vehicle-card">
+    <!-- 1 — Camion Bétonnière IMER — Disponible -->
+    <div class="vehicle-card" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.08">
       <div class="vehicle-img-wrap">
-        <div class="vehicle-img-placeholder">
+        <div class="vehicle-img-placeholder" style="background:linear-gradient(135deg,#0d1b3e 0%,#1d4ed8 100%);">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M1 3h15l3 5h4v9h-2M1 3v14h2M1 3l1 14M3 17a2 2 0 104 0 2 2 0 00-4 0zM17 17a2 2 0 104 0 2 2 0 00-4 0z"/></svg>
         </div>
         <span class="vehicle-badge vehicle-badge--dispo">Disponible</span>
+        <span class="vehicle-category-tag">Camion Bétonnière</span>
       </div>
       <div class="vehicle-info">
         <h3>Camion Bétonnière IMER</h3>
@@ -425,13 +420,14 @@
       </div>
     </div>
 
-    <!-- Véhicule 2 — Disponible -->
-    <div class="vehicle-card">
+    <!-- 2 — Camion Bétonnière Stetter — Disponible -->
+    <div class="vehicle-card" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.08">
       <div class="vehicle-img-wrap">
-        <div class="vehicle-img-placeholder" style="background: linear-gradient(135deg, #1a2540 0%, #1a4080 100%);">
+        <div class="vehicle-img-placeholder" style="background:linear-gradient(135deg,#1a2540 0%,#1a4080 100%);">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M1 3h15l3 5h4v9h-2M1 3v14h2M1 3l1 14M3 17a2 2 0 104 0 2 2 0 00-4 0zM17 17a2 2 0 104 0 2 2 0 00-4 0z"/></svg>
         </div>
         <span class="vehicle-badge vehicle-badge--dispo">Disponible</span>
+        <span class="vehicle-category-tag">Camion Bétonnière</span>
       </div>
       <div class="vehicle-info">
         <h3>Camion Bétonnière Stetter</h3>
@@ -445,33 +441,35 @@
       </div>
     </div>
 
-    <!-- Véhicule 3 — Vendu -->
-    <div class="vehicle-card">
-      <div class="vehicle-img-wrap" style="opacity: 0.7;">
-        <div class="vehicle-img-placeholder" style="background: linear-gradient(135deg, #1a1a2e 0%, #374151 100%);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M1 3h15l3 5h4v9h-2M1 3v14h2M1 3l1 14M3 17a2 2 0 104 0 2 2 0 00-4 0zM17 17a2 2 0 104 0 2 2 0 00-4 0z"/></svg>
+    <!-- 3 — Camion Benne — Disponible -->
+    <div class="vehicle-card" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.08">
+      <div class="vehicle-img-wrap">
+        <div class="vehicle-img-placeholder" style="background:linear-gradient(135deg,#142030 0%,#1e5080 100%);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M2 6h14l2 4h4v8h-2m-4 0a2 2 0 11-4 0m-6 0a2 2 0 11-4 0M2 6v12h4M2 6l2-3h10l2 3"/></svg>
         </div>
-        <span class="vehicle-badge vehicle-badge--vendu">Vendu</span>
+        <span class="vehicle-badge vehicle-badge--dispo">Disponible</span>
+        <span class="vehicle-category-tag">Camion Benne</span>
       </div>
       <div class="vehicle-info">
-        <h3>Camion Bétonnière Liebherr</h3>
-        <p>Toupie 7m³ — Toutes options vérifiées</p>
+        <h3>Camion Benne TP 6x4</h3>
+        <p>Benne TP basculante — Renforcée, hydraulique neuf</p>
         <div class="vehicle-specs">
-          <span class="vehicle-spec">7 m³</span>
-          <span class="vehicle-spec">Liebherr</span>
-          <span class="vehicle-spec">Révisé</span>
+          <span class="vehicle-spec">6x4</span>
+          <span class="vehicle-spec">Benne TP</span>
+          <span class="vehicle-spec">CT OK</span>
         </div>
-        <a href="#contact-strip" class="vehicle-cta vehicle-cta--ghost">Nous contacter pour similaire</a>
+        <a href="#contact-strip" class="vehicle-cta">Demander les détails</a>
       </div>
     </div>
 
-    <!-- Véhicule 4 — Disponible -->
-    <div class="vehicle-card">
+    <!-- 4 — Pompe à Béton Putzmeister — Disponible -->
+    <div class="vehicle-card" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.08">
       <div class="vehicle-img-wrap">
-        <div class="vehicle-img-placeholder" style="background: linear-gradient(135deg, #0c1424 0%, #1d4ed8 100%);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M1 3h15l3 5h4v9h-2M1 3v14h2M1 3l1 14M3 17a2 2 0 104 0 2 2 0 00-4 0zM17 17a2 2 0 104 0 2 2 0 00-4 0z"/></svg>
+        <div class="vehicle-img-placeholder" style="background:linear-gradient(135deg,#0c1424 0%,#1d4ed8 100%);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
         </div>
         <span class="vehicle-badge vehicle-badge--dispo">Disponible</span>
+        <span class="vehicle-category-tag">Pompe à Béton</span>
       </div>
       <div class="vehicle-info">
         <h3>Pompe à Béton Putzmeister</h3>
@@ -485,41 +483,106 @@
       </div>
     </div>
 
-    <!-- Véhicule 5 — Disponible -->
-    <div class="vehicle-card">
+    <!-- 5 — Centrale à Béton — Disponible -->
+    <div class="vehicle-card" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.08">
       <div class="vehicle-img-wrap">
-        <div class="vehicle-img-placeholder" style="background: linear-gradient(135deg, #111827 0%, #1a3a6e 100%);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M1 3h15l3 5h4v9h-2M1 3v14h2M1 3l1 14M3 17a2 2 0 104 0 2 2 0 00-4 0zM17 17a2 2 0 104 0 2 2 0 00-4 0z"/></svg>
+        <div class="vehicle-img-placeholder" style="background:linear-gradient(135deg,#0f1f3d 0%,#163472 100%);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2M12 12v4M10 14h4"/></svg>
         </div>
         <span class="vehicle-badge vehicle-badge--dispo">Disponible</span>
+        <span class="vehicle-category-tag">Centrale à Béton</span>
       </div>
       <div class="vehicle-info">
-        <h3>Camion Bétonnière CIFA</h3>
-        <p>Toupie 10m³ — Préparée en atelier, prête chantier</p>
+        <h3>Centrale à Béton Mobile</h3>
+        <p>Centrale mobile 30m³/h — Révisée, installation rapide</p>
         <div class="vehicle-specs">
-          <span class="vehicle-spec">10 m³</span>
-          <span class="vehicle-spec">CIFA</span>
+          <span class="vehicle-spec">30 m³/h</span>
+          <span class="vehicle-spec">Mobile</span>
           <span class="vehicle-spec">Révisée</span>
         </div>
         <a href="#contact-strip" class="vehicle-cta">Demander les détails</a>
       </div>
     </div>
 
-    <!-- Véhicule 6 — Vendu -->
-    <div class="vehicle-card">
-      <div class="vehicle-img-wrap" style="opacity: 0.7;">
-        <div class="vehicle-img-placeholder" style="background: linear-gradient(135deg, #1a1a2e 0%, #374151 100%);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M1 3h15l3 5h4v9h-2M1 3v14h2M1 3l1 14M3 17a2 2 0 104 0 2 2 0 00-4 0zM17 17a2 2 0 104 0 2 2 0 00-4 0z"/></svg>
+    <!-- 6 — Équipement Chantier — Disponible -->
+    <div class="vehicle-card" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.08">
+      <div class="vehicle-img-wrap">
+        <div class="vehicle-img-placeholder" style="background:linear-gradient(135deg,#111827 0%,#1a3a6e 100%);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
         </div>
-        <span class="vehicle-badge vehicle-badge--vendu">Vendu</span>
+        <span class="vehicle-badge vehicle-badge--dispo">Disponible</span>
+        <span class="vehicle-category-tag">Équipement Chantier</span>
       </div>
       <div class="vehicle-info">
-        <h3>Pompe à Béton Schwing</h3>
+        <h3>Malaxeur de Chantier 500L</h3>
+        <p>Malaxeur fixe — Moteur révisé, cuve inox</p>
+        <div class="vehicle-specs">
+          <span class="vehicle-spec">500 L</span>
+          <span class="vehicle-spec">Électrique</span>
+          <span class="vehicle-spec">Inox</span>
+        </div>
+        <a href="#contact-strip" class="vehicle-cta">Demander les détails</a>
+      </div>
+    </div>
+
+    <!-- 7 — Pompe Tractée Schwing — Vendu -->
+    <div class="vehicle-card vehicle-card--vendu" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.04">
+      <div class="vehicle-img-wrap">
+        <div class="vehicle-img-placeholder" style="background:linear-gradient(135deg,#1a1a2e 0%,#374151 100%); opacity:0.8;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <span class="vehicle-badge vehicle-badge--vendu">Vendu</span>
+        <span class="vehicle-category-tag">Pompe Tractée</span>
+      </div>
+      <div class="vehicle-info">
+        <h3>Pompe Tractée Schwing</h3>
         <p>Pompe tractée — Révisée, bras 28m</p>
         <div class="vehicle-specs">
           <span class="vehicle-spec">28 m</span>
           <span class="vehicle-spec">Schwing</span>
           <span class="vehicle-spec">Tractée</span>
+        </div>
+        <a href="#contact-strip" class="vehicle-cta vehicle-cta--ghost">Nous contacter pour similaire</a>
+      </div>
+    </div>
+
+    <!-- 8 — Camion Benne Polybenne — Vendu -->
+    <div class="vehicle-card vehicle-card--vendu" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.04">
+      <div class="vehicle-img-wrap">
+        <div class="vehicle-img-placeholder" style="background:linear-gradient(135deg,#1a1a2e 0%,#374151 100%); opacity:0.8;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M2 6h14l2 4h4v8h-2m-4 0a2 2 0 11-4 0m-6 0a2 2 0 11-4 0M2 6v12h4M2 6l2-3h10l2 3"/></svg>
+        </div>
+        <span class="vehicle-badge vehicle-badge--vendu">Vendu</span>
+        <span class="vehicle-category-tag">Camion Benne</span>
+      </div>
+      <div class="vehicle-info">
+        <h3>Camion Polybenne 4x2</h3>
+        <p>Ampliroll 4x2 — Bras poly, benne travaux</p>
+        <div class="vehicle-specs">
+          <span class="vehicle-spec">4x2</span>
+          <span class="vehicle-spec">Ampliroll</span>
+          <span class="vehicle-spec">Révisé</span>
+        </div>
+        <a href="#contact-strip" class="vehicle-cta vehicle-cta--ghost">Nous contacter pour similaire</a>
+      </div>
+    </div>
+
+    <!-- 9 — Équipement Chantier — Vendu -->
+    <div class="vehicle-card vehicle-card--vendu" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.04">
+      <div class="vehicle-img-wrap">
+        <div class="vehicle-img-placeholder" style="background:linear-gradient(135deg,#1a1a2e 0%,#374151 100%); opacity:0.8;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <span class="vehicle-badge vehicle-badge--vendu">Vendu</span>
+        <span class="vehicle-category-tag">Équipement Chantier</span>
+      </div>
+      <div class="vehicle-info">
+        <h3>Groupe Électrogène 100 kVA</h3>
+        <p>Groupe diesel — Révisé, prêt chantier immédiat</p>
+        <div class="vehicle-specs">
+          <span class="vehicle-spec">100 kVA</span>
+          <span class="vehicle-spec">Diesel</span>
+          <span class="vehicle-spec">Révisé</span>
         </div>
         <a href="#contact-strip" class="vehicle-cta vehicle-cta--ghost">Nous contacter pour similaire</a>
       </div>
