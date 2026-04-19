@@ -1311,21 +1311,19 @@ footer { background: #1e2127; color: #fff; }
 }
 .brands-track {
   display: flex;
+  align-items: center;
   gap: 4rem;
   white-space: nowrap;
-  animation: brandsScroll 40s linear infinite;
+  animation: brandsScroll 22s linear infinite;
 }
-.brands-track span {
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+.brand-logo {
+  height: 30px;
+  width: auto;
+  opacity: 0.85;
+  transition: opacity 0.3s;
+  flex-shrink: 0;
 }
-.brands-track small {
-  font-size: 0.7rem;
-  color: var(--accent);
-  vertical-align: super;
-}
+.brand-logo:hover { opacity: 1; }
 
 @keyframes brandsScroll {
   0%   { transform: translateX(0); }

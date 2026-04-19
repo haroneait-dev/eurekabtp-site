@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 36">
+  <!-- Three-pointed star simplified -->
+  <circle cx="18" cy="18" r="16" fill="none" stroke="white" stroke-width="1.5"/>
+  <circle cx="18" cy="18" r="13" fill="none" stroke="white" stroke-width="0.5"/>
+  <line x1="18" y1="2" x2="18" y2="18" stroke="white" stroke-width="1.5"/>
+  <line x1="18" y1="18" x2="4" y2="28" stroke="white" stroke-width="1.5"/>
+  <line x1="18" y1="18" x2="32" y2="28" stroke="white" stroke-width="1.5"/>
+  <text x="112" y="25" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="white" text-anchor="middle" letter-spacing="2">MERCEDES-BENZ</text>
+</svg>
