@@ -334,6 +334,7 @@ h5 { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spa
 #services {
   padding: 9rem 2rem 6rem;
   background: #fff;
+  position: relative;
 }
 #services .section-header { margin-bottom: 5.5rem; }
 
@@ -341,7 +342,6 @@ h5 { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spa
   max-width: 1240px; margin: 0 auto 7rem;
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 5rem; align-items: center;
-  position: relative; z-index: 1;
 }
 .service-row:last-child { margin-bottom: 0; }
 
@@ -369,11 +369,6 @@ h5 { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spa
   text-transform: uppercase; letter-spacing: 0.1em;
   padding: 0.35rem 0.85rem; border-radius: 20px;
   margin-bottom: 1.1rem;
-}
-.service-content {
-  background: #fff;
-  position: relative;
-  z-index: 2;
 }
 .service-content h3 { color: var(--anthracite); margin-bottom: 1.1rem; }
 .service-content p  { color: var(--gray); line-height: 1.78; margin-bottom: 1.5rem; }

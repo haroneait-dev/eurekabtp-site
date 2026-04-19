@@ -147,35 +147,17 @@
      SERVICES — Z-PATTERN
 ═══════════════════════════════════════════ -->
 <section id="services" style="position: relative;">
-  <!-- Route animée au scroll -->
+  <!-- Chemin animé au scroll -->
   <svg class="services-path-overlay" preserveAspectRatio="none" viewBox="0 0 100 100"
-       style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;">
+       style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.4;">
     <defs>
       <clipPath id="servicesClip">
         <rect id="servicesClipRect" x="0" y="0" width="100" height="0"/>
       </clipPath>
     </defs>
-    <!--
-      Route : droites dans les colonnes images, courbes uniquement dans les gaps.
-      x=26 = colonne image gauche (rangées 01, 03)
-      x=74 = colonne image droite (rangées 02, 04)
-      Les courbes (8% de hauteur) se situent dans les marges entre rangées.
-      Démarre à y=19 (sous le titre de section), finit à y=91 (image 04).
-    -->
-    <g clip-path="url(#servicesClip)">
-      <!-- Couche 1 : bandes de rive blanches -->
-      <path d="M 26 19 L 26 34 C 26 38 74 38 74 42 L 74 55 C 74 59 26 59 26 63 L 26 76 C 26 80 74 80 74 84 L 74 91"
-            fill="none" stroke="rgba(255,255,255,0.72)" stroke-width="5.6"
-            stroke-linecap="butt" stroke-linejoin="round"/>
-      <!-- Couche 2 : asphalte sombre -->
-      <path d="M 26 19 L 26 34 C 26 38 74 38 74 42 L 74 55 C 74 59 26 59 26 63 L 26 76 C 26 80 74 80 74 84 L 74 91"
-            fill="none" stroke="rgba(20,22,28,0.84)" stroke-width="4.1"
-            stroke-linecap="butt" stroke-linejoin="round"/>
-      <!-- Couche 3 : tirets d'axe central -->
-      <path d="M 26 19 L 26 34 C 26 38 74 38 74 42 L 74 55 C 74 59 26 59 26 63 L 26 76 C 26 80 74 80 74 84 L 74 91"
-            fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="0.3"
-            stroke-dasharray="2.5 2" stroke-linecap="square"/>
-    </g>
+    <path d="M 25 15 C 25 35, 75 35, 75 40 C 75 60, 25 60, 25 65 C 25 85, 75 85, 75 90"
+          fill="none" stroke="var(--accent)" stroke-width="0.3"
+          stroke-dasharray="1.5, 1.5" clip-path="url(#servicesClip)"/>
   </svg>
 
   <div class="section-header" data-animate style="position: relative; z-index: 2;">
