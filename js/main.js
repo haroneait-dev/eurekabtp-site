@@ -8,26 +8,19 @@ gsap.registerPlugin(ScrollTrigger);
 /* ─── HERO SLIDER ─── */
 (function () {
   const slides = Array.from(document.querySelectorAll('.hero-slide'));
-  const dots   = Array.from(document.querySelectorAll('.hero-dot'));
   if (!slides.length) return;
 
   let current = 0;
-  let timer;
 
   /* Init: first slide fully visible, others hidden */
   gsap.set(slides, { autoAlpha: 0, filter: 'blur(10px)', zIndex: 0 });
   gsap.set(slides[0], { autoAlpha: 1, filter: 'blur(0px)', zIndex: 1 });
-  dots[0]?.classList.add('active');
 
   function goTo(n) {
     const prev = current;
     current = ((n % slides.length) + slides.length) % slides.length;
     if (prev === current) return;
 
-    dots[prev]?.classList.remove('active');
-    dots[current]?.classList.add('active');
-
-    /* New slide on top, fade+unblur in; old slide fade+blur out simultaneously */
     gsap.set(slides[current], { zIndex: 2 });
     gsap.set(slides[prev],    { zIndex: 1 });
 
@@ -40,17 +33,8 @@ gsap.registerPlugin(ScrollTrigger);
     );
   }
 
-  function startAuto() {
-    clearInterval(timer);
-    timer = setInterval(() => goTo(current + 1), 2000);
-  }
-
-  const hero = document.getElementById('hero');
-  hero?.addEventListener('mouseenter', () => clearInterval(timer));
-  hero?.addEventListener('mouseleave', () => startAuto());
-  dots.forEach(dot => dot.addEventListener('click', () => { goTo(+dot.dataset.slide); startAuto(); }));
-
-  startAuto();
+  /* Défilement continu — jamais interrompu */
+  setInterval(() => goTo(current + 1), 2000);
 })();
 
 
