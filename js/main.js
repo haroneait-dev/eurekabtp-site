@@ -12,40 +12,42 @@ gsap.registerPlugin(ScrollTrigger);
   if (!slides.length) return;
 
   let current = 0;
+  let busy    = false;
   let timer;
 
-  /* Premier slide déjà visible (is-active dans le HTML) */
-  slides[0].style.transform = 'translateX(0)';
-  slides[0].style.zIndex = '2';
+  /* Init: first slide visible, all others off-screen right */
+  gsap.set(slides, { x: '100%', zIndex: 0, autoAlpha: 1 });
+  gsap.set(slides[0], { x: '0%', zIndex: 1 });
+  dots[0]?.classList.add('active');
 
   function goTo(n) {
+    if (busy) return;
     const prev = current;
     current = ((n % slides.length) + slides.length) % slides.length;
     if (prev === current) return;
+    busy = true;
 
     dots[prev]?.classList.remove('active');
     dots[current]?.classList.add('active');
 
-    /* Slide sortante → gauche */
-    slides[prev].classList.remove('is-active');
-    slides[prev].classList.add('is-leaving');
+    /* New slide comes in from right above old slide */
+    gsap.set(slides[current], { x: '100%', zIndex: 2 });
+    gsap.set(slides[prev],    { zIndex: 1 });
 
-    /* Slide entrante → depuis la droite vers le centre */
-    slides[current].classList.add('is-active');
-
-    /* Après la transition, réinitialise la slide sortante */
-    const leaving = slides[prev];
-    setTimeout(() => {
-      leaving.style.transition = 'none';
-      leaving.classList.remove('is-leaving');
-      void leaving.offsetWidth;            /* force reflow */
-      leaving.style.transition = '';
-    }, 820);
+    gsap.to(slides[current], {
+      x: '0%',
+      duration: 0.65,
+      ease: 'power2.inOut',
+      onComplete() {
+        gsap.set(slides[prev], { x: '100%', zIndex: 0 });
+        busy = false;
+      }
+    });
   }
 
   function startAuto() {
     clearInterval(timer);
-    timer = setInterval(() => goTo(current + 1), 2000);
+    timer = setInterval(() => goTo(current + 1), 3500);
   }
 
   const hero = document.getElementById('hero');
