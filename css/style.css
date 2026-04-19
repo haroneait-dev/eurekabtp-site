@@ -902,10 +902,8 @@ footer { background: #1e2127; color: #fff; }
 
 .stat-v2 {
   position: relative;
-  background: rgba(255,255,255,0.72);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,0.6);
+  background: #fff;
+  border: 1px solid var(--border);
   border-top: 3px solid var(--border);
   border-radius: 16px;
   padding: 3rem 2rem 2.5rem;
@@ -920,8 +918,8 @@ footer { background: #1e2127; color: #fff; }
 
 .stat-v2:hover { border-top-color: var(--accent); }
 .stat-v2--hero {
-  background: rgba(29,78,216,0.78);
-  border-color: rgba(29,78,216,0.4);
+  background: var(--accent);
+  border-color: var(--accent);
   border-top-color: var(--accent-dk);
   box-shadow: none;
 }
