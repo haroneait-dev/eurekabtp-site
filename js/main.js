@@ -34,7 +34,7 @@ gsap.registerPlugin(ScrollTrigger);
   }
 
   /* Défilement continu — jamais interrompu */
-  setInterval(() => goTo(current + 1), 2000);
+  setInterval(() => goTo(current + 1), 5000);
 })();
 
 
@@ -59,20 +59,6 @@ navMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   navBurger.classList.remove('open');
 }));
 
-/* ─── GSAP: SERVICES DOTTED PATH REVEAL ─── */
-const servicesClipRect = document.getElementById('servicesClipRect');
-if (servicesClipRect) {
-  gsap.to(servicesClipRect, {
-    attr: { height: 100 },
-    ease: "none",
-    scrollTrigger: {
-      trigger: "#services",
-      start: "top 40%",
-      end: "bottom 80%",
-      scrub: 1
-    }
-  });
-}
 
 /* ─── SMOOTH ANCHOR SCROLL ─── */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -109,9 +95,7 @@ statCards.forEach(card => {
 });
 
 /* ─── GSAP : COMPTEURS ANIMÉS ─── */
-document.querySelectorAll('.stat-v2').forEach(c => {
-  const numEl = c.querySelector('.stat-v2-num');
-  if (!numEl) return;
+document.querySelectorAll('.stat-v2-num[data-target]').forEach(numEl => {
   const target = parseInt(numEl.dataset.target, 10);
   let obj = { val: 0 };
   gsap.to(obj, {
@@ -119,7 +103,7 @@ document.querySelectorAll('.stat-v2').forEach(c => {
     duration: 3.8,
     ease: 'power1.inOut',
     scrollTrigger: {
-      trigger: c,
+      trigger: numEl,
       start: 'top 85%'
     },
     onUpdate: () => { numEl.textContent = Math.round(obj.val).toLocaleString('fr-FR'); },
@@ -213,6 +197,37 @@ if (form) {
     }, 1200);
   });
 }
+
+/* ─── GOOGLE REVIEWS CAROUSEL ─── */
+(function () {
+  const cards = Array.from(document.querySelectorAll('.gr-card'));
+  const dots  = Array.from(document.querySelectorAll('.gr-dot'));
+  if (!cards.length) return;
+
+  let current = 0;
+  let timer;
+
+  function goTo(idx) {
+    cards[current].classList.remove('is-active');
+    dots[current].classList.remove('is-active');
+    current = ((idx % cards.length) + cards.length) % cards.length;
+    cards[current].classList.add('is-active');
+    dots[current].classList.add('is-active');
+  }
+
+  function startAuto() {
+    timer = setInterval(() => goTo(current + 1), 5000);
+  }
+
+  startAuto();
+
+  document.getElementById('grPrev')?.addEventListener('click', () => { clearInterval(timer); goTo(current - 1); startAuto(); });
+  document.getElementById('grNext')?.addEventListener('click', () => { clearInterval(timer); goTo(current + 1); startAuto(); });
+  dots.forEach((dot, i) => dot.addEventListener('click', () => { clearInterval(timer); goTo(i); startAuto(); }));
+
+  document.getElementById('grCarousel')?.addEventListener('mouseenter', () => clearInterval(timer));
+  document.getElementById('grCarousel')?.addEventListener('mouseleave', startAuto);
+})();
 
 /* ─── 3D PRODUCT CAROUSEL (PIÈCES DÉTACHÉES) ─── */
 (function () {

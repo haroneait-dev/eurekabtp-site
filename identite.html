@@ -239,16 +239,48 @@
       display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
     }
 
+    /* ── ENGAGEMENTS — PHOTO + TEXTE ── */
+    .id-engagement-wrap {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center; margin-top: 4rem;
+    }
+    .id-engagement-photo {
+      border-radius: 14px; overflow: hidden;
+      min-height: 460px; box-shadow: var(--shadow-lg);
+    }
+    .id-engagement-photo img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.65s ease;
+    }
+    .id-engagement-photo:hover img { transform: scale(1.03); }
+    .id-engagement-text p {
+      font-size: 1rem; color: var(--gray); line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .id-engagement-text p:last-child { margin-bottom: 0; }
+
+    /* ── PHOTO FICHE ── */
+    .id-fiche-photo {
+      border-radius: 14px; overflow: hidden;
+      min-height: 320px; margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-lg);
+    }
+    .id-fiche-photo img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.65s ease;
+    }
+    .id-fiche-photo:hover img { transform: scale(1.03); }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .id-fiche-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .id-valeurs-grid { grid-template-columns: 1fr 1fr; }
+      .id-engagement-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+      .id-engagement-photo { min-height: 280px; }
       .id-loc-inner { grid-template-columns: 1fr; gap: 3rem; }
       .id-loc-map { height: 280px; }
     }
     @media (max-width: 600px) {
       .id-info-grid { grid-template-columns: 1fr; }
-      .id-valeurs-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -261,7 +293,7 @@
       <span class="logo-eureka">EUREKA</span><span class="logo-btp">BTP</span>
     </a>
     <ul class="nav-links">
-      <li><a href="identite.html" style="color:var(--accent)">Identité</a></li>
+      <li><a href="index.html">Accueil</a></li>
       <li><a href="index.html#services">Services</a></li>
       <li><a href="pieces.html">Pièces détachées</a></li>
       <li><a href="index.html#vente">Achat & Revente</a></li>
@@ -289,7 +321,6 @@
 <section class="id-hero">
   <div class="id-hero-overlay"></div>
   <div class="id-hero-content">
-    <a href="index.html" class="id-hero-back">← Retour à l'accueil</a>
     <p class="section-eyebrow">Notre identité</p>
     <h1>EUREKA BTP</h1>
     <p>Expert en carrosserie béton depuis 2001 — réparation, maintenance et préparation de toupies et pompes à béton, partout en France.</p>
@@ -305,31 +336,8 @@
       <p class="section-eyebrow" style="text-align:left;">Fiche entreprise</p>
       <h2 style="color:var(--anthracite); margin-bottom:2rem;">Notre identité en quelques chiffres</h2>
 
-      <div class="id-info-grid">
-        <div class="id-info-card">
-          <div class="id-info-label">Forme juridique</div>
-          <div class="id-info-val">SARL</div>
-        </div>
-        <div class="id-info-card">
-          <div class="id-info-label">Année de création</div>
-          <div class="id-info-val">2001</div>
-        </div>
-        <div class="id-info-card">
-          <div class="id-info-label">Dirigeante</div>
-          <div class="id-info-val">Mme Sophie Darmigny</div>
-        </div>
-        <div class="id-info-card">
-          <div class="id-info-label">Localisation</div>
-          <div class="id-info-val">Gretz-Armainvilliers (77)</div>
-        </div>
-        <div class="id-info-card">
-          <div class="id-info-label">Zone d'intervention</div>
-          <div class="id-info-val">Toute la France</div>
-        </div>
-        <div class="id-info-card">
-          <div class="id-info-label">Spécialité</div>
-          <div class="id-info-val">Carrosserie béton</div>
-        </div>
+      <div class="id-fiche-photo">
+        <img src="images/camion/PHOTO-2026-04-18-16-40-30.jpg" alt="Atelier Eureka BTP — expertise carrosserie béton depuis 2001">
       </div>
 
       <a href="index.html#contact-strip" class="btn-primary">Prendre contact →</a>
@@ -347,37 +355,6 @@
   </div>
 </section>
 
-<!-- ATELIER EN ACTION -->
-<section id="id-atelier">
-  <div class="id-atelier-inner">
-    <div class="section-header" data-animate>
-      <p class="section-eyebrow">Notre savoir-faire</p>
-      <h2>L'atelier en action</h2>
-      <p class="section-subtitle">Soudure, réfection de carrosserie, révision mécanique — chaque matériel repart opérationnel entre les mains de nos techniciens.</p>
-    </div>
-    <div class="id-atelier-grid">
-      <div class="id-photo id-photo--wide" data-animate>
-        <img src="images/camion/PHOTO-2026-04-18-16-40-30.jpg" alt="Camion bétonnière en atelier Eureka BTP" loading="lazy">
-      </div>
-      <div class="id-photo id-photo--tall" data-animate>
-        <img src="images/soudure/PHOTO-2026-04-18-16-40-33.jpg" alt="Soudure carrosserie béton Eureka BTP" loading="lazy">
-      </div>
-      <div class="id-photo" data-animate>
-        <img src="images/soudure/PHOTO-2026-04-18-16-40-32%204.jpg" alt="Travail de soudure sur toupie" loading="lazy">
-      </div>
-      <div class="id-photo" data-animate>
-        <img src="images/camion/PHOTO-2026-04-18-16-40-31%202.jpg" alt="Inspection véhicule béton" loading="lazy">
-      </div>
-      <div class="id-photo" data-animate>
-        <img src="images/soudure/PHOTO-2026-04-18-16-40-33%202.jpg" alt="Réparation structure béton" loading="lazy">
-      </div>
-      <div class="id-photo" data-animate>
-        <img src="images/camion/PHOTO-2026-04-18-16-40-32.jpg" alt="Préparation camion bétonnière" loading="lazy">
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- VALEURS -->
 <section id="id-valeurs">
   <div class="id-valeurs-inner">
@@ -386,56 +363,15 @@
       <h2>Nos engagements</h2>
       <p class="section-subtitle">Des valeurs concrètes qui guident chacune de nos interventions depuis plus de 20 ans.</p>
     </div>
-    <div class="id-valeurs-grid">
-
-      <div class="id-valeur-card" data-animate>
-        <div class="id-valeur-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <h4>Expertise technique</h4>
-        <p>Nos techniciens maîtrisent toutes les marques et tous les modèles de toupies et pompes à béton. Plus de 20 ans de savoir-faire concentré dans notre atelier de Gretz-Armainvilliers.</p>
+    <div class="id-engagement-wrap" data-animate>
+      <div class="id-engagement-photo">
+        <img src="images/soudure/PHOTO-2026-04-18-16-40-33.jpg" alt="Atelier Eureka BTP — engagement et savoir-faire">
       </div>
-
-      <div class="id-valeur-card" data-animate>
-        <div class="id-valeur-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <h4>Réactivité maximale</h4>
-        <p>Chaque heure d'immobilisation coûte cher. Nous intervenons vite, avec des délais tenus et une disponibilité qui s'adapte à vos impératifs de chantier.</p>
+      <div class="id-engagement-text">
+        <p>Chez Eureka BTP, chaque engagement que nous prenons envers nos clients est le fruit de plus de 20 ans de pratique et de perfectionnement. Notre expertise technique nous permet d'intervenir sur toutes les marques et tous les modèles de toupies et pompes à béton — IMER, Stetter, Liebherr, Putzmeister, CIFA, Schwing — avec une rigueur absolue à chaque étape.</p>
+        <p>Nous comprenons que chaque heure d'immobilisation a un coût direct sur votre activité. C'est pourquoi nous priorisons la réactivité : diagnostic rapide, approvisionnement en pièces optimisé, délais tenus. Notre réseau de fournisseurs nous permet de localiser les références les plus rares en un minimum de temps, avec une expédition sous 24 à 48h partout en France.</p>
+        <p>La relation de confiance est au cœur de notre philosophie. Depuis 2001, nos clients nous confient leur parc parce qu'ils savent que nos devis sont transparents, notre travail de qualité et notre suivi après intervention rigoureux. Basés en Seine-et-Marne, nous intervenons et livrons sur toute la France, avec un accompagnement personnalisé à chaque étape de votre projet.</p>
       </div>
-
-      <div class="id-valeur-card" data-animate>
-        <div class="id-valeur-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-        </div>
-        <h4>Relation de confiance</h4>
-        <p>Nos clients nous confient leur parc depuis des années. Une relation construite sur la transparence des devis, la qualité du travail et un suivi rigoureux après intervention.</p>
-      </div>
-
-      <div class="id-valeur-card" data-animate>
-        <div class="id-valeur-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <h4>Couverture nationale</h4>
-        <p>Basés en Seine-et-Marne, nous intervenons et livrons sur toute la France. Pièces expédiées en 24-48h, déplacements pour les interventions complexes.</p>
-      </div>
-
-      <div class="id-valeur-card" data-animate>
-        <div class="id-valeur-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-        </div>
-        <h4>Toutes marques</h4>
-        <p>IMER, Stetter, Liebherr, Putzmeister, CIFA, Schwing, Sermac… Aucune contrainte de marque. Nous avons les compétences et les références pour tout type de matériel béton.</p>
-      </div>
-
-      <div class="id-valeur-card" data-animate>
-        <div class="id-valeur-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-        </div>
-        <h4>Devis transparent</h4>
-        <p>Avant chaque intervention, vous recevez un devis détaillé, gratuit et sans engagement. Pas de surprise, pas de frais cachés — une relation professionnelle claire et honnête.</p>
-      </div>
-
     </div>
   </div>
 </section>
