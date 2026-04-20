@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Équipements et pièces reconditionnées à la vente — groupes hydrauliques, goulottes, vérins, pompes, kits révision pour toupies et bétonnières — Eureka BTP.">
-  <title>Équipements à la Vente — Eureka BTP</title>
+  <meta name="description" content="Services de réparation et maintenance de toupies à béton — Eureka BTP, expert carrosserie béton depuis 2001 en Seine-et-Marne.">
+  <title>Services de Réparation — Eureka BTP</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -13,11 +13,11 @@
     .vente-hero {
       position: relative; height: 50vh; min-height: 340px; max-height: 520px;
       display: flex; align-items: flex-end; padding: 0 2rem 4rem; overflow: hidden;
-      background: url('images/camion/PHOTO-2026-04-18-16-40-29.jpg') center/cover no-repeat;
+      background: url('images/soudure/PHOTO-2026-04-18-16-40-33.jpg') center/cover no-repeat;
     }
     .vente-hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(10,14,22,0.9) 0%, rgba(10,14,22,0.5) 60%, rgba(10,14,22,0.3) 100%);
+      background: linear-gradient(to top, rgba(10,14,22,0.92) 0%, rgba(10,14,22,0.55) 60%, rgba(10,14,22,0.3) 100%);
     }
     .vente-hero-content {
       position: relative; z-index: 2;
@@ -32,11 +32,88 @@
     .vente-hero-content h1 { margin-bottom: 0.75rem; }
     .vente-hero-content p { font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 580px; line-height: 1.7; }
 
+    /* ── SECTION SERVICES ── */
     #vente-stock { background: var(--light); padding: 7rem 2rem; }
     .vente-stock-inner { max-width: 1240px; margin: 0 auto; }
     .vente-stock-grid {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem;
     }
+
+    /* ── CARTE SERVICE ── */
+    .srv-card {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      display: flex; flex-direction: column;
+      transition: box-shadow var(--t), transform var(--t);
+    }
+    .srv-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-5px); }
+
+    .srv-img {
+      height: 200px; overflow: hidden; position: relative;
+    }
+    .srv-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .srv-card:hover .srv-img img { transform: scale(1.05); }
+    .srv-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,14,22,0.55) 0%, transparent 60%);
+    }
+    .srv-num {
+      position: absolute; top: 1rem; left: 1rem;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--accent); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 900; letter-spacing: -0.03em;
+    }
+
+    .srv-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .srv-tag {
+      display: inline-block; font-size: 0.65rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--accent); margin-bottom: 0.65rem;
+    }
+    .srv-body h3 {
+      font-size: 1rem; font-weight: 800; color: var(--anthracite);
+      margin-bottom: 0.6rem; line-height: 1.35;
+    }
+    .srv-body p {
+      font-size: 0.88rem; color: var(--gray); line-height: 1.65; margin-bottom: 1.1rem; flex: 1;
+    }
+    .srv-list {
+      list-style: none; padding: 0; margin: 0 0 1.25rem;
+      display: flex; flex-direction: column; gap: 0.35rem;
+    }
+    .srv-list li {
+      font-size: 0.8rem; color: var(--mid); display: flex; align-items: center; gap: 0.5rem;
+    }
+    .srv-list li::before {
+      content: ''; display: block; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0;
+    }
+    .srv-cta {
+      display: block; text-align: center;
+      padding: 0.7rem 1rem;
+      background: var(--accent); color: #fff;
+      border-radius: 8px; font-size: 0.85rem; font-weight: 700;
+      transition: background var(--t), transform var(--t);
+    }
+    .srv-cta:hover { background: var(--accent-dk); transform: translateY(-1px); }
+
+    /* ── BANDEAU URGENCE ── */
+    .urgence-band {
+      max-width: 1240px; margin: 0 auto 3rem;
+      display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+      padding: 1.75rem 2.25rem;
+      background: var(--anthracite); border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .urgence-band-icon { color: var(--accent); flex-shrink: 0; }
+    .urgence-band-icon svg { width: 28px; height: 28px; }
+    .urgence-band-text { flex: 1; min-width: 200px; }
+    .urgence-band-text strong { display: block; font-size: 1rem; color: #fff; margin-bottom: 0.3rem; }
+    .urgence-band-text span { font-size: 0.88rem; color: rgba(255,255,255,0.6); }
 
     .vente-cta-strip {
       max-width: 1240px; margin: 0 auto;
@@ -49,7 +126,7 @@
     .vente-cta-strip p { font-size: 0.92rem; color: var(--mid); flex: 1; min-width: 200px; }
 
     @media (max-width: 900px) { .vente-stock-grid { grid-template-columns: repeat(2,1fr); } }
-    @media (max-width: 600px) { .vente-stock-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto 3rem; } }
+    @media (max-width: 600px) { .vente-stock-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -88,185 +165,152 @@
   <div class="vente-hero-overlay"></div>
   <a href="index.html" class="vente-hero-back">← Retour à l'accueil</a>
   <div class="vente-hero-content">
-    <p class="section-eyebrow">Stock disponible</p>
-    <h1>Équipements à la Vente</h1>
-    <p>Groupes hydrauliques, vérins, goulottes, pompes et pièces reconditionnées pour toupies et bétonnières — contrôlés et garantis par nos techniciens.</p>
+    <p class="section-eyebrow">Expertise depuis 2001</p>
+    <h1>Services de Réparation</h1>
+    <p>Réparation, maintenance et remise en état de toupies et pompes à béton — toutes marques, partout en France. Devis gratuit sous 24h.</p>
   </div>
 </section>
 
 <section id="vente-stock">
   <div class="vente-stock-inner">
 
+    <!-- Bandeau urgence -->
+    <div class="urgence-band" data-animate>
+      <div class="urgence-band-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      </div>
+      <div class="urgence-band-text">
+        <strong>Intervention d'urgence disponible</strong>
+        <span>Toupie immobilisée ? Nos techniciens se déplacent — diagnostic rapide, remise en route prioritaire.</span>
+      </div>
+      <a href="index.html#contact-strip" class="btn-primary">Appeler maintenant</a>
+    </div>
+
     <div class="vente-stock-grid" data-animate>
 
-      <!-- 1 — Groupe hydraulique reconditionné -->
-      <div class="vehicle-card">
-        <div class="vehicle-img-wrap">
-          <img src="pieces%20detache/XRQZsGsp3bAERyptzXNi9kK4hHs.avif" alt="Groupe hydraulique reconditionné pour toupie">
-          <span class="vehicle-badge vehicle-badge--dispo">Disponible</span>
-          <span class="vehicle-category-tag">Hydraulique</span>
+      <!-- 1 — Réparation toupie à béton -->
+      <div class="srv-card">
+        <div class="srv-img">
+          <img src="images/soudure/PHOTO-2026-04-18-16-40-33.jpg" alt="Réparation toupie à béton">
+          <div class="srv-img-overlay"></div>
+          <span class="srv-num">01</span>
         </div>
-        <div class="vehicle-info">
-          <h3>Groupe hydraulique reconditionné</h3>
-          <p>Remis à neuf en atelier — compatible IMER, Stetter, Liebherr</p>
-          <div class="vehicle-specs">
-            <span class="vehicle-spec">Reconditionné</span>
-            <span class="vehicle-spec">Testé</span>
-            <span class="vehicle-spec">Garanti 3 mois</span>
-          </div>
-          <a href="index.html#contact-strip" class="vehicle-cta">Demander les détails</a>
-        </div>
-      </div>
-
-      <!-- 2 — Pompe hydraulique toupie -->
-      <div class="vehicle-card">
-        <div class="vehicle-img-wrap">
-          <img src="pieces%20detache/gB9EySrhdP7iejdXGCueT1lHl4.avif" alt="Pompe hydraulique pour toupie à béton">
-          <span class="vehicle-badge vehicle-badge--dispo">Disponible</span>
-          <span class="vehicle-category-tag">Hydraulique</span>
-        </div>
-        <div class="vehicle-info">
-          <h3>Pompe hydraulique toupie — toutes marques</h3>
-          <p>Haute performance, compatible IMER, Stetter, Liebherr, CIFA</p>
-          <div class="vehicle-specs">
-            <span class="vehicle-spec">Neuve</span>
-            <span class="vehicle-spec">Toutes marques</span>
-            <span class="vehicle-spec">Garantie</span>
-          </div>
-          <a href="index.html#contact-strip" class="vehicle-cta">Demander les détails</a>
+        <div class="srv-body">
+          <span class="srv-tag">Réparation</span>
+          <h3>Réparation de toupie à béton</h3>
+          <p>Diagnostic complet, remplacement des pièces défaillantes et remise en état fonctionnelle. Toutes marques : IMER, Stetter, Liebherr, CIFA.</p>
+          <ul class="srv-list">
+            <li>Diagnostic sur place ou en atelier</li>
+            <li>Remplacement pièces d'usure</li>
+            <li>Tests et contrôle final</li>
+            <li>Devis gratuit sous 24h</li>
+          </ul>
+          <a href="index.html#contact-strip" class="srv-cta">Demander un devis →</a>
         </div>
       </div>
 
-      <!-- 3 — Vérin hydraulique reconditionné -->
-      <div class="vehicle-card">
-        <div class="vehicle-img-wrap">
-          <img src="pieces%20detache/Y7cGgrUwXsMYAEsJPG1SxdAvY.avif" alt="Vérin hydraulique reconditionné pour toupie">
-          <span class="vehicle-badge vehicle-badge--dispo">Disponible</span>
-          <span class="vehicle-category-tag">Hydraulique</span>
+      <!-- 2 — Soudure & réfection carrosserie -->
+      <div class="srv-card">
+        <div class="srv-img">
+          <img src="images/soudure/PHOTO-2026-04-18-16-40-32%204.jpg" alt="Soudure et réfection carrosserie béton">
+          <div class="srv-img-overlay"></div>
+          <span class="srv-num">02</span>
         </div>
-        <div class="vehicle-info">
-          <h3>Vérin hydraulique reconditionné</h3>
-          <p>Vérin de levage toupie — testé et étalonné en atelier</p>
-          <div class="vehicle-specs">
-            <span class="vehicle-spec">Reconditionné</span>
-            <span class="vehicle-spec">Étalonné</span>
-            <span class="vehicle-spec">Garanti 3 mois</span>
-          </div>
-          <a href="index.html#contact-strip" class="vehicle-cta">Demander les détails</a>
-        </div>
-      </div>
-
-      <!-- 4 — Goulotte de déchargement aluminium -->
-      <div class="vehicle-card">
-        <div class="vehicle-img-wrap">
-          <img src="pieces%20detache/9J8THXwvTmr0fEUYeOdluaWQXQk.avif" alt="Goulotte de déchargement aluminium renforcé">
-          <span class="vehicle-badge vehicle-badge--dispo">Disponible</span>
-          <span class="vehicle-category-tag">Goulotte</span>
-        </div>
-        <div class="vehicle-info">
-          <h3>Goulotte de déchargement aluminium renforcé</h3>
-          <p>Solution robuste pour prolongement et canalisation des matériaux</p>
-          <div class="vehicle-specs">
-            <span class="vehicle-spec">Aluminium</span>
-            <span class="vehicle-spec">Neuve</span>
-            <span class="vehicle-spec">Toutes marques</span>
-          </div>
-          <a href="index.html#contact-strip" class="vehicle-cta">Demander les détails</a>
+        <div class="srv-body">
+          <span class="srv-tag">Carrosserie</span>
+          <h3>Soudure &amp; réfection de carrosserie</h3>
+          <p>Remise en forme de la structure, soudure de renforts, traitement anticorrosion et protection de surface pour prolonger la durée de vie de votre matériel.</p>
+          <ul class="srv-list">
+            <li>Soudure MIG/TIG tous matériaux</li>
+            <li>Remplacement tôles d'usure</li>
+            <li>Traitement anticorrosion</li>
+            <li>Peinture de finition</li>
+          </ul>
+          <a href="index.html#contact-strip" class="srv-cta">Demander un devis →</a>
         </div>
       </div>
 
-      <!-- 5 — Manette de commande -->
-      <div class="vehicle-card">
-        <div class="vehicle-img-wrap">
-          <img src="pieces%20detache/C9r4harhZoWYf9iTlhC0fJGjzQ.avif" alt="Manette de commande ergonomique">
-          <span class="vehicle-badge vehicle-badge--dispo">Disponible</span>
-          <span class="vehicle-category-tag">Commande</span>
+      <!-- 3 — Révision système hydraulique -->
+      <div class="srv-card">
+        <div class="srv-img">
+          <img src="images/camion/PHOTO-2026-04-18-16-40-30.jpg" alt="Révision système hydraulique toupie">
+          <div class="srv-img-overlay"></div>
+          <span class="srv-num">03</span>
         </div>
-        <div class="vehicle-info">
-          <h3>Manette de commande ergonomique</h3>
-          <p>Contrôle précis des équipements — compatible bétonnières chantier</p>
-          <div class="vehicle-specs">
-            <span class="vehicle-spec">Neuve</span>
-            <span class="vehicle-spec">Universelle</span>
-            <span class="vehicle-spec">Garantie</span>
-          </div>
-          <a href="index.html#contact-strip" class="vehicle-cta">Demander les détails</a>
-        </div>
-      </div>
-
-      <!-- 6 — Tôle d'usure -->
-      <div class="vehicle-card">
-        <div class="vehicle-img-wrap">
-          <img src="pieces%20detache/BWyuJuUZ2CFTVhWzz77k2Vyagc.avif" alt="Tôle d'usure adaptable toutes marques">
-          <span class="vehicle-badge vehicle-badge--dispo">Disponible</span>
-          <span class="vehicle-category-tag">Usure</span>
-        </div>
-        <div class="vehicle-info">
-          <h3>Tôle d'usure adaptable</h3>
-          <p>Protection contre l'abrasion et les chocs — acier haute résistance</p>
-          <div class="vehicle-specs">
-            <span class="vehicle-spec">Acier HR</span>
-            <span class="vehicle-spec">Neuve</span>
-            <span class="vehicle-spec">Toutes marques</span>
-          </div>
-          <a href="index.html#contact-strip" class="vehicle-cta">Demander les détails</a>
+        <div class="srv-body">
+          <span class="srv-tag">Hydraulique</span>
+          <h3>Révision du système hydraulique</h3>
+          <p>Contrôle et remise en état complète du circuit hydraulique : pompe, vérins, flexibles, distributeurs. Prévient les pannes coûteuses sur chantier.</p>
+          <ul class="srv-list">
+            <li>Vidange et remplacement fluides</li>
+            <li>Contrôle pression et débit</li>
+            <li>Remplacement joints et flexibles</li>
+            <li>Test circuit complet</li>
+          </ul>
+          <a href="index.html#contact-strip" class="srv-cta">Demander un devis →</a>
         </div>
       </div>
 
-      <!-- 7 — Câble de commande — Vendu -->
-      <div class="vehicle-card vehicle-card--vendu">
-        <div class="vehicle-img-wrap">
-          <img src="pieces%20detache/ZejEDtwfU4sNAANYP3PuwkYJNzU.avif" alt="Câble de commande renforcé">
-          <span class="vehicle-badge vehicle-badge--vendu">Vendu</span>
-          <span class="vehicle-category-tag">Commande</span>
+      <!-- 4 — Remplacement cuve / tambour -->
+      <div class="srv-card">
+        <div class="srv-img">
+          <img src="images/camion/PHOTO-2026-04-18-16-40-31.jpg" alt="Remplacement cuve tambour toupie">
+          <div class="srv-img-overlay"></div>
+          <span class="srv-num">04</span>
         </div>
-        <div class="vehicle-info">
-          <h3>Câble de commande renforcé</h3>
-          <p>Transmission fiable des commandes mécaniques — lot de 3</p>
-          <div class="vehicle-specs">
-            <span class="vehicle-spec">Renforcé</span>
-            <span class="vehicle-spec">Lot ×3</span>
-            <span class="vehicle-spec">Universel</span>
-          </div>
-          <a href="index.html#contact-strip" class="vehicle-cta vehicle-cta--ghost">Nous contacter pour similaire</a>
-        </div>
-      </div>
-
-      <!-- 8 — Compteur d'eau — Vendu -->
-      <div class="vehicle-card vehicle-card--vendu">
-        <div class="vehicle-img-wrap">
-          <img src="pieces%20detache/j7S1RBZ4eRIRwmJoyL5NS3nxaFg.avif" alt="Compteur d'eau pour toupie à béton">
-          <span class="vehicle-badge vehicle-badge--vendu">Vendu</span>
-          <span class="vehicle-category-tag">Toupie</span>
-        </div>
-        <div class="vehicle-info">
-          <h3>Compteur d'eau pour toupie</h3>
-          <p>Contrôle optimal de la quantité d'eau — robuste et fiable</p>
-          <div class="vehicle-specs">
-            <span class="vehicle-spec">Robuste</span>
-            <span class="vehicle-spec">Précis</span>
-            <span class="vehicle-spec">Toutes marques</span>
-          </div>
-          <a href="index.html#contact-strip" class="vehicle-cta vehicle-cta--ghost">Nous contacter pour similaire</a>
+        <div class="srv-body">
+          <span class="srv-tag">Cuve & Tambour</span>
+          <h3>Remplacement de cuve ou tambour</h3>
+          <p>Dépose de l'ancien tambour, pose et réglage d'une cuve neuve ou reconditionnée. Intervention réalisée en atelier ou sur site selon vos contraintes.</p>
+          <ul class="srv-list">
+            <li>Dépose et repose en atelier</li>
+            <li>Réglage et alignement</li>
+            <li>Compatible toutes marques</li>
+            <li>Remise en service incluse</li>
+          </ul>
+          <a href="index.html#contact-strip" class="srv-cta">Demander un devis →</a>
         </div>
       </div>
 
-      <!-- 9 — Kit joints & accessoires — Vendu -->
-      <div class="vehicle-card vehicle-card--vendu">
-        <div class="vehicle-img-wrap">
-          <img src="pieces%20detache/r6Ki0LPbKmgLOPGINwW7NCYk.avif" alt="Kit joints et accessoires complet">
-          <span class="vehicle-badge vehicle-badge--vendu">Vendu</span>
-          <span class="vehicle-category-tag">Accessoires</span>
+      <!-- 5 — Maintenance préventive -->
+      <div class="srv-card">
+        <div class="srv-img">
+          <img src="images/soudure/PHOTO-2026-04-18-16-40-33%202.jpg" alt="Maintenance préventive bétonnière">
+          <div class="srv-img-overlay"></div>
+          <span class="srv-num">05</span>
         </div>
-        <div class="vehicle-info">
-          <h3>Kit joints &amp; accessoires complet</h3>
-          <p>Gamme complète de joints d'étanchéité et accessoires de fixation</p>
-          <div class="vehicle-specs">
-            <span class="vehicle-spec">Kit complet</span>
-            <span class="vehicle-spec">Étanchéité</span>
-            <span class="vehicle-spec">Universel</span>
-          </div>
-          <a href="index.html#contact-strip" class="vehicle-cta vehicle-cta--ghost">Nous contacter pour similaire</a>
+        <div class="srv-body">
+          <span class="srv-tag">Maintenance</span>
+          <h3>Maintenance préventive</h3>
+          <p>Programme d'entretien régulier pour éviter les pannes imprévues et maximiser la durée de vie de votre parc. Adapté à votre planning de production.</p>
+          <ul class="srv-list">
+            <li>Contrôle périodique complet</li>
+            <li>Graissage et réglages</li>
+            <li>Rapport d'état détaillé</li>
+            <li>Contrat annuel disponible</li>
+          </ul>
+          <a href="index.html#contact-strip" class="srv-cta">Demander un devis →</a>
+        </div>
+      </div>
+
+      <!-- 6 — Remise en état complète -->
+      <div class="srv-card">
+        <div class="srv-img">
+          <img src="images/camion/PHOTO-2026-04-18-16-40-29.jpg" alt="Remise en état complète bétonnière">
+          <div class="srv-img-overlay"></div>
+          <span class="srv-num">06</span>
+        </div>
+        <div class="srv-body">
+          <span class="srv-tag">Remise en état</span>
+          <h3>Remise en état complète</h3>
+          <p>Révision totale de votre bétonnière : mécanique, hydraulique, électrique, carrosserie. Votre matériel repart comme au premier jour, prêt pour le chantier.</p>
+          <ul class="srv-list">
+            <li>Révision mécanique et hydraulique</li>
+            <li>Réfection complète carrosserie</li>
+            <li>Contrôle électrique et commandes</li>
+            <li>Certificat de remise en état</li>
+          </ul>
+          <a href="index.html#contact-strip" class="srv-cta">Demander un devis →</a>
         </div>
       </div>
 
@@ -274,8 +318,8 @@
 
     <div class="vente-cta-strip" data-animate>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      <p>Stock renouvelé régulièrement — Contactez-nous pour connaître les dernières arrivées ou faire une demande sur un modèle précis.</p>
-      <a href="index.html#contact-strip" class="btn-primary">Nous contacter</a>
+      <p>Besoin d'un service non listé ? Nos techniciens interviennent sur tout type de réparation — contactez-nous pour un diagnostic gratuit.</p>
+      <a href="index.html#contact-strip" class="btn-primary">Diagnostic gratuit</a>
     </div>
 
   </div>
