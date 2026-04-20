@@ -460,7 +460,7 @@ h5 { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spa
 /* ═══════════════════════════════════════════
    VÉHICULES EN VENTE
 ═══════════════════════════════════════════ */
-#vente { padding: 8rem 2rem; background: var(--light); }
+#vente { padding: 8rem 2rem; background: #fff; }
 
 .vehicles-gallery-v2 {
   max-width: 1240px; margin: 0 auto 4.5rem;
@@ -1994,7 +1994,7 @@ footer { background: #1e2127; color: #fff; }
 ════════════════════════════════════════════════════ */
 #vente {
   padding: 6rem 2rem 8rem !important;
-  background: var(--light) !important;
+  background: #fff !important;
 }
 .vente-showcase {
   max-width: 1240px; margin: 0 auto;
