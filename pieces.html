@@ -325,8 +325,16 @@
     content.appendChild(a);
   });
 
+  let lastScrollY = window.scrollY;
   window.addEventListener('scroll', () => {
-    spotWrap.classList.toggle('is-compact', window.scrollY > 180);
+    const y = window.scrollY;
+    spotWrap.classList.toggle('is-compact', y > 180);
+    if (y > 200) {
+      spotWrap.classList.toggle('is-hidden', y > lastScrollY);
+    } else {
+      spotWrap.classList.remove('is-hidden');
+    }
+    lastScrollY = y;
   }, { passive: true });
 
   function runFilter() {
