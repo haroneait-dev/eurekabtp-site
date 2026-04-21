@@ -3327,6 +3327,9 @@ footer { background: #2b2b2b; color: #fff; }
   background: var(--anthracite) !important;
   color: #fff;
 }
+.activite-row:has(.activite-text.dark-bg) {
+  background: var(--anthracite);
+}
 .activite-text.dark-bg h3 { color: #fff; }
 .activite-text.dark-bg p { color: rgba(255,255,255,0.75); }
 .activite-text.dark-bg .eureka-split-tag {
