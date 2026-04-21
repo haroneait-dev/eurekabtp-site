@@ -84,55 +84,72 @@
 
 
 
-<section id="activites-body" class="bento-section">
-  <div class="bento-inner">
-    
-    <div class="bento-huge-text" data-animate>
-      <span>EXPERTISE</span>
-    </div>
 
-    <div class="bento-item bento-img-1" data-animate>
-      <img src="images/soudure/PHOTO-2026-04-18-16-40-33.jpg" alt="Réparation">
-    </div>
+<section id="activites-body" style="padding: 0; max-width: 100%; background: #fff;">
 
-    <div class="bento-item bento-text-1" data-animate>
-      <span class="eureka-split-tag" style="margin-bottom:1rem;">Activité 01</span>
-      <h3>Réparation &amp;<br>Maintenance</h3>
-      <p>Nos techniciens interviennent sur l'ensemble de votre parc de véhicules lourds. Bétonnières, pompes, camions bennes — nous maîtrisons toutes les marques pour des réparations durables.</p>
-      <a href="reparation.html" class="btn-primary" style="margin-top:1.5rem; align-self:flex-start;">Découvrir</a>
-    </div>
-
-    <div class="bento-huge-text-2" data-animate style="color: var(--anthracite);">
-      <span>GLOBALE</span>
-    </div>
-
-    <div class="bento-item bento-text-2" data-animate>
-      <span class="eureka-split-tag" style="margin-bottom:1rem; background: rgba(0,0,0,0.05); color: var(--anthracite);">Activité 02</span>
-      <h3>Préparation<br>Camion Neuf</h3>
-      <p style="color: var(--gray);">Mise en service complète, clé en main. Montage, réglage des équipements et aménagements spécifiques. Votre véhicule quitte notre atelier prêt pour le chantier.</p>
-      <a href="preparation.html" class="btn-primary" style="margin-top:1.5rem; align-self:flex-start;">Découvrir</a>
-    </div>
-
-    <div class="bento-item bento-img-2" data-animate>
-      <img src="images/camion/PHOTO-2026-04-18-16-40-31.jpg" alt="Préparation">
-    </div>
-
-    <div class="bento-item bento-img-3" data-animate>
-      <img src="images/camion/PHOTO-2026-04-18-16-40-29%202.jpg" alt="Location">
-    </div>
-
-    <div class="bento-item bento-text-1" data-animate style="background: var(--accent);">
-      <span class="eureka-split-tag" style="margin-bottom:1rem; background: rgba(0,0,0,0.1); color: var(--anthracite);">Activité 03 & 04</span>
-      <h3 style="color: var(--anthracite);">Location &amp; Revente</h3>
-      <p style="color: rgba(43,43,43,0.8);">Un renfort immédiat avec nos toupies en location, ou un accompagnement expert pour l'achat et la revente de vos équipements d'occasion.</p>
-      <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-        <a href="location.html" class="btn-primary">Location</a>
-        <a href="achat-revente.html" class="btn-ghost" style="border-color: var(--anthracite); color: var(--anthracite);">Revente</a>
-      </div>
-    </div>
-
+  <!-- Intro header -->
+  <div style="max-width: 960px; margin: 0 auto; padding: 5rem 2rem 3rem; text-align: left;">
+    <p class="section-eyebrow">Vue d'ensemble</p>
+    <h2 style="font-size: clamp(2rem, 4vw, 3rem); color: var(--anthracite); margin-bottom: 1rem;">Quatre métiers, une expertise</h2>
+    <p style="color: var(--gray); font-size: 1.05rem; max-width: 700px; line-height: 1.75;">Chaque activité est portée par nos techniciens et plus de 20 ans d'expérience dans la carrosserie béton.</p>
   </div>
+
+  <!-- Activity rows: alternating left/right, inspired by matbeton but more compact & numbered -->
+  <div class="activite-row" data-animate>
+    <div class="activite-img">
+      <img src="images/soudure/PHOTO-2026-04-18-16-40-33.jpg" alt="Réparation">
+      <div class="activite-num">01</div>
+    </div>
+    <div class="activite-text dark-bg">
+      <span class="eureka-split-tag">Réparation &amp; Maintenance</span>
+      <h3>Remise en état de vos véhicules de chantier</h3>
+      <p>Nos techniciens qualifiés interviennent sur l'ensemble de votre parc de véhicules lourds. Bétonnières IMER, Stetter, Liebherr — nous maîtrisons toutes les marques, des diagnostics aux interventions complètes.</p>
+      <p>Stock de pièces détachées sur place pour minimiser les temps d'immobilisation.</p>
+      <a href="reparation.html" class="split-btn">En savoir plus</a>
+    </div>
+  </div>
+
+  <div class="activite-row reverse" data-animate>
+    <div class="activite-img">
+      <img src="images/camion/PHOTO-2026-04-18-16-40-31.jpg" alt="Préparation">
+      <div class="activite-num">02</div>
+    </div>
+    <div class="activite-text light-bg" style="background: var(--light);">
+      <span class="eureka-split-tag" style="background: rgba(0,0,0,0.06); color: var(--anthracite);">Préparation Camion Neuf</span>
+      <h3 style="color: var(--anthracite);">Mise en service complète, clé en main</h3>
+      <p style="color: var(--gray);">Montage et réglage des équipements, aménagements spécifiques selon vos besoins, contrôles techniques complets. Chaque véhicule quitte notre atelier opérationnel et conforme aux exigences du terrain.</p>
+      <a href="preparation.html" class="split-btn" style="border-color: var(--anthracite); color: var(--anthracite);">En savoir plus</a>
+    </div>
+  </div>
+
+  <div class="activite-row" data-animate>
+    <div class="activite-img">
+      <img src="images/camion/PHOTO-2026-04-18-16-40-29%202.jpg" alt="Location">
+      <div class="activite-num">03</div>
+    </div>
+    <div class="activite-text dark-bg">
+      <span class="eureka-split-tag">Location de Toupies</span>
+      <h3>Un renfort opérationnel immédiat</h3>
+      <p>Besoin d'un véhicule de remplacement ou d'un renfort temporaire ? Nos toupies sont rigoureusement contrôlées et prêtes à l'emploi, pour des durées courtes ou longues selon vos besoins.</p>
+      <a href="location.html" class="split-btn">En savoir plus</a>
+    </div>
+  </div>
+
+  <div class="activite-row reverse" data-animate>
+    <div class="activite-img">
+      <img src="images/camion/PHOTO-2026-04-18-16-40-30%205.jpg" alt="Achat revente">
+      <div class="activite-num">04</div>
+    </div>
+    <div class="activite-text light-bg" style="background: var(--light);">
+      <span class="eureka-split-tag" style="background: rgba(0,0,0,0.06); color: var(--anthracite);">Achat &amp; Revente</span>
+      <h3 style="color: var(--anthracite);">Votre partenaire pour acheter &amp; revendre</h3>
+      <p style="color: var(--gray);">Chaque véhicule est expertisé et remis en état avant revente. Notre réseau de professionnels nous permet de proposer un stock régulièrement renouvelé de toupies et camions bétonnières.</p>
+      <a href="achat-revente.html" class="split-btn" style="border-color: var(--anthracite); color: var(--anthracite);">En savoir plus</a>
+    </div>
+  </div>
+
 </section>
+
 
 
 
