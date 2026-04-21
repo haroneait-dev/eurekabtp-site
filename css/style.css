@@ -3213,12 +3213,13 @@ footer { background: #2b2b2b; color: #fff; }
   margin: 0 auto;
 }
 .tagline-eyebrow {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.22em;
-  color: #f4650a;
+  color: var(--anthracite);
   font-weight: 700;
-  margin: 0 0 1.6rem;
+  margin: 0 0 1.4rem;
+  opacity: 0.55;
 }
 .tagline-text {
   font-size: clamp(1.35rem, 2.6vw, 2.1rem);
@@ -3232,15 +3233,6 @@ footer { background: #2b2b2b; color: #fff; }
   font-style: normal;
   font-weight: 700;
   color: var(--anthracite);
-  position: relative;
-  white-space: nowrap;
-}
-.tagline-text em::after {
-  content: '';
-  position: absolute;
-  left: 0; right: 0; bottom: -2px;
-  height: 2px;
-  background: #f4650a;
 }
 @media (max-width: 768px) {
   #homepage-tagline { padding: 3.5rem 1.5rem; }
@@ -3256,7 +3248,7 @@ footer { background: #2b2b2b; color: #fff; }
 #hub-pieces .eureka-split,
 #hub-materiel .eureka-split,
 #hub-activites .eureka-split {
-  min-height: 500px;
+  min-height: 400px;
   align-items: stretch;
 }
 #identite-teaser .split-image,
@@ -3265,9 +3257,10 @@ footer { background: #2b2b2b; color: #fff; }
 #hub-pieces .eureka-split-image,
 #hub-materiel .eureka-split-image,
 #hub-activites .eureka-split-image {
-  flex: 1 1 44%;
+  flex: 1 1 40%;
   height: auto;
-  min-height: 500px;
+  min-height: 400px;
+  max-height: 460px;
 }
 #identite-teaser .split-content,
 #atelier-teaser .split-content,
@@ -3275,9 +3268,27 @@ footer { background: #2b2b2b; color: #fff; }
 #hub-pieces .eureka-split-content,
 #hub-materiel .eureka-split-content,
 #hub-activites .eureka-split-content {
-  flex: 1 1 56%;
-  min-height: 500px;
-  padding: clamp(3rem, 6vw, 5.5rem) clamp(2rem, 5vw, 4.5rem);
+  flex: 1 1 60%;
+  min-height: 400px;
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.75rem, 4vw, 3.5rem);
+}
+#identite-teaser .split-content h2,
+#atelier-teaser .split-content h2,
+#hub-services .eureka-split-content h2,
+#hub-pieces .eureka-split-content h2,
+#hub-materiel .eureka-split-content h2,
+#hub-activites .eureka-split-content h2 {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  line-height: 1.2;
+}
+#identite-teaser .split-content p,
+#atelier-teaser .split-content p,
+#hub-services .eureka-split-content p,
+#hub-pieces .eureka-split-content p,
+#hub-materiel .eureka-split-content p,
+#hub-activites .eureka-split-content p {
+  font-size: 0.95rem;
+  line-height: 1.65;
 }
 @media (max-width: 900px) {
   #identite-teaser .split-image,
