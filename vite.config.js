@@ -8,7 +8,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         pieces: resolve(__dirname, 'pieces.html'),
         identite: resolve(__dirname, 'identite.html'),
-        vente: resolve(__dirname, 'vente.html'),
+
         reparation: resolve(__dirname, 'reparation.html'),
         preparation: resolve(__dirname, 'preparation.html'),
         location: resolve(__dirname, 'location.html'),
