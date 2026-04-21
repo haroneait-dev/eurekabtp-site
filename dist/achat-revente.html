@@ -16,11 +16,11 @@
     }
     .service-hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(10,14,22,0.88) 0%, rgba(10,14,22,0.5) 55%, rgba(10,14,22,0.3) 100%);
+      background: linear-gradient(to top, rgba(43,43,43,0.88) 0%, rgba(43,43,43,0.5) 55%, rgba(43,43,43,0.3) 100%);
     }
     .service-hero-content {
       position: relative; z-index: 2;
-      max-width: 1240px; margin: 0 auto; width: 100%; color: #fff;
+      max-width: 1240px; margin: 0 auto; width: 100%; color: var(--anthracite);
     }
     .service-hero-back {
       display: inline-flex; align-items: center; gap: 0.4rem;
@@ -29,7 +29,7 @@
     }
     .service-hero-back:hover { color: var(--accent); }
     .service-hero-content h1 { margin-bottom: 0.85rem; }
-    .service-hero-content p { font-size: 1.05rem; color: rgba(255,255,255,0.75); max-width: 640px; line-height: 1.72; }
+    .service-hero-content p { font-size: 1.05rem; color: var(--gray); max-width: 640px; line-height: 1.72; }
 
     #service-body { background: #fff; padding: 7rem 2rem; }
     .service-body-inner {
@@ -62,7 +62,7 @@
 
     #service-cta { background: var(--dark); padding: 6rem 2rem; text-align: center; }
     .service-cta-inner { max-width: 640px; margin: 0 auto; }
-    .service-cta-inner h2 { color: #fff; margin-bottom: 1rem; }
+    .service-cta-inner h2 { color: var(--anthracite); margin-bottom: 1rem; }
     .service-cta-inner p { color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.75; margin-bottom: 2.5rem; }
     .service-cta-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 
@@ -71,14 +71,14 @@
       .service-body-img { min-height: 300px; position: static; }
     }
   </style>
-  <link rel="stylesheet" crossorigin href="/assets/style-BrPK0WhG.css">
+  <link rel="stylesheet" crossorigin href="/assets/style-DD4NjU0r.css">
 </head>
 <body>
 
 <nav id="navbar" class="scrolled">
   <div class="nav-container">
     <a href="index.html" class="nav-logo">
-      <img src="/assets/Logo%20eureka-CgDsgso3.jpg" alt="Eureka BTP" class="nav-logo-img">
+      <img src="data:image/avif;base64,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" alt="Eureka BTP" class="nav-logo-img">
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
@@ -95,6 +95,7 @@
       <li><a href="pieces.html">Pièces détachées</a></li>
       <li><a href="vente.html">Matériel</a></li>
       <li><a href="activites.html">Nos activités</a></li>
+      <li><a href="atelier.html">Atelier &amp; SAV</a></li>
     </ul>
     <a href="index.html#contact-strip" class="nav-cta">Demander un devis</a>
     <button class="nav-burger" id="navBurger" aria-label="Menu">
@@ -126,50 +127,29 @@
   </div>
 </section>
 
-<section id="service-body">
-  <div class="service-body-inner">
-    <div class="service-body-text" data-animate>
-      <p class="section-eyebrow">Achat & Revente</p>
-      <h2>Votre partenaire pour acheter et revendre en toute confiance</h2>
-      <p>Eureka BTP vous accompagne dans l'achat et la revente de toupies à béton et camions bétonnières. Chaque véhicule est expertisé et remis en état avant revente, pour vous garantir un matériel fiable et performant.</p>
-      <p>Notre réseau étendu de professionnels du BPE nous permet de proposer un stock régulièrement renouvelé, et de trouver le matériel correspondant précisément à vos besoins, au meilleur prix. Vous souhaitez céder votre ancien matériel ? Nous l'évaluons gratuitement et vous accompagnons dans toutes les démarches.</p>
-      <p>Que vous cherchiez à investir dans un matériel fiable ou à valoriser votre parc actuel, notre expertise de plus de 20 ans est à votre service pour des transactions sécurisées, transparentes et sans mauvaise surprise.</p>
 
-      <div class="service-features">
-        <div class="service-feature-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          <div>
-            <h4>Expertise & évaluation gratuite</h4>
-            <p>Diagnostic complet de votre matériel avant toute transaction, avec rapport d'évaluation détaillé.</p>
-          </div>
-        </div>
-        <div class="service-feature-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-          <div>
-            <h4>Remise en état avant revente</h4>
-            <p>Chaque véhicule est contrôlé, remis en état et garanti avant d'être proposé à la vente.</p>
-          </div>
-        </div>
-        <div class="service-feature-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          <div>
-            <h4>Accompagnement de A à Z</h4>
-            <p>Gestion complète de la transaction — de la négociation aux formalités administratives.</p>
-          </div>
-        </div>
+<section id="service-body" style="padding: 0; max-width: 100%; border-bottom: none;">
+  <div class="eureka-split" data-animate>
+    <div class="eureka-split-content dark-bg">
+      <div class="eureka-blueprint-watermark"></div>
+      <span class="eureka-split-tag">Achat & Revente</span>
+      <h3 class="eureka-split-title">Votre partenaire pour acheter et revendre en toute confiance</h3>
+      <div class="eureka-split-desc">
+        <p>Eureka BTP vous accompagne dans l'achat et la revente de toupies à béton et camions bétonnières. Chaque véhicule est expertisé et remis en état avant revente, pour vous garantir un matériel fiable et performant.</p>
+        <p>Notre réseau étendu de professionnels du BPE nous permet de proposer un stock régulièrement renouvelé, et de trouver le matériel correspondant précisément à vos besoins, au meilleur prix. Vous souhaitez céder votre ancien matériel ? Nous l'évaluons gratuitement et vous accompagnons dans toutes les démarches.</p>
+        <p>Que vous cherchiez à investir dans un matériel fiable ou à valoriser votre parc actuel, notre expertise de plus de 20 ans est à votre service pour des transactions sécurisées, transparentes et sans mauvaise surprise.</p>
       </div>
-
-      <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-        <a href="vente.html" class="btn-primary">Voir le stock disponible</a>
-        <a href="index.html#contact-strip" class="btn-ghost" style="border-color:var(--border);color:var(--anthracite);">Faire expertiser mon matériel</a>
+      <div class="eureka-split-features" style="margin-bottom: 3.5rem; margin-top: 2rem; max-width: 600px;">
+        
       </div>
+      <a href="index.html#contact-strip" class="split-btn" >Demander un devis gratuit</a>
     </div>
-
-    <div class="service-body-img" data-animate>
+    <div class="eureka-split-image">
       <img src="/assets/PHOTO-2026-04-18-16-40-30-G2NElDkg.jpg" alt="Achat et revente de véhicules béton — Eureka BTP">
     </div>
   </div>
 </section>
+
 
 <section id="service-cta">
   <div class="service-cta-inner" data-animate>
@@ -187,7 +167,7 @@
   <div class="footer-container">
     <div class="footer-brand">
       <div class="footer-logo">
-        <img src="/assets/Logo%20eureka-CgDsgso3.jpg" alt="Eureka BTP" style="height:44px; width:auto;">
+        <img src="data:image/avif;base64,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" alt="Eureka BTP" style="height:44px; width:auto;">
       </div>
       <p class="footer-tagline">25 ans au service des professionnels du BPE. Réparation, location, achat & revente de toupies à béton — toutes marques, partout en France.</p>
       <div class="footer-coords">
