@@ -3108,10 +3108,32 @@ footer { background: #2b2b2b; color: #fff; }
 
 
 /* activite-text light variant */
-.activite-text.light-bg { color: var(--anthracite); background: var(--light); }
+.activite-text.light-bg { color: var(--anthracite); background: #ffffff; }
 .activite-text.light-bg .eureka-split-tag { background: rgba(0,0,0,0.06); color: var(--anthracite); }
 .activite-text.light-bg h3 { color: var(--anthracite); }
 .activite-text.light-bg p { color: var(--gray); }
+
+/* Small Image Variant for Atelier */
+.activite-row.small-img-row {
+  min-height: auto;
+  border-bottom: 1px solid var(--border);
+}
+.activite-row.small-img-row .activite-img {
+  flex: 0 0 35%;
+  min-height: 320px;
+}
+.activite-row.small-img-row .activite-text {
+  flex: 0 0 65%;
+  padding: 5rem 8% 5rem 6%;
+}
+.activite-row.small-img-row.reverse .activite-text {
+  padding: 5rem 6% 5rem 8%;
+}
+
+@media (max-width: 900px) {
+  .activite-row.small-img-row .activite-img { flex: none; width: 100%; min-height: 240px; }
+  .activite-row.small-img-row .activite-text { flex: none; width: 100%; padding: 4rem 2rem; }
+}
 
 /* ════════════════════════════════════════════════════
    TRUST STRIP
