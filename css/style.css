@@ -1886,7 +1886,7 @@ footer { background: #2b2b2b; color: #fff; }
    STATS BAND v3 — bande chiffres fond sombre
 ════════════════════════════════════════════════════ */
 #stats {
-  background: #0a0a0a !important;
+  background: var(--anthracite) !important;
   background-image: none !important;
   padding: 0 !important;
   margin-top: 0 !important;
