@@ -3112,6 +3112,14 @@ footer { background: #2b2b2b; color: #fff; }
 .activite-text.light-bg .eureka-split-tag { background: rgba(0,0,0,0.06); color: var(--anthracite); }
 .activite-text.light-bg h3 { color: var(--anthracite); }
 .activite-text.light-bg p { color: var(--gray); }
+.activite-text.light-bg .split-btn {
+  border-color: var(--anthracite);
+  color: var(--anthracite);
+}
+.activite-text.light-bg .split-btn:hover {
+  background: var(--anthracite);
+  color: #fff;
+}
 
 /* Small Image Variant for Atelier */
 .activite-row.small-img-row {
@@ -3191,3 +3199,160 @@ footer { background: #2b2b2b; color: #fff; }
 .activite-text.gray-bg p { color: var(--gray); }
 .gray-row { background: #f1f1f1 !important; }
 .gray-row .activite-text { background: #f1f1f1 !important; }
+
+/* ════════════════════════════════════════════════════
+   KEY NUMBERS — BANDE CHIFFRES (remplace trust-strip)
+════════════════════════════════════════════════════ */
+#key-numbers {
+  background: var(--anthracite);
+  padding: 4.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+#key-numbers::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(255,255,255,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(255,255,255,0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+.key-numbers-inner {
+  position: relative; z-index: 1;
+  max-width: 1240px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+}
+.key-num-item {
+  position: relative;
+  text-align: center;
+  padding: 0.5rem 1.25rem;
+}
+.key-num-item + .key-num-item::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 20%;
+  width: 1px; height: 60%;
+  background: rgba(255,255,255,0.1);
+}
+.key-num-val {
+  display: block;
+  font-size: clamp(2.4rem, 4.2vw, 3.2rem);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 0.85rem;
+}
+.key-num-val em {
+  font-style: normal;
+  color: var(--accent);
+  font-weight: 900;
+}
+.key-num-label {
+  display: block;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  #key-numbers { padding: 3rem 1.5rem; }
+  .key-numbers-inner { grid-template-columns: repeat(2, 1fr); row-gap: 2.5rem; }
+  .key-num-item + .key-num-item::before { display: none; }
+  .key-num-item:nth-child(even)::before {
+    content: '';
+    position: absolute; left: 0; top: 20%;
+    width: 1px; height: 60%;
+    background: rgba(255,255,255,0.1);
+  }
+}
+
+/* ════════════════════════════════════════════════════
+   HOMEPAGE — UNIFY SPLIT-SECTION / EUREKA-SPLIT SIZES
+════════════════════════════════════════════════════ */
+#identite-teaser .split-section,
+#atelier-teaser .split-section,
+#hub-services .eureka-split,
+#hub-pieces .eureka-split,
+#hub-materiel .eureka-split,
+#hub-activites .eureka-split {
+  min-height: 500px;
+  align-items: stretch;
+}
+#identite-teaser .split-image,
+#atelier-teaser .split-image,
+#hub-services .eureka-split-image,
+#hub-pieces .eureka-split-image,
+#hub-materiel .eureka-split-image,
+#hub-activites .eureka-split-image {
+  flex: 1 1 50%;
+  height: auto;
+  min-height: 500px;
+}
+#identite-teaser .split-content,
+#atelier-teaser .split-content,
+#hub-services .eureka-split-content,
+#hub-pieces .eureka-split-content,
+#hub-materiel .eureka-split-content,
+#hub-activites .eureka-split-content {
+  flex: 1 1 50%;
+  min-height: 500px;
+}
+
+/* ════════════════════════════════════════════════════
+   ATELIER — IMAGES PLUS PETITES + VARIATION ANTHRACITE
+════════════════════════════════════════════════════ */
+.activite-row.small-img-row .activite-img {
+  flex: 0 0 30%;
+  min-height: 280px;
+}
+.activite-row.small-img-row .activite-text {
+  flex: 0 0 70%;
+  padding: 4rem 7% 4rem 5%;
+}
+.activite-row.small-img-row.reverse .activite-text {
+  padding: 4rem 5% 4rem 7%;
+}
+.activite-text.dark-bg {
+  background: var(--anthracite) !important;
+  color: #fff;
+}
+.activite-text.dark-bg h3 { color: #fff; }
+.activite-text.dark-bg p { color: rgba(255,255,255,0.75); }
+.activite-text.dark-bg .eureka-split-tag {
+  background: rgba(255,255,255,0.1) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+.activite-text.dark-bg .split-btn {
+  border-color: #fff;
+  color: #fff;
+}
+.activite-text.dark-bg .split-btn:hover {
+  background: #fff;
+  color: var(--anthracite);
+}
+
+/* ════════════════════════════════════════════════════
+   ACTIVITÉS — TAILLES UNIFORMES + FOND ANTHRACITE
+════════════════════════════════════════════════════ */
+.activite-row.extra-small-img .activite-img {
+  flex: 0 0 32%;
+  min-height: 320px;
+  max-height: 420px;
+}
+.activite-row.extra-small-img .activite-text {
+  flex: 0 0 68%;
+  padding: 4rem 7% 4rem 5%;
+}
+.activite-row.extra-small-img.reverse .activite-text {
+  padding: 4rem 5% 4rem 7%;
+}
+@media (max-width: 900px) {
+  .activite-row.extra-small-img .activite-img,
+  .activite-row.extra-small-img .activite-text { flex: none; width: 100%; padding: 3rem 2rem; }
+}
