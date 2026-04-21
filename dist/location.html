@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Location de toupies à béton — renfort immédiat pour votre activité — Eureka BTP, Seine-et-Marne.">
+  <title>Location de Toupies — Eureka BTP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    .service-hero {
+      position: relative; height: 55vh; min-height: 380px; max-height: 600px;
+      display: flex; align-items: flex-end; padding: 0 2rem 4.5rem; overflow: hidden;
+      background: url('/assets/PHOTO-2026-04-18-16-40-29%202-CdLY-tEu.jpg') center/cover no-repeat;
+    }
+    .service-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,14,22,0.88) 0%, rgba(10,14,22,0.5) 55%, rgba(10,14,22,0.3) 100%);
+    }
+    .service-hero-content {
+      position: relative; z-index: 2;
+      max-width: 1240px; margin: 0 auto; width: 100%; color: #fff;
+    }
+    .service-hero-back {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.6);
+      position: absolute; top: 5.5rem; left: 2rem; z-index: 5; transition: color 0.3s;
+    }
+    .service-hero-back:hover { color: var(--accent); }
+    .service-hero-content h1 { margin-bottom: 0.85rem; }
+    .service-hero-content p { font-size: 1.05rem; color: rgba(255,255,255,0.75); max-width: 640px; line-height: 1.72; }
+
+    #service-body { background: #fff; padding: 7rem 2rem; }
+    .service-body-inner {
+      max-width: 1240px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start;
+    }
+    .service-body-text .section-eyebrow { text-align: left; }
+    .service-body-text h2 { color: var(--anthracite); margin-bottom: 1.5rem; }
+    .service-body-text p { color: var(--gray); line-height: 1.78; font-size: 1rem; margin-bottom: 1.5rem; }
+    .service-body-text p:last-of-type { margin-bottom: 2rem; }
+
+    .service-features {
+      display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2.5rem;
+    }
+    .service-feature-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--light); border-radius: var(--radius);
+      border: 1px solid var(--border); border-left: 4px solid var(--accent);
+    }
+    .service-feature-item svg { width: 22px; height: 22px; color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+    .service-feature-item h4 { font-size: 0.95rem; color: var(--anthracite); margin-bottom: 0.25rem; }
+    .service-feature-item p { font-size: 0.85rem; color: var(--gray); margin: 0; line-height: 1.6; }
+
+    .service-body-img {
+      border-radius: 14px; overflow: hidden; min-height: 500px;
+      box-shadow: var(--shadow-lg); position: sticky; top: 120px;
+    }
+    .service-body-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    #service-cta { background: var(--dark); padding: 6rem 2rem; text-align: center; }
+    .service-cta-inner { max-width: 640px; margin: 0 auto; }
+    .service-cta-inner h2 { color: #fff; margin-bottom: 1rem; }
+    .service-cta-inner p { color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.75; margin-bottom: 2.5rem; }
+    .service-cta-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+    @media (max-width: 900px) {
+      .service-body-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .service-body-img { min-height: 300px; position: static; }
+    }
+  </style>
+  <link rel="stylesheet" crossorigin href="/assets/style-Bpc-o8k0.css">
+</head>
+<body>
+
+<nav id="navbar" class="scrolled">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="/assets/Logo%20eureka-CgDsgso3.jpg" alt="Eureka BTP" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li class="has-dropdown">
+        <a href="services.html" class="nav-dropdown-toggle">Services</a>
+        <div class="nav-dropdown">
+          <a href="reparation.html">Réparation<small>Diagnostic et remise en état</small></a>
+          <a href="livraison.html">Vente de pièces &amp; livraison<small>Toutes marques — 24-48h</small></a>
+          <a href="preparation.html">Préparation camion neuf<small>Mise en service clé en main</small></a>
+          <a href="location.html">Location<small>Toupies opérationnelles</small></a>
+          <a href="achat-revente.html">Achat &amp; revente<small>Pièces et camions</small></a>
+        </div>
+      </li>
+      <li><a href="pieces.html">Pièces détachées</a></li>
+      <li><a href="vente.html">Matériel</a></li>
+      <li><a href="activites.html">Nos activités</a></li>
+    </ul>
+    <a href="index.html#contact-strip" class="nav-cta">Demander un devis</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html">Accueil</a>
+    <a href="services.html"><strong>Services</strong></a>
+    <a href="reparation.html" style="padding-left:1.25rem;font-size:0.9rem;">· Réparation</a>
+    <a href="livraison.html" style="padding-left:1.25rem;font-size:0.9rem;">· Vente de pièces &amp; livraison</a>
+    <a href="preparation.html" style="padding-left:1.25rem;font-size:0.9rem;">· Préparation camion neuf</a>
+    <a href="location.html" style="padding-left:1.25rem;font-size:0.9rem;">· Location</a>
+    <a href="achat-revente.html" style="padding-left:1.25rem;font-size:0.9rem;">· Achat &amp; revente</a>
+    <a href="pieces.html">Pièces détachées</a>
+    <a href="vente.html">Matériel</a>
+    <a href="activites.html">Nos activités</a>
+    <a href="index.html#contact-strip" class="mobile-cta">Demander un devis</a>
+  </div>
+</nav>
+
+<section class="service-hero">
+  <div class="service-hero-overlay"></div>
+  <a href="index.html#services" class="service-hero-back">← Nos services</a>
+  <div class="service-hero-content">
+    <p class="section-eyebrow">Nos services</p>
+    <h1>Location de Toupies</h1>
+    <p>Un renfort opérationnel immédiat — toupies contrôlées et prêtes à l'emploi, courte ou longue durée.</p>
+  </div>
+</section>
+
+<section id="service-body">
+  <div class="service-body-inner">
+    <div class="service-body-text" data-animate>
+      <p class="section-eyebrow">Location de Toupies</p>
+      <h2>Un renfort opérationnel immédiat pour votre activité</h2>
+      <p>Besoin d'un véhicule de remplacement pendant une réparation, ou d'un renfort temporaire pour faire face à un pic d'activité ? Nous mettons à disposition des toupies à béton rigoureusement contrôlées et prêtes à l'emploi, pour des durées courtes ou longues selon vos besoins.</p>
+      <p>Notre flotte de location vous permet de maintenir votre cadence de production sans interruption, à des conditions transparentes et sans mauvaise surprise. Disponibilité rapide sur demande, toutes marques et toutes capacités.</p>
+      <p>Chaque toupie de notre flotte est entretenue et contrôlée régulièrement par nos techniciens. Vous bénéficiez d'un matériel fiable, opérationnel dès la prise en main, avec un support technique disponible tout au long de la location.</p>
+
+      <div class="service-features">
+        <div class="service-feature-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <div>
+            <h4>Disponibilité rapide</h4>
+            <p>Réponse sous 24h à votre demande de location avec mise à disposition dans les meilleurs délais.</p>
+          </div>
+        </div>
+        <div class="service-feature-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <div>
+            <h4>Matériel contrôlé & prêt à l'emploi</h4>
+            <p>Toutes nos toupies sont entretenues, révisées et prêtes à travailler dès leur sortie de notre parc.</p>
+          </div>
+        </div>
+        <div class="service-feature-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <div>
+            <h4>Toutes marques, toutes capacités</h4>
+            <p>Flotte variée pour répondre à tous les besoins — de la toupie 6m³ à la grande capacité 12m³.</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="index.html#contact-strip" class="btn-primary">Vérifier la disponibilité</a>
+    </div>
+
+    <div class="service-body-img" data-animate>
+      <img src="/assets/PHOTO-2026-04-18-16-40-30%204-eTH_iqzz.jpg" alt="Location toupies béton — Eureka BTP">
+    </div>
+  </div>
+</section>
+
+<section id="service-cta">
+  <div class="service-cta-inner" data-animate>
+    <p class="section-eyebrow" style="color:var(--accent);">Besoin d'un renfort ?</p>
+    <h2>Une toupie disponible sous 24h</h2>
+    <p>Contactez-nous pour vérifier la disponibilité de notre flotte et obtenir un tarif personnalisé selon votre durée et vos besoins.</p>
+    <div class="service-cta-actions">
+      <a href="index.html#contact-strip" class="btn-primary">Demander un devis gratuit</a>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="/assets/Logo%20eureka-CgDsgso3.jpg" alt="Eureka BTP" style="height:44px; width:auto;">
+      </div>
+      <p class="footer-tagline">25 ans au service des professionnels du BPE. Réparation, location, achat & revente de toupies à béton — toutes marques, partout en France.</p>
+      <div class="footer-coords">
+        <p><strong>Adresse :</strong> Gretz-Armainvilliers, Seine-et-Marne (77)</p>
+        <p><strong>Tél :</strong> <a href="tel:+33XXXXXXXXX">+33 X XX XX XX XX</a></p>
+        <p><strong>Email :</strong> <a href="mailto:contact@eurekabtp.com">contact@eurekabtp.com</a></p>
+      </div>
+      <div class="footer-hours">
+        <p><strong>Horaires :</strong></p>
+        <p>Lundi – Vendredi : 8h00 – 18h00</p>
+        <p>Samedi : 8h00 – 12h00</p>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="identite.html">Notre identité</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="activites.html">Nos activités</a></li>
+        <li><a href="pieces.html">Pièces détachées</a></li>
+        <li><a href="vente.html">Matériel</a></li>
+        <li><a href="atelier.html">L'atelier en action</a></li>
+        <li><a href="index.html#contact-strip">Contact &amp; Devis</a></li>
+      </ul>
+      <h5 style="margin-top:1.75rem">Services</h5>
+      <ul>
+        <li><a href="reparation.html">Réparation &amp; Maintenance</a></li>
+        <li><a href="livraison.html">Vente de pièces &amp; livraison</a></li>
+        <li><a href="preparation.html">Préparation camion neuf</a></li>
+        <li><a href="location.html">Location de toupies</a></li>
+        <li><a href="achat-revente.html">Achat &amp; Revente</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Eureka BTP — Tous droits réservés</p>
+    <div class="footer-bottom-links"><a href="#">Mentions légales</a><a href="#">Confidentialité</a></div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  const nb = document.getElementById('navbar');
+  window.addEventListener('scroll', () => nb.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+  document.getElementById('navBurger').addEventListener('click', function() {
+    document.getElementById('navMobile').classList.toggle('open');
+    this.classList.toggle('open');
+  });
+  document.querySelectorAll('[data-animate]').forEach(el => {
+    gsap.from(el, { y: 30, opacity: 0, duration: 0.75, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 85%' } });
+  });
+</script>
+</body>
+</html>

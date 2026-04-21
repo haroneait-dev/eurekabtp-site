@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="L'atelier en action — Eureka BTP. Découvrez les étapes de notre savoir-faire : soudure, carrosserie, mécanique, essais. Photos terrain.">
+  <title>L'atelier en action — Eureka BTP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Hero atelier */
+    .atelier-hero {
+      position: relative; height: 60vh; min-height: 420px; max-height: 640px;
+      display: flex; align-items: flex-end;
+      padding: 0 2rem 4.5rem;
+      overflow: hidden;
+      background: url('images/soudure/PHOTO-2026-04-18-16-40-33.jpg') center/cover no-repeat;
+    }
+    .atelier-hero::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,14,22,0.92) 0%, rgba(10,14,22,0.55) 55%, rgba(10,14,22,0.35) 100%);
+    }
+    .atelier-hero-content {
+      position: relative; z-index: 2;
+      max-width: 1240px; margin: 0 auto; width: 100%; color: #fff;
+    }
+    .atelier-hero-content h1 { margin-bottom: 0.9rem; }
+    .atelier-hero-content p { font-size: 1.05rem; color: rgba(255,255,255,0.8); max-width: 640px; line-height: 1.72; }
+
+    /* Intro */
+    #atelier-intro {
+      background: #fff;
+      padding: 7rem 2rem 4rem;
+    }
+    .atelier-intro-inner {
+      max-width: 900px; margin: 0 auto;
+      text-align: center;
+    }
+    .atelier-intro-inner p {
+      font-size: 1.08rem; color: var(--gray);
+      line-height: 1.85; margin-top: 1.5rem;
+    }
+
+    /* Process steps */
+    #atelier-process {
+      background: #fff;
+      padding: 4rem 2rem 8rem;
+    }
+    .atelier-process-inner {
+      max-width: 1240px; margin: 0 auto;
+    }
+    .process-step {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      margin-bottom: 7rem;
+    }
+    .process-step:last-child { margin-bottom: 0; }
+    .process-step.reverse .process-text { order: 2; }
+    .process-step.reverse .process-img { order: 1; }
+
+    .process-num {
+      font-size: 5rem; font-weight: 900;
+      color: var(--light);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.5rem;
+    }
+    .process-text h3 {
+      color: var(--anthracite);
+      margin-bottom: 1.1rem;
+      font-size: 1.75rem;
+    }
+    .process-text .process-tag {
+      display: inline-block;
+      font-size: 0.7rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.14em;
+      color: var(--anthracite);
+      padding: 0.35rem 0.85rem;
+      background: var(--light);
+      border-radius: 20px;
+      margin-bottom: 1.1rem;
+    }
+    .process-text p {
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      font-size: 0.98rem;
+    }
+
+    .process-img {
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      box-shadow: var(--shadow-lg);
+    }
+    .process-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.65s var(--ease);
+    }
+    .process-img:hover img { transform: scale(1.04); }
+
+    /* Gallery */
+    #atelier-gallery {
+      background: var(--anthracite);
+      padding: 7rem 2rem;
+    }
+    .atelier-gallery-inner {
+      max-width: 1320px; margin: 0 auto;
+    }
+    .atelier-gallery-inner .section-header { margin-bottom: 4rem; }
+    .atelier-gallery-inner .section-header h2 { color: #fff; }
+    .atelier-gallery-inner .section-subtitle { color: rgba(255,255,255,0.65); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 180px;
+      gap: 0.75rem;
+    }
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 8px;
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.7s var(--ease), filter 0.4s var(--ease);
+      filter: grayscale(10%);
+    }
+    .gallery-item:hover img { transform: scale(1.06); filter: grayscale(0%); }
+    .gallery-item--wide  { grid-column: span 2; }
+    .gallery-item--tall  { grid-row: span 2; }
+    .gallery-item--big   { grid-column: span 2; grid-row: span 2; }
+
+    @media (max-width: 900px) {
+      .process-step { grid-template-columns: 1fr; gap: 2.5rem; }
+      .process-step.reverse .process-text { order: 1; }
+      .process-step.reverse .process-img { order: 2; }
+      .process-num { font-size: 3.5rem; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
+      .gallery-item--wide, .gallery-item--big { grid-column: span 2; }
+      .gallery-item--tall { grid-row: span 1; }
+    }
+
+    /* CTA */
+    #atelier-cta {
+      background: var(--dark);
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    .atelier-cta-inner { max-width: 640px; margin: 0 auto; }
+    .atelier-cta-inner h2 { color: #fff; margin-bottom: 1rem; }
+    .atelier-cta-inner p { color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.75; margin-bottom: 2.5rem; }
+  </style>
+</head>
+<body>
+
+<nav id="navbar" class="scrolled">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/Logo eureka.jpg" alt="Eureka BTP" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li class="has-dropdown">
+        <a href="services.html" class="nav-dropdown-toggle">Services</a>
+        <div class="nav-dropdown">
+          <a href="reparation.html">Réparation<small>Diagnostic et remise en état</small></a>
+          <a href="livraison.html">Vente de pièces &amp; livraison<small>Toutes marques — 24-48h</small></a>
+          <a href="preparation.html">Préparation camion neuf<small>Mise en service clé en main</small></a>
+          <a href="location.html">Location<small>Toupies opérationnelles</small></a>
+          <a href="achat-revente.html">Achat &amp; revente<small>Pièces et camions</small></a>
+        </div>
+      </li>
+      <li><a href="pieces.html">Pièces détachées</a></li>
+      <li><a href="vente.html">Matériel</a></li>
+      <li><a href="activites.html">Nos activités</a></li>
+    </ul>
+    <a href="index.html#contact-strip" class="nav-cta">Demander un devis</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html">Accueil</a>
+    <a href="services.html"><strong>Services</strong></a>
+    <a href="reparation.html" style="padding-left:1.25rem;font-size:0.9rem;">· Réparation</a>
+    <a href="livraison.html" style="padding-left:1.25rem;font-size:0.9rem;">· Vente de pièces &amp; livraison</a>
+    <a href="preparation.html" style="padding-left:1.25rem;font-size:0.9rem;">· Préparation camion neuf</a>
+    <a href="location.html" style="padding-left:1.25rem;font-size:0.9rem;">· Location</a>
+    <a href="achat-revente.html" style="padding-left:1.25rem;font-size:0.9rem;">· Achat &amp; revente</a>
+    <a href="pieces.html">Pièces détachées</a>
+    <a href="vente.html">Matériel</a>
+    <a href="activites.html">Nos activités</a>
+    <a href="index.html#contact-strip" class="mobile-cta">Demander un devis</a>
+  </div>
+</nav>
+
+<section class="atelier-hero">
+  <div class="atelier-hero-content">
+    <p class="section-eyebrow">Notre savoir-faire</p>
+    <h1>L'atelier en action</h1>
+    <p>Soudure, réfection de carrosserie, révision mécanique, essais — chaque matériel repart opérationnel entre les mains de nos techniciens, en Seine-et-Marne.</p>
+  </div>
+</section>
+
+<section id="atelier-intro">
+  <div class="atelier-intro-inner" data-animate>
+    <p class="section-eyebrow">Bienvenue dans nos locaux</p>
+    <h2 style="color:var(--anthracite);">Un atelier pensé pour la carrosserie béton lourde</h2>
+    <p>Nos installations en Seine-et-Marne rassemblent un atelier de soudure complet, une baie de mécanique grande capacité, un stock de pièces détachées toutes marques et un espace dédié à la préparation des camions neufs. Chaque poste est équipé pour traiter des toupies, pompes et centrales — des plus petites unités aux grandes capacités.</p>
+    <p>Notre équipe intervient du diagnostic au contrôle final. Voici, en quatre étapes, le parcours d'un véhicule qui entre chez nous.</p>
+  </div>
+</section>
+
+<section id="atelier-process">
+  <div class="atelier-process-inner">
+
+    <div class="process-step" data-animate>
+      <div class="process-text">
+        <span class="process-tag">Étape 01</span>
+        <div class="process-num">01</div>
+        <h3>Diagnostic &amp; réception</h3>
+        <p>Chaque véhicule commence par un diagnostic complet : inspection visuelle, contrôle mécanique, évaluation des défauts de carrosserie. Nous dressons un état précis avant toute intervention, pour que vous sachiez exactement ce qui est à faire, à quel coût et dans quels délais.</p>
+        <p>Aucune surprise : le devis détaillé est validé avant lancement des travaux.</p>
+      </div>
+      <div class="process-img">
+        <img src="images/camion/PHOTO-2026-04-18-16-40-31.jpg" alt="Diagnostic d'un véhicule béton à l'atelier Eureka BTP">
+      </div>
+    </div>
+
+    <div class="process-step reverse" data-animate>
+      <div class="process-text">
+        <span class="process-tag">Étape 02</span>
+        <div class="process-num">02</div>
+        <h3>Soudure &amp; carrosserie</h3>
+        <p>C'est le cœur de notre métier depuis 2001. Nos soudeurs qualifiés interviennent sur cuves, goulottes, châssis, cabines — redressage, panneautage, reconstructions partielles ou complètes. Nous travaillons l'acier lourd avec la rigueur qu'exige un véhicule qui va repartir sur chantier.</p>
+        <p>Chaque soudure est contrôlée, chaque tôle protégée contre la corrosion avant remise en peinture.</p>
+      </div>
+      <div class="process-img">
+        <img src="images/soudure/PHOTO-2026-04-18-16-40-33.jpg" alt="Soudure de carrosserie béton — atelier Eureka BTP">
+      </div>
+    </div>
+
+    <div class="process-step" data-animate>
+      <div class="process-text">
+        <span class="process-tag">Étape 03</span>
+        <div class="process-num">03</div>
+        <h3>Mécanique &amp; hydraulique</h3>
+        <p>Révision moteur, remplacement embrayage, maintenance des circuits hydrauliques et pneumatiques, réducteurs et pompes hydrauliques — nos techniciens maîtrisent toutes les marques : IMER, Stetter, Liebherr, Putzmeister, CIFA, Schwing.</p>
+        <p>Notre stock permanent de pièces détachées nous permet de limiter au maximum les temps d'immobilisation.</p>
+      </div>
+      <div class="process-img">
+        <img src="images/soudure/PHOTO-2026-04-18-16-40-32%204.jpg" alt="Intervention mécanique et hydraulique sur bétonnière">
+      </div>
+    </div>
+
+    <div class="process-step reverse" data-animate>
+      <div class="process-text">
+        <span class="process-tag">Étape 04</span>
+        <div class="process-num">04</div>
+        <h3>Contrôle final &amp; essais</h3>
+        <p>Avant remise des clés, chaque véhicule passe par une phase d'essais : fonctionnement des équipements, contrôle des sécurités, vérifications d'étanchéité, test en charge si nécessaire. Nous ne rendons que du matériel opérationnel.</p>
+        <p>Un rapport d'intervention est systématiquement remis au client, avec toutes les pièces changées et les contrôles effectués.</p>
+      </div>
+      <div class="process-img">
+        <img src="images/camion/PHOTO-2026-04-18-16-40-30.jpg" alt="Contrôle final et essais — Eureka BTP">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="atelier-gallery">
+  <div class="atelier-gallery-inner">
+    <div class="section-header" data-animate>
+      <p class="section-eyebrow" style="color:rgba(255,255,255,0.6);">Galerie atelier</p>
+      <h2>Notre atelier au travail</h2>
+      <p class="section-subtitle">Quelques clichés de nos interventions : soudure, carrosserie, préparation et essais.</p>
+    </div>
+
+    <div class="gallery-grid" data-animate>
+      <div class="gallery-item gallery-item--big">
+        <img src="images/soudure/PHOTO-2026-04-18-16-40-33.jpg" alt="Soudure sur carrosserie béton" loading="lazy">
+      </div>
+      <div class="gallery-item gallery-item--tall">
+        <img src="images/camion/PHOTO-2026-04-18-16-40-30.jpg" alt="Bétonnière en atelier" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="images/soudure/PHOTO-2026-04-18-16-40-32%204.jpg" alt="Soudure précision" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="images/camion/PHOTO-2026-04-18-16-40-31.jpg" alt="Camion sur poste de préparation" loading="lazy">
+      </div>
+      <div class="gallery-item gallery-item--wide">
+        <img src="images/camion/PHOTO-2026-04-18-16-40-30%202.jpg" alt="Pièces et composants béton" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="images/soudure/PHOTO-2026-04-18-16-40-33%204.jpg" alt="Atelier de soudure Eureka BTP" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="images/structure/PHOTO-2026-04-18-16-43-12.jpg" alt="Structure et locaux Eureka BTP" loading="lazy">
+      </div>
+      <div class="gallery-item gallery-item--wide">
+        <img src="images/camion/PHOTO-2026-04-18-16-40-29.jpg" alt="Toupies à béton en cour atelier" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="images/soudure/PHOTO-2026-04-18-16-40-33%203.jpg" alt="Soudeur au travail" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="atelier-cta">
+  <div class="atelier-cta-inner" data-animate>
+    <p class="section-eyebrow" style="color:#fff;">Parlons de votre matériel</p>
+    <h2>Confiez-nous votre parc</h2>
+    <p>Notre atelier est prêt à accueillir vos toupies, pompes et camions. Décrivez-nous votre besoin, nos techniciens reviennent vers vous sous 24h.</p>
+    <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+      <a href="index.html#contact-strip" class="btn-primary">Demander un devis gratuit</a>
+      <a href="services.html" class="btn-ghost">Voir tous nos services</a>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="images/Logo eureka.jpg" alt="Eureka BTP" style="height:44px; width:auto;">
+      </div>
+      <p class="footer-tagline">25 ans au service des professionnels du BPE. Réparation, location, achat &amp; revente de toupies à béton — toutes marques, partout en France.</p>
+      <div class="footer-coords">
+        <p><strong>Adresse :</strong> Gretz-Armainvilliers, Seine-et-Marne (77)</p>
+        <p><strong>Tél :</strong> <a href="tel:+33XXXXXXXXX">+33 X XX XX XX XX</a></p>
+        <p><strong>Email :</strong> <a href="mailto:contact@eurekabtp.com">contact@eurekabtp.com</a></p>
+      </div>
+      <div class="footer-hours">
+        <p><strong>Horaires :</strong></p>
+        <p>Lundi – Vendredi : 8h00 – 18h00</p>
+        <p>Samedi : 8h00 – 12h00</p>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="identite.html">Notre identité</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="activites.html">Nos activités</a></li>
+        <li><a href="pieces.html">Pièces détachées</a></li>
+        <li><a href="vente.html">Matériel</a></li>
+        <li><a href="atelier.html">L'atelier en action</a></li>
+        <li><a href="index.html#contact-strip">Contact &amp; Devis</a></li>
+      </ul>
+      <h5 style="margin-top:1.75rem">Services</h5>
+      <ul>
+        <li><a href="reparation.html">Réparation &amp; Maintenance</a></li>
+        <li><a href="livraison.html">Vente de pièces &amp; livraison</a></li>
+        <li><a href="preparation.html">Préparation camion neuf</a></li>
+        <li><a href="location.html">Location de toupies</a></li>
+        <li><a href="achat-revente.html">Achat &amp; Revente</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Eureka BTP — Tous droits réservés</p>
+    <div class="footer-bottom-links"><a href="#">Mentions légales</a><a href="#">Confidentialité</a></div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  document.getElementById('navBurger').addEventListener('click', function() {
+    document.getElementById('navMobile').classList.toggle('open');
+    this.classList.toggle('open');
+  });
+  document.querySelectorAll('[data-animate]').forEach(el => {
+    gsap.from(el, { y: 30, opacity: 0, duration: 0.75, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 85%' } });
+  });
+</script>
+</body>
+</html>

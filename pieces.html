@@ -17,27 +17,40 @@
 <nav id="navbar" class="scrolled">
   <div class="nav-container">
     <a href="index.html" class="nav-logo">
-      <span class="logo-eureka">EUREKA</span><span class="logo-btp">BTP</span>
+      <img src="images/Logo eureka.jpg" alt="Eureka BTP" class="nav-logo-img">
     </a>
     <ul class="nav-links">
-      <li><a href="identite.html">Identité</a></li>
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="pieces.html" style="color:var(--accent)">Pièces détachées</a></li>
-      <li><a href="index.html#vente">Achat & Revente</a></li>
-      <li><a href="index.html#avis">Avis clients</a></li>
+      <li><a href="index.html">Accueil</a></li>
+      <li class="has-dropdown">
+        <a href="services.html" class="nav-dropdown-toggle">Services</a>
+        <div class="nav-dropdown">
+          <a href="reparation.html">Réparation<small>Diagnostic et remise en état</small></a>
+          <a href="livraison.html">Vente de pièces &amp; livraison<small>Toutes marques — 24-48h</small></a>
+          <a href="preparation.html">Préparation camion neuf<small>Mise en service clé en main</small></a>
+          <a href="location.html">Location<small>Toupies opérationnelles</small></a>
+          <a href="achat-revente.html">Achat &amp; revente<small>Pièces et camions</small></a>
+        </div>
+      </li>
+      <li><a href="pieces.html">Pièces détachées</a></li>
+      <li><a href="vente.html">Matériel</a></li>
+      <li><a href="activites.html">Nos activités</a></li>
     </ul>
-    <div class="nav-right-stack">
-      <a href="index.html#contact-strip" class="nav-cta">Demander un devis</a>
-    </div>
+    <a href="index.html#contact-strip" class="nav-cta">Demander un devis</a>
     <button class="nav-burger" id="navBurger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="nav-mobile" id="navMobile">
-    <a href="index.html#services">Services</a>
+    <a href="index.html">Accueil</a>
+    <a href="services.html"><strong>Services</strong></a>
+    <a href="reparation.html" style="padding-left:1.25rem;font-size:0.9rem;">· Réparation</a>
+    <a href="livraison.html" style="padding-left:1.25rem;font-size:0.9rem;">· Vente de pièces &amp; livraison</a>
+    <a href="preparation.html" style="padding-left:1.25rem;font-size:0.9rem;">· Préparation camion neuf</a>
+    <a href="location.html" style="padding-left:1.25rem;font-size:0.9rem;">· Location</a>
+    <a href="achat-revente.html" style="padding-left:1.25rem;font-size:0.9rem;">· Achat &amp; revente</a>
     <a href="pieces.html">Pièces détachées</a>
-    <a href="index.html#vente">Achat & Revente</a>
-    <a href="index.html#contact-strip">Contact</a>
+    <a href="vente.html">Matériel</a>
+    <a href="activites.html">Nos activités</a>
     <a href="index.html#contact-strip" class="mobile-cta">Demander un devis</a>
   </div>
 </nav>
@@ -45,7 +58,7 @@
 <!-- HERO PAGE -->
 <section class="page-hero">
   <div class="page-hero-overlay"></div>
-  <div class="page-hero-bg" style="background: linear-gradient(135deg, #0c1424 0%, #1d4ed8 60%, #0f1e3d 100%);"></div>
+  <div class="page-hero-bg" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 60%, #2b2b2b 100%);"></div>
   <div class="page-hero-content">
     <p class="section-eyebrow">Catalogue complet</p>
     <h1>Pièces Détachées</h1>
@@ -86,7 +99,7 @@
     <div class="catalog-grid" data-animate>
 
       <!-- Item 1 — wide -->
-      <div class="catalog-card card-wide" data-search="rallonge goulotte plastique toupie extension matériaux" data-tag="Toupie">
+      <div class="catalog-card" data-search="rallonge goulotte plastique toupie extension matériaux" data-tag="Toupie">
         <div class="catalog-img catalog-img--light">
           <img src="pieces%20detache/13ZVV1VYFdZ9a3vpMhMbO3Ciuk.avif" alt="Rallonge de goulotte en plastique haute résistance">
         </div>
@@ -146,7 +159,7 @@
       </div>
 
       <!-- Item 6 — wide -->
-      <div class="catalog-card card-wide" data-search="pompe hydraulique pression puissance haute performance" data-tag="Hydraulique">
+      <div class="catalog-card" data-search="pompe hydraulique pression puissance haute performance" data-tag="Hydraulique">
         <div class="catalog-img catalog-img--light">
           <img src="pieces%20detache/XRQZsGsp3bAERyptzXNi9kK4hHs.avif" alt="Pompe hydraulique">
         </div>
@@ -170,7 +183,7 @@
       </div>
 
       <!-- Item 8 — wide -->
-      <div class="catalog-card card-wide" data-search="câble commande mécanique transmission renforcé" data-tag="Commande">
+      <div class="catalog-card" data-search="câble commande mécanique transmission renforcé" data-tag="Commande">
         <div class="catalog-img catalog-img--light">
           <img src="pieces%20detache/ZejEDtwfU4sNAANYP3PuwkYJNzU.avif" alt="Câble de commande">
         </div>
@@ -218,7 +231,7 @@
       </div>
 
       <!-- Item 12 — wide -->
-      <div class="catalog-card card-wide" data-search="joints accessoires étanchéité fixation divers" data-tag="Accessoires">
+      <div class="catalog-card" data-search="joints accessoires étanchéité fixation divers" data-tag="Accessoires">
         <div class="catalog-img catalog-img--light">
           <img src="pieces%20detache/r6Ki0LPbKmgLOPGINwW7NCYk.avif" alt="Joints et accessoires divers">
         </div>
@@ -263,7 +276,9 @@
 <footer id="footer">
   <div class="footer-container">
     <div class="footer-brand">
-      <div class="footer-logo"><span class="logo-eureka">EUREKA</span><span class="logo-btp">BTP</span></div>
+      <div class="footer-logo">
+        <img src="images/Logo eureka.jpg" alt="Eureka BTP" style="height:44px; width:auto;">
+      </div>
       <p class="footer-tagline">25 ans au service des professionnels du BPE.</p>
       <div class="footer-coords">
         <p><strong>Adresse :</strong> Seine-et-Marne (77), France</p>
@@ -275,10 +290,21 @@
       <h5>Navigation</h5>
       <ul>
         <li><a href="index.html">Accueil</a></li>
-        <li><a href="index.html#services">Nos services</a></li>
+        <li><a href="identite.html">Notre identité</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="activites.html">Nos activités</a></li>
         <li><a href="pieces.html">Pièces détachées</a></li>
-        <li><a href="index.html#vente">Achat & Revente</a></li>
-        <li><a href="index.html#contact-strip">Contact & Devis</a></li>
+        <li><a href="vente.html">Matériel</a></li>
+        <li><a href="atelier.html">L'atelier en action</a></li>
+        <li><a href="index.html#contact-strip">Contact &amp; Devis</a></li>
+      </ul>
+      <h5 style="margin-top:1.75rem">Services</h5>
+      <ul>
+        <li><a href="reparation.html">Réparation &amp; Maintenance</a></li>
+        <li><a href="livraison.html">Vente de pièces &amp; livraison</a></li>
+        <li><a href="preparation.html">Préparation camion neuf</a></li>
+        <li><a href="location.html">Location de toupies</a></li>
+        <li><a href="achat-revente.html">Achat &amp; Revente</a></li>
       </ul>
     </div>
   </div>
@@ -313,16 +339,6 @@
   const catalogTotal = document.getElementById('catalogTotal');
   const allCards  = Array.from(document.querySelectorAll('.catalog-card'));
 
-  /* Inject permanent CTA into every card */
-  allCards.forEach(card => {
-    const content = card.querySelector('.catalog-content');
-    if (!content) return;
-    const a = document.createElement('a');
-    a.href = 'index.html#contact-strip';
-    a.className = 'catalog-devis';
-    a.textContent = 'Demander un devis';
-    content.appendChild(a);
-  });
 
   let lastScrollY = window.scrollY;
   window.addEventListener('scroll', () => {

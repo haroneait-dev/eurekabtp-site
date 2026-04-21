@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Services de réparation et maintenance de toupies à béton — Eureka BTP, expert carrosserie béton depuis 2001 en Seine-et-Marne.">
+  <title>Services de Réparation — Eureka BTP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    .vente-hero {
+      position: relative; height: 50vh; min-height: 340px; max-height: 520px;
+      display: flex; align-items: flex-end; padding: 0 2rem 4rem; overflow: hidden;
+      background: url('/assets/PHOTO-2026-04-18-16-40-33-De8cGgyb.jpg') center/cover no-repeat;
+    }
+    .vente-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,14,22,0.92) 0%, rgba(10,14,22,0.55) 60%, rgba(10,14,22,0.3) 100%);
+    }
+    .vente-hero-content {
+      position: relative; z-index: 2;
+      max-width: 1240px; margin: 0 auto; width: 100%; color: #fff;
+    }
+    .vente-hero-back {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.6);
+      position: absolute; top: 5.5rem; left: 2rem; z-index: 5; transition: color 0.3s;
+    }
+    .vente-hero-back:hover { color: var(--accent); }
+    .vente-hero-content h1 { margin-bottom: 0.75rem; }
+    .vente-hero-content p { font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 580px; line-height: 1.7; }
+
+    /* ── SECTION SERVICES ── */
+    #vente-stock { background: var(--light); padding: 7rem 2rem; }
+    .vente-stock-inner { max-width: 1240px; margin: 0 auto; }
+    .vente-stock-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem;
+    }
+
+    /* ── CARTE SERVICE ── */
+    .srv-card {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      display: flex; flex-direction: column;
+      transition: box-shadow var(--t), transform var(--t);
+    }
+    .srv-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-5px); }
+
+    .srv-img {
+      height: 200px; overflow: hidden; position: relative;
+    }
+    .srv-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .srv-card:hover .srv-img img { transform: scale(1.05); }
+    .srv-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,14,22,0.55) 0%, transparent 60%);
+    }
+    .srv-num {
+      position: absolute; top: 1rem; left: 1rem;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--accent); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 900; letter-spacing: -0.03em;
+    }
+
+    .srv-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .srv-tag {
+      display: inline-block; font-size: 0.65rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--accent); margin-bottom: 0.65rem;
+    }
+    .srv-body h3 {
+      font-size: 1rem; font-weight: 800; color: var(--anthracite);
+      margin-bottom: 0.6rem; line-height: 1.35;
+    }
+    .srv-body p {
+      font-size: 0.88rem; color: var(--gray); line-height: 1.65; margin-bottom: 1.1rem; flex: 1;
+    }
+    .srv-list {
+      list-style: none; padding: 0; margin: 0 0 1.25rem;
+      display: flex; flex-direction: column; gap: 0.35rem;
+    }
+    .srv-list li {
+      font-size: 0.8rem; color: var(--mid); display: flex; align-items: center; gap: 0.5rem;
+    }
+    .srv-list li::before {
+      content: ''; display: block; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0;
+    }
+    .srv-cta {
+      display: block; text-align: center;
+      padding: 0.7rem 1rem;
+      background: var(--accent); color: #fff;
+      border-radius: 8px; font-size: 0.85rem; font-weight: 700;
+      transition: background var(--t), transform var(--t);
+    }
+    .srv-cta:hover { background: var(--accent-dk); transform: translateY(-1px); }
+
+    /* ── BANDEAU URGENCE ── */
+    .urgence-band {
+      max-width: 1240px; margin: 0 auto 3rem;
+      display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+      padding: 1.75rem 2.25rem;
+      background: var(--anthracite); border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .urgence-band-icon { color: var(--accent); flex-shrink: 0; }
+    .urgence-band-icon svg { width: 28px; height: 28px; }
+    .urgence-band-text { flex: 1; min-width: 200px; }
+    .urgence-band-text strong { display: block; font-size: 1rem; color: #fff; margin-bottom: 0.3rem; }
+    .urgence-band-text span { font-size: 0.88rem; color: rgba(255,255,255,0.6); }
+
+    .vente-cta-strip {
+      max-width: 1240px; margin: 0 auto;
+      display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;
+      padding: 1.75rem 2.25rem;
+      background: #fff; border-radius: var(--radius);
+      border-left: 4px solid var(--accent); box-shadow: var(--shadow-sm);
+    }
+    .vente-cta-strip svg { width: 22px; height: 22px; color: var(--accent); flex-shrink: 0; }
+    .vente-cta-strip p { font-size: 0.92rem; color: var(--mid); flex: 1; min-width: 200px; }
+
+    @media (max-width: 900px) { .vente-stock-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 600px) { .vente-stock-grid { grid-template-columns: 1fr; } }
+  </style>
+  <link rel="stylesheet" crossorigin href="/assets/style-Bpc-o8k0.css">
+</head>
+<body>
+
+<nav id="navbar" class="scrolled">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="/assets/Logo%20eureka-CgDsgso3.jpg" alt="Eureka BTP" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li class="has-dropdown">
+        <a href="services.html" class="nav-dropdown-toggle">Services</a>
+        <div class="nav-dropdown">
+          <a href="reparation.html">Réparation<small>Diagnostic et remise en état</small></a>
+          <a href="livraison.html">Vente de pièces &amp; livraison<small>Toutes marques — 24-48h</small></a>
+          <a href="preparation.html">Préparation camion neuf<small>Mise en service clé en main</small></a>
+          <a href="location.html">Location<small>Toupies opérationnelles</small></a>
+          <a href="achat-revente.html">Achat &amp; revente<small>Pièces et camions</small></a>
+        </div>
+      </li>
+      <li><a href="pieces.html">Pièces détachées</a></li>
+      <li><a href="vente.html">Matériel</a></li>
+      <li><a href="activites.html">Nos activités</a></li>
+    </ul>
+    <a href="index.html#contact-strip" class="nav-cta">Demander un devis</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html">Accueil</a>
+    <a href="services.html"><strong>Services</strong></a>
+    <a href="reparation.html" style="padding-left:1.25rem;font-size:0.9rem;">· Réparation</a>
+    <a href="livraison.html" style="padding-left:1.25rem;font-size:0.9rem;">· Vente de pièces &amp; livraison</a>
+    <a href="preparation.html" style="padding-left:1.25rem;font-size:0.9rem;">· Préparation camion neuf</a>
+    <a href="location.html" style="padding-left:1.25rem;font-size:0.9rem;">· Location</a>
+    <a href="achat-revente.html" style="padding-left:1.25rem;font-size:0.9rem;">· Achat &amp; revente</a>
+    <a href="pieces.html">Pièces détachées</a>
+    <a href="vente.html">Matériel</a>
+    <a href="activites.html">Nos activités</a>
+    <a href="index.html#contact-strip" class="mobile-cta">Demander un devis</a>
+  </div>
+</nav>
+
+<section class="vente-hero">
+  <div class="vente-hero-overlay"></div>
+  <div class="vente-hero-content">
+    <p class="section-eyebrow">Expertise depuis 2001</p>
+    <h1>Services de Réparation</h1>
+    <p>Réparation, maintenance et remise en état de toupies et pompes à béton — toutes marques, partout en France. Devis gratuit sous 24h.</p>
+  </div>
+</section>
+
+<section id="vente-stock">
+  <div class="vente-stock-inner">
+
+    <!-- Bandeau urgence -->
+    <div class="urgence-band" data-animate>
+      <div class="urgence-band-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      </div>
+      <div class="urgence-band-text">
+        <strong>Intervention d'urgence disponible</strong>
+        <span>Toupie immobilisée ? Nos techniciens se déplacent — diagnostic rapide, remise en route prioritaire.</span>
+      </div>
+      <a href="index.html#contact-strip" class="btn-primary">Appeler maintenant</a>
+    </div>
+
+    <div class="vente-stock-grid" data-animate>
+
+      <!-- 1 — Réparation toupie à béton -->
+      <div class="srv-card">
+        <div class="srv-img">
+          <img src="/assets/PHOTO-2026-04-18-16-40-33-De8cGgyb.jpg" alt="Réparation toupie à béton">
+          <div class="srv-img-overlay"></div>
+          <span class="srv-num">01</span>
+        </div>
+        <div class="srv-body">
+          <span class="srv-tag">Réparation</span>
+          <h3>Réparation de toupie à béton</h3>
+          <p>Diagnostic complet, remplacement des pièces défaillantes et remise en état fonctionnelle. Toutes marques : IMER, Stetter, Liebherr, CIFA.</p>
+          <ul class="srv-list">
+            <li>Diagnostic sur place ou en atelier</li>
+            <li>Remplacement pièces d'usure</li>
+            <li>Tests et contrôle final</li>
+            <li>Devis gratuit sous 24h</li>
+          </ul>
+          <a href="index.html#contact-strip" class="srv-cta">Demander un devis →</a>
+        </div>
+      </div>
+
+      <!-- 2 — Soudure & réfection carrosserie -->
+      <div class="srv-card">
+        <div class="srv-img">
+          <img src="/assets/PHOTO-2026-04-18-16-40-32%204-DdRoBdoI.jpg" alt="Soudure et réfection carrosserie béton">
+          <div class="srv-img-overlay"></div>
+          <span class="srv-num">02</span>
+        </div>
+        <div class="srv-body">
+          <span class="srv-tag">Carrosserie</span>
+          <h3>Soudure &amp; réfection de carrosserie</h3>
+          <p>Remise en forme de la structure, soudure de renforts, traitement anticorrosion et protection de surface pour prolonger la durée de vie de votre matériel.</p>
+          <ul class="srv-list">
+            <li>Soudure MIG/TIG tous matériaux</li>
+            <li>Remplacement tôles d'usure</li>
+            <li>Traitement anticorrosion</li>
+            <li>Peinture de finition</li>
+          </ul>
+          <a href="index.html#contact-strip" class="srv-cta">Demander un devis →</a>
+        </div>
+      </div>
+
+      <!-- 3 — Révision système hydraulique -->
+      <div class="srv-card">
+        <div class="srv-img">
+          <img src="/assets/PHOTO-2026-04-18-16-40-30-G2NElDkg.jpg" alt="Révision système hydraulique toupie">
+          <div class="srv-img-overlay"></div>
+          <span class="srv-num">03</span>
+        </div>
+        <div class="srv-body">
+          <span class="srv-tag">Hydraulique</span>
+          <h3>Révision du système hydraulique</h3>
+          <p>Contrôle et remise en état complète du circuit hydraulique : pompe, vérins, flexibles, distributeurs. Prévient les pannes coûteuses sur chantier.</p>
+          <ul class="srv-list">
+            <li>Vidange et remplacement fluides</li>
+            <li>Contrôle pression et débit</li>
+            <li>Remplacement joints et flexibles</li>
+            <li>Test circuit complet</li>
+          </ul>
+          <a href="index.html#contact-strip" class="srv-cta">Demander un devis →</a>
+        </div>
+      </div>
+
+      <!-- 4 — Remplacement cuve / tambour -->
+      <div class="srv-card">
+        <div class="srv-img">
+          <img src="/assets/PHOTO-2026-04-18-16-40-31-B-vVGv8m.jpg" alt="Remplacement cuve tambour toupie">
+          <div class="srv-img-overlay"></div>
+          <span class="srv-num">04</span>
+        </div>
+        <div class="srv-body">
+          <span class="srv-tag">Cuve & Tambour</span>
+          <h3>Remplacement de cuve ou tambour</h3>
+          <p>Dépose de l'ancien tambour, pose et réglage d'une cuve neuve ou reconditionnée. Intervention réalisée en atelier ou sur site selon vos contraintes.</p>
+          <ul class="srv-list">
+            <li>Dépose et repose en atelier</li>
+            <li>Réglage et alignement</li>
+            <li>Compatible toutes marques</li>
+            <li>Remise en service incluse</li>
+          </ul>
+          <a href="index.html#contact-strip" class="srv-cta">Demander un devis →</a>
+        </div>
+      </div>
+
+      <!-- 5 — Maintenance préventive -->
+      <div class="srv-card">
+        <div class="srv-img">
+          <img src="/assets/PHOTO-2026-04-18-16-40-33%202-WICfNp-V.jpg" alt="Maintenance préventive bétonnière">
+          <div class="srv-img-overlay"></div>
+          <span class="srv-num">05</span>
+        </div>
+        <div class="srv-body">
+          <span class="srv-tag">Maintenance</span>
+          <h3>Maintenance préventive</h3>
+          <p>Programme d'entretien régulier pour éviter les pannes imprévues et maximiser la durée de vie de votre parc. Adapté à votre planning de production.</p>
+          <ul class="srv-list">
+            <li>Contrôle périodique complet</li>
+            <li>Graissage et réglages</li>
+            <li>Rapport d'état détaillé</li>
+            <li>Contrat annuel disponible</li>
+          </ul>
+          <a href="index.html#contact-strip" class="srv-cta">Demander un devis →</a>
+        </div>
+      </div>
+
+      <!-- 6 — Remise en état complète -->
+      <div class="srv-card">
+        <div class="srv-img">
+          <img src="/assets/PHOTO-2026-04-18-16-40-29-Bow-Xd2q.jpg" alt="Remise en état complète bétonnière">
+          <div class="srv-img-overlay"></div>
+          <span class="srv-num">06</span>
+        </div>
+        <div class="srv-body">
+          <span class="srv-tag">Remise en état</span>
+          <h3>Remise en état complète</h3>
+          <p>Révision totale de votre bétonnière : mécanique, hydraulique, électrique, carrosserie. Votre matériel repart comme au premier jour, prêt pour le chantier.</p>
+          <ul class="srv-list">
+            <li>Révision mécanique et hydraulique</li>
+            <li>Réfection complète carrosserie</li>
+            <li>Contrôle électrique et commandes</li>
+            <li>Certificat de remise en état</li>
+          </ul>
+          <a href="index.html#contact-strip" class="srv-cta">Demander un devis →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="vente-cta-strip" data-animate>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <p>Besoin d'un service non listé ? Nos techniciens interviennent sur tout type de réparation — contactez-nous pour un diagnostic gratuit.</p>
+      <a href="index.html#contact-strip" class="btn-primary">Diagnostic gratuit</a>
+    </div>
+
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="/assets/Logo%20eureka-CgDsgso3.jpg" alt="Eureka BTP" style="height:44px; width:auto;">
+      </div>
+      <p class="footer-tagline">25 ans au service des professionnels du BPE. Réparation, location, achat & revente de toupies à béton — toutes marques, partout en France.</p>
+      <div class="footer-coords">
+        <p><strong>Adresse :</strong> Gretz-Armainvilliers, Seine-et-Marne (77)</p>
+        <p><strong>Tél :</strong> <a href="tel:+33XXXXXXXXX">+33 X XX XX XX XX</a></p>
+        <p><strong>Email :</strong> <a href="mailto:contact@eurekabtp.com">contact@eurekabtp.com</a></p>
+      </div>
+      <div class="footer-hours">
+        <p><strong>Horaires :</strong></p>
+        <p>Lundi – Vendredi : 8h00 – 18h00</p>
+        <p>Samedi : 8h00 – 12h00</p>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="identite.html">Notre identité</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="activites.html">Nos activités</a></li>
+        <li><a href="pieces.html">Pièces détachées</a></li>
+        <li><a href="vente.html">Matériel</a></li>
+        <li><a href="atelier.html">L'atelier en action</a></li>
+        <li><a href="index.html#contact-strip">Contact &amp; Devis</a></li>
+      </ul>
+      <h5 style="margin-top:1.75rem">Services</h5>
+      <ul>
+        <li><a href="reparation.html">Réparation &amp; Maintenance</a></li>
+        <li><a href="livraison.html">Vente de pièces &amp; livraison</a></li>
+        <li><a href="preparation.html">Préparation camion neuf</a></li>
+        <li><a href="location.html">Location de toupies</a></li>
+        <li><a href="achat-revente.html">Achat &amp; Revente</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Eureka BTP — Tous droits réservés</p>
+    <div class="footer-bottom-links"><a href="#">Mentions légales</a><a href="#">Confidentialité</a></div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  const nb = document.getElementById('navbar');
+  window.addEventListener('scroll', () => nb.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+  document.getElementById('navBurger').addEventListener('click', function() {
+    document.getElementById('navMobile').classList.toggle('open');
+    this.classList.toggle('open');
+  });
+  document.querySelectorAll('[data-animate]').forEach(el => {
+    gsap.from(el, { y: 30, opacity: 0, duration: 0.75, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 85%' } });
+  });
+</script>
+</body>
+</html>

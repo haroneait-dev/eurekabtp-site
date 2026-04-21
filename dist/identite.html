@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Identité d'Eureka BTP — SARL fondée en 2001, spécialiste en réparation et maintenance de toupies et pompes à béton en Seine-et-Marne.">
+  <title>Notre Identité — Eureka BTP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ── PAGE HERO ── */
+    .id-hero {
+      position: relative;
+      height: 55vh; min-height: 380px; max-height: 600px;
+      display: flex; align-items: flex-end;
+      padding: 0 2rem 4.5rem;
+      overflow: hidden;
+      background: url('/assets/PHOTO-2026-04-18-16-40-31-B-vVGv8m.jpg') center/cover no-repeat;
+    }
+    .id-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,14,22,0.82) 0%, rgba(10,14,22,0.45) 60%, rgba(10,14,22,0.3) 100%);
+    }
+    .id-hero-content {
+      position: relative; z-index: 2;
+      max-width: 1240px; margin: 0 auto; width: 100%;
+      color: #fff;
+    }
+    .id-hero-back {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.82rem; font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      position: absolute;
+      top: 5.5rem; left: 2rem;
+      z-index: 5;
+      transition: color 0.3s;
+    }
+    .id-hero-back:hover { color: var(--accent); }
+    .id-hero-content h1 { margin-bottom: 0.85rem; }
+    .id-hero-content p {
+      font-size: 1.05rem; color: rgba(255,255,255,0.75);
+      max-width: 640px; line-height: 1.72;
+    }
+
+    /* ── FICHE IDENTITÉ ── */
+    #id-fiche {
+      background: #fff;
+      padding: 6rem 2rem;
+    }
+    .id-fiche-inner {
+      max-width: 1240px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.2fr 1fr;
+      gap: 6rem; align-items: start;
+    }
+
+    /* Infos clés */
+    .id-info-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.25rem; margin-bottom: 3rem;
+    }
+    .id-info-card {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.25rem;
+      border-top: 3px solid var(--accent);
+    }
+    .id-info-card .id-info-label {
+      font-size: 0.65rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.14em;
+      color: var(--gray-lt); margin-bottom: 0.45rem;
+    }
+    .id-info-card .id-info-val {
+      font-size: 1.05rem; font-weight: 800;
+      color: var(--anthracite); letter-spacing: -0.02em;
+    }
+
+    /* Qui sommes-nous */
+    .id-qui {
+      background: var(--dark);
+      border-radius: 16px;
+      padding: 2.5rem;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .id-qui::before {
+      content: '';
+      position: absolute; top: -60%; right: -20%;
+      width: 340px; height: 340px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(29,78,216,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .id-qui .section-eyebrow { color: var(--accent); margin-bottom: 1rem; }
+    .id-qui h3 { color: #fff; margin-bottom: 1rem; font-size: 1.35rem; }
+    .id-qui p {
+      font-size: 0.95rem; color: rgba(255,255,255,0.68);
+      line-height: 1.78; margin-bottom: 1.25rem;
+    }
+    .id-qui p:last-child { margin-bottom: 0; }
+
+    /* ── ATELIER EN ACTION ── */
+    #id-atelier {
+      background: var(--anthracite);
+      padding: 6rem 2rem;
+    }
+    .id-atelier-inner {
+      max-width: 1240px; margin: 0 auto;
+    }
+    .id-atelier-inner .section-header { max-width: 640px; margin: 0 auto 3.5rem; }
+    .id-atelier-inner .section-header h2 { color: #fff; }
+    .id-atelier-inner .section-subtitle { color: rgba(255,255,255,0.6); }
+    .id-atelier-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 1rem;
+    }
+    .id-atelier-grid .id-photo { border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; }
+    .id-atelier-grid .id-photo--wide { grid-column: span 2; aspect-ratio: 16/9; }
+    .id-atelier-grid .id-photo--tall { grid-row: span 2; aspect-ratio: auto; }
+    .id-atelier-grid .id-photo img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .id-atelier-grid .id-photo:hover img { transform: scale(1.04); }
+    @media (max-width: 900px) {
+      .id-atelier-grid { grid-template-columns: 1fr 1fr; }
+      .id-atelier-grid .id-photo--wide { grid-column: span 2; }
+      .id-atelier-grid .id-photo--tall { grid-row: span 1; }
+    }
+    @media (max-width: 600px) {
+      .id-atelier-grid { grid-template-columns: 1fr; }
+      .id-atelier-grid .id-photo--wide { grid-column: span 1; }
+    }
+
+    /* ── VALEURS ── */
+    #id-valeurs {
+      background: #f0f5ff;
+      padding: 6rem 2rem;
+    }
+    .id-valeurs-inner {
+      max-width: 1240px; margin: 0 auto;
+    }
+    .id-valeurs-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; margin-top: 4rem;
+    }
+    .id-valeur-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 2.25rem 2rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--t), box-shadow var(--t);
+    }
+    .id-valeur-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .id-valeur-icon {
+      width: 48px; height: 48px;
+      background: var(--accent-glass);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+      color: var(--accent);
+    }
+    .id-valeur-icon svg { width: 24px; height: 24px; }
+    .id-valeur-card h4 {
+      font-size: 1.05rem; font-weight: 800;
+      color: var(--anthracite); margin-bottom: 0.65rem;
+    }
+    .id-valeur-card p {
+      font-size: 0.9rem; color: var(--gray);
+      line-height: 1.72;
+    }
+
+    /* ── LOCALISATION ── */
+    #id-localisation {
+      background: #fff;
+      padding: 6rem 2rem;
+    }
+    .id-loc-inner {
+      max-width: 1240px; margin: 0 auto;
+    }
+    .id-loc-inner .section-header { margin-bottom: 3rem; }
+    .id-loc-map {
+      height: 480px; border-radius: 16px; overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+    }
+    .id-loc-map iframe {
+      width: 100%; height: 100%; border: none;
+      filter: grayscale(20%) contrast(1.05);
+    }
+
+    /* ── CTA ── */
+    #id-cta {
+      background: var(--dark);
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    .id-cta-inner {
+      max-width: 640px; margin: 0 auto;
+    }
+    .id-cta-inner h2 { color: #fff; margin-bottom: 1rem; }
+    .id-cta-inner p { color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.75; margin-bottom: 2.5rem; }
+    .id-cta-actions {
+      display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
+    }
+
+    /* ── ENGAGEMENTS — PHOTO + TEXTE ── */
+    .id-engagement-wrap {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center; margin-top: 4rem;
+    }
+    .id-engagement-photo {
+      border-radius: 14px; overflow: hidden;
+      min-height: 460px; box-shadow: var(--shadow-lg);
+    }
+    .id-engagement-photo img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.65s ease;
+    }
+    .id-engagement-photo:hover img { transform: scale(1.03); }
+    .id-engagement-text p {
+      font-size: 1rem; color: var(--gray); line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .id-engagement-text p:last-child { margin-bottom: 0; }
+
+    /* ── PHOTO FICHE ── */
+    .id-fiche-photo {
+      border-radius: 14px; overflow: hidden;
+      min-height: 320px; margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-lg);
+    }
+    .id-fiche-photo img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.65s ease;
+    }
+    .id-fiche-photo:hover img { transform: scale(1.03); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .id-fiche-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .id-engagement-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+      .id-engagement-photo { min-height: 280px; }
+      .id-loc-map { height: 320px; }
+    }
+    @media (max-width: 600px) {
+      .id-info-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <link rel="stylesheet" crossorigin href="/assets/style-Bpc-o8k0.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar" class="scrolled">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="/assets/Logo%20eureka-CgDsgso3.jpg" alt="Eureka BTP" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li class="has-dropdown">
+        <a href="services.html" class="nav-dropdown-toggle">Services</a>
+        <div class="nav-dropdown">
+          <a href="reparation.html">Réparation<small>Diagnostic et remise en état</small></a>
+          <a href="livraison.html">Vente de pièces &amp; livraison<small>Toutes marques — 24-48h</small></a>
+          <a href="preparation.html">Préparation camion neuf<small>Mise en service clé en main</small></a>
+          <a href="location.html">Location<small>Toupies opérationnelles</small></a>
+          <a href="achat-revente.html">Achat &amp; revente<small>Pièces et camions</small></a>
+        </div>
+      </li>
+      <li><a href="pieces.html">Pièces détachées</a></li>
+      <li><a href="vente.html">Matériel</a></li>
+      <li><a href="activites.html">Nos activités</a></li>
+    </ul>
+    <a href="index.html#contact-strip" class="nav-cta">Demander un devis</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html">Accueil</a>
+    <a href="services.html"><strong>Services</strong></a>
+    <a href="reparation.html" style="padding-left:1.25rem;font-size:0.9rem;">· Réparation</a>
+    <a href="livraison.html" style="padding-left:1.25rem;font-size:0.9rem;">· Vente de pièces &amp; livraison</a>
+    <a href="preparation.html" style="padding-left:1.25rem;font-size:0.9rem;">· Préparation camion neuf</a>
+    <a href="location.html" style="padding-left:1.25rem;font-size:0.9rem;">· Location</a>
+    <a href="achat-revente.html" style="padding-left:1.25rem;font-size:0.9rem;">· Achat &amp; revente</a>
+    <a href="pieces.html">Pièces détachées</a>
+    <a href="vente.html">Matériel</a>
+    <a href="activites.html">Nos activités</a>
+    <a href="index.html#contact-strip" class="mobile-cta">Demander un devis</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="id-hero">
+  <div class="id-hero-overlay"></div>
+  <div class="id-hero-content">
+    <p class="section-eyebrow">Notre identité</p>
+    <h1>EUREKA BTP</h1>
+    <p>Expert en carrosserie béton depuis 2001 — réparation, maintenance et préparation de toupies et pompes à béton, partout en France.</p>
+  </div>
+</section>
+
+<!-- FICHE IDENTITÉ -->
+<section id="id-fiche">
+  <div class="id-fiche-inner">
+
+    <!-- Infos structurées -->
+    <div data-animate>
+      <p class="section-eyebrow" style="text-align:left;">Fiche entreprise</p>
+      <h2 style="color:var(--anthracite); margin-bottom:2rem;">Notre identité en quelques chiffres</h2>
+
+      <div class="id-fiche-photo">
+        <img src="/assets/PHOTO-2026-04-18-16-40-30-G2NElDkg.jpg" alt="Atelier Eureka BTP — expertise carrosserie béton depuis 2001">
+      </div>
+
+      <a href="index.html#contact-strip" class="btn-primary">Prendre contact →</a>
+    </div>
+
+    <!-- Qui sommes-nous (texte simple, pas de carte) -->
+    <div class="id-qui-plain" data-animate>
+      <p class="section-eyebrow" style="text-align:left;">Qui sommes-nous</p>
+      <h2 style="color:var(--anthracite); margin-bottom:1.5rem;">Une expertise forgée en plus de 20 ans</h2>
+      <p>EUREKA BTP est une entreprise experte en carrosserie, spécialisée dans la réparation, la maintenance et la préparation de toupies à béton et de pompes à béton en Seine-et-Marne.</p>
+      <p>Forte de plus de 20 ans d'expérience, nous accompagnons les professionnels du bâtiment et des travaux publics sur toute la France. Notre savoir-faire reconnu nous permet d'intervenir sur toutes les marques — IMER, Stetter, Liebherr, Putzmeister, CIFA, Schwing — avec la rigueur et la réactivité qu'exige votre activité.</p>
+      <p>Chaque véhicule qui passe dans notre atelier repart opérationnel, contrôlé et prêt pour le chantier. C'est notre engagement depuis le premier jour.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- VALEURS -->
+<section id="id-valeurs">
+  <div class="id-valeurs-inner">
+    <div class="section-header" data-animate>
+      <p class="section-eyebrow">Ce qui nous distingue</p>
+      <h2>Nos engagements</h2>
+      <p class="section-subtitle">Des valeurs concrètes qui guident chacune de nos interventions depuis plus de 20 ans.</p>
+    </div>
+    <div class="id-engagement-wrap" data-animate>
+      <div class="id-engagement-photo">
+        <img src="/assets/PHOTO-2026-04-18-16-40-33-De8cGgyb.jpg" alt="Atelier Eureka BTP — engagement et savoir-faire">
+      </div>
+      <div class="id-engagement-text">
+        <p>Chez Eureka BTP, chaque engagement que nous prenons envers nos clients est le fruit de plus de 20 ans de pratique et de perfectionnement. Notre expertise technique nous permet d'intervenir sur toutes les marques et tous les modèles de toupies et pompes à béton — IMER, Stetter, Liebherr, Putzmeister, CIFA, Schwing — avec une rigueur absolue à chaque étape.</p>
+        <p>Nous comprenons que chaque heure d'immobilisation a un coût direct sur votre activité. C'est pourquoi nous priorisons la réactivité : diagnostic rapide, approvisionnement en pièces optimisé, délais tenus. Notre réseau de fournisseurs nous permet de localiser les références les plus rares en un minimum de temps, avec une expédition sous 24 à 48h partout en France.</p>
+        <p>La relation de confiance est au cœur de notre philosophie. Depuis 2001, nos clients nous confient leur parc parce qu'ils savent que nos devis sont transparents, notre travail de qualité et notre suivi après intervention rigoureux. Basés en Seine-et-Marne, nous intervenons et livrons sur toute la France, avec un accompagnement personnalisé à chaque étape de votre projet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALISATION -->
+<section id="id-localisation">
+  <div class="id-loc-inner">
+    <div class="section-header" data-animate>
+      <p class="section-eyebrow">Où nous trouver</p>
+      <h2 class="section-title">Notre atelier en Seine-et-Marne</h2>
+    </div>
+
+    <div class="id-loc-map" data-animate>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21027.292!2d2.7272!3d48.7337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5f0e1bbbba265%3A0x40b82c3688c26b0!2sGretz-Armainvilliers%2C%2077220!5e0!3m2!1sfr!2sfr!4v1713437600000!5m2!1sfr!2sfr"
+        width="100%" height="100%"
+        style="border:0;"
+        allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Localisation Eureka BTP — Gretz-Armainvilliers"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="/assets/Logo%20eureka-CgDsgso3.jpg" alt="Eureka BTP" style="height:44px; width:auto;">
+      </div>
+      <p class="footer-tagline">25 ans au service des professionnels du BPE. Réparation, location, achat & revente de toupies à béton — toutes marques, partout en France.</p>
+      <div class="footer-coords">
+        <p><strong>Adresse :</strong> Gretz-Armainvilliers, Seine-et-Marne (77)</p>
+        <p><strong>Tél :</strong> <a href="tel:+33XXXXXXXXX">+33 X XX XX XX XX</a></p>
+        <p><strong>Email :</strong> <a href="mailto:contact@eurekabtp.com">contact@eurekabtp.com</a></p>
+      </div>
+      <div class="footer-hours">
+        <p><strong>Horaires :</strong></p>
+        <p>Lundi – Vendredi : 8h00 – 18h00</p>
+        <p>Samedi : 8h00 – 12h00</p>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="identite.html">Notre identité</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="activites.html">Nos activités</a></li>
+        <li><a href="pieces.html">Pièces détachées</a></li>
+        <li><a href="vente.html">Matériel</a></li>
+        <li><a href="atelier.html">L'atelier en action</a></li>
+        <li><a href="index.html#contact-strip">Contact &amp; Devis</a></li>
+      </ul>
+      <h5 style="margin-top:1.75rem">Services</h5>
+      <ul>
+        <li><a href="reparation.html">Réparation &amp; Maintenance</a></li>
+        <li><a href="livraison.html">Vente de pièces &amp; livraison</a></li>
+        <li><a href="preparation.html">Préparation camion neuf</a></li>
+        <li><a href="location.html">Location de toupies</a></li>
+        <li><a href="achat-revente.html">Achat &amp; Revente</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Eureka BTP — Tous droits réservés</p>
+    <div class="footer-bottom-links">
+      <a href="#">Mentions légales</a>
+      <a href="#">Confidentialité</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  const nb = document.getElementById('navbar');
+  window.addEventListener('scroll', () => nb.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+  document.getElementById('navBurger').addEventListener('click', function() {
+    document.getElementById('navMobile').classList.toggle('open');
+    this.classList.toggle('open');
+  });
+  document.querySelectorAll('[data-animate]').forEach(el => {
+    gsap.from(el, { y: 30, opacity: 0, duration: 0.75, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 85%' } });
+  });
+</script>
+</body>
+</html>

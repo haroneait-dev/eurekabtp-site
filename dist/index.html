@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/main-Cs36yHyt.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/style-D1H1LHAe.css">
+  <script type="module" crossorigin src="/assets/main-psUP40ux.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/style-Bpc-o8k0.css">
 </head>
 <body>
 
@@ -19,27 +19,42 @@
 ═══════════════════════════════════════════ -->
 <nav id="navbar">
   <div class="nav-container">
-    <a href="#" class="nav-logo">
-      <span class="logo-eureka">EUREKA</span><span class="logo-btp">BTP</span>
+    <a href="index.html" class="nav-logo">
+      <img src="/assets/Logo%20eureka-CgDsgso3.jpg" alt="Eureka BTP" class="nav-logo-img">
     </a>
     <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#pieces">Pièces détachées</a></li>
-      <li><a href="#vente">Achat & Revente</a></li>
-      <li><a href="#avis">Avis clients</a></li>
+      <li><a href="index.html">Accueil</a></li>
+      <li class="has-dropdown">
+        <a href="services.html" class="nav-dropdown-toggle">Services</a>
+        <div class="nav-dropdown">
+          <a href="reparation.html">Réparation<small>Diagnostic et remise en état</small></a>
+          <a href="livraison.html">Vente de pièces &amp; livraison<small>Toutes marques — 24-48h</small></a>
+          <a href="preparation.html">Préparation camion neuf<small>Mise en service clé en main</small></a>
+          <a href="location.html">Location<small>Toupies opérationnelles</small></a>
+          <a href="achat-revente.html">Achat &amp; revente<small>Pièces et camions</small></a>
+        </div>
+      </li>
+      <li><a href="pieces.html">Pièces détachées</a></li>
+      <li><a href="vente.html">Matériel</a></li>
+      <li><a href="activites.html">Nos activités</a></li>
     </ul>
-    <a href="#contact-strip" class="nav-cta">Demander un devis</a>
+    <a href="index.html#contact-strip" class="nav-cta">Demander un devis</a>
     <button class="nav-burger" id="navBurger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="nav-mobile" id="navMobile">
-    <a href="#services">Services</a>
-    <a href="#pieces">Pièces détachées</a>
-    <a href="#vente">Achat & Revente</a>
-    <a href="#avis">Avis clients</a>
-    <a href="#contact-strip">Contact</a>
-    <a href="#contact-strip" class="mobile-cta">Demander un devis</a>
+    <a href="index.html">Accueil</a>
+    <a href="services.html"><strong>Services</strong></a>
+    <a href="reparation.html" style="padding-left:1.25rem;font-size:0.9rem;">· Réparation</a>
+    <a href="livraison.html" style="padding-left:1.25rem;font-size:0.9rem;">· Vente de pièces &amp; livraison</a>
+    <a href="preparation.html" style="padding-left:1.25rem;font-size:0.9rem;">· Préparation camion neuf</a>
+    <a href="location.html" style="padding-left:1.25rem;font-size:0.9rem;">· Location</a>
+    <a href="achat-revente.html" style="padding-left:1.25rem;font-size:0.9rem;">· Achat &amp; revente</a>
+    <a href="pieces.html">Pièces détachées</a>
+    <a href="vente.html">Matériel</a>
+    <a href="activites.html">Nos activités</a>
+    <a href="index.html#contact-strip" class="mobile-cta">Demander un devis</a>
   </div>
 </nav>
 
@@ -47,9 +62,12 @@
      HERO
 ═══════════════════════════════════════════ -->
 <section id="hero">
-  <video class="hero-video" autoplay loop muted playsinline poster="/assets/PHOTO-2026-04-18-16-40-29-Bow-Xd2q.jpg">
-    <source src="/assets/hero-video-UoLmT0BX.mp4" type="video/mp4">
-  </video>
+  <!-- Slider backgrounds with real images -->
+  <div class="hero-slides">
+    <div class="hero-slide is-active" style="background-image:url('/assets/PHOTO-2026-04-18-16-40-29-Bow-Xd2q.jpg'); background-size:cover; background-position:center;"></div>
+    <div class="hero-slide" style="background-image:url('/assets/PHOTO-2026-04-18-16-40-33-De8cGgyb.jpg'); background-size:cover; background-position:center;"></div>
+    <div class="hero-slide" style="background-image:url('/assets/PHOTO-2026-04-18-16-40-30-G2NElDkg.jpg'); background-size:cover; background-position:center;"></div>
+  </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Eureka BTP — 25 ans au service des professionnels du BPE</p>
@@ -57,395 +75,96 @@
     <p class="hero-subtitle">Réparation, maintenance, location, pièces détachées pour toupies, pompes et centrales à béton — toutes marques, partout en France.</p>
     <div class="hero-actions">
       <a href="#contact-strip" class="btn-primary">Demander un devis gratuit</a>
-      <a href="#services" class="btn-ghost">Découvrir nos services</a>
+      <a href="services.html" class="btn-ghost">Découvrir nos services</a>
     </div>
   </div>
 </section>
 
+
 <!-- ═══════════════════════════════════════════
-     STATS
+     STATS — BANDE CHIFFRES
 ═══════════════════════════════════════════ -->
 <section id="stats">
-  <div class="stats-deco-ring stats-deco-ring--a"></div>
-  <div class="stats-deco-ring stats-deco-ring--b"></div>
+  <div class="stats-band">
 
-  <div class="stats-grid-v2">
-
-    <div class="stat-v2" data-gsap-stat="left">
-      <div class="stat-v2-ghost">3500</div>
-      <div class="stat-v2-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-        </svg>
+    <div class="stat-band-item" data-animate>
+      <div class="stat-band-val">
+        <span class="stat-v2-num" data-target="3500">0</span><span class="stat-band-sup">+</span>
       </div>
-      <div class="stat-v2-val">
-        <span class="stat-v2-num" data-target="3500">0</span><span class="stat-v2-sup">+</span>
-      </div>
-      <p class="stat-v2-label">Projets terminés</p>
-      <p class="stat-v2-note">depuis 2021</p>
+      <p class="stat-band-label">Projets réalisés</p>
+      <span class="stat-band-note">Depuis 2001</span>
     </div>
 
-    <div class="stat-v2 stat-v2--hero" data-gsap-stat="bottom">
-      <div class="stat-v2-ghost">25</div>
-      <div class="stat-v2-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-        </svg>
+    <div class="stat-band-sep"></div>
+
+    <div class="stat-band-item stat-band-item--hl" data-animate>
+      <div class="stat-band-val">
+        <span class="stat-v2-num" data-target="25">0</span><span class="stat-band-sup">+</span>
       </div>
-      <div class="stat-v2-val">
-        <span class="stat-v2-num" data-target="25">0</span><span class="stat-v2-sup">+</span>
-      </div>
-      <p class="stat-v2-label">Années d'expérience</p>
-      <p class="stat-v2-note">créée en 2001</p>
+      <p class="stat-band-label">Années d'expérience</p>
+      <span class="stat-band-note">Fondé en 2001</span>
     </div>
 
-    <div class="stat-v2" data-gsap-stat="right">
-      <div class="stat-v2-ghost">200</div>
-      <div class="stat-v2-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
-        </svg>
+    <div class="stat-band-sep"></div>
+
+    <div class="stat-band-item" data-animate>
+      <div class="stat-band-val">
+        <span class="stat-v2-num" data-target="200">0</span><span class="stat-band-sup">+</span>
       </div>
-      <div class="stat-v2-val">
-        <span class="stat-v2-num" data-target="200">0</span><span class="stat-v2-sup">+</span>
-      </div>
-      <p class="stat-v2-label">Clients satisfaits</p>
-      <p class="stat-v2-note">dans toute la France</p>
+      <p class="stat-band-label">Clients satisfaits</p>
+      <span class="stat-band-note">Partout en France</span>
     </div>
 
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════
-     MARQUES PRISES EN CHARGE (MARQUEE)
+     IDENTITÉ DE L'ENTREPRISE — TEASER
 ═══════════════════════════════════════════ -->
-<div class="brands-marquee-wrap">
-  <div class="brands-marquee">
-    <div class="brands-track">
-      <span>IMER <small>(Officiel IDF)</small></span>
-      <span>Stetter</span>
-      <span>Liebherr</span>
-      <span>Renault Trucks</span>
-      <span>Mercedes-Benz</span>
-      <span>Putzmeister</span>
-      <span>Cifa</span>
-      <span>Schwing</span>
-      <!-- Duplicates for seamless loop -->
-      <span>IMER <small>(Officiel IDF)</small></span>
-      <span>Stetter</span>
-      <span>Liebherr</span>
-      <span>Renault Trucks</span>
-      <span>Mercedes-Benz</span>
-      <span>Putzmeister</span>
-      <span>Cifa</span>
-      <span>Schwing</span>
+<section id="identite-teaser">
+  <div class="identite-inner">
+    <div class="identite-text" data-animate>
+      <p class="section-eyebrow">Qui sommes-nous</p>
+      <h2>Expert en carrosserie béton depuis 2001</h2>
+      <p>EUREKA BTP est une SARL spécialisée dans la réparation, la maintenance et la préparation de toupies et pompes à béton en Seine-et-Marne. Forte de plus de 20 ans d'expérience, nous accompagnons les professionnels du BTP partout en France.</p>
+      <p>Dirigée par Mme Sophie Darmigny depuis sa création, notre entreprise s'est imposée comme la référence régionale pour les professionnels du BPE — avec une approche rigoureuse, un savoir-faire reconnu et un engagement total pour la satisfaction client.</p>
+      <a href="identite.html" class="btn-primary" style="margin-top:0.5rem;">Explorer notre identité →</a>
     </div>
-  </div>
-</div>
-
-
-<!-- ═══════════════════════════════════════════
-     SERVICES — Z-PATTERN
-═══════════════════════════════════════════ -->
-<section id="services" style="position: relative;">
-  <!-- Chemin animé au scroll -->
-  <svg class="services-path-overlay" preserveAspectRatio="none" viewBox="0 0 100 100" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.4;">
-    <defs>
-      <clipPath id="servicesClip">
-        <rect id="servicesClipRect" x="0" y="0" width="100" height="0" />
-      </clipPath>
-    </defs>
-    <path id="servicesPath" d="M 25 15 C 25 35, 75 35, 75 40 C 75 60, 25 60, 25 65 C 25 85, 75 85, 75 90" fill="none" stroke="var(--accent)" stroke-width="0.3" stroke-dasharray="1.5, 1.5" clip-path="url(#servicesClip)" />
-  </svg>
-
-  <div class="section-header" data-animate style="position: relative; z-index: 2;">
-    <p class="section-eyebrow">Ce que nous faisons</p>
-    <h2 class="section-title">Nos activités principales</h2>
-    <p class="section-subtitle">Réparation, préparation, location, achat & revente — nous accompagnons les professionnels du BPE à chaque étape du cycle de vie de leur parc béton.</p>
-  </div>
-
-  <!-- 01 — Image gauche / Texte droite -->
-  <div class="service-row" data-animate>
-    <div class="service-image">
-      <img src="/assets/PHOTO-2026-04-18-16-40-33-De8cGgyb.jpg" alt="Réparation et maintenance de camions professionnels">
-      <div class="service-badge">01</div>
-    </div>
-    <div class="service-content">
-      <span class="service-tag">Réparation & Maintenance</span>
-      <h3>Remise en état de vos véhicules de chantier</h3>
-      <p>Nos techniciens qualifiés interviennent sur l'ensemble de votre parc de véhicules lourds. Bétonnières IMER, Stetter, Liebherr, camions bennes — nous maîtrisons toutes les marques et tous les modèles, des diagnostics aux interventions complètes.</p>
-      <ul class="service-list">
-        <li>Diagnostic complet et expertise technique</li>
-        <li>Réparation carrosserie, châssis et cabine</li>
-        <li>Interventions moteur, boîte, embrayage</li>
-        <li>Entretien hydraulique et pneumatique</li>
-      </ul>
-      <a href="#contact-strip" class="btn-primary">Prendre rendez-vous</a>
-    </div>
-  </div>
-
-  <!-- 02 — Texte gauche / Image droite -->
-  <div class="service-row reverse" data-animate>
-    <div class="service-content">
-      <span class="service-tag">Préparation Camion Neuf</span>
-      <h3>Mise en service complète, clé en main</h3>
-      <p>Nous prenons en charge l'intégralité de la mise en service — montage et réglage des équipements, aménagements spécifiques selon vos besoins, contrôles techniques complets et essais avant livraison. Chaque véhicule quitte notre atelier opérationnel et conforme aux exigences du terrain.</p>
-      <ul class="service-list">
-        <li>Montage et réglage de tous les équipements</li>
-        <li>Aménagements spécifiques sur mesure</li>
-        <li>Contrôles techniques complets</li>
-        <li>Essais et validation avant livraison</li>
-      </ul>
-      <a href="#contact-strip" class="btn-primary">Prendre rendez-vous</a>
-    </div>
-    <div class="service-image">
-      <img src="/assets/PHOTO-2026-04-18-16-40-31-B-vVGv8m.jpg" alt="Préparation et mise en service de camion neuf">
-      <div class="service-badge">02</div>
-    </div>
-  </div>
-
-  <!-- 03 — Image gauche / Texte droite -->
-  <div class="service-row" data-animate>
-    <div class="service-image" style="position: relative; z-index: 2;">
-      <img src="/assets/PHOTO-2026-04-18-16-40-29-Bow-Xd2q.jpg" alt="Location de toupies à béton">
-      <div class="service-badge">03</div>
-    </div>
-    <div class="service-content">
-      <span class="service-tag">Location de Toupies</span>
-      <h3>Un renfort opérationnel immédiat pour votre activité</h3>
-      <p>Besoin d'un véhicule de remplacement pendant une réparation, ou d'un renfort temporaire pour faire face à un pic d'activité ? Nous mettons à disposition des toupies à béton rigoureusement contrôlées et prêtes à l'emploi, pour des durées courtes ou longues selon vos besoins.</p>
-      <ul class="service-list">
-        <li>Toupies contrôlées et prêtes à l'emploi</li>
-        <li>Location courte ou longue durée</li>
-        <li>Disponibilité rapide sur demande</li>
-        <li>Toutes marques, toutes capacités</li>
-      </ul>
-      <a href="#contact-strip" class="btn-primary">Vérifier la disponibilité</a>
-    </div>
-  </div>
-
-  <!-- 04 — Texte gauche / Image droite -->
-  <div class="service-row reverse" data-animate>
-    <div class="service-content">
-      <span class="service-tag">Achat & Revente</span>
-      <h3>Votre partenaire pour acheter et revendre en toute confiance</h3>
-      <p>Eureka BTP vous accompagne dans l'achat et la revente de toupies à béton et camions bétonnières. Chaque véhicule est expertisé et remis en état avant revente, pour vous garantir un matériel fiable et performant.</p>
-      <ul class="service-list">
-        <li>Expertise et évaluation gratuite</li>
-        <li>Remise en état avant toute revente</li>
-        <li>Matériel garanti fiable et performant</li>
-        <li>Accompagnement de A à Z dans la transaction</li>
-      </ul>
-      <a href="#vente" class="btn-primary">Voir le stock disponible</a>
-    </div>
-    <div class="service-image">
-      <img src="/assets/PHOTO-2026-04-18-16-40-30-G2NElDkg.jpg" alt="Achat et revente de toupies à béton">
-      <div class="service-badge">04</div>
+    <div class="identite-photo" data-animate>
+      <img src="/assets/PHOTO-2026-04-18-16-40-31-B-vVGv8m.jpg" alt="Atelier Eureka BTP — techniciens au travail">
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════
-     PIÈCES DÉTACHÉES (COVERFLOW CAROUSEL)
+     ATELIER EN ACTION — TEASER
 ═══════════════════════════════════════════ -->
-<section id="pieces" style="background: var(--anthracite); color: #fff; padding: 6rem 0; overflow: hidden; position: relative;">
-  <div class="section-header" data-animate style="text-align: center; margin-bottom: 2rem; position: relative; z-index: 2;">
-    <p class="section-eyebrow" style="color: var(--accent);">Catalogue</p>
-    <h2 class="section-title" style="color: #fff;">Pièces Détachées</h2>
-  </div>
-
-  <!-- ─── 3D PRODUCT CAROUSEL ─── -->
-  <div class="pieces-3d-carousel" id="piecesCarousel">
-    <div class="pc-wrapper">
-      <div class="pc-track" id="pcTrack">
-
-        <!-- Card 0 — Toupies -->
-        <div class="pc-card" data-idx="0">
-          <div class="pc-bg-label">TOUPIES</div>
-          <div class="pc-img-wrap">
-            <img src="/assets/PHOTO-2026-04-18-16-40-32%204-DdRoBdoI.jpg" alt="Toupies & Mixo-pompes">
-          </div>
-          <div class="pc-body">
-            <p class="pc-eyebrow">Pièces détachées</p>
-            <h4 class="pc-name">Toupies & Mixo-pompes</h4>
-            <p class="pc-desc">Moteurs, réducteurs, cuves, goulottes, pompes hydrauliques, câbles de commande.</p>
-            <a href="pieces.html" class="pc-cta">Demander un devis <span>→</span></a>
-          </div>
-        </div>
-
-        <!-- Card 1 — Pompes -->
-        <div class="pc-card" data-idx="1">
-          <div class="pc-bg-label">POMPES</div>
-          <div class="pc-img-wrap">
-            <img src="/assets/pompe_beton-ClBZBEX7.png" alt="Pompes à Béton">
-          </div>
-          <div class="pc-body">
-            <p class="pc-eyebrow">Pièces détachées</p>
-            <h4 class="pc-name">Pompes à Béton</h4>
-            <p class="pc-desc">Pistons, clapets, flexibles haute pression, bras de distribution, joints toriques.</p>
-            <a href="pieces.html" class="pc-cta">Demander un devis <span>→</span></a>
-          </div>
-        </div>
-
-        <!-- Card 2 — Centrales -->
-        <div class="pc-card" data-idx="2">
-          <div class="pc-bg-label">CENTRALES</div>
-          <div class="pc-img-wrap">
-            <img src="/assets/PHOTO-2026-04-18-16-40-29%203-CpYITgFa.jpg" alt="Centrales à Béton">
-          </div>
-          <div class="pc-body">
-            <p class="pc-eyebrow">Pièces détachées</p>
-            <h4 class="pc-name">Centrales à Béton</h4>
-            <p class="pc-desc">Malaxeurs, sondes d'humidité, automatismes, compresseurs, tapis, vannes papillon.</p>
-            <a href="pieces.html" class="pc-cta">Demander un devis <span>→</span></a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Navigation -->
-      <button class="pc-btn pc-prev" aria-label="Précédent">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <button class="pc-btn pc-next" aria-label="Suivant">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
+<section id="atelier-teaser">
+  <div class="atelier-teaser-inner">
+    <div class="atelier-teaser-header" data-animate>
+      <p class="section-eyebrow">Notre savoir-faire</p>
+      <h2>L'atelier en action</h2>
+      <p class="section-subtitle">Soudure, réfection de carrosserie, révision mécanique — chaque matériel repart opérationnel entre les mains de nos techniciens.</p>
     </div>
-
-    <!-- Dots -->
-    <div class="pc-dots">
-      <button class="pc-dot is-active" data-goto="0" aria-label="Slide 1"></button>
-      <button class="pc-dot" data-goto="1" aria-label="Slide 2"></button>
-      <button class="pc-dot" data-goto="2" aria-label="Slide 3"></button>
-    </div>
-  </div>
-
-  <!-- Badges & CTA — fond anthracite unifié -->
-  <div class="pc-below">
-    <div class="pieces-badges" data-animate>
-      <div class="pieces-badge-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        <span>Expédition <strong>24–48h</strong></span>
+    <div class="atelier-teaser-grid">
+      <div class="at-photo at-photo--tall" data-animate>
+        <img src="/assets/PHOTO-2026-04-18-16-40-33-De8cGgyb.jpg" alt="Soudure carrosserie béton Eureka BTP" loading="lazy">
       </div>
-      <div class="pieces-badge-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-        <span>Partout <strong>en France</strong></span>
+      <div class="at-photo" data-animate>
+        <img src="/assets/PHOTO-2026-04-18-16-40-30-G2NElDkg.jpg" alt="Camion bétonnière en atelier" loading="lazy">
       </div>
-      <div class="pieces-badge-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        <span>Toutes <strong>marques</strong></span>
-      </div>
-      <div class="pieces-badge-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span>Devis <strong>gratuit</strong></span>
+      <div class="at-photo" data-animate>
+        <img src="/assets/PHOTO-2026-04-18-16-40-32%204-DdRoBdoI.jpg" alt="Travail de soudure sur toupie" loading="lazy">
       </div>
     </div>
-
-    <div class="pieces-cta-block" data-animate>
-      <div class="pieces-cta-text">
-        <h3>Vous ne trouvez pas votre pièce ?</h3>
-        <p>Notre équipe sourcing localise n'importe quelle référence partout en France et en Europe.</p>
-      </div>
-      <div class="pieces-cta-actions">
-        <a href="pieces.html" class="btn-primary">Accéder au catalogue complet</a>
-        <a href="#contact-strip" class="pieces-cta-secondary">Faire une demande spécifique →</a>
-      </div>
+    <div class="atelier-teaser-cta" data-animate>
+      <a href="atelier.html" class="btn-ghost-dark">Voir l'atelier en action →</a>
     </div>
-  </div>
-
-</section>
-
-<!-- ═══════════════════════════════════════════
-     VÉHICULES EN VENTE
-═══════════════════════════════════════════ -->
-<section id="vente">
-  <div class="section-header" data-animate>
-    <p class="section-eyebrow">Stock disponible</p>
-    <h2 class="section-title">Véhicules à la Vente</h2>
-    <p class="section-subtitle">Des camions professionnels remis en état, contrôlés et garantis — prêts à rejoindre vos chantiers.</p>
-  </div>
-
-  <div class="vehicles-gallery-v2" data-animate>
-
-    <!-- Carte 1 -->
-    <div class="tier-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
-      <div class="tier-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-      </div>
-      <h3 class="tier-title">Camion Bétonnière</h3>
-      <div class="tier-price">Sur devis <span>/ unité</span></div>
-      <p class="tier-desc">Véhicule professionnel révisé pour vos chantiers de coulage.</p>
-      
-      <hr class="tier-divider">
-      
-      <p class="tier-features-title">Ce qui est inclus :</p>
-      <ul class="tier-features">
-        <li>Reconditionnement complet</li>
-        <li>Contrôle technique OK</li>
-        <li>Tambour et pales vérifiés</li>
-        <li>Prêt à l'emploi immédiat</li>
-      </ul>
-      
-      <a href="#contact-strip" class="tier-btn">Demander les détails</a>
-    </div>
-
-    <!-- Carte 2 (Mise en avant) -->
-    <div class="tier-card tier-card--featured" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
-      <div class="tier-featured-tag">• Recommandé</div>
-      <div class="tier-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
-      </div>
-      <h3 class="tier-title">Camion Benne</h3>
-      <div class="tier-price">Sur devis <span>/ unité</span></div>
-      <p class="tier-desc">Le choix idéal pour le transport de matériaux en vrac.</p>
-      
-      <hr class="tier-divider">
-      
-      <p class="tier-features-title">Ce qui est inclus :</p>
-      <ul class="tier-features">
-        <li>Carrosserie entièrement rénovée</li>
-        <li>Contrôle technique à jour</li>
-        <li>Vérins hydrauliques neufs</li>
-        <li>Garantie moteur 6 mois</li>
-        <li>Nettoyage industriel</li>
-      </ul>
-      
-      <a href="#contact-strip" class="tier-btn">Demander les détails</a>
-    </div>
-
-    <!-- Carte 3 -->
-    <div class="tier-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
-      <div class="tier-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-      </div>
-      <h3 class="tier-title">Équipement Chantier</h3>
-      <div class="tier-price">Sur devis <span>/ lot</span></div>
-      <p class="tier-desc">Matériel complémentaire pour optimiser votre productivité.</p>
-      
-      <hr class="tier-divider">
-      
-      <p class="tier-features-title">Ce qui est inclus :</p>
-      <ul class="tier-features">
-        <li>Pièces d'usure remplacées</li>
-        <li>Tests fonctionnels stricts</li>
-        <li>Prêt à l'emploi immédiat</li>
-        <li>Maintenance à jour</li>
-      </ul>
-      
-      <a href="#contact-strip" class="tier-btn">Demander les détails</a>
-    </div>
-
-  </div>
-
-  <div class="vente-notice" data-animate>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="notice-icon"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-    <p>Stock renouvelé régulièrement — Contactez-nous pour connaître les dernières arrivées ou faire une demande sur un modèle précis.</p>
-    <a href="#contact-strip" class="btn-primary">Toutes les disponibilités</a>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════
-     AVIS CLIENTS — MARQUEE INFINI
+     AVIS CLIENTS — GOOGLE REVIEW WIDGET
 ═══════════════════════════════════════════ -->
 <section id="avis">
   <div class="section-header" data-animate>
@@ -454,65 +173,79 @@
     <p class="section-subtitle">Des professionnels du BPE qui nous confient leur parc depuis des années.</p>
   </div>
 
-  <div class="marquee-wrap">
-
-    <!-- Ligne 1 — défile vers la gauche -->
-    <div class="marquee-row">
-      <div class="marquee-track marquee-track--left">
-
-        <div class="avis-tile"><div class="avis-tile-stars">★★★★★</div><p class="avis-tile-quote">"Toupie IMER remise en route en moins de 48h. Techniciens compétents, communication au top."</p><div class="avis-tile-author"><span class="avis-tile-av">MR</span><div><strong>Marc R.</strong><span>Directeur technique — Centrale BPE, 77</span></div></div></div>
-
-        <div class="avis-tile"><div class="avis-tile-stars">★★★★★</div><p class="avis-tile-quote">"Pièces livrées en 24h pile. On ne peut pas se permettre d'immobiliser une toupie. Ils l'ont compris."</p><div class="avis-tile-author"><span class="avis-tile-av">SL</span><div><strong>Sophie L.</strong><span>Responsable parc — Groupe BPE Île-de-France</span></div></div></div>
-
-        <div class="avis-tile"><div class="avis-tile-stars">★★★★★</div><p class="avis-tile-quote">"Préparation de nos camions neufs depuis 5 ans. Sérieux, méticuleux. Chaque véhicule sort prêt à travailler."</p><div class="avis-tile-author"><span class="avis-tile-av">TP</span><div><strong>Thomas P.</strong><span>Gérant — Travaux Publics, 77</span></div></div></div>
-
-        <div class="avis-tile"><div class="avis-tile-stars">★★★★★</div><p class="avis-tile-quote">"Location de toupie pendant la réparation de la nôtre, réglée en un coup de fil. Service irréprochable."</p><div class="avis-tile-author"><span class="avis-tile-av">DM</span><div><strong>David M.</strong><span>Chef de chantier — BPE Melun</span></div></div></div>
-
-        <div class="avis-tile"><div class="avis-tile-stars">★★★★★</div><p class="avis-tile-quote">"Rachat de notre ancienne flotte effectué rapidement. Paiement immédiat, enlèvement inclus. Très pro."</p><div class="avis-tile-author"><span class="avis-tile-av">IK</span><div><strong>Isabelle K.</strong><span>DG — Carrières & Béton Est</span></div></div></div>
-
-        <!-- Duplicates pour la boucle -->
-        <div class="avis-tile"><div class="avis-tile-stars">★★★★★</div><p class="avis-tile-quote">"Toupie IMER remise en route en moins de 48h. Techniciens compétents, communication au top."</p><div class="avis-tile-author"><span class="avis-tile-av">MR</span><div><strong>Marc R.</strong><span>Directeur technique — Centrale BPE, 77</span></div></div></div>
-
-        <div class="avis-tile"><div class="avis-tile-stars">★★★★★</div><p class="avis-tile-quote">"Pièces livrées en 24h pile. On ne peut pas se permettre d'immobiliser une toupie. Ils l'ont compris."</p><div class="avis-tile-author"><span class="avis-tile-av">SL</span><div><strong>Sophie L.</strong><span>Responsable parc — Groupe BPE Île-de-France</span></div></div></div>
-
-        <div class="avis-tile"><div class="avis-tile-stars">★★★★★</div><p class="avis-tile-quote">"Préparation de nos camions neufs depuis 5 ans. Sérieux, méticuleux. Chaque véhicule sort prêt à travailler."</p><div class="avis-tile-author"><span class="avis-tile-av">TP</span><div><strong>Thomas P.</strong><span>Gérant — Travaux Publics, 77</span></div></div></div>
-
-        <div class="avis-tile"><div class="avis-tile-stars">★★★★★</div><p class="avis-tile-quote">"Location de toupie pendant la réparation de la nôtre, réglée en un coup de fil. Service irréprochable."</p><div class="avis-tile-author"><span class="avis-tile-av">DM</span><div><strong>David M.</strong><span>Chef de chantier — BPE Melun</span></div></div></div>
-
-        <div class="avis-tile"><div class="avis-tile-stars">★★★★★</div><p class="avis-tile-quote">"Rachat de notre ancienne flotte effectué rapidement. Paiement immédiat, enlèvement inclus. Très pro."</p><div class="avis-tile-author"><span class="avis-tile-av">IK</span><div><strong>Isabelle K.</strong><span>DG — Carrières & Béton Est</span></div></div></div>
-
+  <div class="gr-banner" data-animate>
+    <!-- Panneau score global -->
+    <div class="gr-score-panel">
+      <div class="gr-stars-row">★★★★★</div>
+      <div class="gr-rating-val">4.8 <span>/ 5</span></div>
+      <p class="gr-count">Basé sur nos avis clients</p>
+      <div class="gr-google-badge">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        <span>Google · Avis vérifiés</span>
       </div>
     </div>
 
-    <!-- Ligne 2 — défile vers la droite -->
-    <div class="marquee-row">
-      <div class="marquee-track marquee-track--right">
+    <!-- Carousel de reviews -->
+    <div class="gr-carousel" id="grCarousel">
+      <div class="gr-cards" id="grCards">
 
-        <div class="avis-tile"><div class="avis-tile-stars">★★★★★</div><p class="avis-tile-quote">"Réactivité exemplaire. Diagnostic posé en 2h, pièce commandée dans la foulée. Aucune journée perdue."</p><div class="avis-tile-author"><span class="avis-tile-av">PB</span><div><strong>Pierre B.</strong><span>Dir. exploitation — BPE Normandie</span></div></div></div>
+        <div class="gr-card is-active">
+          <div class="gr-card-stars">★★★★★</div>
+          <p class="gr-card-quote">"Toujours satisfait des réparations. Merci à toute l'équipe pour leur réactivité et leur professionnalisme — vraiment à la hauteur."</p>
+          <p class="gr-card-author">— Yaya A.</p>
+        </div>
 
-        <div class="avis-tile"><div class="avis-tile-stars">★★★★★</div><p class="avis-tile-quote">"Ils ont trouvé une pièce introuvable depuis 3 semaines chez tout le monde. En stock chez eux. Bluffant."</p><div class="avis-tile-author"><span class="avis-tile-av">MF</span><div><strong>Marie F.</strong><span>Acheteur technique — Grand Paris BPE</span></div></div></div>
+        <div class="gr-card">
+          <div class="gr-card-stars">★★★★★</div>
+          <p class="gr-card-quote">"Très bon accueil, équipe disponible et compétente. Ils ont trouvé la pièce dont on avait besoin en moins de 24h. Je recommande sans hésiter."</p>
+          <p class="gr-card-author">— Mohamed B.</p>
+        </div>
 
-        <div class="avis-tile"><div class="avis-tile-stars">★★★★★</div><p class="avis-tile-quote">"Toupie de location disponible le lendemain matin. On a pu honorer tous nos chantiers sans interruption."</p><div class="avis-tile-author"><span class="avis-tile-av">JA</span><div><strong>Jean-Luc A.</strong><span>Resp. flotte — BPE Loire</span></div></div></div>
+        <div class="gr-card">
+          <div class="gr-card-stars">★★★★★</div>
+          <p class="gr-card-quote">"Personnel sympathique et intervention rapide. Notre toupie était remise en route le lendemain matin. Service impeccable."</p>
+          <p class="gr-card-author">— Laurent C.</p>
+        </div>
 
-        <div class="avis-tile"><div class="avis-tile-stars">★★★★★</div><p class="avis-tile-quote">"Mise en service parfaite de notre camion neuf. Réglages au millimètre, livraison dans les délais annoncés."</p><div class="avis-tile-author"><span class="avis-tile-av">CN</span><div><strong>Cécile N.</strong><span>Coordinatrice — TP Seine-et-Marne</span></div></div></div>
+        <div class="gr-card">
+          <div class="gr-card-stars">★★★★★</div>
+          <p class="gr-card-quote">"Sérieux, réactifs, devis transparent. On fait appel à eux depuis plusieurs années pour l'entretien de notre flotte. Jamais déçu."</p>
+          <p class="gr-card-author">— Pascal D.</p>
+        </div>
 
-        <div class="avis-tile"><div class="avis-tile-stars">★★★★★</div><p class="avis-tile-quote">"Équipe compétente, devis honnête, travail de qualité. Le rapport qualité/prix est vraiment excellent."</p><div class="avis-tile-author"><span class="avis-tile-av">FD</span><div><strong>François D.</strong><span>Gérant — Entreprise Générale Paris</span></div></div></div>
+        <div class="gr-card">
+          <div class="gr-card-stars">★★★★★</div>
+          <p class="gr-card-quote">"Excellente entreprise, ils connaissent leur métier. Pièces livrées rapidement, camion prêt en temps et en heure. Très professionnel."</p>
+          <p class="gr-card-author">— Jean-Pierre M.</p>
+        </div>
 
-        <!-- Duplicates -->
-        <div class="avis-tile"><div class="avis-tile-stars">★★★★★</div><p class="avis-tile-quote">"Réactivité exemplaire. Diagnostic posé en 2h, pièce commandée dans la foulée. Aucune journée perdue."</p><div class="avis-tile-author"><span class="avis-tile-av">PB</span><div><strong>Pierre B.</strong><span>Dir. exploitation — BPE Normandie</span></div></div></div>
-
-        <div class="avis-tile"><div class="avis-tile-stars">★★★★★</div><p class="avis-tile-quote">"Ils ont trouvé une pièce introuvable depuis 3 semaines chez tout le monde. En stock chez eux. Bluffant."</p><div class="avis-tile-author"><span class="avis-tile-av">MF</span><div><strong>Marie F.</strong><span>Acheteur technique — Grand Paris BPE</span></div></div></div>
-
-        <div class="avis-tile"><div class="avis-tile-stars">★★★★★</div><p class="avis-tile-quote">"Toupie de location disponible le lendemain matin. On a pu honorer tous nos chantiers sans interruption."</p><div class="avis-tile-author"><span class="avis-tile-av">JA</span><div><strong>Jean-Luc A.</strong><span>Resp. flotte — BPE Loire</span></div></div></div>
-
-        <div class="avis-tile"><div class="avis-tile-stars">★★★★★</div><p class="avis-tile-quote">"Mise en service parfaite de notre camion neuf. Réglages au millimètre, livraison dans les délais annoncés."</p><div class="avis-tile-author"><span class="avis-tile-av">CN</span><div><strong>Cécile N.</strong><span>Coordinatrice — TP Seine-et-Marne</span></div></div></div>
-
-        <div class="avis-tile"><div class="avis-tile-stars">★★★★★</div><p class="avis-tile-quote">"Équipe compétente, devis honnête, travail de qualité. Le rapport qualité/prix est vraiment excellent."</p><div class="avis-tile-author"><span class="avis-tile-av">FD</span><div><strong>François D.</strong><span>Gérant — Entreprise Générale Paris</span></div></div></div>
+        <div class="gr-card">
+          <div class="gr-card-stars">★★★★★</div>
+          <p class="gr-card-quote">"Ils ont trouvé une pièce introuvable depuis 3 semaines partout. En stock chez eux, livraison en 48h. Bluffant — merci à l'équipe."</p>
+          <p class="gr-card-author">— Ahmed K.</p>
+        </div>
 
       </div>
-    </div>
 
-  </div><!-- /marquee-wrap -->
+      <div class="gr-nav">
+        <button class="gr-prev" id="grPrev" aria-label="Avis précédent">‹</button>
+        <div class="gr-dots" id="grDots">
+          <span class="gr-dot is-active" data-idx="0"></span>
+          <span class="gr-dot" data-idx="1"></span>
+          <span class="gr-dot" data-idx="2"></span>
+          <span class="gr-dot" data-idx="3"></span>
+          <span class="gr-dot" data-idx="4"></span>
+          <span class="gr-dot" data-idx="5"></span>
+        </div>
+        <button class="gr-next" id="grNext" aria-label="Avis suivant">›</button>
+      </div>
+    </div>
+  </div>
 
   <div class="avis-bottom" data-animate>
     <p>Plus de <strong>200 professionnels</strong> nous font confiance partout en France</p>
@@ -623,7 +356,7 @@
 
     <div class="footer-brand">
       <div class="footer-logo">
-        <span class="logo-eureka">EUREKA</span><span class="logo-btp">BTP</span>
+        <img src="/assets/Logo%20eureka-CgDsgso3.jpg" alt="Eureka BTP" style="height:44px; width:auto;">
       </div>
       <p class="footer-tagline">25 ans au service des professionnels du BPE. Réparation, location, achat & revente de toupies à béton — toutes marques, partout en France.</p>
       <div class="footer-coords">
@@ -641,24 +374,24 @@
     <div class="footer-nav">
       <h5>Navigation</h5>
       <ul>
-        <li><a href="#">Accueil</a></li>
-        <li><a href="#services">Nos services</a></li>
-        <li><a href="#pieces">Pièces détachées</a></li>
-        <li><a href="#vente">Véhicules à vendre</a></li>
-        <li><a href="#contact-strip">Contact & Devis</a></li>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="identite.html">Notre identité</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="activites.html">Nos activités</a></li>
+        <li><a href="pieces.html">Pièces détachées</a></li>
+        <li><a href="vente.html">Matériel</a></li>
+        <li><a href="atelier.html">L'atelier en action</a></li>
+        <li><a href="index.html#contact-strip">Contact &amp; Devis</a></li>
       </ul>
       <h5 style="margin-top:1.75rem">Services</h5>
       <ul>
-        <li><a href="#services">Réparation & Maintenance</a></li>
-        <li><a href="#services">Préparation camion neuf</a></li>
-        <li><a href="#services">Location de toupies</a></li>
-        <li><a href="#services">Achat & Revente</a></li>
-        <li><a href="#pieces">Pièces détachées</a></li>
+        <li><a href="reparation.html">Réparation &amp; Maintenance</a></li>
+        <li><a href="livraison.html">Vente de pièces &amp; livraison</a></li>
+        <li><a href="preparation.html">Préparation camion neuf</a></li>
+        <li><a href="location.html">Location de toupies</a></li>
+        <li><a href="achat-revente.html">Achat &amp; Revente</a></li>
       </ul>
     </div>
-
-
-
   </div>
   <div class="footer-bottom">
     <p>© 2026 Eureka BTP — Tous droits réservés</p>

@@ -269,7 +269,7 @@ html, body { background-color: #ffffff !important; }
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--accent);
-  background: rgba(29,78,216,0.09);
+  background: rgba(26,26,26,0.09);
   padding: 0.22rem 0.65rem;
   border-radius: 999px;
   align-self: flex-start;
@@ -362,7 +362,7 @@ html, body { background-color: #ffffff !important; }
 }
 .spotlight-bar:focus-within {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(29,78,216,0.12), 0 8px 40px rgba(0,0,0,0.07);
+  box-shadow: 0 0 0 3px rgba(26,26,26,0.12), 0 8px 40px rgba(0,0,0,0.07);
 }
 .is-compact .spotlight-bar {
   padding: 0.6rem 1.2rem;
@@ -479,7 +479,7 @@ html, body { background-color: #ffffff !important; }
 .catalog-section-label::before,
 .catalog-section-label::after {
   content: ''; flex: 1; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(29,78,216,0.25), transparent);
+  background: linear-gradient(90deg, transparent, rgba(26,26,26,0.25), transparent);
 }
 .catalog-section-label span { font-size: 0.58rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.28em; color: var(--accent); white-space: nowrap; }
 
@@ -489,8 +489,6 @@ html, body { background-color: #ffffff !important; }
 
 /* ─── Grille ─── */
 .catalog-grid { gap: 1.2rem; }
-.catalog-card.card-wide { grid-column: span 2; }
-.catalog-card.card-wide .catalog-img { height: 220px; }
 
 /* ─── Cartes ─── */
 .catalog-card {
@@ -500,7 +498,7 @@ html, body { background-color: #ffffff !important; }
   box-shadow: 0 10px 25px rgba(0,0,0,0.1), 0 4px 10px rgba(0,0,0,0.05);
 }
 .catalog-card:hover {
-  border-color: rgba(29,78,216,0.2);
+  border-color: rgba(26,26,26,0.2);
   transform: translateY(-5px);
   box-shadow: 0 20px 50px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.08);
 }
@@ -522,14 +520,14 @@ html, body { background-color: #ffffff !important; }
 
 /* ─── Spotlight ─── */
 .spotlight-wrap { background: #fff; }
-.spotlight-wrap.is-compact { background: rgba(255,255,255,0.96); backdrop-filter: blur(18px); box-shadow: 0 1px 0 rgba(29,78,216,0.08); }
+.spotlight-wrap.is-compact { background: rgba(255,255,255,0.96); backdrop-filter: blur(18px); box-shadow: 0 1px 0 rgba(26,26,26,0.08); }
 .spotlight-bar { background: #fff; border-color: var(--border); box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
-.spotlight-bar:focus-within { border-color: rgba(29,78,216,0.5); box-shadow: 0 0 0 3px rgba(29,78,216,0.1), 0 4px 24px rgba(0,0,0,0.06); }
+.spotlight-bar:focus-within { border-color: rgba(26,26,26,0.5); box-shadow: 0 0 0 3px rgba(26,26,26,0.1), 0 4px 24px rgba(0,0,0,0.06); }
 .spotlight-icon { color: var(--accent); }
 .spotlight-input { color: var(--anthracite); }
 .spotlight-input::placeholder { color: var(--gray-lt); }
 .spotlight-count { color: var(--gray-lt); }
-.spotlight-kbd { border-color: rgba(29,78,216,0.3); color: var(--accent); background: var(--accent-glass); }
+.spotlight-kbd { border-color: rgba(26,26,26,0.3); color: var(--accent); background: var(--accent-glass); }
 .spotlight-clear { background: var(--light); color: var(--gray); }
 .spotlight-clear:hover { background: var(--accent); color: #fff; }
 .spotlight-empty { background: var(--light); border-color: var(--border); color: var(--gray); box-shadow: var(--shadow-sm); }
@@ -538,21 +536,19 @@ html, body { background-color: #ffffff !important; }
 /* ─── Marques ─── */
 .marques-section h4 { color: var(--gray-lt); }
 .marques-list span { background: var(--light); border-color: var(--border); color: var(--gray); box-shadow: var(--shadow-sm); }
-.marques-list span:hover { border-color: rgba(29,78,216,0.4); color: var(--accent); background: var(--accent-glass); }
+.marques-list span:hover { border-color: rgba(26,26,26,0.4); color: var(--accent); background: var(--accent-glass); }
 
 /* ─── CTA final ─── */
-.pieces-page-cta { background: var(--light); border: 1px solid var(--border); border-left: 4px solid var(--accent); box-shadow: var(--shadow-sm); }
-
-/* ─── Responsive ─── */
-@media (max-width: 780px) { .catalog-card.card-wide { grid-column: span 2; } }
-@media (max-width: 480px) {
-  .catalog-card.card-wide { grid-column: span 1; }
-  .catalog-card.card-wide .catalog-img { height: 185px; }
-}
+.pieces-page-cta { background: var(--anthracite); border: none; border-left: 4px solid var(--accent); box-shadow: var(--shadow-md); margin-top: 3rem; }
+.pieces-page-cta h3 { color: #fff; }
+.pieces-page-cta p { color: rgba(255,255,255,0.65); }
+.pieces-page-cta .btn-primary { background: #fff; color: var(--anthracite); }
+.pieces-page-cta .btn-primary:hover { background: var(--accent); color: #fff; }
+.pieces-phone { color: rgba(255,255,255,0.7); }
+.pieces-phone:hover { color: #fff; }
 
 /* ─── Images AVIF fond blanc (contain) ─── */
 .catalog-img--light { background: #f8f9fb; display: flex; align-items: center; justify-content: center; }
 .catalog-img--light img { width: 100%; height: 100%; object-fit: contain; padding: 1rem; filter: none; }
-.card-wide .catalog-img--light { height: 220px; }
 .catalog-img--light + .catalog-content .catalog-devis { font-size: 0.8rem; }
-.marques-list span:hover { border-color: rgba(29,78,216,0.5); }
+.marques-list span:hover { border-color: rgba(26,26,26,0.5); }

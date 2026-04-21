@@ -18,28 +18,42 @@
 ═══════════════════════════════════════════ -->
 <nav id="navbar">
   <div class="nav-container">
-    <a href="#" class="nav-logo">
-      <span class="logo-eureka">EUREKA</span><span class="logo-btp">BTP</span>
+    <a href="index.html" class="nav-logo">
+      <img src="images/Logo eureka.jpg" alt="Eureka BTP" class="nav-logo-img">
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#pieces">Pièces détachées</a></li>
-      <li><a href="#vente">Achat & Revente</a></li>
-      <li><a href="#avis">Avis clients</a></li>
+      <li class="has-dropdown">
+        <a href="services.html" class="nav-dropdown-toggle">Services</a>
+        <div class="nav-dropdown">
+          <a href="reparation.html">Réparation<small>Diagnostic et remise en état</small></a>
+          <a href="livraison.html">Vente de pièces &amp; livraison<small>Toutes marques — 24-48h</small></a>
+          <a href="preparation.html">Préparation camion neuf<small>Mise en service clé en main</small></a>
+          <a href="location.html">Location<small>Toupies opérationnelles</small></a>
+          <a href="achat-revente.html">Achat &amp; revente<small>Pièces et camions</small></a>
+        </div>
+      </li>
+      <li><a href="pieces.html">Pièces détachées</a></li>
+      <li><a href="vente.html">Matériel</a></li>
+      <li><a href="activites.html">Nos activités</a></li>
     </ul>
-    <a href="#contact-strip" class="nav-cta">Demander un devis</a>
+    <a href="index.html#contact-strip" class="nav-cta">Demander un devis</a>
     <button class="nav-burger" id="navBurger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="nav-mobile" id="navMobile">
-    <a href="#services">Services</a>
-    <a href="#pieces">Pièces détachées</a>
-    <a href="#vente">Achat & Revente</a>
-    <a href="#avis">Avis clients</a>
-    <a href="#contact-strip">Contact</a>
-    <a href="#contact-strip" class="mobile-cta">Demander un devis</a>
+    <a href="index.html">Accueil</a>
+    <a href="services.html"><strong>Services</strong></a>
+    <a href="reparation.html" style="padding-left:1.25rem;font-size:0.9rem;">· Réparation</a>
+    <a href="livraison.html" style="padding-left:1.25rem;font-size:0.9rem;">· Vente de pièces &amp; livraison</a>
+    <a href="preparation.html" style="padding-left:1.25rem;font-size:0.9rem;">· Préparation camion neuf</a>
+    <a href="location.html" style="padding-left:1.25rem;font-size:0.9rem;">· Location</a>
+    <a href="achat-revente.html" style="padding-left:1.25rem;font-size:0.9rem;">· Achat &amp; revente</a>
+    <a href="pieces.html">Pièces détachées</a>
+    <a href="vente.html">Matériel</a>
+    <a href="activites.html">Nos activités</a>
+    <a href="index.html#contact-strip" class="mobile-cta">Demander un devis</a>
   </div>
 </nav>
 
@@ -60,7 +74,7 @@
     <p class="hero-subtitle">Réparation, maintenance, location, pièces détachées pour toupies, pompes et centrales à béton — toutes marques, partout en France.</p>
     <div class="hero-actions">
       <a href="#contact-strip" class="btn-primary">Demander un devis gratuit</a>
-      <a href="#services" class="btn-ghost">Découvrir nos services</a>
+      <a href="services.html" class="btn-ghost">Découvrir nos services</a>
     </div>
   </div>
 </section>
@@ -143,171 +157,7 @@
       </div>
     </div>
     <div class="atelier-teaser-cta" data-animate>
-      <a href="identite.html" class="btn-ghost-dark">Voir tout notre savoir-faire →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     SERVICES — Z-PATTERN
-═══════════════════════════════════════════ -->
-<section id="services">
-
-  <div class="section-header" data-animate>
-    <p class="section-eyebrow">Ce que nous faisons</p>
-    <h2 class="section-title">Nos activités principales</h2>
-    <p class="section-subtitle">Réparation, préparation, location, achat & revente — nous accompagnons les professionnels du BPE à chaque étape du cycle de vie de leur parc béton.</p>
-  </div>
-
-  <!-- 01 — Image gauche / Texte droite -->
-  <div class="service-row" data-animate>
-    <div class="service-image">
-      <img src="images/soudure/PHOTO-2026-04-18-16-40-33.jpg" alt="Réparation et maintenance de véhicules béton">
-      <div class="service-badge">01</div>
-    </div>
-    <div class="service-content">
-      <span class="service-tag">Réparation & Maintenance</span>
-      <h3>Remise en état de vos véhicules de chantier</h3>
-      <p>Nos techniciens qualifiés interviennent sur l'ensemble de votre parc de véhicules lourds. Bétonnières IMER, Stetter, Liebherr, camions bennes — nous maîtrisons toutes les marques et tous les modèles, des diagnostics aux interventions complètes. Grâce à notre atelier équipé en Seine-et-Marne et notre stock de pièces détachées, nous minimisons les délais d'immobilisation et vous garantissons des réparations durables, réalisées dans les règles de l'art.</p>
-      <a href="reparation.html" class="btn-primary">En savoir plus</a>
-    </div>
-  </div>
-
-  <!-- 02 — Texte gauche / Image droite -->
-  <div class="service-row reverse" data-animate>
-    <div class="service-content">
-      <span class="service-tag">Préparation Camion Neuf</span>
-      <h3>Mise en service complète, clé en main</h3>
-      <p>Nous prenons en charge l'intégralité de la mise en service — montage et réglage des équipements, aménagements spécifiques selon vos besoins, contrôles techniques complets et essais avant livraison. Chaque véhicule quitte notre atelier opérationnel et conforme aux exigences du terrain. Notre équipe assure un suivi personnalisé de A à Z pour que votre camion neuf soit prêt à rejoindre vos chantiers dès le premier jour.</p>
-      <a href="preparation.html" class="btn-primary">En savoir plus</a>
-    </div>
-    <div class="service-image">
-      <img src="images/camion/PHOTO-2026-04-18-16-40-31.jpg" alt="Préparation et mise en service camion neuf">
-      <div class="service-badge">02</div>
-    </div>
-  </div>
-
-  <!-- 03 — Image gauche / Texte droite -->
-  <div class="service-row" data-animate>
-    <div class="service-image" style="position: relative; z-index: 2;">
-      <img src="images/camion/PHOTO-2026-04-18-16-40-29%202.jpg" alt="Location de toupies à béton">
-      <div class="service-badge">03</div>
-    </div>
-    <div class="service-content">
-      <span class="service-tag">Location de Toupies</span>
-      <h3>Un renfort opérationnel immédiat pour votre activité</h3>
-      <p>Besoin d'un véhicule de remplacement pendant une réparation, ou d'un renfort temporaire pour faire face à un pic d'activité ? Nous mettons à disposition des toupies à béton rigoureusement contrôlées et prêtes à l'emploi, pour des durées courtes ou longues selon vos besoins. Notre flotte de location vous permet de maintenir votre cadence de production sans interruption, à des conditions transparentes et sans mauvaise surprise.</p>
-      <a href="location.html" class="btn-primary">En savoir plus</a>
-    </div>
-  </div>
-
-  <!-- 04 — Texte gauche / Image droite -->
-  <div class="service-row reverse" data-animate>
-    <div class="service-content">
-      <span class="service-tag">Achat & Revente</span>
-      <h3>Votre partenaire pour acheter et revendre en toute confiance</h3>
-      <p>Eureka BTP vous accompagne dans l'achat et la revente de toupies à béton et camions bétonnières. Chaque véhicule est expertisé et remis en état avant revente, pour vous garantir un matériel fiable et performant. Notre réseau étendu de professionnels du BPE nous permet de proposer un stock régulièrement renouvelé, et de trouver le matériel correspondant précisément à vos besoins, au meilleur prix.</p>
-      <a href="achat-revente.html" class="btn-primary">En savoir plus</a>
-    </div>
-    <div class="service-image">
-      <img src="images/camion/PHOTO-2026-04-18-16-40-30%205.jpg" alt="Achat et revente de toupies et camions">
-      <div class="service-badge">04</div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     PIÈCES DÉTACHÉES — ÉDITORIAL
-═══════════════════════════════════════════ -->
-<section id="pieces">
-  <div class="section-header" data-animate>
-    <p class="section-eyebrow">Catalogue</p>
-    <h2 class="section-title">Pièces Détachées</h2>
-    <p class="section-subtitle">Toutes marques — expédition 24–48h partout en France.</p>
-  </div>
-
-  <!-- Bloc 1 — Image plein fond, texte panneau gauche -->
-  <div class="pb pb--hero" data-animate>
-    <div class="pb-bg" style="background-image:url('images/soudure/PHOTO-2026-04-18-16-40-32%204.jpg')"></div>
-    <div class="pb-overlay"></div>
-    <div class="pb-panel">
-      <span class="service-tag service-tag--glass">Toupies & Mixo-pompes</span>
-      <h3>Moteurs, réducteurs,<br>cuves et goulottes</h3>
-      <p>Nous stockons et fournissons l'ensemble des pièces détachées pour toupies et mixo-pompes, toutes marques — IMER, Stetter, Liebherr, CIFA. Moteurs hydrauliques, réducteurs, cuves, goulottes, pompes hydrauliques : chaque référence est disponible rapidement pour limiter vos temps d'immobilisation.</p>
-      <a href="pieces.html" class="btn-primary">Voir le catalogue →</a>
-    </div>
-  </div>
-
-  <!-- Bloc 2 — Texte gauche blanc, image droite -->
-  <div class="pb pb--split" data-animate>
-    <div class="pb-text">
-      <span class="service-tag">Pompes à Béton</span>
-      <h3>Pistons, clapets et flexibles haute pression</h3>
-      <p>Nos experts localisent et livrent toutes les pièces critiques pour vos pompes à béton — Putzmeister, Schwing, Sermac. Pistons, clapets anti-retour, flexibles haute pression, bras de distribution, joints toriques : stock permanent pour les meilleurs délais de livraison.</p>
-      <a href="pieces.html" class="btn-primary">Voir le catalogue →</a>
-    </div>
-    <div class="pb-img">
-      <img src="images/camion/PHOTO-2026-04-18-16-40-30%202.jpg" alt="Pièces détachées pompes à béton">
-    </div>
-  </div>
-
-  <!-- Bloc 3 — Image gauche, texte foncé droite -->
-  <div class="pb pb--split pb--dark-text" data-animate>
-    <div class="pb-img">
-      <img src="images/camion/PHOTO-2026-04-18-16-40-29%203.jpg" alt="Centrales à béton — pièces détachées">
-    </div>
-    <div class="pb-text pb-text--dark">
-      <span class="service-tag service-tag--glass">Centrales à Béton</span>
-      <h3>Malaxeurs, automatismes et composants</h3>
-      <p>Pour vos centrales à béton, nous proposons malaxeurs, sondes d'humidité, cartes d'automatismes, compresseurs, tapis d'alimentation et vannes papillon. Chaque pièce est sélectionnée pour sa compatibilité et sa fiabilité, afin que votre centrale reprenne la production sans délai.</p>
-      <a href="pieces.html" class="btn-primary">Voir le catalogue →</a>
-    </div>
-  </div>
-
-  <!-- Badges -->
-  <div class="pc-below">
-    <div class="pieces-badges" data-animate>
-      <div class="pieces-badge-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        <span>Expédition <strong>24–48h</strong></span>
-      </div>
-      <div class="pieces-badge-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-        <span>Partout <strong>en France</strong></span>
-      </div>
-      <div class="pieces-badge-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        <span>Toutes <strong>marques</strong></span>
-      </div>
-      <div class="pieces-badge-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span>Devis <strong>gratuit</strong></span>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-<!-- ═══════════════════════════════════════════
-     MATÉRIELS À LA VENTE — SHOWCASE
-═══════════════════════════════════════════ -->
-<section id="vente">
-  <div class="section-header" data-animate>
-    <p class="section-eyebrow">Stock disponible</p>
-    <h2 class="section-title">Matériels à la Vente</h2>
-    <p class="section-subtitle">Camions, pompes et équipements de chantier — remis en état, contrôlés et garantis par nos techniciens.</p>
-  </div>
-
-  <div class="vente-showcase" data-animate>
-    <div class="vente-showcase-img">
-      <img src="images/camion/PHOTO-2026-04-18-16-40-30.jpg" alt="Matériels à la vente — Eureka BTP">
-      <div class="vente-showcase-overlay"></div>
-    </div>
-    <div class="vente-showcase-content">
-      <span class="service-tag">Achat & Revente</span>
-      <h3>Votre partenaire pour acheter et revendre en toute confiance</h3>
-      <p>Camions bétonnières, pompes à béton, centrales mobiles, équipements de chantier — tous nos matériels sont expertisés, remis en état et rigoureusement contrôlés par nos techniciens avant mise en vente. Stock renouvelé régulièrement, garantie sur chaque véhicule.</p>
-      <a href="vente.html" class="btn-primary">Voir tout le stock disponible →</a>
+      <a href="atelier.html" class="btn-ghost-dark">Voir l'atelier en action →</a>
     </div>
   </div>
 </section>
@@ -505,7 +355,7 @@
 
     <div class="footer-brand">
       <div class="footer-logo">
-        <span class="logo-eureka">EUREKA</span><span class="logo-btp">BTP</span>
+        <img src="images/Logo eureka.jpg" alt="Eureka BTP" style="height:44px; width:auto;">
       </div>
       <p class="footer-tagline">25 ans au service des professionnels du BPE. Réparation, location, achat & revente de toupies à béton — toutes marques, partout en France.</p>
       <div class="footer-coords">
@@ -523,25 +373,24 @@
     <div class="footer-nav">
       <h5>Navigation</h5>
       <ul>
-        <li><a href="#">Accueil</a></li>
+        <li><a href="index.html">Accueil</a></li>
         <li><a href="identite.html">Notre identité</a></li>
-        <li><a href="#services">Nos services</a></li>
-        <li><a href="#pieces">Pièces détachées</a></li>
-        <li><a href="#vente">Véhicules à vendre</a></li>
-        <li><a href="#contact-strip">Contact & Devis</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="activites.html">Nos activités</a></li>
+        <li><a href="pieces.html">Pièces détachées</a></li>
+        <li><a href="vente.html">Matériel</a></li>
+        <li><a href="atelier.html">L'atelier en action</a></li>
+        <li><a href="index.html#contact-strip">Contact &amp; Devis</a></li>
       </ul>
       <h5 style="margin-top:1.75rem">Services</h5>
       <ul>
-        <li><a href="#services">Réparation & Maintenance</a></li>
-        <li><a href="#services">Préparation camion neuf</a></li>
-        <li><a href="#services">Location de toupies</a></li>
-        <li><a href="#services">Achat & Revente</a></li>
-        <li><a href="#pieces">Pièces détachées</a></li>
+        <li><a href="reparation.html">Réparation &amp; Maintenance</a></li>
+        <li><a href="livraison.html">Vente de pièces &amp; livraison</a></li>
+        <li><a href="preparation.html">Préparation camion neuf</a></li>
+        <li><a href="location.html">Location de toupies</a></li>
+        <li><a href="achat-revente.html">Achat &amp; Revente</a></li>
       </ul>
     </div>
-
-
-
   </div>
   <div class="footer-bottom">
     <p>© 2026 Eureka BTP — Tous droits réservés</p>

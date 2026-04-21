@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nos services — Eureka BTP : réparation, vente de pièces & livraison, préparation camion neuf, location, achat & revente.">
+  <title>Nos services — Eureka BTP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero-s {
+      position: relative; height: 45vh; min-height: 340px; max-height: 520px;
+      display: flex; align-items: flex-end; padding: 0 2rem 4rem; overflow: hidden;
+      background: url('images/soudure/PHOTO-2026-04-18-16-40-33.jpg') center/cover no-repeat;
+    }
+    .page-hero-s::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,14,22,0.88) 0%, rgba(10,14,22,0.5) 55%, rgba(10,14,22,0.3) 100%);
+    }
+    .page-hero-s-content {
+      position: relative; z-index: 2;
+      max-width: 1240px; margin: 0 auto; width: 100%; color: #fff;
+    }
+    .page-hero-s-content h1 { margin-bottom: 0.85rem; }
+    .page-hero-s-content p { font-size: 1.05rem; color: rgba(255,255,255,0.78); max-width: 640px; line-height: 1.72; }
+
+    #svc-grid-sec {
+      background: #fff;
+      padding: 7rem 2rem 8rem;
+    }
+    .svc-grid-inner {
+      max-width: 1240px; margin: 0 auto;
+    }
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      margin-top: 4rem;
+    }
+    .svc-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+    }
+    .svc-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--anthracite);
+    }
+    .svc-card-img {
+      height: 210px;
+      overflow: hidden;
+      background: var(--light);
+    }
+    .svc-card-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.6s var(--ease);
+    }
+    .svc-card:hover .svc-card-img img { transform: scale(1.06); }
+    .svc-card-body {
+      padding: 1.75rem 1.75rem 1.5rem;
+      display: flex; flex-direction: column;
+      flex: 1;
+    }
+    .svc-card-num {
+      font-size: 0.7rem; font-weight: 800;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gray-lt);
+      margin-bottom: 0.55rem;
+    }
+    .svc-card-body h3 {
+      color: var(--anthracite);
+      margin-bottom: 0.75rem;
+      font-size: 1.2rem;
+    }
+    .svc-card-body p {
+      font-size: 0.92rem; color: var(--gray);
+      line-height: 1.65; margin-bottom: 1.75rem;
+      flex: 1;
+    }
+    .svc-card-cta {
+      display: inline-flex; align-items: center;
+      gap: 0.5rem; align-self: flex-start;
+      padding: 0.75rem 1.4rem;
+      background: var(--anthracite);
+      color: #fff;
+      border-radius: 6px;
+      font-size: 0.85rem; font-weight: 700;
+      transition: background 0.25s var(--ease), gap 0.25s var(--ease);
+    }
+    .svc-card-cta::after { content: '→'; transition: transform 0.25s var(--ease); }
+    .svc-card-cta:hover {
+      background: #000;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 960px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .svc-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav id="navbar" class="scrolled">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/Logo eureka.jpg" alt="Eureka BTP" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li class="has-dropdown">
+        <a href="services.html" class="nav-dropdown-toggle">Services</a>
+        <div class="nav-dropdown">
+          <a href="reparation.html">Réparation<small>Diagnostic et remise en état</small></a>
+          <a href="livraison.html">Vente de pièces &amp; livraison<small>Toutes marques — 24-48h</small></a>
+          <a href="preparation.html">Préparation camion neuf<small>Mise en service clé en main</small></a>
+          <a href="location.html">Location<small>Toupies opérationnelles</small></a>
+          <a href="achat-revente.html">Achat &amp; revente<small>Pièces et camions</small></a>
+        </div>
+      </li>
+      <li><a href="pieces.html">Pièces détachées</a></li>
+      <li><a href="vente.html">Matériel</a></li>
+      <li><a href="activites.html">Nos activités</a></li>
+    </ul>
+    <a href="index.html#contact-strip" class="nav-cta">Demander un devis</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html">Accueil</a>
+    <a href="services.html"><strong>Services</strong></a>
+    <a href="reparation.html" style="padding-left:1.25rem;font-size:0.9rem;">· Réparation</a>
+    <a href="livraison.html" style="padding-left:1.25rem;font-size:0.9rem;">· Vente de pièces &amp; livraison</a>
+    <a href="preparation.html" style="padding-left:1.25rem;font-size:0.9rem;">· Préparation camion neuf</a>
+    <a href="location.html" style="padding-left:1.25rem;font-size:0.9rem;">· Location</a>
+    <a href="achat-revente.html" style="padding-left:1.25rem;font-size:0.9rem;">· Achat &amp; revente</a>
+    <a href="pieces.html">Pièces détachées</a>
+    <a href="vente.html">Matériel</a>
+    <a href="activites.html">Nos activités</a>
+    <a href="index.html#contact-strip" class="mobile-cta">Demander un devis</a>
+  </div>
+</nav>
+
+<section class="page-hero-s">
+  <div class="page-hero-s-content">
+    <p class="section-eyebrow">Nos services</p>
+    <h1>Tout notre savoir-faire, en un coup d'œil</h1>
+    <p>Cinq domaines d'expertise au service de votre parc béton — chaque service est piloté par nos techniciens et nos experts sourcing.</p>
+  </div>
+</section>
+
+<section id="svc-grid-sec">
+  <div class="svc-grid-inner">
+
+    <div class="section-header" data-animate>
+      <p class="section-eyebrow">Choisissez votre besoin</p>
+      <h2 class="section-title">Des services dédiés aux professionnels du BPE</h2>
+      <p class="section-subtitle">Un point d'entrée unique pour chaque étape du cycle de vie de votre matériel.</p>
+    </div>
+
+    <div class="svc-grid">
+
+      <article class="svc-card" data-animate>
+        <div class="svc-card-img">
+          <img src="images/soudure/PHOTO-2026-04-18-16-40-33.jpg" alt="Réparation et maintenance">
+        </div>
+        <div class="svc-card-body">
+          <span class="svc-card-num">01 — Atelier</span>
+          <h3>Réparation</h3>
+          <p>Diagnostic complet, réparation carrosserie et châssis, interventions moteur, boîte et hydraulique — toutes marques.</p>
+          <a href="reparation.html" class="svc-card-cta">Découvrir</a>
+        </div>
+      </article>
+
+      <article class="svc-card" data-animate>
+        <div class="svc-card-img">
+          <img src="images/camion/PHOTO-2026-04-18-16-40-30%202.jpg" alt="Vente de pièces détachées et livraison">
+        </div>
+        <div class="svc-card-body">
+          <span class="svc-card-num">02 — Logistique</span>
+          <h3>Vente de pièces &amp; livraison</h3>
+          <p>Stock permanent toutes marques et expédition sous 24-48h partout en France. Sourcing dédié pour les références rares.</p>
+          <a href="livraison.html" class="svc-card-cta">Découvrir</a>
+        </div>
+      </article>
+
+      <article class="svc-card" data-animate>
+        <div class="svc-card-img">
+          <img src="images/camion/PHOTO-2026-04-18-16-40-31.jpg" alt="Préparation camion neuf">
+        </div>
+        <div class="svc-card-body">
+          <span class="svc-card-num">03 — Mise en service</span>
+          <h3>Préparation camion neuf</h3>
+          <p>Montage et réglage des équipements, aménagements spécifiques, contrôles techniques et essais avant livraison.</p>
+          <a href="preparation.html" class="svc-card-cta">Découvrir</a>
+        </div>
+      </article>
+
+      <article class="svc-card" data-animate>
+        <div class="svc-card-img">
+          <img src="images/camion/PHOTO-2026-04-18-16-40-29%202.jpg" alt="Location de toupies">
+        </div>
+        <div class="svc-card-body">
+          <span class="svc-card-num">04 — Flotte</span>
+          <h3>Location</h3>
+          <p>Toupies contrôlées et prêtes à l'emploi — courte ou longue durée, pour un renfort immédiat ou un véhicule de remplacement.</p>
+          <a href="location.html" class="svc-card-cta">Découvrir</a>
+        </div>
+      </article>
+
+      <article class="svc-card" data-animate>
+        <div class="svc-card-img">
+          <img src="images/camion/PHOTO-2026-04-18-16-40-30%205.jpg" alt="Achat revente de pièces et camions">
+        </div>
+        <div class="svc-card-body">
+          <span class="svc-card-num">05 — Marché</span>
+          <h3>Achat &amp; revente de pièces et camions</h3>
+          <p>Matériel expertisé, remis en état et contrôlé — stock renouvelé régulièrement dans toute la France.</p>
+          <a href="achat-revente.html" class="svc-card-cta">Découvrir</a>
+        </div>
+      </article>
+
+      <article class="svc-card" data-animate style="background:var(--anthracite); color:#fff;">
+        <div class="svc-card-body" style="padding:2.25rem 1.75rem;">
+          <span class="svc-card-num" style="color:rgba(255,255,255,0.55);">Vue globale</span>
+          <h3 style="color:#fff;">Toutes nos activités</h3>
+          <p style="color:rgba(255,255,255,0.68);">Un aperçu complet de nos 4 pôles d'activité — réparation, préparation, location, achat &amp; revente.</p>
+          <a href="activites.html" class="svc-card-cta" style="background:#fff; color:var(--anthracite);">Nos activités</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="service-cta" style="background:var(--dark); padding:6rem 2rem; text-align:center;">
+  <div style="max-width:640px; margin:0 auto;" data-animate>
+    <p class="section-eyebrow" style="color:#fff;">Parlons de votre besoin</p>
+    <h2 style="color:#fff; margin-bottom:1rem;">Un projet, une réparation, une pièce ?</h2>
+    <p style="color:rgba(255,255,255,0.65); font-size:1rem; line-height:1.75; margin-bottom:2.5rem;">Nos experts répondent sous 24h avec une estimation gratuite et sans engagement.</p>
+    <a href="index.html#contact-strip" class="btn-primary">Demander un devis gratuit</a>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="images/Logo eureka.jpg" alt="Eureka BTP" style="height:44px; width:auto;">
+      </div>
+      <p class="footer-tagline">25 ans au service des professionnels du BPE. Réparation, location, achat &amp; revente de toupies à béton — toutes marques, partout en France.</p>
+      <div class="footer-coords">
+        <p><strong>Adresse :</strong> Gretz-Armainvilliers, Seine-et-Marne (77)</p>
+        <p><strong>Tél :</strong> <a href="tel:+33XXXXXXXXX">+33 X XX XX XX XX</a></p>
+        <p><strong>Email :</strong> <a href="mailto:contact@eurekabtp.com">contact@eurekabtp.com</a></p>
+      </div>
+      <div class="footer-hours">
+        <p><strong>Horaires :</strong></p>
+        <p>Lundi – Vendredi : 8h00 – 18h00</p>
+        <p>Samedi : 8h00 – 12h00</p>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="identite.html">Notre identité</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="activites.html">Nos activités</a></li>
+        <li><a href="pieces.html">Pièces détachées</a></li>
+        <li><a href="vente.html">Matériel</a></li>
+        <li><a href="atelier.html">L'atelier en action</a></li>
+        <li><a href="index.html#contact-strip">Contact &amp; Devis</a></li>
+      </ul>
+      <h5 style="margin-top:1.75rem">Services</h5>
+      <ul>
+        <li><a href="reparation.html">Réparation &amp; Maintenance</a></li>
+        <li><a href="livraison.html">Vente de pièces &amp; livraison</a></li>
+        <li><a href="preparation.html">Préparation camion neuf</a></li>
+        <li><a href="location.html">Location de toupies</a></li>
+        <li><a href="achat-revente.html">Achat &amp; Revente</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Eureka BTP — Tous droits réservés</p>
+    <div class="footer-bottom-links"><a href="#">Mentions légales</a><a href="#">Confidentialité</a></div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  document.getElementById('navBurger').addEventListener('click', function() {
+    document.getElementById('navMobile').classList.toggle('open');
+    this.classList.toggle('open');
+  });
+  document.querySelectorAll('[data-animate]').forEach(el => {
+    gsap.from(el, { y: 30, opacity: 0, duration: 0.75, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 85%' } });
+  });
+</script>
+</body>
+</html>
