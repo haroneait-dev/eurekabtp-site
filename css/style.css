@@ -3171,3 +3171,21 @@ footer { background: #2b2b2b; color: #fff; }
     gap: 1rem 2rem;
   }
 }
+
+.activite-row.extra-small-img .activite-img {
+  flex: 0 0 30%;
+  min-height: 280px;
+}
+.activite-row.extra-small-img .activite-text {
+  flex: 0 0 70%;
+}
+.activite-text.gray-bg {
+  background: var(--light) !important;
+  color: var(--anthracite);
+}
+.activite-text.gray-bg .eureka-split-tag {
+  background: rgba(0,0,0,0.06);
+  color: var(--anthracite);
+}
+.activite-text.gray-bg h3 { color: var(--anthracite); }
+.activite-text.gray-bg p { color: var(--gray); }
