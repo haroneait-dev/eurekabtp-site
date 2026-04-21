@@ -3100,42 +3100,5 @@ footer { background: #2b2b2b; color: #fff; }
   .activite-text { padding: 3.5rem 2rem; }
 }
 
-/* ════════════════════════════════════════════════════
-   SECTION TRANSITION STRIP
-════════════════════════════════════════════════════ */
-.section-transition {
-  background: #fff;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  overflow: hidden;
-  padding: 1.1rem 0;
-}
-.section-transition-inner {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  width: max-content;
-  animation: marquee-scroll 22s linear infinite;
-  white-space: nowrap;
-  padding: 0 2rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--anthracite);
-}
-/* Duplicate content for seamless loop */
-.section-transition-inner::after {
-  content: 'Réparation · Maintenance · Location · Pièces détachées · Seine-et-Marne · Réparation · Maintenance · Location · Pièces détachées · Seine-et-Marne';
-  margin-left: 3rem;
-  letter-spacing: 0.18em;
-}
-.transition-dot {
-  color: var(--accent);
-  font-size: 1.2rem;
-  line-height: 1;
-}
-@keyframes marquee-scroll {
-  0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
