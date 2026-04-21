@@ -2694,3 +2694,106 @@ footer { background: #2b2b2b; color: #fff; }
     margin-right: 0;
   }
 }
+
+/* ════════════════════════════════════════════════════
+   EUREKA SIGNATURE SPLIT LAYOUT (Bord à Bord)
+════════════════════════════════════════════════════ */
+.eureka-split {
+  display: flex;
+  flex-direction: row;
+  min-height: 55vh;
+  width: 100%;
+}
+.eureka-split.reverse {
+  flex-direction: row-reverse;
+}
+.eureka-split-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 8%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Backgrounds */
+.eureka-split-content.dark-bg {
+  background: var(--anthracite);
+  color: #fff;
+}
+.eureka-split-content.light-bg {
+  background: #fff;
+  color: var(--anthracite);
+}
+
+/* Text Elements */
+.eureka-split-tag {
+  display: inline-block;
+  font-size: 0.75rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+}
+.dark-bg .eureka-split-tag {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+.light-bg .eureka-split-tag {
+  background: rgba(43,43,43,0.06);
+  color: var(--anthracite);
+}
+
+.eureka-split-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+.light-bg .eureka-split-title { color: var(--anthracite); }
+.dark-bg .eureka-split-title { color: #fff; }
+
+.eureka-split-desc {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+}
+.dark-bg .eureka-split-desc { color: rgba(255,255,255,0.8); }
+.light-bg .eureka-split-desc { color: var(--gray); }
+
+.eureka-split-desc p { margin-bottom: 1.5rem; }
+.eureka-split-desc p:last-child { margin-bottom: 0; }
+
+/* Image Side */
+.eureka-split-image {
+  flex: 1;
+  position: relative;
+  min-height: 400px;
+}
+.eureka-split-image img {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
+}
+
+/* Optional Blueprint watermark for dark-bg */
+.dark-bg .eureka-blueprint-watermark {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('../images/blueprint-pattern.png');
+  background-size: 400px;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+.eureka-split-content > * { position: relative; z-index: 2; }
+
+@media (max-width: 900px) {
+  .eureka-split, .eureka-split.reverse {
+    flex-direction: column;
+  }
+  .eureka-split-content {
+    padding: 4rem 2rem;
+  }
+}
