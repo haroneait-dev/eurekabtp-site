@@ -3356,3 +3356,29 @@ footer { background: #2b2b2b; color: #fff; }
   .activite-row.extra-small-img .activite-img,
   .activite-row.extra-small-img .activite-text { flex: none; width: 100%; padding: 3rem 2rem; }
 }
+
+/* ════════════════════════════════════════════════════
+   SERVICE DETAIL PAGES — ALIGN IMAGE WITH TEXT + HIDE EMPTY FEATURES
+════════════════════════════════════════════════════ */
+#service-body .eureka-split-features { display: none; }
+
+#service-body .eureka-split {
+  align-items: center;
+  min-height: 540px;
+}
+#service-body .eureka-split-image {
+  align-self: center;
+  flex: 1 1 50%;
+  height: 540px;
+  min-height: 440px;
+  max-height: 540px;
+}
+#service-body .eureka-split-content {
+  flex: 1 1 50%;
+  padding: 5rem 5rem;
+}
+@media (max-width: 900px) {
+  #service-body .eureka-split { align-items: stretch; min-height: 0; }
+  #service-body .eureka-split-image { height: 340px; min-height: 300px; max-height: none; }
+  #service-body .eureka-split-content { padding: 3rem 2rem; }
+}
