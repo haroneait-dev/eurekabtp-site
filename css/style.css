@@ -3180,7 +3180,7 @@ footer { background: #2b2b2b; color: #fff; }
   flex: 0 0 70%;
 }
 .activite-text.gray-bg {
-  background: var(--light) !important;
+  background: #f1f1f1 !important;
   color: var(--anthracite);
 }
 .activite-text.gray-bg .eureka-split-tag {
@@ -3189,3 +3189,5 @@ footer { background: #2b2b2b; color: #fff; }
 }
 .activite-text.gray-bg h3 { color: var(--anthracite); }
 .activite-text.gray-bg p { color: var(--gray); }
+.gray-row { background: #f1f1f1 !important; }
+.gray-row .activite-text { background: #f1f1f1 !important; }
