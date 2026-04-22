@@ -271,6 +271,11 @@
   </div>
 </section>
 
+<!-- Lien discret accès entreprise -->
+<div class="company-access-wrap">
+  <a href="login.html" class="company-access-link">Êtes-vous de l'entreprise&nbsp;?</a>
+</div>
+
 <!-- FOOTER (simplifié) -->
 <footer id="footer">
   <div class="footer-container">
@@ -335,7 +340,15 @@
   const spotQuery = document.getElementById('spotlightQuery');
   const spotClear   = document.getElementById('spotlightClear');
   const catalogTotal = document.getElementById('catalogTotal');
-  const allCards  = Array.from(document.querySelectorAll('.catalog-card'));
+  let allCards  = Array.from(document.querySelectorAll('.catalog-card'));
+
+  document.addEventListener('pieces:loaded', () => {
+    allCards = Array.from(document.querySelectorAll('.catalog-card'));
+    runFilter();
+    if (window.gsap) {
+      gsap.from('.catalog-card[data-dynamic="1"]', { y: 30, opacity: 0, stagger: 0.06, duration: 0.6, ease: 'power2.out' });
+    }
+  });
 
 
   let lastScrollY = window.scrollY;
@@ -387,5 +400,6 @@
     }
   });
 </script>
+<script type="module" src="js/pieces-public.js"></script>
 </body>
 </html>

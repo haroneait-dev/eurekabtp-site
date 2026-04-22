@@ -552,3 +552,16 @@ html, body { background-color: #ffffff !important; }
 .catalog-img--light img { width: 100%; height: 100%; object-fit: contain; padding: 1rem; filter: none; }
 .catalog-img--light + .catalog-content .catalog-devis { font-size: 0.8rem; }
 .marques-list span:hover { border-color: rgba(26,26,26,0.5); }
+
+/* ─── Lien discret d'accès entreprise ─── */
+.company-access-wrap { display: flex; justify-content: center; padding: 2.5rem 1rem 3rem; }
+.company-access-link {
+  font-size: 0.78rem;
+  color: #9a9ea6;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: color 0.25s ease, background 0.25s ease;
+}
+.company-access-link:hover { color: var(--anthracite); background: rgba(0,0,0,0.03); }

@@ -16,7 +16,9 @@ export default defineConfig({
         services: resolve(__dirname, 'services.html'),
         activites: resolve(__dirname, 'activites.html'),
         atelier: resolve(__dirname, 'atelier.html'),
-        livraison: resolve(__dirname, 'livraison.html')
+        livraison: resolve(__dirname, 'livraison.html'),
+        login: resolve(__dirname, 'login.html'),
+        adminPieces: resolve(__dirname, 'admin/pieces.html')
       }
     }
   }
