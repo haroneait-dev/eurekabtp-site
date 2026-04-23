@@ -2307,9 +2307,10 @@ footer { background: #2b2b2b; color: #fff; }
   .nav-logo-img { height: 48px; }
 }
 
-/* When navbar is black (on hero), logo is white */
+/* When navbar is black (on hero), logo is white — mix-blend-mode hides white square */
 #navbar:not(.scrolled) .nav-logo-img {
-  filter: brightness(0) invert(1);
+  filter: invert(1);
+  mix-blend-mode: screen;
 }
 /* When navbar is white (scrolled), logo stays black */
 #navbar.scrolled .nav-logo-img {
