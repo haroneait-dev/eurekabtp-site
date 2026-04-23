@@ -7,12 +7,15 @@ function escapeHtml(s) {
 }
 
 function buildCard(p) {
-  const searchTokens = [p.titre, p.description, p.tag].filter(Boolean).join(' ').toLowerCase();
+  const searchTokens = [p.titre, p.description, p.tag, p.in_stock ? '' : 'rupture stock indisponible']
+    .filter(Boolean).join(' ').toLowerCase();
   const tag = p.tag || 'Pièce';
+  const outOfStock = !p.in_stock;
   return `
-    <div class="catalog-card" data-search="${escapeHtml(searchTokens)}" data-tag="${escapeHtml(tag)}" data-dynamic="1">
+    <div class="catalog-card${outOfStock ? ' is-out-of-stock' : ''}" data-search="${escapeHtml(searchTokens)}" data-tag="${escapeHtml(tag)}" data-dynamic="1">
       <div class="catalog-img catalog-img--light">
         <img src="${escapeHtml(p.image_url)}" alt="${escapeHtml(p.titre)}" loading="lazy">
+        ${outOfStock ? '<span class="catalog-stock-badge">Rupture de stock</span>' : ''}
       </div>
       <div class="catalog-content">
         <span class="catalog-tag">${escapeHtml(tag)}</span>
@@ -37,7 +40,6 @@ function buildCard(p) {
     return;
   }
 
-  const html = data.map(buildCard).join('');
-  grid.insertAdjacentHTML('afterbegin', html);
+  grid.innerHTML = data.map(buildCard).join('');
   document.dispatchEvent(new CustomEvent('pieces:loaded', { detail: { added: data.length } }));
 })();

@@ -16,34 +16,73 @@
     .admin-header-right span { color: rgba(255,255,255,0.7); }
     .admin-header-right button { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 0.45rem 0.9rem; border-radius: 8px; font-family: inherit; font-size: 0.82rem; cursor: pointer; transition: all 0.2s; }
     .admin-header-right button:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.6); }
-    .admin-wrap { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem; display: grid; grid-template-columns: 380px 1fr; gap: 2rem; align-items: start; }
-    @media (max-width: 880px) { .admin-wrap { grid-template-columns: 1fr; } }
-    .admin-card { background: #fff; border-radius: 14px; padding: 1.75rem; box-shadow: 0 8px 30px rgba(0,0,0,0.05); }
-    .admin-card h2 { font-size: 1.05rem; font-weight: 700; color: var(--anthracite); margin-bottom: 1.25rem; letter-spacing: -0.01em; }
+    .admin-wrap { max-width: 1180px; margin: 0 auto; padding: 2.5rem 2rem; display: grid; grid-template-columns: 400px 1fr; gap: 2rem; align-items: start; }
+    @media (max-width: 920px) { .admin-wrap { grid-template-columns: 1fr; } }
+    .admin-card { background: #fff; border-radius: 14px; padding: 1.75rem; box-shadow: 0 8px 30px rgba(0,0,0,0.05); position: sticky; top: 1rem; }
+    .admin-card h2 { font-size: 1.05rem; font-weight: 700; color: var(--anthracite); margin-bottom: 0.3rem; letter-spacing: -0.01em; }
+    .admin-card .form-mode-hint { font-size: 0.78rem; color: var(--gray); margin-bottom: 1.25rem; }
     .admin-field { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
     .admin-field label { font-size: 0.76rem; font-weight: 600; color: var(--anthracite); }
-    .admin-field input, .admin-field textarea { padding: 0.7rem 0.9rem; border: 1px solid #e3e5ea; border-radius: 9px; font-family: inherit; font-size: 0.9rem; background: #fafbfc; }
+    .admin-field small { font-size: 0.72rem; color: var(--gray); font-weight: 400; }
+    .admin-field input[type="text"], .admin-field textarea { padding: 0.7rem 0.9rem; border: 1px solid #e3e5ea; border-radius: 9px; font-family: inherit; font-size: 0.9rem; background: #fafbfc; }
     .admin-field textarea { resize: vertical; min-height: 80px; }
-    .admin-field input:focus, .admin-field textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(244,101,10,0.12); background: #fff; }
-    .admin-field input[type="file"] { padding: 0.6rem; background: #fafbfc; }
-    .admin-submit { width: 100%; padding: 0.85rem; background: var(--accent); color: #fff; border: none; border-radius: 9px; font-family: inherit; font-weight: 600; font-size: 0.92rem; cursor: pointer; transition: background 0.2s; margin-top: 0.5rem; }
+    .admin-field input[type="text"]:focus, .admin-field textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(244,101,10,0.12); background: #fff; }
+    .admin-field input[type="file"] { padding: 0.6rem; background: #fafbfc; border: 1px solid #e3e5ea; border-radius: 9px; font-family: inherit; font-size: 0.85rem; }
+
+    /* Toggle stock */
+    .stock-toggle { display: flex; align-items: center; gap: 0.65rem; padding: 0.7rem 0.9rem; background: #fafbfc; border: 1px solid #e3e5ea; border-radius: 9px; cursor: pointer; user-select: none; }
+    .stock-toggle input { appearance: none; width: 38px; height: 22px; background: #d4d7dd; border-radius: 20px; position: relative; cursor: pointer; transition: background 0.2s; flex-shrink: 0; }
+    .stock-toggle input::after { content: ''; position: absolute; top: 2px; left: 2px; width: 18px; height: 18px; border-radius: 50%; background: #fff; transition: transform 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+    .stock-toggle input:checked { background: #2a8a4a; }
+    .stock-toggle input:checked::after { transform: translateX(16px); }
+    .stock-toggle .stock-label { font-size: 0.88rem; font-weight: 600; color: var(--anthracite); }
+    .stock-toggle .stock-sub { font-size: 0.72rem; color: var(--gray); font-weight: 400; margin-left: 0.3rem; }
+
+    .form-buttons { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+    .admin-submit { flex: 1; padding: 0.85rem; background: var(--accent); color: #fff; border: none; border-radius: 9px; font-family: inherit; font-weight: 600; font-size: 0.92rem; cursor: pointer; transition: background 0.2s; }
     .admin-submit:hover:not(:disabled) { background: #d85408; }
     .admin-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .admin-cancel { padding: 0.85rem 1.1rem; background: transparent; color: var(--gray); border: 1px solid #e3e5ea; border-radius: 9px; font-family: inherit; font-weight: 600; font-size: 0.88rem; cursor: pointer; transition: all 0.2s; display: none; }
+    .admin-cancel:hover { color: var(--anthracite); border-color: var(--anthracite); }
+    body[data-form-mode="edit"] .admin-cancel { display: block; }
+
     .admin-status { margin-top: 0.9rem; font-size: 0.82rem; text-align: center; min-height: 1.1rem; }
     .admin-status[data-type="success"] { color: #2a8a4a; }
     .admin-status[data-type="error"] { color: #c83b3b; }
+
     .admin-list { display: flex; flex-direction: column; gap: 0.75rem; }
     .admin-empty { color: var(--gray); font-size: 0.9rem; text-align: center; padding: 2rem 1rem; }
-    .admin-piece-row { display: grid; grid-template-columns: 72px 1fr auto; gap: 1rem; background: #fff; border-radius: 12px; padding: 0.9rem; align-items: center; box-shadow: 0 4px 16px rgba(0,0,0,0.04); }
-    .admin-piece-row img { width: 72px; height: 72px; object-fit: cover; border-radius: 8px; background: #f0f2f5; }
+    .admin-piece-row { display: grid; grid-template-columns: 72px 1fr auto; gap: 1rem; background: #fff; border-radius: 12px; padding: 0.9rem; align-items: center; box-shadow: 0 4px 16px rgba(0,0,0,0.04); transition: box-shadow 0.2s, transform 0.2s; }
+    .admin-piece-row:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .admin-piece-row.is-editing { outline: 2px solid var(--accent); outline-offset: -1px; }
+    .admin-piece-row.out-of-stock { opacity: 0.65; }
+    .admin-piece-row img { width: 72px; height: 72px; object-fit: contain; border-radius: 8px; background: #f0f2f5; padding: 4px; }
     .admin-piece-info h3 { font-size: 0.95rem; font-weight: 700; color: var(--anthracite); margin-bottom: 0.2rem; }
     .admin-piece-info p { font-size: 0.8rem; color: var(--gray); line-height: 1.4; }
-    .admin-piece-tag { display: inline-block; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.08em; color: var(--accent); background: rgba(244,101,10,0.1); padding: 0.2rem 0.55rem; border-radius: 16px; margin-bottom: 0.35rem; text-transform: uppercase; }
-    .admin-piece-delete { background: transparent; border: 1px solid #e3e5ea; color: #c83b3b; padding: 0.5rem 0.8rem; border-radius: 7px; font-family: inherit; font-size: 0.78rem; cursor: pointer; transition: all 0.2s; }
-    .admin-piece-delete:hover { background: #c83b3b; color: #fff; border-color: #c83b3b; }
+    .admin-piece-meta { display: flex; gap: 0.35rem; align-items: center; flex-wrap: wrap; margin-bottom: 0.25rem; }
+    .admin-piece-tag { display: inline-block; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.08em; color: var(--accent); background: rgba(244,101,10,0.1); padding: 0.2rem 0.55rem; border-radius: 16px; text-transform: uppercase; }
+    .admin-piece-stock { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.68rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 16px; cursor: pointer; border: none; font-family: inherit; transition: all 0.2s; }
+    .admin-piece-stock[data-in-stock="true"] { background: rgba(42,138,74,0.12); color: #2a8a4a; }
+    .admin-piece-stock[data-in-stock="true"]:hover { background: rgba(42,138,74,0.22); }
+    .admin-piece-stock[data-in-stock="false"] { background: rgba(200,59,59,0.12); color: #c83b3b; }
+    .admin-piece-stock[data-in-stock="false"]:hover { background: rgba(200,59,59,0.22); }
+    .admin-piece-stock::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+    .admin-piece-actions { display: flex; flex-direction: column; gap: 0.35rem; }
+    .admin-piece-btn { background: transparent; border: 1px solid #e3e5ea; color: var(--anthracite); padding: 0.45rem 0.8rem; border-radius: 7px; font-family: inherit; font-size: 0.76rem; font-weight: 600; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+    .admin-piece-btn:hover { background: var(--anthracite); color: #fff; border-color: var(--anthracite); }
+    .admin-piece-btn.danger { color: #c83b3b; }
+    .admin-piece-btn.danger:hover { background: #c83b3b; border-color: #c83b3b; color: #fff; }
+
+    @media (max-width: 560px) {
+      .admin-piece-row { grid-template-columns: 60px 1fr; }
+      .admin-piece-actions { grid-column: 1 / -1; flex-direction: row; }
+      .admin-piece-actions button { flex: 1; }
+      .admin-piece-row img { width: 60px; height: 60px; }
+    }
   </style>
 </head>
-<body>
+<body data-form-mode="create">
 
   <header class="admin-header">
     <h1>Eureka BTP · Admin Pièces</h1>
@@ -56,7 +95,10 @@
   <div class="admin-wrap">
 
     <form class="admin-card" id="pieceForm">
-      <h2>Ajouter une pièce</h2>
+      <h2 id="formTitle">Ajouter une pièce</h2>
+      <p class="form-mode-hint" id="formHint">Remplissez les champs pour créer une nouvelle pièce.</p>
+
+      <input type="hidden" id="pieceId" value="">
 
       <div class="admin-field">
         <label for="pieceTitre">Titre</label>
@@ -71,11 +113,20 @@
         <textarea id="pieceDescription" maxlength="400" placeholder="Compatible toutes marques, performance durable…"></textarea>
       </div>
       <div class="admin-field">
-        <label for="pieceImage">Photo</label>
-        <input type="file" id="pieceImage" accept="image/*" required>
+        <label for="pieceImage">Photo <small id="imageHint">(requise)</small></label>
+        <input type="file" id="pieceImage" accept="image/*">
+      </div>
+      <div class="admin-field">
+        <label class="stock-toggle">
+          <input type="checkbox" id="pieceInStock" checked>
+          <span class="stock-label">En stock <span class="stock-sub">— décochez pour afficher « Rupture »</span></span>
+        </label>
       </div>
 
-      <button type="submit" class="admin-submit" id="pieceSubmit">Ajouter la pièce</button>
+      <div class="form-buttons">
+        <button type="submit" class="admin-submit" id="pieceSubmit">Ajouter la pièce</button>
+        <button type="button" class="admin-cancel" id="pieceCancel">Annuler</button>
+      </div>
       <p class="admin-status" id="pieceStatus"></p>
     </form>
 
