@@ -11,11 +11,14 @@ function buildCard(p) {
     .filter(Boolean).join(' ').toLowerCase();
   const tag = p.tag || 'Pièce';
   const outOfStock = !p.in_stock;
+  const stockBadge = outOfStock
+    ? '<span class="catalog-stock-badge catalog-stock-badge--out">Rupture de stock</span>'
+    : '<span class="catalog-stock-badge catalog-stock-badge--in">En stock</span>';
   return `
     <div class="catalog-card${outOfStock ? ' is-out-of-stock' : ''}" data-search="${escapeHtml(searchTokens)}" data-tag="${escapeHtml(tag)}" data-dynamic="1">
       <div class="catalog-img catalog-img--light">
         <img src="${escapeHtml(p.image_url)}" alt="${escapeHtml(p.titre)}" loading="lazy">
-        ${outOfStock ? '<span class="catalog-stock-badge">Rupture de stock</span>' : ''}
+        ${stockBadge}
       </div>
       <div class="catalog-content">
         <span class="catalog-tag">${escapeHtml(tag)}</span>
