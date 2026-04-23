@@ -615,16 +615,6 @@ html, body { background-color: #ffffff !important; }
   z-index: 4;
   pointer-events: none;
 }
-.catalog-promo-badge::before,
-.catalog-promo-badge::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  border: 6px solid transparent;
-  border-top-color: #a14409;
-}
-.catalog-promo-badge::before { left: 0; border-right-color: #a14409; }
-.catalog-promo-badge::after  { right: 0; border-left-color: #a14409; }
 
 /* ─── Lien discret d'accès entreprise ─── */
 .company-access-wrap { display: flex; justify-content: center; padding: 2.5rem 1rem 3rem; }
