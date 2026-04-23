@@ -110,11 +110,12 @@ h5 { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spa
    NAVBAR
 ═══════════════════════════════════════════ */
 #navbar {
-  position: sticky; top: 0; left: 0; right: 0; z-index: 999;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
   background: #000;
-  transition: box-shadow var(--t) var(--ease);
+  transition: background var(--t) var(--ease), box-shadow var(--t) var(--ease);
 }
 #navbar.scrolled {
+  background: #fff;
   box-shadow: var(--shadow-md);
 }
 .nav-container {
@@ -132,6 +133,7 @@ h5 { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spa
 }
 .logo-eureka { color: #fff; transition: color var(--t) var(--ease); }
 .logo-btp    { color: var(--accent); }
+#navbar.scrolled .logo-eureka { color: var(--anthracite); }
 
 .nav-links {
   display: flex; gap: 0.15rem; margin-left: auto;
@@ -149,6 +151,8 @@ h5 { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spa
   transition: color var(--t), background var(--t);
 }
 .nav-links a:hover { color: #fff; background: rgba(255,255,255,0.1); }
+#navbar.scrolled .nav-links a       { color: var(--mid); }
+#navbar.scrolled .nav-links a:hover { color: var(--anthracite); background: var(--light); }
 
 .nav-cta {
   padding: 0.6rem 1.2rem;
@@ -180,6 +184,7 @@ h5 { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spa
   background: #fff; border-radius: 2px;
   transition: var(--t);
 }
+#navbar.scrolled .nav-burger span { background: var(--anthracite); }
 .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-burger.open span:nth-child(2) { opacity: 0; }
 .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -2302,9 +2307,13 @@ footer { background: #2b2b2b; color: #fff; }
   .nav-logo-img { height: 48px; }
 }
 
-/* Logo is always white since navbar is always black */
-.nav-logo-img {
-  filter: invert(1);
+/* When navbar is black (on hero), logo is white */
+#navbar:not(.scrolled) .nav-logo-img {
+  filter: brightness(0) invert(1);
+}
+/* When navbar is white (scrolled), logo stays black */
+#navbar.scrolled .nav-logo-img {
+  filter: none;
 }
 
 /* Dropdown Services (Apple-style) */
