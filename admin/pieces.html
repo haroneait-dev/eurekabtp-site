@@ -35,6 +35,7 @@
     .stock-toggle input::after { content: ''; position: absolute; top: 2px; left: 2px; width: 18px; height: 18px; border-radius: 50%; background: #fff; transition: transform 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
     .stock-toggle input:checked { background: #2a8a4a; }
     .stock-toggle input:checked::after { transform: translateX(16px); }
+    .stock-toggle.promo-toggle input:checked { background: var(--accent); }
     .stock-toggle .stock-label { font-size: 0.88rem; font-weight: 600; color: var(--anthracite); }
     .stock-toggle .stock-sub { font-size: 0.72rem; color: var(--gray); font-weight: 400; margin-left: 0.3rem; }
 
@@ -67,6 +68,12 @@
     .admin-piece-stock[data-in-stock="false"] { background: rgba(200,59,59,0.12); color: #c83b3b; }
     .admin-piece-stock[data-in-stock="false"]:hover { background: rgba(200,59,59,0.22); }
     .admin-piece-stock::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+    .admin-piece-promo { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.68rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 16px; cursor: pointer; border: none; font-family: inherit; transition: all 0.2s; }
+    .admin-piece-promo[data-is-promo="true"] { background: var(--accent); color: #fff; }
+    .admin-piece-promo[data-is-promo="true"]:hover { background: #d85408; }
+    .admin-piece-promo[data-is-promo="false"] { background: #f0f2f5; color: var(--gray); }
+    .admin-piece-promo[data-is-promo="false"]:hover { background: #e3e5ea; color: var(--anthracite); }
 
     .admin-piece-actions { display: flex; flex-direction: column; gap: 0.35rem; }
     .admin-piece-btn { background: transparent; border: 1px solid #e3e5ea; color: var(--anthracite); padding: 0.45rem 0.8rem; border-radius: 7px; font-family: inherit; font-size: 0.76rem; font-weight: 600; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
@@ -120,6 +127,12 @@
         <label class="stock-toggle">
           <input type="checkbox" id="pieceInStock" checked>
           <span class="stock-label">En stock <span class="stock-sub">— décochez pour afficher « Rupture »</span></span>
+        </label>
+      </div>
+      <div class="admin-field">
+        <label class="stock-toggle promo-toggle">
+          <input type="checkbox" id="pieceIsPromo">
+          <span class="stock-label">En promo <span class="stock-sub">— affiche un badge orange « Promo »</span></span>
         </label>
       </div>
 

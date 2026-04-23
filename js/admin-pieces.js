@@ -7,6 +7,7 @@ const tagInput = document.getElementById('pieceTag');
 const descInput = document.getElementById('pieceDescription');
 const fileInput = document.getElementById('pieceImage');
 const stockInput = document.getElementById('pieceInStock');
+const promoInput = document.getElementById('pieceIsPromo');
 const submitBtn = document.getElementById('pieceSubmit');
 const cancelBtn = document.getElementById('pieceCancel');
 const statusBox = document.getElementById('pieceStatus');
@@ -48,6 +49,7 @@ function enterCreateMode() {
   idInput.value = '';
   form.reset();
   stockInput.checked = true;
+  promoInput.checked = false;
   fileInput.setAttribute('required', '');
   imageHint.textContent = '(requise)';
   formTitle.textContent = 'Ajouter une pièce';
@@ -65,6 +67,7 @@ function enterEditMode(piece) {
   tagInput.value = piece.tag || '';
   descInput.value = piece.description || '';
   stockInput.checked = !!piece.in_stock;
+  promoInput.checked = !!piece.is_promo;
   fileInput.value = '';
   fileInput.removeAttribute('required');
   imageHint.textContent = '(laisser vide pour conserver l\'image actuelle)';
@@ -101,6 +104,9 @@ async function loadPieces() {
           <button type="button" class="admin-piece-stock" data-in-stock="${p.in_stock}" data-action="toggle-stock" data-id="${p.id}">
             ${p.in_stock ? 'En stock' : 'Rupture'}
           </button>
+          <button type="button" class="admin-piece-promo" data-is-promo="${!!p.is_promo}" data-action="toggle-promo" data-id="${p.id}">
+            ${p.is_promo ? 'Promo' : 'Pas en promo'}
+          </button>
         </div>
         <h3>${escapeHtml(p.titre)}</h3>
         <p>${escapeHtml(p.description || '')}</p>
@@ -127,8 +133,24 @@ async function loadPieces() {
         const piece = data.find(x => x.id === id);
         if (piece) toggleStock(piece);
       });
+    } else if (action === 'toggle-promo') {
+      btn.addEventListener('click', () => {
+        const piece = data.find(x => x.id === id);
+        if (piece) togglePromo(piece);
+      });
     }
   });
+}
+
+async function togglePromo(piece) {
+  const newVal = !piece.is_promo;
+  const { error } = await supabase
+    .from(PIECES_TABLE)
+    .update({ is_promo: newVal })
+    .eq('id', piece.id);
+  if (error) return setStatus(`Erreur : ${error.message}`, 'error');
+  setStatus(newVal ? 'Pièce marquée en promo.' : 'Promo retirée.', 'success');
+  loadPieces();
 }
 
 async function toggleStock(piece) {
@@ -178,7 +200,8 @@ form.addEventListener('submit', async (e) => {
       titre: titreInput.value.trim(),
       description: descInput.value.trim() || null,
       tag: tagInput.value.trim() || null,
-      in_stock: stockInput.checked
+      in_stock: stockInput.checked,
+      is_promo: promoInput.checked
     };
 
     if (file) {

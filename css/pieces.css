@@ -593,6 +593,28 @@ html, body { background-color: #ffffff !important; }
 .catalog-card.is-out-of-stock .catalog-content h2,
 .catalog-card.is-out-of-stock .catalog-content p { opacity: 0.7; }
 
+/* ─── Badge Promo ─── */
+.catalog-promo-badge {
+  position: absolute;
+  top: 0.7rem;
+  left: 0.7rem;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.75rem;
+  border-radius: 16px;
+  z-index: 3;
+  box-shadow: 0 4px 14px rgba(244, 101, 10, 0.4);
+  animation: promoPulse 2.2s ease-in-out infinite;
+}
+@keyframes promoPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 4px 14px rgba(244, 101, 10, 0.4); }
+  50% { transform: scale(1.06); box-shadow: 0 6px 20px rgba(244, 101, 10, 0.55); }
+}
+
 /* ─── Lien discret d'accès entreprise ─── */
 .company-access-wrap { display: flex; justify-content: center; padding: 2.5rem 1rem 3rem; }
 .company-access-link {
