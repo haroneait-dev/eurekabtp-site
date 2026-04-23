@@ -18,7 +18,8 @@ export default defineConfig({
         atelier: resolve(__dirname, 'atelier.html'),
         livraison: resolve(__dirname, 'livraison.html'),
         login: resolve(__dirname, 'login.html'),
-        adminPieces: resolve(__dirname, 'admin/pieces.html')
+        adminPieces: resolve(__dirname, 'admin/pieces.html'),
+        partenaires: resolve(__dirname, 'partenaires.html')
       }
     }
   }
