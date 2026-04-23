@@ -601,7 +601,7 @@ html, body { background-color: #ffffff !important; }
   top: 18px;
   left: -48px;
   width: 170px;
-  background: var(--accent);
+  background: #c8321e;
   color: #fff;
   text-align: center;
   padding: 0.4rem 0;
