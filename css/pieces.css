@@ -583,7 +583,6 @@ html, body { background-color: #ffffff !important; }
 .catalog-stock-badge--in {
   background: rgba(255, 255, 255, 0.92);
   color: var(--accent);
-  border: 1px solid rgba(244, 101, 10, 0.22);
 }
 .catalog-stock-badge--in::before { display: none; }
 .catalog-stock-badge--out {
