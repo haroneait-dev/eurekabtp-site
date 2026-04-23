@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nos Partenaires — Eureka BTP est le représentant officiel IMER en Île-de-France depuis 2016.">
+  <meta name="description" content="Nos Partenaires — Eureka BTP, représentant officiel IMER en Île-de-France depuis 2016. Plus de 25 ans d'expertise du matériel béton.">
   <title>Nos Partenaires — Eureka BTP</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/style.css">
   <style>
     /* ── PAGE HERO ── */
-    .id-hero {
+    .part-hero {
       position: relative;
       height: 55vh; min-height: 380px; max-height: 600px;
       display: flex; align-items: flex-end;
@@ -19,35 +19,122 @@
       overflow: hidden;
       background: url('images/camion/PHOTO-2026-04-18-16-40-32.jpg') center/cover no-repeat;
     }
-    .id-hero-overlay {
+    .part-hero-overlay {
       position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(43,43,43,0.82) 0%, rgba(43,43,43,0.45) 60%, rgba(43,43,43,0.3) 100%);
     }
-    .id-hero-content {
+    .part-hero-content {
       position: relative; z-index: 2;
       max-width: 1240px; margin: 0 auto; width: 100%;
       color: #fff;
     }
-    .id-hero-back {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      font-size: 0.82rem; font-weight: 600;
-      color: rgba(255,255,255,0.6);
-      position: absolute;
-      top: 5.5rem; left: 2rem;
-      z-index: 5;
-      transition: color 0.3s;
-    }
-    .id-hero-back:hover { color: var(--accent); }
-    .id-hero-content h1 { margin-bottom: 0.85rem; }
-    .id-hero-content p {
+    .part-hero-content h1 { margin-bottom: 0.85rem; }
+    .part-hero-content p {
       font-size: 1.05rem; color: rgba(255,255,255,0.75);
       max-width: 640px; line-height: 1.72;
     }
 
-    /* ── FICHE IDENTITÉ ── */
-    #id-fiche {
+    /* ── SECTION BLANCHE ── */
+    .part-section-white {
       background: #fff;
       padding: 6rem 2rem;
+    }
+    .part-section-white .part-inner {
+      max-width: 1240px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .part-section-white .part-inner.reverse { direction: rtl; }
+    .part-section-white .part-inner.reverse > * { direction: ltr; }
+
+    .part-text .section-eyebrow { margin-bottom: 0.75rem; }
+    .part-text h3 {
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      font-weight: 700; color: var(--anthracite);
+      margin-bottom: 1.1rem; line-height: 1.3;
+    }
+    .part-text p {
+      font-size: 0.95rem; color: var(--gray);
+      line-height: 1.78; margin-bottom: 1.25rem;
+    }
+    .part-text p:last-child { margin-bottom: 0; }
+
+    .part-photo {
+      border-radius: 14px; overflow: hidden;
+      aspect-ratio: 4/3;
+      box-shadow: var(--shadow-lg);
+    }
+    .part-photo img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.65s ease;
+    }
+    .part-photo:hover img { transform: scale(1.03); }
+
+    /* ── VALEURS / AVANTAGES ── */
+    .part-advantages {
+      background: var(--light);
+      padding: 6rem 2rem;
+    }
+    .part-advantages-inner {
+      max-width: 1240px; margin: 0 auto;
+    }
+    .part-advantages-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; margin-top: 3.5rem;
+    }
+    .part-adv-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 2.25rem 2rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--t), box-shadow var(--t);
+    }
+    .part-adv-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .part-adv-icon {
+      width: 48px; height: 48px;
+      background: var(--accent-glass);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+      color: var(--accent);
+    }
+    .part-adv-icon svg { width: 24px; height: 24px; }
+    .part-adv-card h4 {
+      font-size: 1.05rem; font-weight: 800;
+      color: var(--anthracite); margin-bottom: 0.65rem;
+    }
+    .part-adv-card p {
+      font-size: 0.9rem; color: var(--gray);
+      line-height: 1.72;
+    }
+
+    /* ── CTA ── */
+    .part-cta {
+      background: var(--dark);
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    .part-cta-inner {
+      max-width: 640px; margin: 0 auto;
+    }
+    .part-cta-inner h2 { color: #fff; margin-bottom: 1rem; }
+    .part-cta-inner p {
+      color: rgba(255,255,255,0.65); font-size: 1rem;
+      line-height: 1.75; margin-bottom: 2.5rem;
+    }
+    .part-cta-actions {
+      display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .part-section-white .part-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .part-section-white .part-inner.reverse { direction: ltr; }
+      .part-advantages-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -72,7 +159,7 @@
         </div>
       </li>
       <li><a href="pieces.html">Pièces détachées</a></li>
-            <li><a href="activites.html">Nos activités</a></li>
+      <li><a href="activites.html">Nos activités</a></li>
       <li><a href="atelier.html">Atelier &amp; SAV</a></li>
     </ul>
     <a href="index.html#contact-strip" class="nav-cta">Demander un devis</a>
@@ -89,58 +176,141 @@
     <a href="location.html" style="padding-left:1.25rem;font-size:0.9rem;">· Location</a>
     <a href="achat-revente.html" style="padding-left:1.25rem;font-size:0.9rem;">· Achat &amp; revente</a>
     <a href="pieces.html">Pièces détachées</a>
-        <a href="activites.html">Nos activités</a>
+    <a href="activites.html">Nos activités</a>
     <a href="index.html#contact-strip" class="mobile-cta">Demander un devis</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="id-hero">
-  <div class="id-hero-overlay"></div>
-  <div class="id-hero-content">
+<section class="part-hero">
+  <div class="part-hero-overlay"></div>
+  <div class="part-hero-content">
     <p class="section-eyebrow">Nos Partenaires</p>
     <h1>IMER</h1>
     <p>Depuis 2016, Eureka BTP est le représentant officiel IMER en Île-de-France. Une relation de confiance construite sur plus de 25 ans d'expertise du matériel béton.</p>
   </div>
 </section>
 
-<!-- FICHE -->
-<section id="id-fiche" style="padding: 0; max-width: 100%; border-bottom: none;">
-  
+
+<!-- SECTION 1 — Qui est IMER -->
+<section class="part-section-white">
+  <div class="part-inner" data-animate>
+    <div class="part-text">
+      <p class="section-eyebrow">Le constructeur</p>
+      <h3>IMER, un leader mondial du matériel béton</h3>
+      <p>Fondé en Italie, le groupe IMER est l'un des principaux constructeurs mondiaux d'équipements pour le béton : toupies, pompes à béton, centrales à béton et malaxeurs.</p>
+      <p>Reconnu pour la robustesse et la fiabilité de ses machines, IMER équipe des milliers de professionnels du BTP en Europe et dans le monde.</p>
+    </div>
+    <div class="part-photo">
+      <img src="images/camion/PHOTO-2026-04-18-16-40-30.jpg" alt="Matériel IMER — toupie à béton">
+    </div>
+  </div>
+</section>
+
+
+<!-- SECTION 2 — Split dark (eureka-split) -->
+<section style="padding: 0; max-width: 100%; border-bottom: none;">
   <div class="eureka-split" data-animate>
     <div class="eureka-split-content dark-bg">
       <div class="eureka-blueprint-watermark"></div>
       <span class="eureka-split-tag">Notre partenariat</span>
-      <h3 class="eureka-split-title">Représentant officiel<br>en Île-de-France</h3>
+      <h3 class="eureka-split-title">Représentant officiel<br>depuis 2016</h3>
       <div class="eureka-split-desc">
-        <p>En tant que représentant officiel IMER, Eureka BTP vous garantit un accès privilégié aux pièces d'origine et aux équipements neufs de la marque.</p>
-        <p>Notre atelier est parfaitement équipé pour assurer la maintenance et la réparation de tous vos matériels IMER selon les standards du constructeur.</p>
+        <p>En tant que représentant officiel IMER en Île-de-France, Eureka BTP vous garantit un accès privilégié aux pièces d'origine, aux équipements neufs et au savoir-faire du constructeur.</p>
+        <p>Notre équipe est formée directement par IMER pour assurer une maintenance conforme aux standards de la marque, avec des pièces certifiées et un suivi rigoureux.</p>
       </div>
     </div>
     <div class="eureka-split-image">
-      <img src="images/soudure/PHOTO-2026-04-18-16-40-33.jpg" alt="Atelier Eureka BTP et IMER">
+      <img src="images/soudure/PHOTO-2026-04-18-16-40-33.jpg" alt="Atelier Eureka BTP — partenaire IMER">
     </div>
   </div>
-
 </section>
+
+
+<!-- SECTION 3 — Avantages -->
+<section class="part-advantages">
+  <div class="part-advantages-inner">
+    <div class="section-header" data-animate>
+      <p class="section-eyebrow">Pourquoi nous choisir</p>
+      <h2 class="section-title">Les avantages du partenariat IMER</h2>
+      <p class="section-subtitle">En travaillant avec un représentant officiel, vous bénéficiez de garanties que personne d'autre ne peut vous offrir.</p>
+    </div>
+
+    <div class="part-advantages-grid" data-animate>
+      <div class="part-adv-card">
+        <div class="part-adv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h4>Pièces d'origine certifiées</h4>
+        <p>Accès direct au catalogue IMER avec des pièces 100 % d'origine, garantissant la longévité et la performance de votre matériel.</p>
+      </div>
+
+      <div class="part-adv-card">
+        <div class="part-adv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h4>Réactivité maximale</h4>
+        <p>Stock de pièces IMER disponible sur place. Réduction des délais d'immobilisation grâce à notre proximité avec le constructeur.</p>
+      </div>
+
+      <div class="part-adv-card">
+        <div class="part-adv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        </div>
+        <h4>Expertise constructeur</h4>
+        <p>Notre équipe est formée aux standards IMER. Chaque intervention respecte les préconisations du fabricant pour un résultat optimal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SECTION 4 — Split white (eureka-split reverse) -->
+<section style="padding: 0; max-width: 100%; border-bottom: none;">
+  <div class="eureka-split reverse" data-animate>
+    <div class="eureka-split-content light-bg">
+      <span class="eureka-split-tag">Île-de-France</span>
+      <h3 class="eureka-split-title">Un interlocuteur de confiance à proximité</h3>
+      <p class="eureka-split-desc">Basés en Seine-et-Marne, nous intervenons sur toute l'Île-de-France et au-delà. Que vous ayez besoin d'une pièce IMER en urgence, d'une révision complète ou d'un conseil technique, notre équipe est à votre disposition.</p>
+      <a href="index.html#contact-strip" class="split-btn" style="border-color: var(--anthracite); color: var(--anthracite);">Nous contacter</a>
+    </div>
+    <div class="eureka-split-image">
+      <img src="images/camion/PHOTO-2026-04-18-16-40-31.jpg" alt="Eureka BTP — intervention Île-de-France">
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="part-cta">
+  <div class="part-cta-inner" data-animate>
+    <h2>Besoin d'une pièce IMER ?</h2>
+    <p>Contactez-nous pour un devis gratuit. En tant que représentant officiel, nous vous garantissons les meilleurs délais et des pièces d'origine certifiées.</p>
+    <div class="part-cta-actions">
+      <a href="index.html#contact-strip" class="btn-primary">Demander un devis gratuit</a>
+      <a href="pieces.html" class="btn-ghost">Parcourir le catalogue</a>
+    </div>
+  </div>
+</section>
+
 
 <!-- FOOTER -->
 <footer id="footer">
   <div class="footer-container">
     <div class="footer-brand">
       <div class="footer-logo">
-        <img src="images/logo-black.png" alt="Eureka BTP" >
+        <img src="images/logo-black.png" alt="Eureka BTP">
       </div>
       <p class="footer-tagline">25 ans au service des professionnels du BPE. Réparation, location, achat & revente de toupies à béton — toutes marques, partout en France.</p>
       <div class="footer-coords">
-        <p><strong>Adresse :</strong> Gretz-Armainvilliers, Seine-et-Marne (77)</p>
+        <p><strong>Adresse :</strong> Seine-et-Marne (77), France</p>
         <p><strong>Tél :</strong> <a href="tel:+33XXXXXXXXX">+33 X XX XX XX XX</a></p>
         <p><strong>Email :</strong> <a href="mailto:contact@eurekabtp.com">contact@eurekabtp.com</a></p>
       </div>
       <div class="footer-hours">
         <p><strong>Horaires :</strong></p>
-        <p>Lundi – Vendredi : 8h00 – 18h00</p>
-        <p>Samedi : 8h00 – 12h00</p>
+        <p>Lundi – Vendredi &nbsp;: 8h00 – 18h00</p>
+        <p>Samedi &nbsp;: 8h00 – 12h00</p>
       </div>
     </div>
     <div class="footer-nav">
@@ -151,7 +321,7 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="activites.html">Nos activités</a></li>
         <li><a href="pieces.html">Pièces détachées</a></li>
-                <li><a href="atelier.html">L'atelier en action</a></li>
+        <li><a href="atelier.html">L'atelier en action</a></li>
         <li><a href="index.html#contact-strip">Contact &amp; Devis</a></li>
       </ul>
       <h5 style="margin-top:1.75rem">Services</h5>
