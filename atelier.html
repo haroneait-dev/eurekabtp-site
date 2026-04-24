@@ -50,73 +50,24 @@
     }
     .light-bg .atelier-interventions-list li { border-bottom: 1px solid rgba(43,43,43,0.08); }
 
-    /* Process steps (comment ça se passe) */
-    #atelier-process {
+    /* Bandeau transition "Comment ça se passe" */
+    .atelier-process-intro {
       background: #fff;
-      padding: 6rem 2rem 8rem;
+      padding: 6rem 2rem 3rem;
+      text-align: center;
     }
-    .atelier-process-inner {
-      max-width: 1240px; margin: 0 auto;
-    }
-    .atelier-process-inner .section-header { margin-bottom: 5rem; text-align: center; }
-    .process-step {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-      margin-bottom: 7rem;
-    }
-    .process-step:last-child { margin-bottom: 0; }
-    .process-step.reverse .process-text { order: 2; }
-    .process-step.reverse .process-img { order: 1; }
+    .atelier-process-intro .section-header { max-width: 720px; margin: 0 auto; }
 
-    .process-text {
-      background: var(--anthracite);
-      color: #fff;
-      padding: 2.5rem 2.25rem;
-      border-radius: 14px;
-      box-shadow: var(--shadow-lg);
-    }
-    .process-num {
-      font-size: 5rem; font-weight: 900;
-      color: rgba(255,255,255,0.12);
+    /* Grand numéro d'étape dans le split */
+    .eureka-split-step-num {
+      font-size: 4.5rem; font-weight: 900;
       line-height: 1;
       letter-spacing: -0.04em;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
     }
-    .process-text h3 {
-      color: #fff;
-      margin-bottom: 1.1rem;
-      font-size: 1.75rem;
-    }
-    .process-text .process-tag {
-      display: inline-block;
-      font-size: 0.7rem; font-weight: 800;
-      text-transform: uppercase; letter-spacing: 0.14em;
-      color: #fff;
-      padding: 0.35rem 0.85rem;
-      background: var(--accent);
-      border-radius: 20px;
-      margin-bottom: 1.1rem;
-    }
-    .process-text p {
-      color: rgba(255,255,255,0.78);
-      line-height: 1.8;
-      margin-bottom: 0;
-      font-size: 0.98rem;
-    }
-
-    .process-img {
-      border-radius: 14px;
-      overflow: hidden;
-      aspect-ratio: 4/3;
-      box-shadow: var(--shadow-lg);
-    }
-    .process-img img {
-      width: 100%; height: 100%; object-fit: cover;
-      transition: transform 0.65s var(--ease);
-    }
-    .process-img:hover img { transform: scale(1.04); }
+    .dark-bg .eureka-split-step-num { color: var(--accent); }
+    .light-bg .eureka-split-step-num { color: var(--accent); }
 
     /* Gallery */
     #atelier-gallery { background: #fff !important; 
@@ -152,10 +103,7 @@
     .gallery-item--big   { grid-column: span 2; grid-row: span 2; }
 
     @media (max-width: 900px) {
-      .process-step { grid-template-columns: 1fr; gap: 2.5rem; }
-      .process-step.reverse .process-text { order: 1; }
-      .process-step.reverse .process-img { order: 2; }
-      .process-num { font-size: 3.5rem; }
+      .eureka-split-step-num { font-size: 3rem; }
       .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
       .gallery-item--wide, .gallery-item--big { grid-column: span 2; }
       .gallery-item--tall { grid-row: span 1; }
@@ -282,73 +230,89 @@
 
 
 
-<section id="atelier-process">
-  <div class="atelier-process-inner">
-    <div class="section-header" data-animate>
-      <p class="section-eyebrow">Comment ça se passe</p>
-      <h2 style="color:var(--anthracite);">Un process simple et transparent</h2>
-    </div>
+<!-- TRANSITION : TITRE COMMENT ÇA SE PASSE -->
+<section class="atelier-process-intro">
+  <div class="section-header" data-animate>
+    <p class="section-eyebrow">Comment ça se passe</p>
+    <h2 style="color:var(--anthracite);">Un process simple et transparent</h2>
+  </div>
+</section>
 
-    <div class="process-step" data-animate>
-      <div class="process-text">
-        <div class="process-num">01</div>
-        <span class="process-tag">Dépôt</span>
-        <h3>Dépôt de votre matériel</h3>
+<!-- 5 ÉTAPES EN SPLIT ALTERNÉ -->
+<section style="padding: 0; max-width: 100%;">
+
+  <div class="eureka-split" data-animate>
+    <div class="eureka-split-content light-bg">
+      <div class="eureka-split-step-num">01</div>
+      <span class="eureka-split-tag">Dépôt</span>
+      <h3 class="eureka-split-title">Dépôt de votre matériel</h3>
+      <div class="eureka-split-desc">
         <p>Vous amenez votre machine à notre atelier de Gretz-Armainvilliers, en Seine-et-Marne. Notre équipe vous accueille et prend en charge votre véhicule.</p>
       </div>
-      <div class="process-img">
-        <img src="images/camion/PHOTO-2026-04-18-16-40-29.jpg" alt="Dépôt du matériel à l'atelier">
-      </div>
     </div>
-
-    <div class="process-step reverse" data-animate>
-      <div class="process-text">
-        <div class="process-num">02</div>
-        <span class="process-tag">Diagnostic</span>
-        <h3>Diagnostic</h3>
-        <p>Nos spécialistes analysent l'état de votre matériel et identifient précisément les interventions nécessaires — carrosserie, mécanique, hydraulique.</p>
-      </div>
-      <div class="process-img">
-        <img src="images/soudure/PHOTO-2026-04-18-16-40-33.jpg" alt="Diagnostic par nos spécialistes">
-      </div>
-    </div>
-
-    <div class="process-step" data-animate>
-      <div class="process-text">
-        <div class="process-num">03</div>
-        <span class="process-tag">Devis</span>
-        <h3>Devis</h3>
-        <p>Vous recevez un devis clair et transparent avant tout démarrage. Le devis est établi sur présentation du véhicule, chaque intervention étant différente.</p>
-      </div>
-      <div class="process-img">
-        <img src="images/structure/PHOTO-2026-04-18-16-43-13.jpg" alt="Devis transparent">
-      </div>
-    </div>
-
-    <div class="process-step reverse" data-animate>
-      <div class="process-text">
-        <div class="process-num">04</div>
-        <span class="process-tag">Intervention</span>
-        <h3>Intervention</h3>
-        <p>Nos techniciens prennent en charge votre matériel — vous pouvez attendre sur place ou revenir le chercher une fois les travaux terminés.</p>
-      </div>
-      <div class="process-img">
-        <img src="images/soudure/PHOTO-2026-04-18-16-40-32 4.jpg" alt="Intervention en atelier">
-      </div>
-    </div>
-
-    <div class="process-step" data-animate>
-      <div class="process-text">
-        <div class="process-num">05</div>
-        <span class="process-tag">Restitution</span>
-        <h3>Restitution</h3>
-        <p>Votre matériel repart opérationnel, contrôlé et prêt pour le chantier. Notre signature : qu'il reparte plus fiable qu'il n'est arrivé.</p>
-      </div>
-      <div class="process-img">
-        <img src="images/camion/PHOTO-2026-04-18-16-40-30.jpg" alt="Matériel restitué opérationnel">
-      </div>
+    <div class="eureka-split-image">
+      <img src="images/camion/PHOTO-2026-04-18-16-40-29.jpg" alt="Dépôt du matériel à l'atelier">
     </div>
   </div>
+
+  <div class="eureka-split reverse" data-animate>
+    <div class="eureka-split-content dark-bg">
+      <div class="eureka-blueprint-watermark"></div>
+      <div class="eureka-split-step-num">02</div>
+      <span class="eureka-split-tag">Diagnostic</span>
+      <h3 class="eureka-split-title">Diagnostic</h3>
+      <div class="eureka-split-desc">
+        <p>Nos spécialistes analysent l'état de votre matériel et identifient précisément les interventions nécessaires — carrosserie, mécanique, hydraulique.</p>
+      </div>
+    </div>
+    <div class="eureka-split-image">
+      <img src="images/soudure/PHOTO-2026-04-18-16-40-33.jpg" alt="Diagnostic par nos spécialistes">
+    </div>
+  </div>
+
+  <div class="eureka-split" data-animate>
+    <div class="eureka-split-content light-bg">
+      <div class="eureka-split-step-num">03</div>
+      <span class="eureka-split-tag">Devis</span>
+      <h3 class="eureka-split-title">Devis</h3>
+      <div class="eureka-split-desc">
+        <p>Vous recevez un devis clair et transparent avant tout démarrage. Le devis est établi sur présentation du véhicule, chaque intervention étant différente.</p>
+      </div>
+    </div>
+    <div class="eureka-split-image">
+      <img src="images/structure/PHOTO-2026-04-18-16-43-13.jpg" alt="Devis transparent">
+    </div>
+  </div>
+
+  <div class="eureka-split reverse" data-animate>
+    <div class="eureka-split-content dark-bg">
+      <div class="eureka-blueprint-watermark"></div>
+      <div class="eureka-split-step-num">04</div>
+      <span class="eureka-split-tag">Intervention</span>
+      <h3 class="eureka-split-title">Intervention</h3>
+      <div class="eureka-split-desc">
+        <p>Nos techniciens prennent en charge votre matériel — vous pouvez attendre sur place ou revenir le chercher une fois les travaux terminés.</p>
+      </div>
+    </div>
+    <div class="eureka-split-image">
+      <img src="images/soudure/PHOTO-2026-04-18-16-40-32 4.jpg" alt="Intervention en atelier">
+    </div>
+  </div>
+
+  <div class="eureka-split" data-animate>
+    <div class="eureka-split-content light-bg">
+      <div class="eureka-split-step-num">05</div>
+      <span class="eureka-split-tag">Restitution</span>
+      <h3 class="eureka-split-title">Restitution</h3>
+      <div class="eureka-split-desc">
+        <p>Votre matériel repart opérationnel, contrôlé et prêt pour le chantier. Notre signature : qu'il reparte plus fiable qu'il n'est arrivé.</p>
+      </div>
+    </div>
+    <div class="eureka-split-image">
+      <img src="images/camion/PHOTO-2026-04-18-16-40-30.jpg" alt="Matériel restitué opérationnel">
+    </div>
+  </div>
+
 </section>
 
 <section id="atelier-gallery">
