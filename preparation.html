@@ -71,6 +71,26 @@
       .service-body-inner { grid-template-columns: 1fr; gap: 3rem; }
       .service-body-img { min-height: 300px; position: static; }
     }
+
+    .atelier-interventions-list {
+      list-style: none; padding: 0; margin: 0 0 1.5rem;
+    }
+    .atelier-interventions-list li {
+      position: relative;
+      padding: 0.55rem 0 0.55rem 1.75rem;
+      font-size: 0.98rem;
+      line-height: 1.55;
+      border-bottom: 1px solid rgba(43,43,43,0.08);
+    }
+    .atelier-interventions-list li:last-child { border-bottom: none; }
+    .atelier-interventions-list li::before {
+      content: ''; position: absolute;
+      left: 0; top: 1.05rem;
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .dark-bg .atelier-interventions-list li { border-bottom: 1px solid rgba(255,255,255,0.08); }
   </style>
 </head>
 <body>
@@ -120,66 +140,50 @@
   <a href="index.html#services" class="service-hero-back">← Nos services</a>
   <div class="service-hero-content">
     <p class="section-eyebrow">Nos services</p>
-    <h1>Préparation Camion Neuf</h1>
-    <p>Mise en service complète et clé en main — montage, réglages, contrôles techniques et validation terrain.</p>
+    <h1>Préparation camion neuf et d'occasion</h1>
+    <p>Votre camion est neuf ? Avant de prendre la route vers la centrale, nous installons tous les équipements nécessaires pour qu'il soit opérationnel dès le premier jour.</p>
   </div>
 </section>
 
 
-<section id="service-body" style="padding: 0; max-width: 100%; border-bottom: none;">
-  <div class="eureka-split reverse" data-animate>
+<section style="padding: 0; max-width: 100%;">
+
+  <div class="eureka-split" data-animate>
     <div class="eureka-split-content light-bg">
-      <div class="eureka-blueprint-watermark"></div>
-      <span class="eureka-split-tag">Préparation Camion Neuf</span>
-      <h3 class="eureka-split-title">Mise en service complète, clé en main</h3>
+      <span class="eureka-split-tag">Ce qu'on installe</span>
+      <h3 class="eureka-split-title">Un camion prêt à travailler<br>dès la livraison</h3>
       <div class="eureka-split-desc">
-        <p>Nous prenons en charge l'intégralité de la mise en service de votre camion neuf — montage et réglage des équipements, aménagements spécifiques selon vos besoins métier, contrôles techniques complets et essais avant livraison.</p>
-        <p>Chaque véhicule quitte notre atelier opérationnel et conforme aux exigences du terrain. Notre équipe assure un suivi personnalisé de A à Z pour que votre camion neuf soit prêt à rejoindre vos chantiers dès le premier jour, sans aucun ajustement supplémentaire de votre côté.</p>
-        <p>Forts de plus de 20 ans d'expérience sur toutes les marques du marché, nos techniciens appliquent des procédures rigoureuses pour chaque mise en service, garantissant fiabilité et longévité à vos équipements.</p>
+        <p>Toupies, pompes et mixo — nous prenons en charge l'installation de tous les équipements spécifiques à votre métier :</p>
+        <ul class="atelier-interventions-list">
+          <li>Système de Retenue de Béton (SRB)</li>
+          <li>Manette de commande</li>
+          <li>Coffre</li>
+          <li>Brosse et balais</li>
+          <li>Et tout autre équipement selon vos besoins</li>
+        </ul>
+        <p>Une fois passé entre nos mains, votre camion est équipé, réglé et prêt pour la centrale.</p>
       </div>
-      <div class="eureka-split-features" style="margin-bottom: 3.5rem; margin-top: 2rem; max-width: 600px;">
-        
-        <div class="eureka-feature-item" style="display: flex; gap: 1.25rem; margin-bottom: 2rem; align-items: flex-start;">
-          <svg  style="width: 28px; height: 28px; color: var(--accent); flex-shrink: 0; margin-top: 4px;"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          <div>
-            <h4 style="margin-bottom:0.4rem; font-size:1.25rem; color: var(--anthracite);"></h4>
-            <p style="margin:0; opacity:0.75; font-size:1rem; line-height: 1.6;"></p>
-          </div>
-        </div>
-        <div class="eureka-feature-item" style="display: flex; gap: 1.25rem; margin-bottom: 2rem; align-items: flex-start;">
-          <svg  style="width: 28px; height: 28px; color: var(--accent); flex-shrink: 0; margin-top: 4px;"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          <div>
-            <h4 style="margin-bottom:0.4rem; font-size:1.25rem; color: var(--anthracite);"></h4>
-            <p style="margin:0; opacity:0.75; font-size:1rem; line-height: 1.6;"></p>
-          </div>
-        </div>
-        <div class="eureka-feature-item" style="display: flex; gap: 1.25rem; margin-bottom: 2rem; align-items: flex-start;">
-          <svg  style="width: 28px; height: 28px; color: var(--accent); flex-shrink: 0; margin-top: 4px;"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-          <div>
-            <h4 style="margin-bottom:0.4rem; font-size:1.25rem; color: var(--anthracite);"></h4>
-            <p style="margin:0; opacity:0.75; font-size:1rem; line-height: 1.6;"></p>
-          </div>
-        </div>
-      
-      </div>
-      <a href="index.html#contact-strip" class="split-btn" >Demander un devis gratuit</a>
     </div>
     <div class="eureka-split-image">
       <img src="images/camion/PHOTO-2026-04-18-16-40-31%202.jpg" alt="Préparation camion neuf — Eureka BTP">
     </div>
   </div>
-</section>
 
-
-<section id="service-cta">
-  <div class="service-cta-inner" data-animate>
-    <p class="section-eyebrow" style="color:#fff;">Travaillons ensemble</p>
-    <h2>Un camion neuf à préparer ?</h2>
-    <p>Confiez-nous votre mise en service. Nos experts répondent sous 24h pour établir un devis gratuit et sans engagement.</p>
-    <div class="service-cta-actions">
-      <a href="index.html#contact-strip" class="btn-primary">Demander un devis gratuit</a>
+  <div class="eureka-split reverse" data-animate>
+    <div class="eureka-split-content dark-bg">
+      <div class="eureka-blueprint-watermark"></div>
+      <span class="eureka-split-tag">Bon à savoir</span>
+      <h3 class="eureka-split-title">Vous avez un camion d'occasion<br>à équiper ?</h3>
+      <div class="eureka-split-desc">
+        <p>Contactez-nous, nous étudions votre demande.</p>
+      </div>
+      <a href="index.html#contact-strip" class="split-btn">Nous contacter</a>
+    </div>
+    <div class="eureka-split-image">
+      <img src="images/camion/PHOTO-2026-04-18-16-40-30.jpg" alt="Camion d'occasion — Eureka BTP">
     </div>
   </div>
+
 </section>
 
 <footer id="footer">
