@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion — Eureka BTP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { background: var(--light-gray); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+    .auth-card { width: 100%; max-width: 440px; background: #fff; border-radius: 16px; padding: 2.75rem 2.5rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+    .auth-card h1 { font-size: 1.65rem; font-weight: 800; color: var(--anthracite); letter-spacing: -0.02em; margin-bottom: 0.35rem; }
+    .auth-card .auth-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.9rem; }
+    .auth-card .auth-sub { color: var(--gray); font-size: 0.9rem; margin-bottom: 2rem; }
+    .auth-field { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.1rem; }
+    .auth-field label { font-size: 0.78rem; font-weight: 600; color: var(--anthracite); letter-spacing: 0.02em; }
+    .auth-field input { padding: 0.8rem 1rem; border: 1px solid #e3e5ea; border-radius: 10px; font-family: inherit; font-size: 0.95rem; transition: border-color 0.2s, box-shadow 0.2s; background: #fafbfc; }
+    .auth-field input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(244,101,10,0.12); background: #fff; }
+    .auth-submit { width: 100%; padding: 0.9rem 1.2rem; background: var(--anthracite); color: #fff; border: none; border-radius: 10px; font-family: inherit; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: background 0.2s, transform 0.15s; margin-top: 0.5rem; }
+    .auth-submit:hover:not(:disabled) { background: #000; transform: translateY(-1px); }
+    .auth-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .auth-error { min-height: 1.2rem; color: #c83b3b; font-size: 0.85rem; margin-top: 0.8rem; text-align: center; }
+    .auth-back { display: block; text-align: center; margin-top: 1.5rem; font-size: 0.82rem; color: var(--gray); text-decoration: none; }
+    .auth-back:hover { color: var(--anthracite); }
+    .auth-logo { text-align: center; margin-bottom: 1.5rem; }
+    .auth-logo img { height: 42px; }
+  </style>
+  <script type="module" crossorigin src="/assets/login-sX43z34n.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="modulepreload" crossorigin href="/assets/supabase-client-BqP9cGay.js">
+  <link rel="stylesheet" crossorigin href="/assets/style-o23hVjyS.css">
+</head>
+<body>
+
+  <form class="auth-card" id="loginForm" autocomplete="on">
+    <div class="auth-logo">
+      <a href="index.html"><img src="/assets/logo-black-Ct1m0PD8.png" alt="Eureka BTP"></a>
+    </div>
+    <p class="auth-eyebrow">Espace entreprise</p>
+    <h1>Connexion</h1>
+    <p class="auth-sub">Accès réservé au responsable Eureka BTP.</p>
+
+    <div class="auth-field">
+      <label for="loginEmail">Email</label>
+      <input type="email" id="loginEmail" name="email" required autocomplete="email" placeholder="vous@eurekabtp.com">
+    </div>
+    <div class="auth-field">
+      <label for="loginPassword">Mot de passe</label>
+      <input type="password" id="loginPassword" name="password" required autocomplete="current-password" placeholder="••••••••">
+    </div>
+
+    <button type="submit" class="auth-submit" id="loginSubmit">Se connecter</button>
+    <p class="auth-error" id="loginError"></p>
+    <a href="index.html" class="auth-back">← Retour au site</a>
+  </form>
+
+</body>
+</html>

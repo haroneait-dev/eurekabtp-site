@@ -28,79 +28,45 @@
     .atelier-hero-content h1 { margin-bottom: 0.9rem; }
     .atelier-hero-content p { font-size: 1.05rem; color: rgba(255,255,255,0.8); max-width: 640px; line-height: 1.72; }
 
-    /* Intro */
-    #atelier-intro {
-      background: #fff;
-      padding: 7rem 2rem 4rem;
+    /* Liste d'interventions dans eureka-split */
+    .atelier-interventions-list {
+      list-style: none; padding: 0; margin: 0 0 1.5rem;
     }
-    .atelier-intro-inner {
-      max-width: 900px; margin: 0 auto;
+    .atelier-interventions-list li {
+      position: relative;
+      padding: 0.55rem 0 0.55rem 1.75rem;
+      font-size: 0.98rem;
+      line-height: 1.55;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .atelier-interventions-list li:last-child { border-bottom: none; }
+    .atelier-interventions-list li::before {
+      content: ''; position: absolute;
+      left: 0; top: 1.05rem;
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .light-bg .atelier-interventions-list li { border-bottom: 1px solid rgba(43,43,43,0.08); }
+
+    /* Bandeau transition "Comment ça se passe" */
+    .atelier-process-intro {
+      background: #fff;
+      padding: 6rem 2rem 3rem;
       text-align: center;
     }
-    .atelier-intro-inner p {
-      font-size: 1.08rem; color: var(--gray);
-      line-height: 1.85; margin-top: 1.5rem;
-    }
+    .atelier-process-intro .section-header { max-width: 720px; margin: 0 auto; }
 
-    /* Process steps */
-    #atelier-process {
-      background: #fff;
-      padding: 4rem 2rem 8rem;
-    }
-    .atelier-process-inner {
-      max-width: 1240px; margin: 0 auto;
-    }
-    .process-step {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-      margin-bottom: 7rem;
-    }
-    .process-step:last-child { margin-bottom: 0; }
-    .process-step.reverse .process-text { order: 2; }
-    .process-step.reverse .process-img { order: 1; }
-
-    .process-num {
-      font-size: 5rem; font-weight: 900;
-      color: var(--light);
+    /* Grand numéro d'étape dans le split */
+    .eureka-split-step-num {
+      font-size: 4.5rem; font-weight: 900;
       line-height: 1;
       letter-spacing: -0.04em;
-      margin-bottom: 0.5rem;
-    }
-    .process-text h3 {
-      color: var(--anthracite);
-      margin-bottom: 1.1rem;
-      font-size: 1.75rem;
-    }
-    .process-text .process-tag {
-      display: inline-block;
-      font-size: 0.7rem; font-weight: 800;
-      text-transform: uppercase; letter-spacing: 0.14em;
-      color: var(--anthracite);
-      padding: 0.35rem 0.85rem;
-      background: var(--light);
-      border-radius: 20px;
-      margin-bottom: 1.1rem;
-    }
-    .process-text p {
-      color: var(--gray);
-      line-height: 1.8;
       margin-bottom: 1rem;
-      font-size: 0.98rem;
+      opacity: 0.9;
     }
-
-    .process-img {
-      border-radius: 14px;
-      overflow: hidden;
-      aspect-ratio: 4/3;
-      box-shadow: var(--shadow-lg);
-    }
-    .process-img img {
-      width: 100%; height: 100%; object-fit: cover;
-      transition: transform 0.65s var(--ease);
-    }
-    .process-img:hover img { transform: scale(1.04); }
+    .dark-bg .eureka-split-step-num { color: var(--accent); }
+    .light-bg .eureka-split-step-num { color: var(--accent); }
 
     /* Gallery */
     #atelier-gallery { background: #fff !important; 
@@ -136,10 +102,7 @@
     .gallery-item--big   { grid-column: span 2; grid-row: span 2; }
 
     @media (max-width: 900px) {
-      .process-step { grid-template-columns: 1fr; gap: 2.5rem; }
-      .process-step.reverse .process-text { order: 1; }
-      .process-step.reverse .process-img { order: 2; }
-      .process-num { font-size: 3.5rem; }
+      .eureka-split-step-num { font-size: 3rem; }
       .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
       .gallery-item--wide, .gallery-item--big { grid-column: span 2; }
       .gallery-item--tall { grid-row: span 1; }
@@ -155,14 +118,14 @@
     .atelier-cta-inner h2 { color: #fff; margin-bottom: 1rem; }
     .atelier-cta-inner p { color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.75; margin-bottom: 2.5rem; }
   </style>
-  <link rel="stylesheet" crossorigin href="/assets/style-CT7DiOCc.css">
+  <link rel="stylesheet" crossorigin href="/assets/style-o23hVjyS.css">
 </head>
 <body>
 
 <nav id="navbar" class="scrolled">
   <div class="nav-container">
     <a href="index.html" class="nav-logo">
-      <img src="data:image/avif;base64,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" alt="Eureka BTP" class="nav-logo-img">
+      <img src="/assets/logo-black-Ct1m0PD8.png" alt="Eureka BTP" class="nav-logo-img">
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
@@ -177,7 +140,6 @@
         </div>
       </li>
       <li><a href="pieces.html">Pièces détachées</a></li>
-            <li><a href="activites.html">Nos activités</a></li>
       <li><a href="atelier.html">Atelier &amp; SAV</a></li>
     </ul>
     <a href="index.html#contact-strip" class="nav-cta">Demander un devis</a>
@@ -194,88 +156,158 @@
     <a href="location.html" style="padding-left:1.25rem;font-size:0.9rem;">· Location</a>
     <a href="achat-revente.html" style="padding-left:1.25rem;font-size:0.9rem;">· Achat &amp; revente</a>
     <a href="pieces.html">Pièces détachées</a>
-        <a href="activites.html">Nos activités</a>
     <a href="index.html#contact-strip" class="mobile-cta">Demander un devis</a>
   </div>
 </nav>
 
 <section class="atelier-hero">
   <div class="atelier-hero-content">
-    <p class="section-eyebrow">Notre savoir-faire</p>
-    <h1>L'atelier en action</h1>
-    <p>Soudure, réfection de carrosserie, révision mécanique, essais — chaque matériel repart opérationnel entre les mains de nos techniciens, en Seine-et-Marne.</p>
+    <p class="section-eyebrow">L'atelier</p>
+    <h1>Un outil de travail à la hauteur de vos exigences</h1>
+    <p>450 m² dédiés à la réparation et la maintenance de votre matériel béton — pour que chaque intervention soit réalisée dans les meilleures conditions.</p>
   </div>
 </section>
 
-<section id="atelier-intro">
-  <div class="atelier-intro-inner" data-animate>
-    <p class="section-eyebrow">Bienvenue dans nos locaux</p>
-    <h2 style="color:var(--anthracite);">Un atelier pensé pour la carrosserie béton lourde</h2>
-    <p>Nos installations en Seine-et-Marne rassemblent un atelier de soudure complet, une baie de mécanique grande capacité, un stock de pièces détachées toutes marques et un espace dédié à la préparation des camions neufs. Chaque poste est équipé pour traiter des toupies, pompes et centrales — des plus petites unités aux grandes capacités.</p>
-    <p>Notre équipe intervient du diagnostic au contrôle final. Voici, en quatre étapes, le parcours d'un véhicule qui entre chez nous.</p>
+<!-- SECTIONS SPLIT -->
+<section style="padding: 0; max-width: 100%;">
+
+  <div class="eureka-split" data-animate>
+    <div class="eureka-split-content light-bg">
+      <span class="eureka-split-tag">Nos interventions</span>
+      <h3 class="eureka-split-title">Toutes les interventions,<br>toutes les marques</h3>
+      <div class="eureka-split-desc">
+        <p>Notre atelier prend en charge l'ensemble des interventions sur vos toupies, pompes et centrales à béton, quelle que soit la marque :</p>
+        <ul class="atelier-interventions-list">
+          <li>Changement de cuve</li>
+          <li>Changement de galets</li>
+          <li>Changement de tôle d'usure</li>
+          <li>Changement de réducteur — neuf ou d'occasion</li>
+          <li>Passage de commande électrique à manuel</li>
+          <li>Déplombage de cuve</li>
+          <li>Révision hydraulique — ventilateur, réducteur, etc.</li>
+          <li>Préparation de camions neufs — mise en service clé en main</li>
+        </ul>
+        <p>Et bien d'autres interventions — chaque matériel est unique, notre équipe s'adapte à chaque situation.</p>
+        <p><strong>Nous intervenons sur toutes les marques</strong> — IMER, Stetter, Liebherr, Putzmeister, Baryval, CIFA, Sermac, et bien d'autres.</p>
+      </div>
+    </div>
+    <div class="eureka-split-image">
+      <img src="/assets/PHOTO-2026-04-18-16-40-32%204-DdRoBdoI.jpg" alt="Interventions atelier Eureka BTP — toutes marques">
+    </div>
   </div>
+
+  <div class="eureka-split reverse" data-animate>
+    <div class="eureka-split-content dark-bg">
+      <div class="eureka-blueprint-watermark"></div>
+      <span class="eureka-split-tag">Maintenance préventive</span>
+      <h3 class="eureka-split-title">Anticiper plutôt<br>que subir</h3>
+      <div class="eureka-split-desc">
+        <p>Une panne coûte toujours plus cher qu'un entretien régulier. C'est pourquoi nous proposons également un suivi préventif de votre matériel — pour détecter les signes d'usure avant qu'ils ne deviennent un problème et maintenir votre parc en état de marche toute l'année.</p>
+      </div>
+    </div>
+    <div class="eureka-split-image">
+      <img src="/assets/PHOTO-2026-04-18-16-40-31-B-vVGv8m.jpg" alt="Maintenance préventive — Eureka BTP">
+    </div>
+  </div>
+
+  <div class="eureka-split" data-animate>
+    <div class="eureka-split-content light-bg">
+      <span class="eureka-split-tag">Nos équipements</span>
+      <h3 class="eureka-split-title">Un atelier professionnel,<br>pensé pour l'efficacité</h3>
+      <div class="eureka-split-desc">
+        <p>Avec ses <strong>450 m²</strong> et son <strong>pont élévateur</strong>, notre atelier est équipé pour accueillir et traiter tous types de matériel béton dans les meilleures conditions.</p>
+        <p>Outillage professionnel, pièces détachées en stock permanent — nous mettons tout en œuvre pour intervenir vite et bien.</p>
+      </div>
+    </div>
+    <div class="eureka-split-image">
+      <img src="/assets/PHOTO-2026-04-18-16-43-12-DA_VgeRV.jpg" alt="Équipements atelier Eureka BTP — 450 m² et pont élévateur">
+    </div>
+  </div>
+
 </section>
 
 
 
+<!-- TRANSITION : TITRE COMMENT ÇA SE PASSE -->
+<section class="atelier-process-intro">
+  <div class="section-header" data-animate>
+    <p class="section-eyebrow">Comment ça se passe</p>
+    <h2 style="color:var(--anthracite);">Un process simple et transparent</h2>
+  </div>
+</section>
 
+<!-- 5 ÉTAPES EN SPLIT ALTERNÉ -->
+<section style="padding: 0; max-width: 100%;">
 
-
-<section id="atelier-process" style="padding: 0; max-width: 100%; border-bottom: none; background: #fff;">
-
-  <div class="activite-row small-img-row" data-animate>
-    <div class="activite-img">
-      <img src="/assets/PHOTO-2026-04-18-16-40-31-B-vVGv8m.jpg" alt="Diagnostic">
-      <div class="activite-num" style="color: rgba(0,0,0,0.05);">01</div>
+  <div class="eureka-split" data-animate>
+    <div class="eureka-split-content light-bg">
+      <div class="eureka-split-step-num">01</div>
+      <span class="eureka-split-tag">Dépôt</span>
+      <h3 class="eureka-split-title">Dépôt de votre matériel</h3>
+      <div class="eureka-split-desc">
+        <p>Vous amenez votre machine à notre atelier de Gretz-Armainvilliers, en Seine-et-Marne. Notre équipe vous accueille et prend en charge votre véhicule.</p>
+      </div>
     </div>
-    <div class="activite-text dark-bg">
-      <span class="eureka-split-tag">Étape 01</span>
-      <h3>Diagnostic, Réception &amp; Expertise</h3>
-      <p>Chaque véhicule qui entre dans nos locaux de Gretz-Armainvilliers fait l'objet d'une expertise rigoureuse. Nos techniciens procèdent à une inspection visuelle complète de la carrosserie (cuve, goulotte, châssis) ainsi qu'à un contrôle approfondi des organes mécaniques et hydrauliques.</p>
-      <p>Nous utilisons des outils de diagnostic modernes pour identifier les pannes intermittentes et les zones de fatigue de l'acier. À l'issue de cette phase, un devis détaillé et transparent vous est remis. Aucune intervention n'est lancée sans votre accord explicite, garantissant une maîtrise totale de votre budget de maintenance.</p>
-      <a href="index.html#contact-strip" class="split-btn">Prendre rendez-vous</a>
+    <div class="eureka-split-image">
+      <img src="/assets/PHOTO-2026-04-18-16-40-29-Bow-Xd2q.jpg" alt="Dépôt du matériel à l'atelier">
     </div>
   </div>
 
-  <div class="activite-row reverse small-img-row" data-animate>
-    <div class="activite-img">
-      <img src="/assets/PHOTO-2026-04-18-16-40-33-De8cGgyb.jpg" alt="Soudure">
-      <div class="activite-num" style="color: rgba(0,0,0,0.05);">02</div>
+  <div class="eureka-split reverse" data-animate>
+    <div class="eureka-split-content dark-bg">
+      <div class="eureka-blueprint-watermark"></div>
+      <div class="eureka-split-step-num">02</div>
+      <span class="eureka-split-tag">Diagnostic</span>
+      <h3 class="eureka-split-title">Diagnostic</h3>
+      <div class="eureka-split-desc">
+        <p>Nos spécialistes analysent l'état de votre matériel et identifient précisément les interventions nécessaires — carrosserie, mécanique, hydraulique.</p>
+      </div>
     </div>
-    <div class="activite-text light-bg">
-      <span class="eureka-split-tag">Étape 02</span>
-      <h3>Soudure de Précision &amp; Carrosserie Lourde</h3>
-      <p>La carrosserie béton est le cœur historique de notre savoir-faire depuis plus de 20 ans. Nos soudeurs spécialisés maîtrisent les techniques d'assemblage sur aciers haute résistance. Nous intervenons sur les perçages de cuves, le remplacement de goulottes, le redressement de châssis et la réfection des cabines.</p>
-      <p>Nous ne nous contentons pas de colmater : nous reconstruisons les éléments affaiblis par l'abrasion du béton. Chaque soudure subit un contrôle qualité strict pour garantir la sécurité et la longévité de vos équipements sur le terrain. Une protection anti-corrosion est systématiquement appliquée sur les zones traitées.</p>
-      <a href="index.html#contact-strip" class="split-btn">Prendre rendez-vous</a>
-    </div>
-  </div>
-
-  <div class="activite-row small-img-row" data-animate>
-    <div class="activite-img">
-      <img src="/assets/PHOTO-2026-04-18-16-40-32%204-DdRoBdoI.jpg" alt="Mécanique">
-      <div class="activite-num" style="color: rgba(255,255,255,0.12);">03</div>
-    </div>
-    <div class="activite-text dark-bg">
-      <span class="eureka-split-tag">Étape 03</span>
-      <h3>Maintenance Mécanique &amp; Systèmes Hydrauliques</h3>
-      <p>Au-delà de la carrosserie, nous assurons l'entretien complet de la chaîne cinématique. Révision moteur, remplacement d'embrayage, freins et suspensions. Nos experts interviennent également sur les systèmes hydrauliques complexes qui pilotent la rotation de la cuve et le déploiement des pompes.</p>
-      <p>Grâce à notre stock permanent de pièces détachées toutes marques (IMER, Stetter, Liebherr, etc.), nous remplaçons les composants défectueux sans délai. Nous vérifions l'étanchéité des circuits et la pression des pompes hydrauliques pour assurer un fonctionnement optimal et sécurisé lors de vos livraisons de béton.</p>
-      <a href="index.html#contact-strip" class="split-btn">Prendre rendez-vous</a>
+    <div class="eureka-split-image">
+      <img src="/assets/PHOTO-2026-04-18-16-40-33-De8cGgyb.jpg" alt="Diagnostic par nos spécialistes">
     </div>
   </div>
 
-  <div class="activite-row reverse small-img-row" data-animate>
-    <div class="activite-img">
-      <img src="/assets/PHOTO-2026-04-18-16-40-30-G2NElDkg.jpg" alt="Contrôle final">
-      <div class="activite-num" style="color: rgba(0,0,0,0.05);">06</div>
+  <div class="eureka-split" data-animate>
+    <div class="eureka-split-content light-bg">
+      <div class="eureka-split-step-num">03</div>
+      <span class="eureka-split-tag">Devis</span>
+      <h3 class="eureka-split-title">Devis</h3>
+      <div class="eureka-split-desc">
+        <p>Vous recevez un devis clair et transparent avant tout démarrage. Le devis est établi sur présentation du véhicule, chaque intervention étant différente.</p>
+      </div>
     </div>
-    <div class="activite-text light-bg">
-      <span class="eureka-split-tag">Étape 06</span>
-      <h3>Contrôle Final, Essais en Charge &amp; Mise en Service</h3>
-      <p>Avant de vous remettre les clés, chaque véhicule passe par une batterie de tests finaux. Nous vérifions le bon fonctionnement de tous les équipements de sécurité, l'absence de fuites et la fluidité des commandes. Des essais en charge peuvent être réalisés pour valider la tenue des réparations en conditions réelles.</p>
-      <p>Un rapport d'intervention complet vous est remis, détaillant les opérations effectuées et les pièces remplacées. Votre matériel ressort de notre atelier non seulement réparé, mais prêt à affronter les cadences soutenues du chantier avec une fiabilité retrouvée. C'est la signature de qualité Eureka BTP.</p>
-      <a href="index.html#contact-strip" class="split-btn">Prendre rendez-vous</a>
+    <div class="eureka-split-image">
+      <img src="/assets/PHOTO-2026-04-18-16-43-13-NB-Nq5H6.jpg" alt="Devis transparent">
+    </div>
+  </div>
+
+  <div class="eureka-split reverse" data-animate>
+    <div class="eureka-split-content dark-bg">
+      <div class="eureka-blueprint-watermark"></div>
+      <div class="eureka-split-step-num">04</div>
+      <span class="eureka-split-tag">Intervention</span>
+      <h3 class="eureka-split-title">Intervention</h3>
+      <div class="eureka-split-desc">
+        <p>Nos techniciens prennent en charge votre matériel — vous pouvez attendre sur place ou revenir le chercher une fois les travaux terminés.</p>
+      </div>
+    </div>
+    <div class="eureka-split-image">
+      <img src="/assets/PHOTO-2026-04-18-16-40-32%204-DdRoBdoI.jpg" alt="Intervention en atelier">
+    </div>
+  </div>
+
+  <div class="eureka-split" data-animate>
+    <div class="eureka-split-content light-bg">
+      <div class="eureka-split-step-num">05</div>
+      <span class="eureka-split-tag">Restitution</span>
+      <h3 class="eureka-split-title">Restitution</h3>
+      <div class="eureka-split-desc">
+        <p>Votre matériel repart opérationnel, contrôlé et prêt pour le chantier. Notre signature : qu'il reparte plus fiable qu'il n'est arrivé.</p>
+      </div>
+    </div>
+    <div class="eureka-split-image">
+      <img src="/assets/PHOTO-2026-04-18-16-40-30-G2NElDkg.jpg" alt="Matériel restitué opérationnel">
     </div>
   </div>
 
@@ -337,7 +369,7 @@
   <div class="footer-container">
     <div class="footer-brand">
       <div class="footer-logo">
-        <img src="data:image/avif;base64,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" alt="Eureka BTP" style="height:44px; width:auto;">
+        <img src="/assets/logo-black-Ct1m0PD8.png" alt="Eureka BTP" >
       </div>
       <p class="footer-tagline">25 ans au service des professionnels du BPE. Réparation, location, achat &amp; revente de toupies à béton — toutes marques, partout en France.</p>
       <div class="footer-coords">
@@ -357,7 +389,6 @@
         <li><a href="index.html">Accueil</a></li>
         <li><a href="identite.html">Notre identité</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="activites.html">Nos activités</a></li>
         <li><a href="pieces.html">Pièces détachées</a></li>
                 <li><a href="atelier.html">L'atelier en action</a></li>
         <li><a href="index.html#contact-strip">Contact &amp; Devis</a></li>

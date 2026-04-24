@@ -70,15 +70,35 @@
       .service-body-inner { grid-template-columns: 1fr; gap: 3rem; }
       .service-body-img { min-height: 300px; position: static; }
     }
+
+    .atelier-interventions-list {
+      list-style: none; padding: 0; margin: 0 0 1.5rem;
+    }
+    .atelier-interventions-list li {
+      position: relative;
+      padding: 0.55rem 0 0.55rem 1.75rem;
+      font-size: 0.98rem;
+      line-height: 1.55;
+      border-bottom: 1px solid rgba(43,43,43,0.08);
+    }
+    .atelier-interventions-list li:last-child { border-bottom: none; }
+    .atelier-interventions-list li::before {
+      content: ''; position: absolute;
+      left: 0; top: 1.05rem;
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .dark-bg .atelier-interventions-list li { border-bottom: 1px solid rgba(255,255,255,0.08); }
   </style>
-  <link rel="stylesheet" crossorigin href="/assets/style-CT7DiOCc.css">
+  <link rel="stylesheet" crossorigin href="/assets/style-o23hVjyS.css">
 </head>
 <body>
 
 <nav id="navbar" class="scrolled">
   <div class="nav-container">
     <a href="index.html" class="nav-logo">
-      <img src="data:image/avif;base64,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" alt="Eureka BTP" class="nav-logo-img">
+      <img src="/assets/logo-black-Ct1m0PD8.png" alt="Eureka BTP" class="nav-logo-img">
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
@@ -93,7 +113,6 @@
         </div>
       </li>
       <li><a href="pieces.html">Pièces détachées</a></li>
-            <li><a href="activites.html">Nos activités</a></li>
       <li><a href="atelier.html">Atelier &amp; SAV</a></li>
     </ul>
     <a href="index.html#contact-strip" class="nav-cta">Demander un devis</a>
@@ -110,7 +129,6 @@
     <a href="location.html" style="padding-left:1.25rem;font-size:0.9rem;">· Location</a>
     <a href="achat-revente.html" style="padding-left:1.25rem;font-size:0.9rem;">· Achat &amp; revente</a>
     <a href="pieces.html">Pièces détachées</a>
-        <a href="activites.html">Nos activités</a>
     <a href="index.html#contact-strip" class="mobile-cta">Demander un devis</a>
   </div>
 </nav>
@@ -120,73 +138,57 @@
   <a href="index.html#services" class="service-hero-back">← Nos services</a>
   <div class="service-hero-content">
     <p class="section-eyebrow">Nos services</p>
-    <h1>Préparation Camion Neuf</h1>
-    <p>Mise en service complète et clé en main — montage, réglages, contrôles techniques et validation terrain.</p>
+    <h1>Préparation camion neuf et d'occasion</h1>
+    <p>Votre camion est neuf ? Avant de prendre la route vers la centrale, nous installons tous les équipements nécessaires pour qu'il soit opérationnel dès le premier jour.</p>
   </div>
 </section>
 
 
-<section id="service-body" style="padding: 0; max-width: 100%; border-bottom: none;">
-  <div class="eureka-split reverse" data-animate>
+<section style="padding: 0; max-width: 100%;">
+
+  <div class="eureka-split" data-animate>
     <div class="eureka-split-content light-bg">
-      <div class="eureka-blueprint-watermark"></div>
-      <span class="eureka-split-tag">Préparation Camion Neuf</span>
-      <h3 class="eureka-split-title">Mise en service complète, clé en main</h3>
+      <span class="eureka-split-tag">Ce qu'on installe</span>
+      <h3 class="eureka-split-title">Un camion prêt à travailler<br>dès la livraison</h3>
       <div class="eureka-split-desc">
-        <p>Nous prenons en charge l'intégralité de la mise en service de votre camion neuf — montage et réglage des équipements, aménagements spécifiques selon vos besoins métier, contrôles techniques complets et essais avant livraison.</p>
-        <p>Chaque véhicule quitte notre atelier opérationnel et conforme aux exigences du terrain. Notre équipe assure un suivi personnalisé de A à Z pour que votre camion neuf soit prêt à rejoindre vos chantiers dès le premier jour, sans aucun ajustement supplémentaire de votre côté.</p>
-        <p>Forts de plus de 20 ans d'expérience sur toutes les marques du marché, nos techniciens appliquent des procédures rigoureuses pour chaque mise en service, garantissant fiabilité et longévité à vos équipements.</p>
+        <p>Toupies, pompes et mixo — nous prenons en charge l'installation de tous les équipements spécifiques à votre métier :</p>
+        <ul class="atelier-interventions-list">
+          <li>Système de Retenue de Béton (SRB)</li>
+          <li>Manette de commande</li>
+          <li>Coffre</li>
+          <li>Brosse et balais</li>
+          <li>Et tout autre équipement selon vos besoins</li>
+        </ul>
+        <p>Une fois passé entre nos mains, votre camion est équipé, réglé et prêt pour la centrale.</p>
       </div>
-      <div class="eureka-split-features" style="margin-bottom: 3.5rem; margin-top: 2rem; max-width: 600px;">
-        
-        <div class="eureka-feature-item" style="display: flex; gap: 1.25rem; margin-bottom: 2rem; align-items: flex-start;">
-          <svg  style="width: 28px; height: 28px; color: var(--accent); flex-shrink: 0; margin-top: 4px;"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          <div>
-            <h4 style="margin-bottom:0.4rem; font-size:1.25rem; color: var(--anthracite);"></h4>
-            <p style="margin:0; opacity:0.75; font-size:1rem; line-height: 1.6;"></p>
-          </div>
-        </div>
-        <div class="eureka-feature-item" style="display: flex; gap: 1.25rem; margin-bottom: 2rem; align-items: flex-start;">
-          <svg  style="width: 28px; height: 28px; color: var(--accent); flex-shrink: 0; margin-top: 4px;"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          <div>
-            <h4 style="margin-bottom:0.4rem; font-size:1.25rem; color: var(--anthracite);"></h4>
-            <p style="margin:0; opacity:0.75; font-size:1rem; line-height: 1.6;"></p>
-          </div>
-        </div>
-        <div class="eureka-feature-item" style="display: flex; gap: 1.25rem; margin-bottom: 2rem; align-items: flex-start;">
-          <svg  style="width: 28px; height: 28px; color: var(--accent); flex-shrink: 0; margin-top: 4px;"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-          <div>
-            <h4 style="margin-bottom:0.4rem; font-size:1.25rem; color: var(--anthracite);"></h4>
-            <p style="margin:0; opacity:0.75; font-size:1rem; line-height: 1.6;"></p>
-          </div>
-        </div>
-      
-      </div>
-      <a href="index.html#contact-strip" class="split-btn" >Demander un devis gratuit</a>
     </div>
     <div class="eureka-split-image">
       <img src="/assets/PHOTO-2026-04-18-16-40-31%202-CPWkK0Mh.jpg" alt="Préparation camion neuf — Eureka BTP">
     </div>
   </div>
-</section>
 
-
-<section id="service-cta">
-  <div class="service-cta-inner" data-animate>
-    <p class="section-eyebrow" style="color:#fff;">Travaillons ensemble</p>
-    <h2>Un camion neuf à préparer ?</h2>
-    <p>Confiez-nous votre mise en service. Nos experts répondent sous 24h pour établir un devis gratuit et sans engagement.</p>
-    <div class="service-cta-actions">
-      <a href="index.html#contact-strip" class="btn-primary">Demander un devis gratuit</a>
+  <div class="eureka-split reverse" data-animate>
+    <div class="eureka-split-content dark-bg">
+      <div class="eureka-blueprint-watermark"></div>
+      <span class="eureka-split-tag">Bon à savoir</span>
+      <h3 class="eureka-split-title">Vous avez un camion d'occasion<br>à équiper ?</h3>
+      <div class="eureka-split-desc">
+        <p>Contactez-nous, nous étudions votre demande.</p>
+      </div>
+      <a href="index.html#contact-strip" class="split-btn">Nous contacter</a>
+    </div>
+    <div class="eureka-split-image">
+      <img src="/assets/PHOTO-2026-04-18-16-40-30-G2NElDkg.jpg" alt="Camion d'occasion — Eureka BTP">
     </div>
   </div>
+
 </section>
 
 <footer id="footer">
   <div class="footer-container">
     <div class="footer-brand">
       <div class="footer-logo">
-        <img src="data:image/avif;base64,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" alt="Eureka BTP" style="height:44px; width:auto;">
+        <img src="/assets/logo-black-Ct1m0PD8.png" alt="Eureka BTP" >
       </div>
       <p class="footer-tagline">25 ans au service des professionnels du BPE. Réparation, location, achat & revente de toupies à béton — toutes marques, partout en France.</p>
       <div class="footer-coords">
@@ -206,7 +208,6 @@
         <li><a href="index.html">Accueil</a></li>
         <li><a href="identite.html">Notre identité</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="activites.html">Nos activités</a></li>
         <li><a href="pieces.html">Pièces détachées</a></li>
                 <li><a href="atelier.html">L'atelier en action</a></li>
         <li><a href="index.html#contact-strip">Contact &amp; Devis</a></li>
