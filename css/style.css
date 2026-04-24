@@ -3272,27 +3272,39 @@ footer { background: #2b2b2b; color: #fff; }
   min-height: 400px;
   align-items: stretch;
 }
-#identite-teaser .split-image,
-#atelier-teaser .split-image,
-#hub-services .eureka-split-image,
-#hub-pieces .eureka-split-image,
-#hub-materiel .eureka-split-image,
-#hub-activites .eureka-split-image {
-  flex: 1 1 40%;
-  height: auto;
-  min-height: 400px;
-  max-height: 460px;
-}
 #identite-teaser .split-content,
 #atelier-teaser .split-content,
 #hub-services .eureka-split-content,
 #hub-pieces .eureka-split-content,
 #hub-materiel .eureka-split-content,
 #hub-activites .eureka-split-content {
-  flex: 1 1 60%;
   min-height: 400px;
   padding: clamp(2.5rem, 5vw, 4rem) clamp(1.75rem, 4vw, 3.5rem);
 }
+
+/* Homepage Diversified Ratios */
+#identite-teaser .split-content { flex: 1 1 45%; }
+#identite-teaser .split-image   { flex: 1 1 55%; }
+
+#atelier-teaser .split-content { flex: 1 1 52%; }
+#atelier-teaser .split-image   { flex: 1 1 48%; }
+
+#hub-services .eureka-split-content { flex: 1 1 50%; }
+#hub-services .eureka-split-image   { flex: 1 1 50%; }
+
+#hub-pieces .eureka-split-content { flex: 1 1 42%; }
+#hub-pieces .eureka-split-image   { flex: 1 1 58%; }
+
+#hub-partenaires .eureka-split-content { flex: 1 1 55%; }
+#hub-partenaires .eureka-split-image   { flex: 1 1 45%; }
+
+/* Atelier Steps Rhythm */
+.atelier-process-intro + section .eureka-split:nth-child(1) .eureka-split-content { flex: 1 1 45%; }
+.atelier-process-intro + section .eureka-split:nth-child(2) .eureka-split-content { flex: 1 1 58%; }
+.atelier-process-intro + section .eureka-split:nth-child(3) .eureka-split-content { flex: 1 1 50%; }
+.atelier-process-intro + section .eureka-split:nth-child(4) .eureka-split-content { flex: 1 1 42%; }
+.atelier-process-intro + section .eureka-split:nth-child(5) .eureka-split-content { flex: 1 1 55%; }
+
 #identite-teaser .split-content h2,
 #atelier-teaser .split-content h2,
 #hub-services .eureka-split-content h2,
