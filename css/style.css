@@ -110,7 +110,7 @@ h5 { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spa
    NAVBAR
 ═══════════════════════════════════════════ */
 #navbar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  position: sticky; top: 0; left: 0; right: 0; z-index: 999;
   background: #000;
   transition: background var(--t) var(--ease), box-shadow var(--t) var(--ease);
 }
@@ -120,11 +120,11 @@ h5 { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spa
 }
 .nav-container {
   max-width: 1320px; margin: 0 auto;
-  padding: 0.8rem 2.5rem;
+  padding: 1.3rem 2.5rem;
   display: flex; align-items: center; gap: 1.5rem;
   transition: padding var(--t) var(--ease);
 }
-#navbar.scrolled .nav-container { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+#navbar.scrolled .nav-container { padding-top: 0.9rem; padding-bottom: 0.9rem; }
 
 .nav-logo {
   display: flex; align-items: baseline; gap: 0.1rem;
@@ -2295,7 +2295,7 @@ footer { background: #2b2b2b; color: #fff; }
 .nav-logo:hover { transform: scale(1.03); }
 .nav-logo-img {
   display: block;
-  height: 90px;
+  height: 118px;
   width: auto;
   object-fit: contain;
   border-radius: 4px;
@@ -2304,7 +2304,7 @@ footer { background: #2b2b2b; color: #fff; }
 }
 
 @media (max-width: 640px) {
-  .nav-logo-img { height: 60px; }
+  .nav-logo-img { height: 76px; }
 }
 
 /* When navbar is black (on hero), logo is white — mix-blend-mode hides white square */
