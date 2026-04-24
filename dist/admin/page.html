@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Éditer une page — Eureka BTP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { background: #f4f5f7; min-height: 100vh; font-family: 'Inter', sans-serif; }
+    .admin-header { background: var(--anthracite); color: #fff; padding: 1.1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .admin-header h1 { font-size: 1.05rem; font-weight: 700; }
+    .admin-header-left { display: flex; align-items: center; gap: 1.25rem; }
+    .admin-header-left a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+    .admin-header-left a:hover { color: #fff; }
+    .admin-header-right { display: flex; align-items: center; gap: 1.25rem; font-size: 0.85rem; }
+    .admin-header-right span { color: rgba(255,255,255,0.7); }
+    .admin-header-right button {
+      background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3);
+      padding: 0.45rem 0.9rem; border-radius: 8px; font-family: inherit;
+      font-size: 0.82rem; cursor: pointer; transition: all 0.2s;
+    }
+    .admin-header-right button:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.6); }
+
+    .admin-wrap { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+    .admin-page-title {
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem;
+      margin-bottom: 2rem; flex-wrap: wrap;
+    }
+    .admin-page-title h2 { font-size: 1.5rem; font-weight: 800; color: var(--anthracite); letter-spacing: -0.01em; margin-bottom: 0.3rem; }
+    .admin-page-title p { color: var(--gray); font-size: 0.88rem; }
+
+    .btn-add {
+      padding: 0.7rem 1.2rem; background: var(--accent); color: #fff;
+      border: none; border-radius: 9px; font-family: inherit; font-weight: 600;
+      font-size: 0.88rem; cursor: pointer; transition: background 0.2s;
+    }
+    .btn-add:hover { background: #d85408; }
+
+    .sections-list { display: flex; flex-direction: column; gap: 1rem; }
+    .section-card {
+      background: #fff; border-radius: 14px; padding: 1.25rem 1.5rem;
+      border: 1px solid #e3e5ea; box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      display: grid; grid-template-columns: auto 1fr auto; gap: 1rem; align-items: center;
+    }
+    .section-card.is-editing { outline: 2px solid var(--accent); outline-offset: -1px; }
+    .section-card.is-unpublished { opacity: 0.55; }
+    .section-order {
+      width: 32px; height: 32px; background: var(--anthracite); color: #fff;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 0.82rem; font-weight: 700;
+    }
+    .section-info { display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; }
+    .section-type-badge {
+      display: inline-block; font-size: 0.65rem; font-weight: 800;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gray); padding: 0.2rem 0.5rem;
+      background: #f4f5f7; border-radius: 4px; align-self: flex-start;
+      margin-bottom: 0.25rem;
+    }
+    .section-title-preview {
+      font-size: 0.95rem; font-weight: 700; color: var(--anthracite);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .section-text-preview { font-size: 0.78rem; color: var(--gray); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .section-actions { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .section-actions button {
+      padding: 0.45rem 0.8rem; background: transparent; border: 1px solid #e3e5ea;
+      border-radius: 7px; font-family: inherit; font-size: 0.78rem; font-weight: 600;
+      color: var(--gray); cursor: pointer; transition: all 0.15s;
+    }
+    .section-actions button:hover:not(:disabled) { color: var(--anthracite); border-color: var(--anthracite); }
+    .section-actions button:disabled { opacity: 0.4; cursor: not-allowed; }
+    .section-actions .btn-edit { color: var(--accent); border-color: var(--accent); }
+    .section-actions .btn-edit:hover { background: var(--accent); color: #fff; }
+    .section-actions .btn-delete:hover { color: #c83b3b; border-color: #c83b3b; }
+
+    .empty {
+      background: #fff; border: 2px dashed #e3e5ea; border-radius: 14px;
+      padding: 4rem 2rem; text-align: center; color: var(--gray);
+    }
+    .empty h3 { color: var(--anthracite); margin-bottom: 0.5rem; }
+
+    /* ── Modal éditeur ── */
+    .modal-backdrop {
+      position: fixed; inset: 0; background: rgba(15,18,30,0.6);
+      backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 9999; padding: 2rem;
+      opacity: 0; pointer-events: none; transition: opacity 0.25s;
+    }
+    .modal-backdrop.is-open { opacity: 1; pointer-events: auto; }
+    .modal {
+      background: #fff; border-radius: 16px; max-width: 720px; width: 100%;
+      max-height: 90vh; overflow-y: auto;
+      box-shadow: 0 30px 100px rgba(0,0,0,0.3);
+      transform: translateY(20px); transition: transform 0.25s;
+    }
+    .modal-backdrop.is-open .modal { transform: translateY(0); }
+    .modal-header {
+      padding: 1.5rem 1.75rem; border-bottom: 1px solid #f0f1f4;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .modal-header h3 { font-size: 1.1rem; font-weight: 700; color: var(--anthracite); }
+    .modal-close {
+      background: transparent; border: none; font-size: 1.5rem; line-height: 1;
+      color: var(--gray); cursor: pointer; padding: 0;
+    }
+    .modal-body { padding: 1.5rem 1.75rem; }
+    .modal-footer {
+      padding: 1.25rem 1.75rem; border-top: 1px solid #f0f1f4;
+      display: flex; justify-content: flex-end; gap: 0.6rem;
+    }
+
+    /* Form fields */
+    .field { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+    .field label { font-size: 0.78rem; font-weight: 600; color: var(--anthracite); }
+    .field small { font-size: 0.72rem; color: var(--gray); font-weight: 400; }
+    .field input[type="text"], .field input[type="url"], .field textarea, .field select {
+      padding: 0.7rem 0.9rem; border: 1px solid #e3e5ea; border-radius: 9px;
+      font-family: inherit; font-size: 0.9rem; background: #fafbfc;
+    }
+    .field textarea { resize: vertical; min-height: 90px; }
+    .field input:focus, .field textarea:focus, .field select:focus {
+      outline: none; border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(244,101,10,0.12); background: #fff;
+    }
+    .field input[type="file"] { padding: 0.55rem; background: #fafbfc; border: 1px solid #e3e5ea; border-radius: 9px; font-family: inherit; font-size: 0.85rem; }
+
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    @media (max-width: 600px) { .field-row { grid-template-columns: 1fr; } }
+
+    .toggle-row { display: flex; align-items: center; gap: 0.65rem; padding: 0.6rem 0; }
+    .toggle-row input { appearance: none; width: 38px; height: 22px; background: #d4d7dd; border-radius: 20px; position: relative; cursor: pointer; transition: background 0.2s; flex-shrink: 0; }
+    .toggle-row input::after { content: ''; position: absolute; top: 2px; left: 2px; width: 18px; height: 18px; border-radius: 50%; background: #fff; transition: transform 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+    .toggle-row input:checked { background: #2a8a4a; }
+    .toggle-row input:checked::after { transform: translateX(16px); }
+
+    .image-preview {
+      margin-top: 0.5rem; max-width: 220px; max-height: 140px;
+      border-radius: 8px; border: 1px solid #e3e5ea; object-fit: cover;
+    }
+
+    .btn-primary, .btn-secondary {
+      padding: 0.7rem 1.2rem; border-radius: 9px;
+      font-family: inherit; font-weight: 600; font-size: 0.88rem;
+      cursor: pointer; transition: all 0.2s; border: 1px solid transparent;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover:not(:disabled) { background: #d85408; }
+    .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn-secondary { background: transparent; color: var(--gray); border-color: #e3e5ea; }
+    .btn-secondary:hover { color: var(--anthracite); border-color: var(--anthracite); }
+
+    .status-msg { font-size: 0.85rem; margin-right: auto; align-self: center; }
+    .status-msg[data-type="success"] { color: #2a8a4a; }
+    .status-msg[data-type="error"] { color: #c83b3b; }
+
+    /* List items editor (for section type 'list') */
+    .list-items { display: flex; flex-direction: column; gap: 0.4rem; }
+    .list-items-row { display: flex; gap: 0.4rem; align-items: center; }
+    .list-items-row input { flex: 1; }
+    .list-items-row button {
+      width: 32px; height: 32px; flex-shrink: 0; border: 1px solid #e3e5ea;
+      background: #fafbfc; border-radius: 7px; cursor: pointer; font-weight: 700; color: var(--gray);
+    }
+    .list-items-row button:hover { color: #c83b3b; border-color: #c83b3b; }
+    .btn-add-item {
+      align-self: flex-start; padding: 0.4rem 0.8rem; background: transparent;
+      border: 1px dashed #c4c8d1; border-radius: 7px; font-family: inherit;
+      font-size: 0.78rem; color: var(--gray); cursor: pointer;
+    }
+    .btn-add-item:hover { color: var(--anthracite); border-color: var(--anthracite); }
+  </style>
+  <script type="module" crossorigin src="/assets/adminPage-D5wjkf4Y.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="modulepreload" crossorigin href="/assets/supabase-client-BqP9cGay.js">
+  <link rel="stylesheet" crossorigin href="/assets/style-GDHS0RUd.css">
+</head>
+<body>
+
+<header class="admin-header">
+  <div class="admin-header-left">
+    <a href="index.html">← Toutes les pages</a>
+    <h1 id="pageTitleHeader">Édition de page</h1>
+  </div>
+  <div class="admin-header-right">
+    <span id="userLabel">—</span>
+    <button id="logoutBtn">Déconnexion</button>
+  </div>
+</header>
+
+<div class="admin-wrap">
+  <div class="admin-page-title">
+    <div>
+      <h2 id="pageTitle">—</h2>
+      <p id="pageMeta">Chargement…</p>
+    </div>
+    <button class="btn-add" id="btnAddSection">➕ Ajouter une section</button>
+  </div>
+
+  <div id="sectionsList" class="sections-list">
+    <div class="empty"><h3>Chargement…</h3></div>
+  </div>
+</div>
+
+<!-- ────────────────────────────────────────
+     MODAL — Éditeur de section
+──────────────────────────────────────── -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modalTitle">Éditer la section</h3>
+      <button class="modal-close" id="modalClose">×</button>
+    </div>
+    <div class="modal-body">
+
+      <div class="field">
+        <label for="sectionType">Type de section</label>
+        <small>Choisis le type de bloc à afficher.</small>
+        <select id="sectionType">
+          <option value="hero">Hero (image de fond + titre)</option>
+          <option value="split">Split (texte + image côte à côte)</option>
+          <option value="process_intro">Bandeau de transition (titre centré)</option>
+          <option value="cta">Appel à l'action (bandeau coloré)</option>
+        </select>
+      </div>
+
+      <div id="formContainer"></div>
+
+      <div class="toggle-row">
+        <input type="checkbox" id="sectionPublished" checked>
+        <label for="sectionPublished">Section publiée (visible sur le site)</label>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <span class="status-msg" id="modalStatus"></span>
+      <button class="btn-secondary" id="modalCancel">Annuler</button>
+      <button class="btn-primary" id="modalSave">Enregistrer</button>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

@@ -8,7 +8,7 @@ const submitBtn = document.getElementById('loginSubmit');
 
 (async () => {
   const { data } = await supabase.auth.getSession();
-  if (data.session) window.location.replace('/admin/pieces.html');
+  if (data.session) window.location.replace('/admin/index.html');
 })();
 
 form.addEventListener('submit', async (e) => {
@@ -29,5 +29,5 @@ form.addEventListener('submit', async (e) => {
     return;
   }
 
-  window.location.replace('/admin/pieces.html');
+  window.location.replace('/admin/index.html');
 });
