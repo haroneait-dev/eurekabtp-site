@@ -2295,7 +2295,7 @@ footer { background: #2b2b2b; color: #fff; }
 .nav-logo:hover { transform: scale(1.03); }
 .nav-logo-img {
   display: block;
-  height: 92px;
+  height: 118px;
   width: auto;
   object-fit: contain;
   border-radius: 4px;
@@ -2304,7 +2304,7 @@ footer { background: #2b2b2b; color: #fff; }
 }
 
 @media (max-width: 640px) {
-  .nav-logo-img { height: 64px; }
+  .nav-logo-img { height: 76px; }
 }
 
 /* When navbar is black (on hero), logo is white — mix-blend-mode hides white square */
