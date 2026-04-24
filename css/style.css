@@ -2504,7 +2504,7 @@ footer { background: #2b2b2b; color: #fff; }
   margin-top: -1px;
 }
 .split-content {
-  flex: 1 1 50%;
+  flex: 1 1 42%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2512,7 +2512,7 @@ footer { background: #2b2b2b; color: #fff; }
   color: #fff;
 }
 .split-image {
-  flex: 1 1 50%;
+  flex: 1 1 58%;
   position: relative;
   min-height: 420px;
 }
@@ -2730,7 +2730,7 @@ footer { background: #2b2b2b; color: #fff; }
   margin-top: -1px;
 }
 .eureka-split-content {
-  flex: 1 1 50%;
+  flex: 1 1 42%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2791,7 +2791,7 @@ footer { background: #2b2b2b; color: #fff; }
 
 /* Image Side */
 .eureka-split-image {
-  flex: 1 1 50%;
+  flex: 1 1 58%;
   position: relative;
   min-height: 420px;
 }
