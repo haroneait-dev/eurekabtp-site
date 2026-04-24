@@ -120,11 +120,11 @@ h5 { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spa
 }
 .nav-container {
   max-width: 1320px; margin: 0 auto;
-  padding: 1.3rem 2.5rem;
+  padding: 0.7rem 2.5rem;
   display: flex; align-items: center; gap: 1.5rem;
   transition: padding var(--t) var(--ease);
 }
-#navbar.scrolled .nav-container { padding-top: 0.9rem; padding-bottom: 0.9rem; }
+#navbar.scrolled .nav-container { padding-top: 0.4rem; padding-bottom: 0.4rem; }
 
 .nav-logo {
   display: flex; align-items: baseline; gap: 0.1rem;
