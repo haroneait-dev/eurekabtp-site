@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 36">
+  <!-- Renault diamond -->
+  <polygon points="18,4 30,18 18,32 6,18" fill="none" stroke="white" stroke-width="2"/>
+  <polygon points="18,9 25,18 18,27 11,18" fill="white"/>
+  <text x="105" y="25" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="white" text-anchor="middle" letter-spacing="2">RENAULT TRUCKS</text>
+</svg>
