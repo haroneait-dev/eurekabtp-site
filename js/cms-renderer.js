@@ -47,7 +47,7 @@ function renderSplit(s) {
 
   return `
     <section class="cms-split" style="padding:0; max-width:100%;">
-      <div class="eureka-split ${reverseClass}" data-animate>
+      <div class="eureka-split ${reverseClass}">
         <div class="eureka-split-content ${variant}">
           ${watermark}
           ${d.eyebrow ? `<span class="eureka-split-tag">${escapeHtml(d.eyebrow)}</span>` : ''}
@@ -65,7 +65,7 @@ function renderProcessIntro(s) {
   const d = s.data || {};
   return `
     <section class="cms-process-intro" style="background:#fff; padding:6rem 2rem 3rem; text-align:center;">
-      <div style="max-width:720px; margin:0 auto;" data-animate>
+      <div style="max-width:720px; margin:0 auto;">
         ${d.eyebrow ? `<p class="section-eyebrow">${escapeHtml(d.eyebrow)}</p>` : ''}
         ${d.title ? `<h2 style="color:var(--anthracite);">${escapeHtml(d.title)}</h2>` : ''}
       </div>
@@ -76,7 +76,7 @@ function renderCta(s) {
   const d = s.data || {};
   return `
     <section class="cms-cta" style="background:var(--dark); padding:6rem 2rem; text-align:center;">
-      <div style="max-width:640px; margin:0 auto;" data-animate>
+      <div style="max-width:640px; margin:0 auto;">
         ${d.eyebrow ? `<p class="section-eyebrow" style="color:#fff;">${escapeHtml(d.eyebrow)}</p>` : ''}
         ${d.title ? `<h2 style="color:#fff; margin-bottom:1rem;">${escapeHtml(d.title)}</h2>` : ''}
         ${d.text ? `<p style="color:rgba(255,255,255,0.65); font-size:1rem; line-height:1.75; margin-bottom:2.5rem;">${escapeHtml(d.text)}</p>` : ''}
@@ -123,15 +123,17 @@ export async function renderPage(slug, mountId = 'cms-content', options = {}) {
     return fn ? fn(s) : '';
   }).join('');
 
-  // Re-trigger GSAP animations on new elements if available
-  if (window.gsap && window.ScrollTrigger) {
-    document.querySelectorAll('[data-animate]:not([data-animated])').forEach(el => {
-      el.setAttribute('data-animated', 'true');
-      window.gsap.from(el, {
-        y: 30, opacity: 0, duration: 0.75, ease: 'power2.out',
-        scrollTrigger: { trigger: el, start: 'top 85%' }
+  // Forcer la visibilité des éléments existants dont les triggers GSAP
+  // sont devenus stales à cause du changement de layout, et rafraîchir
+  // les positions des ScrollTrigger restants.
+  requestAnimationFrame(() => {
+    if (window.gsap) {
+      document.querySelectorAll('[data-animate]').forEach(el => {
+        window.gsap.set(el, { opacity: 1, y: 0, clearProps: 'opacity,transform' });
       });
-    });
-    if (window.ScrollTrigger.refresh) window.ScrollTrigger.refresh();
-  }
+    }
+    if (window.ScrollTrigger?.refresh) {
+      window.ScrollTrigger.refresh();
+    }
+  });
 }
