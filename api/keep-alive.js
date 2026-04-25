@@ -15,6 +15,7 @@ export default async function handler(req, res) {
   try {
     const resp = await fetch(`${url}/rest/v1/pieces_detachees?select=id&limit=1`, {
       headers: { apikey: key, Authorization: `Bearer ${key}` },
+      signal: AbortSignal.timeout(10_000),
     });
     if (!resp.ok) {
       return res.status(502).json({ ok: false, status: resp.status, error: await resp.text() });

@@ -24,11 +24,28 @@ let editingPiece = null;
 async function requireAuth() {
   const { data } = await supabase.auth.getSession();
   if (!data.session) {
-    window.location.replace('/index.html');
+    window.location.replace('/login.html');
     return null;
   }
   userLabel.textContent = data.session.user.email;
   return data.session;
+}
+
+const ALLOWED_IMAGE_EXT = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
+const MAX_IMAGE_SIZE = 10 * 1024 * 1024; // 10 MB
+
+function validateImageFile(file) {
+  if (!file) return;
+  const ext = file.name.split('.').pop().toLowerCase();
+  if (!ALLOWED_IMAGE_EXT.includes(ext)) {
+    throw new Error(`Format ${ext} non autorisé (JPG, PNG, WEBP, GIF uniquement)`);
+  }
+  if (!file.type.startsWith('image/')) {
+    throw new Error('Le fichier sélectionné n\'est pas une image valide');
+  }
+  if (file.size > MAX_IMAGE_SIZE) {
+    throw new Error(`Image trop lourde (${(file.size / 1024 / 1024).toFixed(1)} MB) — maximum 10 MB`);
+  }
 }
 
 function setStatus(msg, type = 'info') {
@@ -175,6 +192,7 @@ async function deletePiece(id, path) {
 }
 
 async function uploadImage(file) {
+  validateImageFile(file);
   const ext = file.name.split('.').pop().toLowerCase();
   const path = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
   const { error } = await supabase.storage
