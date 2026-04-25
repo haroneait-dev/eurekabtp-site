@@ -2,6 +2,7 @@
   "name": "eurekabtp-site",
   "version": "1.0.0",
   "description": "Eureka BTP Website",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
