@@ -6,6 +6,12 @@ function escapeHtml(s) {
   }[c]));
 }
 
+function safeUrl(url) {
+  if (!url) return '';
+  // Encode spaces and other unsafe chars in URL paths
+  return escapeHtml(String(url).replace(/ /g, '%20'));
+}
+
 function paragraphs(text) {
   if (!text) return '';
   return String(text)
@@ -16,7 +22,7 @@ function paragraphs(text) {
 
 function renderHero(s) {
   const d = s.data || {};
-  const bg = d.bg_image ? `style="background:url('${escapeHtml(d.bg_image)}') center/cover no-repeat;"` : '';
+  const bg = d.bg_image ? `style="background:url('${safeUrl(d.bg_image)}') center/cover no-repeat;"` : '';
   return `
     <section class="cms-hero service-hero" ${bg}>
       <div class="service-hero-overlay"></div>
@@ -47,10 +53,10 @@ function renderSplit(s) {
           ${d.eyebrow ? `<span class="eureka-split-tag">${escapeHtml(d.eyebrow)}</span>` : ''}
           ${d.title ? `<h3 class="eureka-split-title">${escapeHtml(d.title).replace(/\n/g, '<br>')}</h3>` : ''}
           ${d.text ? `<div class="eureka-split-desc">${paragraphs(d.text)}</div>` : ''}
-          ${d.logo_image ? `<img src="${escapeHtml(d.logo_image)}" alt="" style="height:90px; width:auto; max-width:240px; object-fit:contain; display:block; margin:0 0 2rem;">` : ''}
+          ${d.logo_image ? `<img src="${safeUrl(d.logo_image)}" alt="" style="height:90px; width:auto; max-width:240px; object-fit:contain; display:block; margin:0 0 2rem;">` : ''}
           ${d.cta_label && d.cta_url ? `<a href="${escapeHtml(d.cta_url)}" class="split-btn" style="${ctaStyle}">${escapeHtml(d.cta_label)}</a>` : ''}
         </div>
-        ${d.image ? `<div class="eureka-split-image"><img src="${escapeHtml(d.image)}" alt=""></div>` : ''}
+        ${d.image ? `<div class="eureka-split-image"><img src="${safeUrl(d.image)}" alt=""></div>` : ''}
       </div>
     </section>`;
 }
@@ -126,5 +132,6 @@ export async function renderPage(slug, mountId = 'cms-content', options = {}) {
         scrollTrigger: { trigger: el, start: 'top 85%' }
       });
     });
+    if (window.ScrollTrigger.refresh) window.ScrollTrigger.refresh();
   }
 }
