@@ -1,0 +1,1 @@
+import"./supabase-client-Dogz5OU6.js";/* empty css              */import{r}from"./cms-renderer-vBIJzJRT.js";import"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";r("identite","cms-content",{skipTypes:["hero"]});

@@ -104,6 +104,7 @@
 ═══════════════════════════════════════════ -->
 
 
+<div id="cms-content">
 <section id="identite-teaser" style="padding: 0; max-width: 100%; border-bottom: none;">
   <div class="split-section reverse" data-animate>
     <div class="split-content light-bg">
@@ -186,6 +187,12 @@
     </div>
   </div>
 </section>
+</div>
+
+<script type="module">
+  import { renderPage } from './js/cms-renderer.js';
+  renderPage('accueil', 'cms-content', { skipTypes: ['hero'] });
+</script>
 
 
 

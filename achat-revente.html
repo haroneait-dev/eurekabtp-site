@@ -124,6 +124,7 @@
 </section>
 
 
+<div id="cms-content">
 <section style="padding: 0; max-width: 100%;">
 
   <div class="eureka-split" data-animate>
@@ -169,6 +170,12 @@
   </div>
 
 </section>
+</div>
+
+<script type="module">
+  import { renderPage } from './js/cms-renderer.js';
+  renderPage('achat-revente', 'cms-content', { skipTypes: ['hero'] });
+</script>
 
 <footer id="footer">
   <div class="footer-container">

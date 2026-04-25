@@ -86,15 +86,17 @@ const RENDERERS = {
   cta: renderCta,
 };
 
-export async function renderPage(slug, mountId = 'cms-content') {
+export async function renderPage(slug, mountId = 'cms-content', options = {}) {
   const mount = document.getElementById(mountId);
   if (!mount) return;
+
+  const skipTypes = new Set(options.skipTypes || []);
 
   const { data: page, error: pErr } = await supabase
     .from('pages').select('id').eq('slug', slug).maybeSingle();
   if (pErr || !page) {
     console.warn('CMS: page not found for slug', slug);
-    return;
+    return; // keeps static HTML fallback
   }
 
   const { data: sections, error: sErr } = await supabase
@@ -104,12 +106,13 @@ export async function renderPage(slug, mountId = 'cms-content') {
 
   if (sErr) {
     console.error('CMS: error loading sections', sErr);
-    return;
+    return; // keeps static HTML fallback
   }
 
-  if (!sections || sections.length === 0) return;
+  const filtered = (sections || []).filter(s => !skipTypes.has(s.type));
+  if (filtered.length === 0) return; // keeps static HTML fallback
 
-  mount.innerHTML = sections.map(s => {
+  mount.innerHTML = filtered.map(s => {
     const fn = RENDERERS[s.type];
     return fn ? fn(s) : '';
   }).join('');

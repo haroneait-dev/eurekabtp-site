@@ -309,6 +309,7 @@
 
 <!-- FICHE IDENTITÉ -->
 
+<div id="cms-content">
 <section id="id-fiche" style="padding: 0; max-width: 100%; border-bottom: none;">
   
   <div class="eureka-split" data-animate>
@@ -357,6 +358,12 @@
   </div>
 
 </section>
+</div>
+
+<script type="module">
+  import { renderPage } from './js/cms-renderer.js';
+  renderPage('identite', 'cms-content', { skipTypes: ['hero'] });
+</script>
 
 
 <!-- LOCALISATION -->
