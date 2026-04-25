@@ -1,0 +1,1 @@
+import"./supabase-client-BPmHix10.js";import{r as e}from"./cms-renderer-fknNN8IZ.js";import"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";e("identite","cms-content",{skipTypes:["hero"]});

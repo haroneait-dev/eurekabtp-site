@@ -1,1 +1,0 @@
-import"./supabase-client-Dogz5OU6.js";/* empty css              */import{r as o}from"./cms-renderer-vBIJzJRT.js";import"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";o("location","cms-content",{skipTypes:["hero"]});

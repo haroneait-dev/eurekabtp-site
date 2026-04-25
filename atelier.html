@@ -169,6 +169,7 @@
 </section>
 
 <!-- SECTIONS SPLIT -->
+<div id="cms-content">
 <section style="padding: 0; max-width: 100%;">
 
   <div class="eureka-split" data-animate>
@@ -312,6 +313,12 @@
   </div>
 
 </section>
+</div>
+
+<script type="module">
+  import { renderPage } from './js/cms-renderer.js';
+  renderPage('atelier', 'cms-content', { skipTypes: ['hero'] });
+</script>
 
 <section id="atelier-gallery">
   <div class="atelier-gallery-inner">

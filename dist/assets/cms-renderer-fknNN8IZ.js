@@ -1,4 +1,4 @@
-import{s as g}from"./supabase-client-Dogz5OU6.js";function t(r){return String(r??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}function u(r){return r?String(r).split(/\n\s*\n/).map(e=>`<p>${t(e.trim()).replace(/\n/g,"<br>")}</p>`).join(""):""}function b(r){const e=r.data||{};return`
+import{s as g}from"./supabase-client-BPmHix10.js";function t(r){return String(r??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}function u(r){return r?String(r).split(/\n\s*\n/).map(e=>`<p>${t(e.trim()).replace(/\n/g,"<br>")}</p>`).join(""):""}function b(r){const e=r.data||{};return`
     <section class="cms-hero service-hero" ${e.bg_image?`style="background:url('${t(e.bg_image)}') center/cover no-repeat;"`:""}>
       <div class="service-hero-overlay"></div>
       <div class="service-hero-content">

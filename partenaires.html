@@ -190,6 +190,7 @@
 </section>
 
 
+<div id="cms-content">
 <!-- SECTION 1 — LE CONSTRUCTEUR -->
 <section class="part-section-white">
   <div class="part-inner" data-animate>
@@ -240,6 +241,12 @@
     </div>
   </div>
 </section>
+</div>
+
+<script type="module">
+  import { renderPage } from './js/cms-renderer.js';
+  renderPage('partenaires', 'cms-content', { skipTypes: ['hero'] });
+</script>
 
 
 <!-- CTA -->

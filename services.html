@@ -154,6 +154,7 @@
 
 
 
+<div id="cms-content">
 <section id="services" style="padding: 0; max-width: 100%; border-bottom: none;">
   <div style="text-align: center; padding: 6rem 2rem 4rem;">
     <p class="section-eyebrow">Choisissez votre besoin</p>
@@ -205,6 +206,12 @@
     </div>
   </div>
 </section>
+</div>
+
+<script type="module">
+  import { renderPage } from './js/cms-renderer.js';
+  renderPage('services', 'cms-content', { skipTypes: ['hero'] });
+</script>
 
 
 
