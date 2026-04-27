@@ -1,0 +1,1 @@
+import"./supabase-client-jymPkMbK.js";import{r as e}from"./cms-renderer-TkYGsC7x.js";import"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";e("achat-revente","cms-content",{skipTypes:["hero"]});
